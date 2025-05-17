@@ -1,0 +1,55 @@
+$mainOffset: 50; // отступы безопасности для контейнера
+$maxWidth: 1920; // максимальная ширина страницы
+$minWidth: 320; // минимальная ширина телефона
+$minWidthMaket: 390; // минимальная ширина телефона в макете
+$containerWidth: 1340; // ширина контейнера из макета
+$maxWidthContainer: $containerWidth + ($mainOffset * 2); // ширина контейнера с учетом padding слева и справа
+
+$headerHeight: 100;
+$footerHeight: 100;
+
+:root {
+  --bs-font-family: 'InterTight', sans-serif; // Семейство шрифта по умолчанию
+  --bs-font-size: 16px; // Размер шрифта по умолчанию
+  --bs-font-weight: 400; // Жирность шрифта по умолчанию
+  --bs-line-height: 125%; // Базовая высота шрифта
+  --bs-transition: .3s ease-in-out;
+  --bs-radius: 10px;
+
+  --bs-font-color: rgba(255, 255, 255, 0.6); // Цвет шрифта по умолчанию
+  --bs-title-color: #f0f0f0;
+  --bs-mark-color: #ff4533;
+  --bs-title-mark-color: #ff4533;
+  --bs-border-color:rgba(255, 255, 255, 0.1);
+  --bs-button-text-color: rgb(207, 207, 207);
+  --bs-button-hover-color: #ff3320;
+  --body-color: #0c0e11;
+  --white: #fff;
+  
+
+  --primary-color: #131313;
+  --primary-hover-color: #2d2d2d;
+  --secondary-color: #ff4040;
+  --black-color: #131313;
+  --white-black-color: #fff;
+
+  --bs-shadow: 0px 2px 3px rgba(#000, 10%), 0px 8px 3px rgba(#000, 10%);
+  --hover-shadow: 0 0 5px 0 rgba(#000, 10%),
+                  0 0 10px 0 rgba(#000, 10%),
+                  0 0 15px 0 rgba(#000, 10%);
+}
+
+html.white-theme {
+  --bs-font-color: rgba(59, 59, 59, 0.6);
+  --bs-title-color: #0d0d0d;
+  --bs-border-color: #dfdfdf;
+  --body-color: #fff;
+
+  --white-black-color: #0d0d0d;
+}
+
+html.blue-page {
+  --bs-mark-color: #0090ff;
+  --bs-title-mark-color: #06f;
+  --bs-button-hover-color: rgb(0, 89, 222);
+}

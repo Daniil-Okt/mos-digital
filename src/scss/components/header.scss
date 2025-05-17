@@ -1,0 +1,237 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  width: 100%;
+  transition: background-color var(--bs-transition);
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.01);
+  border-bottom: 0.5px solid var(--bs-border-color);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  // filter: blur(10px);
+  .white-theme & {
+    border-color: rgba(0, 0, 0, 0.1);
+  }
+  .header-is-sticky & {
+  }
+
+
+  // .header__container
+  &__container {
+    @include adaptiveClamp(height, 103, 75);
+    display: flex;
+    align-items: center;
+    @include adaptiveClamp(padding-top, 26, 13);
+    @include adaptiveClamp(padding-bottom, 26, 13);
+
+    .header-is-sticky & {
+    }
+
+    @media(max-width:650px){
+        align-items: end;
+    }
+  }
+
+  &__logo {
+    @include adaptiveClamp(font-size, 20, 16);
+    font-family: 'Benzin', sans-serif;
+    margin-right: auto;
+    color: var(--white-black-color);
+    line-height: 120%;
+
+    @media(max-width:650px){
+        max-width: rem(100);
+    }
+  }
+
+  &__phone {
+    font-weight: 500;
+    line-height: 120%;
+    @include adaptiveClamp(font-size, 20, 16);
+    @include adaptiveClamp(margin-right, 51, 30);
+
+    @media(max-width:950px){
+      display: none;
+    }
+  }
+
+  &__button {
+    @include adaptiveClamp(margin-right, 60, 30);
+
+    @media(max-width:720px){
+      display: none;
+    }
+  }
+}
+
+
+.btn-theme {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+  font-size: rem(13);
+  color: var(--white-black-color);
+  @include adaptiveClamp(margin-right, 39, 32.5);
+  cursor: pointer;
+  font-weight: 500;
+  line-height: 1;
+  width: rem(152.4);
+  min-width: rem(152.4);
+  user-select: none; 
+
+  @media(max-width:650px){
+    flex-direction: column;
+    align-items: center;
+    min-width: rem(40.5);
+    width: rem(40.5);
+    font-size: rem(16);
+    line-height: 120%;
+    gap: rem(3.9);
+  }
+
+  &::before {
+      display: block;
+      position: relative;
+      content: '';
+      width: rem(46);
+      height: rem(23);
+      border-radius: rem(23);
+      background: var(--white);
+      top:0;
+      left: 0;
+      transition: border-color 0.3s ease  0s;
+      border: 0.50px solid #ffffff00;
+      @media(max-width:650px){
+          width: rem(40.5);
+          height: rem(20.25);
+      }
+  }
+
+  &::after {
+      position: absolute;
+      content: '';
+      width: rem(19);
+      height: rem(19);
+      background: var(--bs-title-mark-color);
+      top:rem(2);
+      left: rem(2);
+      border-radius: 50%;
+      transition: all 0.3s ease  0s;
+
+      .blue-page & {
+        background: #000;
+      }
+      .white-theme.blue-page & {
+        background: #06f;
+      }
+
+      @media(max-width:650px){
+        width: rem(17.25);
+        height: rem(17.25);
+        top:rem(1.5);
+        left: rem(1.5);
+      }
+  }
+
+  &._active {
+    &::before {
+      border: 0.50px solid var(--bs-title-mark-color);
+    }
+    &::after {
+      left: rem(25);
+      @media(max-width:650px){
+        left: rem(21.6);
+      }
+    }
+  } 
+
+}
+
+// Burger
+
+.icon-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    width: rem(41);
+    color: var(--white-black-color);
+    line-height: 120%;
+    background: none;
+    font-size: rem(16);
+    cursor: pointer;
+    z-index: 5;
+    &:hover {
+      .icon-menu__icon::after {
+        width: 100%;
+      }
+
+    }
+
+    &__icon {
+      z-index: -1;
+      position: relative;
+      background: none;
+      width: rem(41);
+      height: rem(11);
+      margin-bottom: rem(11);
+      transition: transform 0.3s ease-in-out  0s;
+      
+    
+      &::before,
+      &::after {
+        content: "";
+        transition: all 0.3s ease  0s;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: rem(2);
+        background-color: var(--bs-title-mark-color);
+        border-radius: 10px;
+      }
+  
+      &::before {
+        top: 0;
+        right: 0;
+        left: auto;
+      }
+  
+      &::after {
+        bottom: 0;
+        width: 70.8%;
+      }
+  
+  
+      .menu-open & {
+        transform: rotate(180deg);
+
+        &::before {
+          top: calc(60% - rem(1));
+          transform: rotate(-45deg);
+          // width: rem(41);
+          width: 80%;
+          right: 10%;
+        }
+  
+        &::after {
+          bottom: calc(30% - rem(0));
+          transform: rotate(45deg);
+          // width: rem(41) !important;
+          width: 80% !important;
+          left: 10%;
+        }
+      }
+    }
+
+
+}
+
+
+
+
+

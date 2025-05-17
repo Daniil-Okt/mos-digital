@@ -1,0 +1,49 @@
+.cursor-follower {
+    position: fixed;
+    width: 15px;
+    height: 15px;
+    background-color: var(--bs-mark-color);
+    border-radius: 50%;
+    pointer-events: none;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%); /* Центрируем точку относительно курсора */
+    transition: 
+    transform 0.1s ease-out,
+    width 0.3s ease,
+    height 0.3s ease,
+    background-color 0.3s ease;
+    z-index: 9999;
+}
+
+/* Эффект при наведении на элементы */
+.cursor-follower.hover-effect {
+    width: 70px;
+    height: 70px;
+    background-color: #ef2c1654;
+    border: 1px solid green;
+}
+
+/* Эффекты при наведении на элементы */
+.hover-element:hover ~ .cursor-follower,
+.hover-element:hover + .cursor-follower {
+    width: 30px;
+    height: 30px;
+    background-color: #9b59b6;
+}
+
+.hover-button:hover ~ .cursor-follower,
+.hover-button:hover + .cursor-follower {
+    width: 40px;
+    height: 40px;
+    background-color: #27ae60;
+    border-radius: 20%;
+}
+
+.hover-link:hover ~ .cursor-follower,
+.hover-link:hover + .cursor-follower {
+    width: 25px;
+    height: 25px;
+    background-color: #c0392b;
+    transform: translate(-50%, -50%) rotate(45deg);
+}

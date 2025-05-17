@@ -1,0 +1,24 @@
+.showreel {
+    position: relative;
+    z-index: 2;
+    // background: var(--body-color);
+    &__container {
+        @media(max-width:550px){
+            padding: 0;
+        }
+    }
+
+    &__video {
+        width: 100%;
+        img, picture, video {
+            width: 100%;
+            object-fit: cover;
+        }
+        .showreel-video {
+            img, picture, video {
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
