@@ -49,7 +49,11 @@ new BurgerMenu().init();
 
 
 // Скролл с инерцией
-smoothScroll()
+if (window.innerWidth > 1024) {
+	smoothScroll()
+}
+
+
 
 
 /** ===================================================================================
@@ -204,8 +208,9 @@ smoothScroll()
 btnTheme()
 
 //курсор
-cursor()
-
+if (window.innerWidth > 1024) {
+	cursor()
+}
 
 
 //автозапус видео на айфонах
@@ -214,7 +219,9 @@ autoplayVideo()
 
 
 //анимация куба
+if (window.innerWidth > 550) {
+	document.querySelectorAll('.cube-anim').forEach(el => {
+		new CubeAnimator(el);
+	});
+}
 
-document.querySelectorAll('.cube-anim').forEach(el => {
-	new CubeAnimator(el);
-});

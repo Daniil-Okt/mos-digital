@@ -10,13 +10,13 @@ export function smoothScroll() {
         smooth: false,        // Включить плавный скролл
         direction: 'vertical' // Направление ('vertical' или 'horizontal')
     })
-      
+    
       // Цикл анимации
     function raf(time) {
         lenis.raf(time)
         requestAnimationFrame(raf)
     }
-      
+    
     requestAnimationFrame(raf)
 }
 

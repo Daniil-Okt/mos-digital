@@ -33,11 +33,14 @@ export function btnTheme() {
 		}
 	}
 
-	if (localStorage.getItem('theme') == 'white') {
-		whiteThemeActive()
-		window.addEventListener('resize', whiteThemeActive);
-	} else {
-		blackThemeActive()
-		window.addEventListener('resize', blackThemeActive);
+	function changeTheme() {
+		if (localStorage.getItem('theme') == 'white') {
+			whiteThemeActive()
+		} else {
+			blackThemeActive()
+		}
 	}
+	
+	changeTheme()
+	window.addEventListener('resize', changeTheme);
 }
