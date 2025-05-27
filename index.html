@@ -1,29 +1,68 @@
 <!doctype html>
 <html lang="ru" class="">
   <head>
-  <style>html { opacity: 0; }</style>
+  <style>
+    /* html { opacity: 0; }
+    main { transform: translateY(5%);} */
+
+    .preload {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99999999;
+      width: 100%;
+      height: 100%;
+    }
+    .preload__top, .preload__bottom {
+      height: 50%;
+      width: 100%;
+      background: var(--body-color);
+      color: var(--bs-title-color);
+    }
+    .preload__top p {
+      transform: scale(4.5);
+    }
+    .preload__bottom p {
+      opacity: 0;
+      transform: scale(0) translateY(50%);
+    }
+    .preload__top {
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      font-size: 40px;
+      font-weight: 500;
+    }
+    .preload__bottom {
+      display: flex;
+      justify-content: center;
+      align-items: start;
+    }
+    
+  </style>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>MOS DIGITAL</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250519120614">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250527114115">
 
-  <script defer="defer" src="js/main.min.js?_v=20250519120614"></script>
+  <script defer="defer" src="js/main.min.js?_v=20250527114115"></script>
 </head>
 
   <body>
     
-        <div class="wrapper">
-          <header class="header">
+    <div class="wrapper">
+      <header class="header">
   <div class="header__container">
     <a href="index.html" class="header__logo logo">
       MOS DIGITAL
     </a>
-    <div class="button-slide btn-theme header__btn-theme">
+    <div class="0 btn-theme header__btn-theme">
       <span class="slide-anim" data-content="Включить свет"></span>
     </div>
+
     <a href="tel:+79620404949" class="header__phone link-slide" data-content="+7 (962) 040 49 49">
       <span>+7 (962) 040 49 49</span>
     </a>
@@ -38,37 +77,76 @@
 </button>
   </div>
 </header>
-            <main class="page">
-              <div data-observ></div>
-              <div class="about">
-    <div class="about__bg bg"></div>
+        <main class="page">
+          <div data-observ></div>
+          <div class="about">
+    <div class="about__bg bg video">
+        <picture>
+            <source media="(max-width: 550px)" srcset="images/about/about-bg-orange-mob.png">
+            <img loading="lazy" src="images/about/about-bg-orange.png" alt="">
+        </picture>
+
+        
+    </div>
     <div class="about__container">
-        <h1 class="about__title title-big">
-            <span class="web">Создаем 
-                <em>
-                    <span class="cube-anim" data-delay="3000">
-                        <span class="cube-anim__opacity"></span>
-                        <span class="cube cube-anim__cube">
-                            <span class="cube__face cube__face-front">понятные</span>
-                            <span class="cube__face cube__face-bottom">наглядные</span>
-                            <span class="cube__face cube__face-back">логичные</span>
-                            <span class="cube__face cube__face-top">стильные</span>
+        <div class="running about__running" data-speed="50">
+            <div class="running__row about__running-row">
+                <div class="running__item about__running-item">
+                    Информационные системы
+                </div>
+                <div class="running__item about__running-item">
+                    Продающие лендинги
+                </div>
+                <div class="running__item about__running-item">
+                    E-commerce
+                </div>
+                <div class="running__item about__running-item">
+                    Личные кабинеты
+                </div>
+            </div>
+        </div>  
+        <h1 class="title-big about__title">
+                <span class="web">Создаем 
+                    <em>
+                        <span class="cube-anim" data-delay="3000">
+                            <span class="cube-anim__opacity"></span>
+                            <span class="cube cube-anim__cube">
+                                <span class="cube__face cube__face-front">понятные</span>
+                                <span class="cube__face cube__face-bottom">наглядные</span>
+                                <span class="cube__face cube__face-back">логичные</span>
+                                <span class="cube__face cube__face-top">стильные</span>
+                            </span>
                         </span>
-                    </span>
-                </em> 
-            презентации для масштабных мероприятий</span>
-            <span class="mob">Создаем презентации для мероприятий</span>
+                    </em> 
+                презентации для масштабных мероприятий</span>
+                <span class="mob">Создаем презентации для мероприятий</span>
         </h1>
-        <p class="about__text bs-text t-c">
-            Удержим интерес до последнего слайда. 
-            <br>Спикеры будут выглядеть убедительно, а аудитория слушать и понимать
+        <p class="bs-text t-c about__text">
+                Удержим интерес до последнего слайда. 
+                <br>Спикеры будут выглядеть убедительно, а аудитория слушать и понимать
         </p>
-        <div class="button-slide button about__button">
-            <span class="slide-anim" data-content="Получить расчет"></span>
+        <div class="about__button-row">
+            <div class="button-slide button about__button">
+                <span class="slide-anim" data-content="Получить расчет"></span>
+            </div>
+            <div class="about__connect">
+                <a class="about__connect-btn" href="#">
+                    <img loading="lazy" src="images/about/btn-connect1.svg" alt="">
+                </a>
+                <a class="about__connect-btn" href="#">
+                    <img loading="lazy" src="images/about/btn-connect2.svg" alt="">
+                </a>
+                <a class="about__connect-btn" href="#">
+                    <img loading="lazy" src="images/about/btn-connect3.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="about__connect-btn about__close-connect">
+            <img src="images/about/btn-connect-close.svg" alt="">
         </div>
     </div>
 </div>
-              <div class="showreel">
+          <div class="showreel">
     <div class="showreel__container">
         <div class="showreel-video showreel__video">
             <video autoplay muted loop playsinline poster="images/showreel/showreel-preview.png" loading="lazy">
@@ -77,19 +155,214 @@
         </div>
     </div>
 </div>
-              
-            </main>
-      
-            <footer class="footer">
+          <div class="drawing">
+    <div class="drawing__container">
+        <div class="drawing__left">
+            <div class="drawing__number">
+                <p class="drawing__number-figure">48</p>
+                <p class="drawing__number-text">презентаций создали в 2024</p>
+            </div>
+            <div class="drawing__line"></div>
+        </div>
+        <div class="drawing__right">
+            <h2 class="drawing__title title-min">
+                Знаем, насколько <em>сложно превратить</em> обилие цифр и фактов в понятную презентацию. Когда презентация <em>не вызывает эмоций,</em> а аудитория быстро теряет интерес 
+            </h2>
+            <div class="drawing__right-bot">
+                <div class="bs-text drawing__text">
+                    Именно поэтому мы создаём презентации, которые балансируют между большим количеством информации 
+                    и эффектной подачей
+                </div>
+                <div class="drawing__user user-drawing">
+                    <img src="images/drawing/user-drawing.png" alt="" class="user-drawing__img">
+                    <div class="user-drawing__body">
+                        <h3 class="user-drawing__name">Николай Мостовой</h3>
+                        <p class="user-drawing__text">Основатель</p>
+                        <div class="user-drawing__row">
+                            <a href="#" class="button-slide user-drawing__link"><span class="slide-anim" data-content="Instagram"></span></a>
+                            <a href="#" class="button-slide user-drawing__link"><span class="slide-anim" data-content="Telegram"></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+          <div class="leaders">
+    <div class="leaders__container">
+        <div class="head-text leaders__head-text">
+            <h2 class="title-big leaders__title">
+                Делаем <em>презентации</em> 
+                для лидеров рынка
+            </h2>
+            <p class="bs-text t-c leaders__text">
+                Мы гордимся работой с компаниями, которые задают правила игры на своих рынках 
+            </p>
+        </div>
+
+        <div class="running leaders__running reverse" data-speed="30">
+            <div class="leaders__running-fon-one"></div>
+            <div class="leaders__running-fon-two"></div>
+            <div class="running__row leaders__running-row">
+                <div class="running__item leaders__running-item">
+                    <img loading="lazy" src="images/running-img1.png" alt="">
+                </div>
+                <div class="running__item leaders__running-item">
+                    <img loading="lazy" src="images/running-img2.png" alt="">
+                </div>
+                <div class="running__item leaders__running-item">
+                    <img loading="lazy" src="images/running-img3.png" alt="">
+                </div>
+                <div class="running__item leaders__running-item">
+                    <img loading="lazy" src="images/running-img4.png" alt="">
+                </div>
+            </div>
+        </div> 
+    </div>
+</div>
+          <div class="direct-port">
+    <div class="direct-port__container">
+        <div class="direct-port__menu" style="--max-width-port-menu: 990px" data-max-width="990px">
+            <div class="button-slide direct-port__menu-item _active">
+                <span class="slide-anim" data-content="Все презентации"></span> 
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Производство"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Промышленность"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Строительство"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Недвижимость"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Логистика"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Финансы"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="IT"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="НКО"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Медицина"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Консальтинг"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Оборудование"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Beauty"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Retail"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="HoReCa"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Туризм"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Авиа и авто"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Государство"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item icon">
+                <span class="slide-anim" data-content="Выступления"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item icon">
+                <span class="slide-anim" data-content="Шаблоны"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item icon">
+                <span class="slide-anim" data-content="Анимация"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Отчеты"></span>
+            </div>
+            <div class="button-slide direct-port__menu-item">
+                <span class="slide-anim" data-content="Каталоги"></span>
+            </div>
+        </div>
+        <div class="direct-port__row">
+            <a href="#" class="direct-port__item" data-cursor-hover="Смотреть <em>кейс</em>">
+                <div class="direct-port__item-img" data-cursor-white>
+                    <img src="images/img-show.png" alt="">
+                </div>
+                <div class="direct-port__item-body">
+                    <h3>Геоспецстрой</h3>
+                    <div class="direct-port__item-row">
+                        <div class="direct-port__item-tag">Корпоративный</div>
+                        <div class="direct-port__item-tag">Строительство</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="direct-port__item" data-cursor-hover="Смотреть <em>кейс</em>">
+                <div class="direct-port__item-img" data-cursor-white>
+                    <img src="images/img-show.png" alt="">
+                </div>
+                <div class="direct-port__item-body">
+                    <h3>Геоспецстрой</h3>
+                    <div class="direct-port__item-row">
+                        <div class="direct-port__item-tag">Корпоративный</div>
+                        <div class="direct-port__item-tag">Строительство</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="direct-port__item" data-cursor-hover="Смотреть <em>кейс</em>">
+                <div class="direct-port__item-img" data-cursor-white>
+                    <img src="images/img-show.png" alt="">
+                </div>
+                <div class="direct-port__item-body">
+                    <h3>Геоспецстрой</h3>
+                    <div class="direct-port__item-row">
+                        <div class="direct-port__item-tag">Корпоративный</div>
+                        <div class="direct-port__item-tag">Строительство</div>
+                    </div>
+                </div>
+            </a>
+            <a href="#" class="direct-port__item" data-cursor-hover="Смотреть <em>кейс</em>">
+                <div class="direct-port__item-img" data-cursor-white>
+                    <img src="images/img-show.png" alt="">
+                </div>
+                <div class="direct-port__item-body">
+                    <h3>Геоспецстрой</h3>
+                    <div class="direct-port__item-row">
+                        <div class="direct-port__item-tag">Корпоративный</div>
+                        <div class="direct-port__item-tag">Строительство</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="direct-port__button-row">
+            <a href="#" class="button-circe direct-port__button">
+                Смотреть <br>еще
+
+                <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+        </main>
+  
+        <footer class="footer">
   <div class="footer__container">
     
   </div>
 </footer>
-        </div>
-      
 
-
-    <div class="popup" data-popup="popup-1" data-close-overlay>
+        <div class="popup" data-popup="popup-1" data-close-overlay>
     <div class="popup__wrapper" data-close-overlay>
         <div class="popup__content">
             <button class="button-close popup__close" type="button">x</button>
@@ -100,6 +373,7 @@
     </div>
 </div>
 
-    <div class="cursor-follower"></div>
+        <div class="cursor-follower"></div>
+    </div>
   </body>
 </html>
