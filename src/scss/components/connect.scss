@@ -1,0 +1,202 @@
+.connect {
+    @include adaptiveClamp(margin-top, 190, 177);
+
+    @media(max-width:550px){
+        @include adaptiveClamp(padding-top, 100, 20);
+        @include adaptiveClamp(padding-bottom, 60, 48.23);
+        border-radius: rem(20);
+        background-color: #101216;
+
+        .white-theme & {
+            background-color: #fafafa;
+        }
+    }
+    &__container {
+    }
+
+    &__head {
+        margin-bottom: rem(62.45);
+
+        @media(max-width:550px){
+            margin-bottom: rem(89);
+        
+        }
+    }
+
+    &__title {
+        max-width: rem(731);
+        @include adaptiveClamp(font-size, 60, 35);
+        @include adaptiveClamp(margin-bottom, 40, 35);
+        @media(max-width:550px){
+            text-align: left;
+        }
+    }
+
+    &__text {
+        max-width: rem(567);
+
+        @media(max-width:550px){
+            text-align: left;
+            padding-right: rem(33);
+        }
+    }
+
+    &__form {
+        max-width: rem(675);
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__row-input {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        @include adaptiveClamp(gap, 49.17, 30);
+        @include adaptiveClamp(margin-bottom, 46, 39);
+        @media(max-width:550px){
+            grid-template-columns: 1fr;
+            @include adaptiveClamp(gap, 49.17, 45);
+        }
+    }
+
+    &__item-input {
+    }
+
+    &__radio {
+        margin-bottom: rem(72);
+
+        @media(max-width:550px){
+            margin-bottom: rem(81);
+        }
+    }
+
+    &__radio-label {
+        margin-bottom: rem(11);
+        font-weight: 400;
+        font-size: rem(14);
+        line-height: 120%;
+        color: var(--bs-mark-color);
+    }
+
+    &__radio-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: rem(13);
+
+        @media(max-width:650px){
+            grid-template-columns: 1fr 1fr;
+            gap: rem(14) rem(13.6);
+        }
+    }
+
+    &__radio-item {
+        input {
+            display: none;
+
+            &:checked + .connect__radio-item-body {
+                pointer-events: none;
+                border-color: var(--bs-title-mark-color);
+                .slide-anim {
+                    &::before {
+                        transform: translateY(0);
+                    }
+                    &::after {
+                        top: 100%;
+                    }
+                }
+            }
+        }
+
+    }
+
+    &__radio-item-body {
+        padding: rem(7.6) rem(13) rem(5);
+        text-align: center;
+        font-weight: 500;
+        line-height: 120%;
+        border: rem(1) solid var(--bs-border-color);
+        border-radius: 7px;
+        font-size: rem(16);
+        cursor: pointer;
+
+        .white-theme & {
+            .slide-anim::before {
+                color: var(--bs-title-color);
+            }
+        }
+    }
+
+    &__form-bot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: rem(277);
+        margin-left: auto;
+        margin-right: auto;
+        gap: rem(17);
+
+        @media(max-width:550px){
+            gap: rem(25);
+            max-width: 100%;
+        }
+    }
+
+    &__button {
+        @include adaptiveClamp(font-size, 18, 16);
+        padding: rem(14) rem(22.3) rem(10);
+        width: 100%;
+    }
+
+    &__personal-data {
+        max-width: rem(209);
+        .personal-data__icon {
+            margin-top: rem(4);
+        }
+
+        @media(max-width:550px){
+            span {
+                text-align: center;
+            }
+        }
+    }
+
+    &__online {
+        display: inline-flex;
+        margin-bottom: rem(47);
+        &::before {
+            background-color: var(--green);
+        }
+
+        @media(min-width:551px){
+            display: none;
+        }
+
+        .white-theme & {
+            color: var(--bs-title-color);
+        }
+    }
+}
+
+
+
+
+
+.head-text {
+}
+.title-big {
+}
+.bs-text {
+}
+.row-input {
+}
+.item-input {
+
+    &__label {
+    }
+
+    &__input {
+    }
+}
+.text {
+}

@@ -29,6 +29,7 @@ export function autoplayVideo() {
 		  // Создание элемента img
 		  const img = document.createElement('img');
 		  img.src = poster;
+          img.loading = 'lazy';
 		  img.alt = 'Video poster';
           img.style.width = '100%';
 		  picture.appendChild(img);

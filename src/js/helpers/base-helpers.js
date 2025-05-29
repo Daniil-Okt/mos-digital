@@ -44,7 +44,7 @@ class BaseHelpers {
     window.addEventListener('load', () => {
       setTimeout(() => {
 	      BaseHelpers.html.classList.add('loaded');
-      }, 0);
+      }, 1000);
     });
   }
 

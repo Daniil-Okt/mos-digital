@@ -1,28 +1,69 @@
 <div class="about">
-    <div class="about__bg bg"></div>
+    <div class="about__bg bg video">
+        <picture>
+            <source media="(max-width: 550px)" srcset="@img/about/@@srcBgMob">
+            <img loading="lazy" src="@img/about/@@srcBg" alt="">
+        </picture>
+
+        <!-- <video  autoplay muted loop playsinline poster="@img/showreel/showreel-preview.png" loading="lazy">
+            <source src="static/showreel/showreel.mp4" type="video/mp4">
+        </video> -->
+    </div>
     <div class="about__container">
+        <div class="about__running running" data-speed="50">
+            <div class="about__running-row running__row">
+                <div class="about__running-item running__item">
+                    Информационные системы
+                </div>
+                <div class="about__running-item running__item">
+                    Продающие лендинги
+                </div>
+                <div class="about__running-item running__item">
+                    E-commerce
+                </div>
+                <div class="about__running-item running__item">
+                    Личные кабинеты
+                </div>
+            </div>
+        </div>  
         <h1 class="about__title title-big">
-            <span class="web">Создаем 
-                <em>
-                    <span class="cube-anim" data-delay="3000">
-                        <span class="cube-anim__opacity"></span>
-                        <span class="cube-anim__cube cube">
-                            <span class="cube__face cube__face-front">понятные</span>
-                            <span class="cube__face cube__face-bottom">наглядные</span>
-                            <span class="cube__face cube__face-back">логичные</span>
-                            <span class="cube__face cube__face-top">стильные</span>
+                <span class="web">Создаем 
+                    <em>
+                        <span class="cube-anim" data-delay="3000">
+                            <span class="cube-anim__opacity"></span>
+                            <span class="cube-anim__cube cube">
+                                <span class="cube__face cube__face-front">понятные</span>
+                                <span class="cube__face cube__face-bottom">наглядные</span>
+                                <span class="cube__face cube__face-back">логичные</span>
+                                <span class="cube__face cube__face-top">стильные</span>
+                            </span>
                         </span>
-                    </span>
-                </em> 
-            презентации для масштабных мероприятий</span>
-            <span class="mob">Создаем презентации для мероприятий</span>
+                    </em> 
+                презентации для масштабных мероприятий</span>
+                <span class="mob">Создаем презентации для мероприятий</span>
         </h1>
         <p class="about__text bs-text t-c">
-            Удержим интерес до последнего слайда. 
-            <br>Спикеры будут выглядеть убедительно, а аудитория слушать и понимать
+                Удержим интерес до последнего слайда. 
+                <br>Спикеры будут выглядеть убедительно, а аудитория слушать и понимать
         </p>
-        <div class="about__button button button-slide">
-            <span class="slide-anim" data-content="Получить расчет"></span>
+        <div class="about__button-row">
+            <div class="about__button button button-slide">
+                <span class="slide-anim" data-content="Получить расчет"></span>
+            </div>
+            <div class="about__connect">
+                <a class="about__connect-btn" href="#">
+                    <img loading="lazy" src="@img/about/btn-connect1.svg" alt="">
+                </a>
+                <a class="about__connect-btn" href="#">
+                    <img loading="lazy" src="@img/about/btn-connect2.svg" alt="">
+                </a>
+                <a class="about__connect-btn" href="#">
+                    <img loading="lazy" src="@img/about/btn-connect3.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="about__close-connect about__connect-btn">
+            <img src="@img/about/btn-connect-close.svg" alt="">
         </div>
     </div>
 </div>

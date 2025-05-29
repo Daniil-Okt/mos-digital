@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   width: 100%;
-  transition: background-color var(--bs-transition);
+  transition: background-color var(--bs-transition), backdrop-filter var(--bs-transition);
   z-index: 50;
   background: rgba(255, 255, 255, 0.01);
   border-bottom: 0.5px solid var(--bs-border-color);
@@ -15,8 +15,13 @@
   // filter: blur(10px);
   .white-theme & {
     border-color: rgba(0, 0, 0, 0.1);
+
+
   }
-  .header-is-sticky & {
+  .white-theme.header-is-sticky & {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
   }
 
 
@@ -106,6 +111,7 @@
       left: 0;
       transition: border-color 0.3s ease  0s;
       border: 0.50px solid #ffffff00;
+    
       @media(max-width:650px){
           width: rem(40.5);
           height: rem(20.25);
@@ -129,7 +135,6 @@
       .white-theme.blue-page & {
         background: #06f;
       }
-
       @media(max-width:650px){
         width: rem(17.25);
         height: rem(17.25);
@@ -150,6 +155,21 @@
     }
   } 
 
+
+  @media(max-width:1024px){
+    &:hover {
+      .slide-anim {
+        &::before {
+          transform: translateY(0);
+        }
+      }
+    }
+    .slide-anim {
+      &::after {
+        display: none;
+      }
+    }
+  }
 }
 
 // Burger

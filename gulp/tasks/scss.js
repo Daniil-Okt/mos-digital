@@ -17,10 +17,10 @@ import { logger } from "../config/logger.js";
 const sass = gulpSass(dartSass);
 
 const scss = (isBuild) => {
-	const webpConfig = {
-		webpClass: '.webp',
-		noWebpClass: '.no-webp',
-	};
+	// const webpConfig = {
+	// 	webpClass: '.webp',
+	// 	noWebpClass: '.no-webp',
+	// };
 
 	return gulp.src(filePaths.src.scss)
     .pipe(logger.handleError('SCSS'))
@@ -32,7 +32,7 @@ const scss = (isBuild) => {
 		/** Группировка медиа-запросов только для production */
 		.pipe(plugins.if(isBuild, groupMediaQueries()))
 
-		.pipe(plugins.if(isBuild, webpCss(webpConfig)))
+		// .pipe(plugins.if(isBuild, webpCss(webpConfig)))
 		.pipe(plugins.if(isBuild, postcss([autoprefixer(), postcssPresetEnv()])))
 
 		/** Раскомментировать если нужен не сжатый дубль файла стилей */

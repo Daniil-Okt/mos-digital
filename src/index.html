@@ -4,24 +4,25 @@
     'title': 'MOS DIGITAL'
   })
   <body>
-    <!-- <div class="smooth-wrapper">
-      <div class="smooth-content"> -->
-        <div class="wrapper">
-          @@include('html/header.html')
-            <main class="page">
-              <div data-observ></div>
-              @@include('html/about.html')
-              @@include('html/showreel.html')
-              
-            </main>
-      
-            @@include('html/footer.html')
-        </div>
-      <!-- </div>
-    </div> -->
+    <!-- @@include('html/preload.html') -->
+    <div class="wrapper">
+      @@include('html/header.html')
+        <main class="page">
+          <div data-observ></div>
+          @@include('html/about.html', {
+            'srcBg':'about-bg-orange.png',
+            'srcBgMob':'about-bg-orange-mob.png',
+          })
+          @@include('html/showreel.html')
+          @@include('html/drawing.html')
+          @@include('html/leaders.html')
+          @@include('html/direct-port.html')
+        </main>
+  
+        @@include('html/footer.html')
 
-
-    @@include('html/popup-example.html')
-    <div class="cursor-follower"></div>
+        @@include('html/popup-example.html')
+        <div class="cursor-follower"></div>
+    </div>
   </body>
 </html>

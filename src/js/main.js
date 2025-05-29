@@ -19,6 +19,9 @@ import { cursor } from './modules/cursor';
 import { autoplayVideo } from './modules/autoplayVideo';
 import { smoothScroll } from './modules/smoothScroll';
 import { CubeAnimator } from './modules/cubeAnimation';
+import { showreelAnim } from './modules/showreelAnim';
+import { contentBtn } from './modules/connectBtn';
+import { running } from './modules/running';
 // import Tabs from './modules/tabs';
 // import Accordion from './modules/accordion';
 
@@ -28,7 +31,7 @@ BaseHelpers.checkWebpSupport();
 /* Добавление loaded для HTML после полной загрузки страницы */
 BaseHelpers.addLoadedClass();
 /* Фиксированный header */
-// BaseHelpers.headerFixed();
+BaseHelpers.headerFixed();
 
 
 /** ===================================================================================
@@ -50,7 +53,7 @@ new BurgerMenu().init();
 
 // Скролл с инерцией
 if (window.innerWidth > 1024) {
-	smoothScroll()
+	// smoothScroll()
 }
 
 
@@ -66,6 +69,16 @@ if (window.innerWidth > 1024) {
  * Параллакс мышей
  * */
 // new MousePRLX();
+
+
+/** ===================================================================================
+ * <Бегущая строка>
+ * */
+	window.addEventListener('load', () => {
+		setTimeout(() => {
+			running()
+		}, 10);
+	})
 
 
 /* ТАБЫ ================================================================================================
@@ -97,14 +110,14 @@ if (window.innerWidth > 1024) {
 * data-da="class блока куда нужно перебросить, брекпоинт(ширина экрана), позиция в блоке(цифра либо first,last)"
 */
 /*Расскоментировать для использования*/
-// import { useDynamicAdapt } from './modules/dynamicAdapt.js'
-// useDynamicAdapt()
+import { useDynamicAdapt } from './modules/dynamicAdapt.js'
+useDynamicAdapt()
 
 /* Маска для инпута tel =================================================================================
 	* Добавить класс tel к нужному инпуту 
 */
-// import { maskTel } from './modules/index.js'
-// maskTel()
+import { maskTel } from './modules/index.js'
+maskTel()
 
 /* Cкрыть меню при клике на его ссылки ==================================================================
 */
@@ -172,10 +185,13 @@ if (window.innerWidth > 1024) {
 */ 
 // import { validForm } from './modules/validFrom.js'
 // const popupTranks = document.querySelector('.popup-thanks')
-// const formNAME = document.getElementById('form-NAME')
+const forms = document.querySelectorAll('form')
 
 //==== валидация ====
-// validForm(fromName, popupTranks)
+forms.forEach(form => {
+	validForm(form)
+});
+
 //==== отправка ====
 // send
 //==== валидация ====
@@ -184,7 +200,9 @@ if (window.innerWidth > 1024) {
 
 //==== валидация ====
 
-//==== валидация ====
+//==== фокус инпута ====
+focusInput()
+
 // =======================================================================================================
 
 /* Добавление класса _active родителю при клике ==========================================================
@@ -199,9 +217,12 @@ if (window.innerWidth > 1024) {
 	* Вызвать функцию и передать в нее массив нужных элементов
 	* При клике на элемент, у всех элементов класс удаляется
 */
-// import { toggleActiveClass } from './modules/index.js'
-// const btnTheme = document.querySelectorAll('.btn-theme');
-// toggleActiveClass(btnTheme)
+import { toggleActiveClass } from './modules/index.js'
+import focusInput from './modules/focusInput.js';
+import { validForm } from './modules/validFrom.js';
+import { qualServLineAnim } from './modules/qualServLineAnim.js';
+const directPortMenuItems = document.querySelectorAll('.direct-port__menu-item');
+toggleActiveClass(directPortMenuItems)
 
 
 //кнопка переключения темы
@@ -213,10 +234,16 @@ if (window.innerWidth > 1024) {
 }
 
 
+
 //автозапус видео на айфонах
 autoplayVideo()
 
 
+//about ============================
+//анимация about
+showreelAnim()
+
+contentBtn()
 
 //анимация куба
 if (window.innerWidth > 550) {
@@ -225,3 +252,9 @@ if (window.innerWidth > 550) {
 	});
 }
 
+
+
+//анимация линий
+window.addEventListener('load', function() {
+    qualServLineAnim()
+});

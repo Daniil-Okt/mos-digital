@@ -1,25 +1,29 @@
-// Firefox
+Firefox
 * {
-  scrollbar-width: rem(8);
-  scrollbar-color: var(--primary-color) #d6d6d6;
+  scrollbar-width: rem(0);
+  scrollbar-color:  #ffffff00;
 
   // Chrome, Edge, and Safari
   &::-webkit-scrollbar {
-    width: rem(8);
-    background-color: var(--white-color);
+    width: rem(0);
+    // background-color: var(--white-color);
   }
 
   &::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 rem(6) rgba(#000, 20%);
-    border-radius: rem(4);
-    background: #eee;
+    box-shadow: inset 0 0 rem(6) rgba(#000, 0%);
+    // border-radius: rem(4);
+    background: var(--body-color);
   }
 
   &::-webkit-scrollbar-thumb {
     border-radius: rem(4);
     border: 0 none #fff;
-    background-color: var(--primary-color);
-
+  
+    background-color: #ff44337e;
+    
+    .blue-page & {
+      background-color: #06f;
+    }
     &:hover {
       background-color: var(--primary-hover-color);
     }

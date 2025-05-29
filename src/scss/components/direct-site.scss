@@ -1,0 +1,106 @@
+.direct-site {
+    @include adaptiveClamp(padding-top, 84.6, 0);
+    &._two {
+        @include adaptiveClamp(padding-top, 240, 120);
+    }
+    &__container {
+    }
+    &__head {
+        @include adaptiveClamp(margin-bottom, 84, 75);
+    }
+    &__title {
+
+    }
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: rem(20) rem(14.5);
+        @media(max-width:1024px){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media(max-width:650px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+        border: rem(1) solid var(--bs-border-color);
+        border-radius: rem(10);
+        padding: rem(30) rem(32) rem(33.17);
+        min-height: rem(171);
+
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: url(@img/direct-site/direct-site-item-bg.png) no-repeat center center / cover;
+            bottom:0;
+            right: 0;
+            pointer-events: none;
+
+            .white-theme & {
+                background: url(@img/direct-site/direct-site-item-bg-black.png) no-repeat center center / cover;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: rem(317);
+            height: rem(296);
+            border-radius: 50%;
+            background: #ff443377;
+            filter: blur(120px);
+            bottom:rem(10);
+            right: rem(-124);
+            pointer-events: none;
+            transition: opacity 0.3s ease  0s;
+
+            .blue-page & {
+                background: rgba(0, 102, 255, 0.325);
+            }
+
+            .white-theme & {
+                opacity: 0;
+            }
+        }
+    }
+
+    &__title-item {
+        font-weight: 600;
+        font-size: rem(22);
+        color: #fff;
+        max-width: rem(240);
+
+        ._two & {
+            max-width: 100%;
+        }
+
+        .white-theme & {
+            color: var(--bs-title-color);
+        }
+    }
+    &__text-item {
+        line-height: 132%;
+        color: #cdcdd7;
+        max-width: rem(324);
+        @include adaptiveClamp(margin-bottom, 15, 13);
+
+        .white-theme & {
+            color: var(--bs-font-color);
+        }
+    }
+    &__price-item {
+        margin-top: auto;
+        font-size: rem(16);
+        line-height: 120%;
+        color: var(--bs-mark-color);
+    }
+}

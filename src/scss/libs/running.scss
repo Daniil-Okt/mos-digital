@@ -1,0 +1,22 @@
+
+.running {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &__row {
+        display: flex;
+        align-items: center;
+        width: max-content;
+    }
+
+    &__item {
+        white-space: nowrap;
+        img {
+            width: auto;
+            height: 100%;
+        }
+    }
+}

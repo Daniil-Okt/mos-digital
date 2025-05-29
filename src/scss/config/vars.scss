@@ -25,13 +25,17 @@ $footerHeight: 100;
   --bs-button-hover-color: #ff3320;
   --body-color: #0c0e11;
   --white: #fff;
-  
+  --blue: #0090ff;
+  --orange: #ff4533;
+  --green: #02d92d;
 
   --primary-color: #131313;
   --primary-hover-color: #2d2d2d;
   --secondary-color: #ff4040;
   --black-color: #131313;
   --white-black-color: #fff;
+  --white-o-b: #fff;
+  
 
   --bs-shadow: 0px 2px 3px rgba(#000, 10%), 0px 8px 3px rgba(#000, 10%);
   --hover-shadow: 0 0 5px 0 rgba(#000, 10%),
@@ -44,8 +48,13 @@ html.white-theme {
   --bs-title-color: #0d0d0d;
   --bs-border-color: #dfdfdf;
   --body-color: #fff;
+  --white-o-b: #ff4533;
 
   --white-black-color: #0d0d0d;
+
+  &.blue-page {
+    --white-o-b: #06f;
+  }
 }
 
 html.blue-page {

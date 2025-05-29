@@ -24,19 +24,19 @@ aside {
 }
 
 html {
-  opacity: 0;
   scroll-behavior: smooth;
   transition: opacity 0.8s ease-in-out, background-color 0.3s ease  0s;
   background: var(--body-color);
-
-  &.loaded {
-    opacity: 1;
-  }
 
   &.lock {
     overflow: hidden;
     touch-action: none;
   }
+
+  &.loaded {
+    opacity: 1;
+  }
+
 }
 
 html,
@@ -59,6 +59,74 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
+main {
+  transition: transform 0.6s ease  0s;
+  .loaded & {
+    transform: translateY(0);
+  }
+}
+
+
+.preload {
+  &__bottom {
+    p {
+      animation: preload_p 0.3s ease-out forwards 0.5s;
+    }
+  }
+  &__top {
+    p {
+      animation: preload_top_p 0.8s ease-out forwards 0s;
+    }
+  }
+
+  .loaded & {
+    &__top {
+      transform: translateY(-100%);
+      transition: all 0.8s ease-in-out  0s;
+    }
+    &__bottom {
+      transform: translateY(100%);
+      transition: all 0.8s ease-in-out  0s;
+  
+      p {
+        opacity: 1;
+        animation: preload_p_two 0.8s ease-in-out forwards 0s;
+      }
+    }
+  }
+}
+@keyframes preload_top_p {
+  0% {
+    transform: scale(3.5);
+  }
+  20% {
+    transform: scale(4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes preload_p {
+  0% {
+    transform: scale(0) translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes preload_p_two {
+  0% {
+    transform: scale(1) translateY(0);
+    
+  }
+  100% {
+    transform: scale(2.5) translateY(500%);
+  }
+}
+
+
 
 input,
 button,

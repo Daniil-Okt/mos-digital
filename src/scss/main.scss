@@ -24,6 +24,7 @@
 */
 // @import 'libs/aos';
 // @import 'libs/swiper';
+@import 'libs/running';
 
 /**
 * Подключение custom scrollbar для всего сайта
@@ -54,8 +55,22 @@
 @import 'components/header';
 @import 'components/about';
 @import 'components/showreel';
+@import 'components/drawing';
+@import 'components/leaders';
+@import 'components/direct-port';
 
 @import 'components/footer';
+
+//desing-site
+@import 'components/direct-site';
+@import 'components/connect';
+@import 'components/expert-site';
+@import 'components/qual-serv';
+
+
+
+
+
 
 
 // html, body {

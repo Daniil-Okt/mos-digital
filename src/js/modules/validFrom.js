@@ -96,7 +96,7 @@ function validForm(form) {
       formAddError(input);
       }
   } else if (input.classList.contains('tel')) {
-      if (input.value.length >= 19) {
+      if (input.value.length >= 18) {
       formRemoveError(input);
       } else {
       formAddError(input);
