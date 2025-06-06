@@ -80,8 +80,11 @@
         line-height: 120%;
         color: var(--white-black-color);
         margin-bottom: rem(26.59);
+       
         .number {
+            display: inline-block;
             @include adaptiveClamp(font-size, 32, 26);
+            @include adaptiveClamp(min-width, 39.5, 32);
         }
         .prc {
             font-size: rem(18);

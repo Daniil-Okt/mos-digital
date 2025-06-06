@@ -232,6 +232,11 @@
         @media(max-width:550px){
             margin-bottom: rem(55);
         }
+
+
+        &._m-t-two {
+            margin-top: rem(16.56);
+        }
     }
 
     &__button {
@@ -240,6 +245,38 @@
         @media(max-width:550px){
             font-weight: 600;
             border-radius: rem(12);
+        }
+    }
+
+    &__discount-prc {
+        width: max-content;
+        line-height: 1;
+        font-size: rem(18);
+        color: var(--white);
+        border-radius: 15px;
+        padding: rem(6.65) rem(11.87) rem(4.65);
+        background-color: var(--bs-title-mark-color);
+        @include adaptiveClamp(margin-bottom, 37.56, 21);
+    }
+
+    &__discount {
+        display: inline-block;
+        width: max-content;
+        position: relative;
+        margin-top: auto;
+        line-height: 120%;
+        color: var(--bs-mark-color);
+        font-size: rem(20);
+        
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: rem(1);
+            background-color: var(--bs-mark-color);
+            top:51%;
+            transform: translateY(-50%);
+            left: 0;
         }
     }
 }

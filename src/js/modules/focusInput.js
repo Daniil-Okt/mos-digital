@@ -19,10 +19,13 @@
             // Добавляем обработчик события потери фокуса
             input.addEventListener('blur', function() {
                 // Проверяем, пустое ли поле ввода
-                if (this.value.trim() === '') {
-                    // Удаляем класс 'focus' у родителя поля ввода, если поле пустое
-                    this.parentNode.classList.remove('_focus');
-                }
+                setTimeout(() => {
+                    if (this.value.trim() === '') {
+                        // Удаляем класс 'focus' у родителя поля ввода, если поле пустое
+                        this.parentNode.classList.remove('_focus');
+                    }
+                }, 10);
+                
                 // Если в поле есть символы, класс 'focus' остается
             });
         });

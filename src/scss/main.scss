@@ -23,7 +23,7 @@
 * раскомментировать для использования
 */
 // @import 'libs/aos';
-// @import 'libs/swiper';
+@import 'libs/swiper';
 @import 'libs/running';
 
 /**
@@ -40,10 +40,12 @@
 * БЕМ блоки используемые во всё проекте
 */
 @import 'config/common';
+@import 'config/common';
 
 /**
 * Функциональные блоки используемые во всё проекте
 */
+
 @import 'components/popup';
 // @import 'components/checkbox';
 // @import 'components/tabs';
@@ -58,6 +60,9 @@
 @import 'components/drawing';
 @import 'components/leaders';
 @import 'components/direct-port';
+@import 'components/stages';
+@import 'components/quest';
+
 
 @import 'components/footer';
 
@@ -66,7 +71,15 @@
 @import 'components/connect';
 @import 'components/expert-site';
 @import 'components/qual-serv';
+@import 'components/warran-site';
+@import 'components/repack';
+@import 'components/reviews';
 
+
+//case-page
+@import 'components/case-page/about-case';
+@import 'components/case-page/desc-case';
+@import 'components/case-page/other-case';
 
 
 

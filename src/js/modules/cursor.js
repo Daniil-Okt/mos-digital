@@ -123,6 +123,60 @@ export function cursor() {
             }
         });
     });
+
+
+
+    // // Элементы с data-cursor-str
+    // const hiddenElements = document.querySelectorAll('[data-cursor-str]');
+    // hiddenElements.forEach(el => {
+    //     el.addEventListener('mouseenter', () => {
+    //         // Скрываем дефолтный курсор
+    //         document.body.style.cursor = 'none';
+
+    //         // Центрируем follower по обеим осям
+    //         follower.style.transform = 'translate(-50%, -50%)';
+    //     });
+
+    //     el.addEventListener('mouseleave', () => {
+    //         // Возвращаем стандартный курсор
+    //         document.body.style.cursor = '';
+
+    //         // Возвращаем transform, как было изначально
+    //         follower.style.transform = 'translate(-50%, 0%)';
+    //     });
+    // });
+
+    // Элементы со стрелками
+    const svgNext = `
+    <svg width="26" height="23" style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%);" viewBox="0 0 26 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M24.65 12.4503C25.2358 11.8645 25.2358 10.9148 24.65 10.329L15.1041 0.783047C14.5183 0.19726 13.5685 0.19726 12.9827 0.783047C12.3969 1.36883 12.3969 2.31858 12.9827 2.90437L21.468 11.3896L12.9827 19.8749C12.3969 20.4607 12.3969 21.4105 12.9827 21.9963C13.5685 22.582 14.5183 22.582 15.104 21.9963L24.65 12.4503ZM0.961914 12.8896L23.5893 12.8896L23.5893 9.88965L0.961914 9.88965L0.961914 12.8896Z" fill="white" />
+    </svg>`;
+    const svgPrev = svgNext.replace('<svg', '<svg style="position: absolute; top: 50%; left: 50%; transform: translateX(-50%) translateY(-50%) rotate(180deg);"');
+    const arrowElements = document.querySelectorAll('[data-cursor-str]');
+    arrowElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            follower.classList.add('hover-effect');
+            document.body.style.cursor = 'none';
+            follower.style.transform = 'translate(-50%, -50%)';
+
+            if (el.hasAttribute('data-cursor-str-prev')) {
+                follower.innerHTML = svgPrev;
+            } else if (el.hasAttribute('data-cursor-str-next')) {
+                follower.innerHTML = svgNext;
+            }
+
+
+        });
+
+        el.addEventListener('mouseleave', () => {
+            follower.classList.remove('hover-effect');
+            follower.innerHTML = '';
+
+            document.body.style.cursor = '';
+            follower.style.transform = 'translate(-50%, 0%)';
+        });
+    });
+
 }
 
 

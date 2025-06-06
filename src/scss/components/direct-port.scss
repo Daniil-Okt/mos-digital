@@ -236,22 +236,24 @@
             border-color: var(--bs-border-color);
             color: var(--bs-font-color);
         }
-
+        &::before {
+            position: absolute;
+            content: '';
+            width: rem(6);
+            height: rem(6);
+            background: var(--bs-mark-color);
+            border-radius: 50%;
+            top:50%;
+            transform: translateY(-50%);
+            left: rem(13);
+            display: none;
+        }
         @media(max-width:550px){
             position: relative;
             padding-left: rem(28);
             color: var(--bs-font-color);
-
             &::before {
-                position: absolute;
-                content: '';
-                width: rem(6);
-                height: rem(6);
-                background: var(--bs-mark-color);
-                border-radius: 50%;
-                top:50%;
-                transform: translateY(-50%);
-                left: rem(13);
+                display: block;
             }
         }
     }

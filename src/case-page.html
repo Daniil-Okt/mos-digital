@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'MOS DIGITAL - Тетракор'
+  })
+  <body>
+    <!-- @@include('html/preload.html') -->
+    <div class="wrapper">
+      @@include('html/header.html')
+        <main class="page">
+            <div data-observ></div>
+            @@include('html/case-page/about-case.html')
+            @@include('html/case-page/desc-case.html')
+            @@include('html/case-page/other-case.html')
+            
+            <div class="connect">
+                <div class="connect__container">
+                    <div class="connect__online direct-port__item-tag">Мы онлайн</div>
+                    <div class="connect__head head-text text-blur-anim">
+                        
+                        <h2 class="connect__title title-big">
+                            Опыт работы <br/>на <em>крупных площадках</em> страны и заграницей
+                        </h2>
+                        <p class="connect__text bs-text t-c">
+                            Мы гордимся работой с компаниями, которые задают <br/>правила игры на своих рынках 
+                        </p>
+                    </div>
+                    <form action="#" class="connect__form">
+                        
+                        <div class="connect__row-input row-input">
+                            <div class="connect__item-input item-input">
+                                <lavel class="item-input__label"><span class="ok">Имя</span><span class="error">Введите имя</span></lavel>
+                                <input type="text" name="name" class="item-input__input text _req _email">
+                            </div>
+                            <div class="connect__item-input item-input">
+                                <lavel class="item-input__label"><span class="ok">Телефон</span><span class="error">Введите телефон</span></lavel>
+                                <input type="text" placeholder="" name="phone" class="item-input__input text _req tel">
+                            </div>
+                        </div>
+                        <div class="connect__radio">
+                            <div class="connect__radio-label">Бюджет проекта</div>
+                            <div class="connect__radio-row">
+                                <label class="connect__radio-item">
+                                    <input checked type="radio" value="до 500 тыс." name="budget">
+                                    <div class="connect__radio-item-body button-slide">
+                                        <span class="slide-anim" data-content="до 500 тыс."></span>
+                                    </div>
+                                </label>
+                                <label class="connect__radio-item">
+                                    <input type="radio" value="до 1 млн" name="budget">
+                                    <div class="connect__radio-item-body button-slide">
+                                        <span class="slide-anim" data-content="до 1 млн"></span>
+                                    </div>
+                                </label>
+                                <label class="connect__radio-item">
+                                    <input type="radio" value="1-3 млн" name="budget">
+                                    <div class="connect__radio-item-body button-slide">
+                                        <span class="slide-anim" data-content="1-3 млн"></span>
+                                    </div>
+                                </label>
+                                <label class="connect__radio-item">
+                                    <input type="radio" value="3+ млн" name="budget">
+                                    <div class="connect__radio-item-body button-slide">
+                                        <span class="slide-anim" data-content="3+ млн"></span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="connect__form-bot">
+                            <button class="connect__button button button-slide">
+                                <span class="slide-anim" data-content="Получить расчет"></span>
+                            </button>
+                            <label class="connect__personal-data personal-data">
+                                <input checked type="checkbox" name="personal-data _req">
+                                <div class="personal-data__icon"></div>
+                                <span>Я даю согласие на обработку <a href="#">персональных данных</a></span>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+  
+        @@include('html/footer.html')
+
+        @@include('html/popup-example.html')
+        <div class="cursor-follower"></div>
+    </div>
+  </body>
+</html>

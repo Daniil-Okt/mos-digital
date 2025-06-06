@@ -74,14 +74,14 @@
                         </div>
                     </div>
                     <div class="about__close-connect about__connect-btn">
-                        <img src="@img/about/btn-connect-close.svg" alt="">
+                        <img loading="lazy" src="@img/about/btn-connect-close.svg" alt="">
                     </div>
                 </div>
             </div>
             @@include('html/direct-site.html')
             <div class="leaders _two">
                 <div class="leaders__container">
-                    <div class="leaders__head-text head-text">
+                    <div class="leaders__head-text head-text text-blur-anim">
                         <h2 class="leaders__title title-big">
                             Запускаем <em>сайты</em> 
                             для бизнеса и государства
@@ -172,7 +172,7 @@
                     <div class="direct-port__row">
                         <a href="#" class="direct-port__item" data-cursor-hover='Смотреть <em>кейс</em>'>
                             <div class="direct-port__item-img" data-cursor-white>
-                                <img src="@img/img-show.png" alt="">
+                                <img loading="lazy" src="@img/img-show.png" alt="">
                             </div>
                             <div class="direct-port__item-body">
                                 <h3>Геоспецстрой</h3>
@@ -184,7 +184,7 @@
                         </a>
                         <a href="#" class="direct-port__item" data-cursor-hover='Смотреть <em>кейс</em>'>
                             <div class="direct-port__item-img" data-cursor-white>
-                                <img src="@img/img-show.png" alt="">
+                                <img loading="lazy" src="@img/img-show.png" alt="">
                             </div>
                             <div class="direct-port__item-body">
                                 <h3>Геоспецстрой</h3>
@@ -196,7 +196,7 @@
                         </a>
                         <a href="#" class="direct-port__item" data-cursor-hover='Смотреть <em>кейс</em>'>
                             <div class="direct-port__item-img" data-cursor-white>
-                                <img src="@img/img-show.png" alt="">
+                                <img loading="lazy" src="@img/img-show.png" alt="">
                             </div>
                             <div class="direct-port__item-body">
                                 <h3>Геоспецстрой</h3>
@@ -208,7 +208,7 @@
                         </a>
                         <a href="#" class="direct-port__item" data-cursor-hover='Смотреть <em>кейс</em>'>
                             <div class="direct-port__item-img" data-cursor-white>
-                                <img src="@img/img-show.png" alt="">
+                                <img loading="lazy" src="@img/img-show.png" alt="">
                             </div>
                             <div class="direct-port__item-body">
                                 <h3>Геоспецстрой</h3>
@@ -231,7 +231,7 @@
                 </div>
             </div>
             @@include('html/connect.html')
-            @@include('html/expert-site.html')
+            @@include('html/desing-site/expert-site.html')
             <div class="drawing">
                 <div class="drawing__container">
                     <div class="drawing__left">
@@ -252,7 +252,7 @@
                                 в своих нишах
                             </div>
                             <div class="drawing__user user-drawing" data-da=".drawing__right, 850, first">
-                                <img src="@img/drawing/user-drawing.png" alt="" class="user-drawing__img">
+                                <img loading="lazy" src="@img/drawing/user-drawing.png" alt="" class="user-drawing__img">
                                 <div class="user-drawing__body">
                                     <h3 class="user-drawing__name">Николай Мостовой</h3>
                                     <p class="user-drawing__text">Основатель</p>
@@ -266,17 +266,18 @@
                     </div>
                 </div>
             </div>
-            @@include('html/expert-site-link.html')
+            @@include('html/desing-site/expert-site-link.html')
+            @@include('html/stages.html')
             <div class="direct-site _two">
-                <div class="direct-site__head head-text">
-                    <h2 class="direct-site__title title-big">
-                        Давайте обсудим <em>стоимость и сроки</em> разработки
-                    </h2>
-                    <p class="direct-site__text bs-text t-c">
-                        Мы познакомимся, зададим вопросы, расскажем о наших процессах и дадим предварительную оценку проекта
-                    </p>
-                </div>
                 <div class="direct-site__container">
+                    <div class="direct-site__head head-text text-blur-anim">
+                        <h2 class="direct-site__title title-big">
+                            Давайте обсудим <em>стоимость и сроки</em> разработки
+                        </h2>
+                        <p class="direct-site__text bs-text t-c">
+                            Мы познакомимся, зададим вопросы, расскажем о наших процессах и дадим предварительную оценку проекта
+                        </p>
+                    </div>
                     <div class="direct-site__row ">
                         <div class="direct-site__item">
                             <h3 class="direct-site__title-item">
@@ -361,6 +362,12 @@
             </div>
             @@include('html/connect.html')
             @@include('html/qual-serv.html')
+            @@include('html/desing-site/expert-site-discount.html')
+            @@include('html/desing-site/warran-site.html')
+            @@include('html/desing-site/repack.html')
+            @@include('html/reviews.html')
+            @@include('html/quest.html')
+            
             
         </main>
   

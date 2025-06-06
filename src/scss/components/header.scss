@@ -15,13 +15,34 @@
   // filter: blur(10px);
   .white-theme & {
     border-color: rgba(0, 0, 0, 0.1);
-
-
   }
   .white-theme.header-is-sticky & {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+  }
+
+  &.header-black-block {
+    background: rgba(255, 255, 255, 0.01) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
+    .header__logo, .header__btn-theme, .header__phone, .header__burger {
+      color: #fff
+    }
+
+    .header__btn-theme span::after, .header__phone::after {
+      color: rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &.header-white-block {
+    border-color: rgba(0, 0, 0, 0.1);
+    .header__logo, .header__btn-theme, .header__phone, .header__burger {
+      color: #0d0d0d;
+    }
+
+    .header__btn-theme span::after, .header__phone::after {
+      color: rgba(59, 59, 59, 0.6);
+    }
   }
 
 

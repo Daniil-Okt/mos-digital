@@ -55,91 +55,91 @@ function validForm(form) {
   const inputFormRecord = form.querySelectorAll('._req');
 
   inputFormRecord.forEach(input => {
-  inputValid(input)
-  // checkFormUnlock(form);
-  //удаляем классы _error
-  if (inputFormRecord.length > 0) {
-      inputFormRecord.forEach(input => {
-      input.parentElement.classList.remove('_error');
-      input.classList.remove('_error');
-      });
-  }
-  input.addEventListener('input', function () {
-      formRemoveError(input);
-      inputValid(input)
-      checkFormUnlock(form); // Проверка на наличие класса unlock
-  });
+    inputValid(input)
+    // checkFormUnlock(form);
+    //удаляем классы _error
+    if (inputFormRecord.length > 0) {
+        inputFormRecord.forEach(input => {
+        input.parentElement.classList.remove('_error');
+        input.classList.remove('_error');
+        });
+    }
+    input.addEventListener('input', function () {
+        formRemoveError(input);
+        inputValid(input)
+        checkFormUnlock(form); // Проверка на наличие класса unlock
+    });
   });
   function inputValid(input) {
-  if (input.classList.contains('_email')) {
-      if (emailTest(input)) {
-      formRemoveError(input);
-      } else {
-      formAddError(input);
-      }
-  } else if (input.getAttribute("type") === "checkbox") {
-      if (input.checked) {
-      formRemoveError(input);
-      } else {
-      formAddError(input);
-      }
-  } else if (input.classList.contains('password')) {
-      if (input.value.length >= 8) {
-      formRemoveError(input);
-      } else {
-      formAddError(input);
-      }
-  } else if (input.classList.contains('data')) {
-      if (input.value.length >= 10) {
-      formRemoveError(input);
-      } else {
-      formAddError(input);
-      }
-  } else if (input.classList.contains('tel')) {
-      if (input.value.length >= 18) {
-      formRemoveError(input);
-      } else {
-      formAddError(input);
-      }
-  } else if (input.classList.contains('withdrawal')) {
-      if (input.value.length >= 3) {
-      formRemoveError(input);
-      } else {
-      formAddError(input);
-      }
-  } else if (input.classList.contains('password-replay')) {
-      if (input.value === form.querySelector('.password').value) {
-      formRemoveError(input);
-      } else {
-      formAddError(input);
-      }
-  } else if (input.classList.contains('promo-code')) {
-      if (input.value.length >= 4) {
-      formRemoveError(input);
-      } else {
-      formAddError(input);
-      }
-  } else {
-      if (input.value.trim() === '') {
-      formAddError(input);
-      } else {
-      formRemoveError(input);
-      }
-  }
+    if (input.classList.contains('_email')) {
+        if (emailTest(input)) {
+        formRemoveError(input);
+        } else {
+        formAddError(input);
+        }
+    } else if (input.getAttribute("type") === "checkbox") {
+        if (input.checked) {
+        formRemoveError(input);
+        } else {
+        formAddError(input);
+        }
+    } else if (input.classList.contains('password')) {
+        if (input.value.length >= 8) {
+        formRemoveError(input);
+        } else {
+        formAddError(input);
+        }
+    } else if (input.classList.contains('data')) {
+        if (input.value.length >= 10) {
+        formRemoveError(input);
+        } else {
+        formAddError(input);
+        }
+    } else if (input.classList.contains('tel')) {
+        if (input.value.length >= 18) {
+        formRemoveError(input);
+        } else {
+        formAddError(input);
+        }
+    } else if (input.classList.contains('withdrawal')) {
+        if (input.value.length >= 3) {
+        formRemoveError(input);
+        } else {
+        formAddError(input);
+        }
+    } else if (input.classList.contains('password-replay')) {
+        if (input.value === form.querySelector('.password').value) {
+        formRemoveError(input);
+        } else {
+        formAddError(input);
+        }
+    } else if (input.classList.contains('promo-code')) {
+        if (input.value.length >= 4) {
+        formRemoveError(input);
+        } else {
+        formAddError(input);
+        }
+    } else {
+        if (input.value.trim() === '') {
+        formAddError(input);
+        } else {
+        formRemoveError(input);
+        }
+    }
 
   }
   function formAddError(input) {
-  input.parentElement.classList.add('_error');
-  input.classList.add('_error');
-  input.parentElement.classList.remove('_ok');
-  input.classList.remove('_ok');
+    input.parentElement.classList.add('_error');
+    input.classList.add('_error');
+    input.parentElement.classList.remove('_ok');
+    input.classList.remove('_ok');
   }
 
   function formRemoveError(input) {
-  input.parentElement.classList.remove('_error');
-  input.classList.remove('_error');
-  input.parentElement.classList.add('_ok');
-  input.classList.add('_ok');
+    input.parentElement.classList.remove('_error');
+    input.classList.remove('_error');
+    input.parentElement.classList.add('_ok');
+    input.classList.add('_ok');
   }
 
   // function formAddOk(input) {
@@ -148,35 +148,35 @@ function validForm(form) {
   // }
 
   function emailTest(input) {
-  return /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/.test(input.value.trim());
+    return /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/.test(input.value.trim());
   }
 
   function telTest(input) {
-  return /^[\d\+][\d\(\)\ -]{4,14}\d$/.test(input.value.trim());
+    return /^[\d\+][\d\(\)\ -]{4,14}\d$/.test(input.value.trim());
   }
 
 
 
   function syncInput() {
-  // Находим все инпуты, имеющие атрибут data-match-group
-  var inputs = document.querySelectorAll('input[data-sync-group]');
+    // Находим все инпуты, имеющие атрибут data-match-group
+    var inputs = document.querySelectorAll('input[data-sync-group]');
 
-  // Проходим по каждому инпуту
-  inputs.forEach(function(input) {
-      // Добавляем обработчик события на изменение значения инпута
-      input.addEventListener('input', function() {
-          // Получаем значение data-match-group текущего инпута
-          var matchGroup = this.getAttribute('data-sync-group');
-          // Находим все инпуты с таким же значением data-match-group
-          var sameGroupInputs = document.querySelectorAll('input[data-sync-group="' + matchGroup + '"]');
-          // Обновляем значение всех инпутов в группе
-          sameGroupInputs.forEach(function(sameGroupInput) {
-              sameGroupInput.parentNode.classList.add('focus')
-              sameGroupInput.value = input.value;
-              inputValid(sameGroupInput)
-          });
-      });
-  });
+    // Проходим по каждому инпуту
+    inputs.forEach(function(input) {
+        // Добавляем обработчик события на изменение значения инпута
+        input.addEventListener('input', function() {
+            // Получаем значение data-match-group текущего инпута
+            var matchGroup = this.getAttribute('data-sync-group');
+            // Находим все инпуты с таким же значением data-match-group
+            var sameGroupInputs = document.querySelectorAll('input[data-sync-group="' + matchGroup + '"]');
+            // Обновляем значение всех инпутов в группе
+            sameGroupInputs.forEach(function(sameGroupInput) {
+                sameGroupInput.parentNode.classList.add('focus')
+                sameGroupInput.value = input.value;
+                inputValid(sameGroupInput)
+            });
+        });
+    });
   }
   syncInput()
 }

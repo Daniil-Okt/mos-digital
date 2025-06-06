@@ -64,3 +64,22 @@ export function running() {
         container.dataset.styleElement = animationName;
     });
 }
+
+let previousWidth = window.innerWidth;
+
+export function runningAnit() {
+    function handleResize() {
+        const currentWidth = window.innerWidth;
+        
+        if (currentWidth !== previousWidth) {
+            setTimeout(running, 10);
+            previousWidth = currentWidth;
+        }
+    }
+
+    window.addEventListener('load', () => {
+        setTimeout(running, 10);
+    });
+
+    window.addEventListener('resize', handleResize);
+}

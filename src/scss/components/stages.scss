@@ -1,0 +1,101 @@
+.stages {
+    @include adaptiveClamp(padding-top, 260, 135);
+
+    &__container {
+    }
+
+    &__head {
+        @include adaptiveClamp(margin-bottom, 85, 57);
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__slider {
+        
+    }
+
+    &__wrapper {
+    }
+
+    &__slide {
+        position: relative;
+        white-space: wrap;
+        transition: color 0.3s ease  0s, border-color 0.3s ease  0s, background-color 0.3s ease  0s;
+        cursor: pointer;
+        
+        @media(min-width:1025px){
+            &:hover {
+                &::before {
+                    opacity: 0.6;
+                }
+                .stages__number {
+                    color: var(--bs-mark-color);
+                }
+
+                .white-theme & {
+                    background: #fafafa;
+                }
+            }
+        }
+        @media(max-width:1024px){
+            &.swiper-slide-active {
+                &::before {
+                    opacity: 0.6;
+                }
+                .stages__number {
+                    color: var(--bs-mark-color);
+                }
+            }
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: rem(317);
+            height: rem(296);
+            background: var(--bs-title-mark-color);
+            filter: blur(100px);
+            border-radius: 100%;
+            top: rem(-200);
+            right: rem(27);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.6s ease  0s;
+
+            .white-theme & {
+                opacity: 0 !important;
+            }
+        }
+    }
+    &__title-slider {
+        color: var(--white-black-color);
+        font-size: rem(18);
+    }
+    &__number {
+        color: var(--white-black-color);
+        margin-bottom: rem(38);
+        font-size: rem(18);
+    }
+}
+.head-text {
+}
+.text-blur-anim {
+}
+.title-big {
+}
+.bs-text {
+}
+.t-c {
+}
+.running {
+
+    &__row {
+    }
+
+    &__item {
+    }
+}

@@ -29,10 +29,10 @@ h1, h2, h3, h4, h5 {
     letter-spacing: -0.02em;
     text-align: center;
     font-weight: 500;
-    @include adaptiveClamp(font-size, 60, 40);
+    @include adaptiveClamp(font-size, 60, 35);
     @include adaptiveClamp(margin-bottom, 40, 30);
     @media(max-width:750px){
-        @include adaptiveClamp(font-size, 50, 40);
+        @include adaptiveClamp(font-size, 50, 35);
     }
 }
 .title-min {
@@ -76,6 +76,7 @@ h1, h2, h3, h4, h5 {
     @include adaptiveClamp(min-height, 515, 379);
 
     border: rem(1) solid rgba(255, 255, 255, 0.07);
+    border-radius: rem(10);
     overflow: hidden;
 
     .white-theme & {
@@ -83,7 +84,7 @@ h1, h2, h3, h4, h5 {
     }
 }
 
-
+//buttons
 .link-slide {
     position: relative;
     overflow: hidden;
@@ -94,13 +95,15 @@ h1, h2, h3, h4, h5 {
         display: inline-block;
         transition: all 0.3s ease  0s;
     }
-
-    &:hover {
-        span {
-            transform: translateY(-100%);
-        }
-        &::after {
-            top: 0;
+ 
+    @media(min-width:769px){
+        &:hover {
+            span {
+                transform: translateY(-100%);
+            }
+            &::after {
+                top: 0;
+            }
         }
     }
     &::after {
@@ -116,6 +119,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .button {
+    display: inline-block;
     font-weight: 500;
     font-size: rem(13);
     line-height: 120%;
@@ -142,6 +146,27 @@ h1, h2, h3, h4, h5 {
     @media(max-width:550px){
         font-size: rem(16);
         padding: rem(15.3) rem(22.3) rem(11.3);
+    }
+
+    &.button-down {
+        position: relative;
+        padding: rem(14) rem(22.3) rem(10) rem(44);
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: rem(27);
+            height: rem(27);
+            background: url(@img/button-down-icon.svg) no-repeat center center / contain;
+            top:50%;
+            transform: translateY(-50%);
+            left: rem(14);
+            transition: opacity 0.3s ease  0s;
+        }
+
+        &:hover::before {
+            opacity: 0.6;
+        }
     }
 }
 
@@ -191,14 +216,17 @@ h1, h2, h3, h4, h5 {
 .button-slide {
     color: var(--white);
 
-    &:hover {
-        .slide-anim::before {
-            transform: translateY(-100%);
-        }
-        .slide-anim::after {
-            top: 0;
+    @media(min-width:769px){
+        &:hover {
+            .slide-anim::before {
+                transform: translateY(-100%);
+            }
+            .slide-anim::after {
+                top: 0;
+            }
         }
     }
+
 
 
     .slide-anim {
@@ -231,6 +259,18 @@ h1, h2, h3, h4, h5 {
     }
 }
 
+a.link-line, a.link-line::after, a.link-line span {
+    font-size: rem(14);
+    line-height: 120%;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: rem(2);
+    color: var(--bs-font-color);
+    // border-bottom: rem(0.1) solid var(--bs-font-color);
+}
+a.link-line::after {
+    color: var(--white-black-color);
+}
 //input
 input::placeholder {
     color: rgba(255, 255, 255, 0.2);
@@ -367,11 +407,13 @@ input.text {
         height: rem(17);
         border-radius: rem(4);
         background: var(--white);
+        border: rem(1) solid rgba(13, 13, 13, 0);
         .white-theme & {
-            background: #ff44333a;
+            border: rem(1) solid rgba(13, 13, 13, 0.15);
         }
         .white-theme.blue-page & {
             background: #d1e2ff;
+            border: rem(1) solid rgba(13, 13, 13, 0);
         }
 
         &::before {
@@ -414,3 +456,107 @@ form {
     }
 }
 
+
+//blocks
+.shadow-hidden {
+    @media(min-width:651px){
+        mask-image: linear-gradient(90deg, transparent 3.5%, black 35%, black 65%, transparent 96%);
+        -webkit-mask-image: linear-gradient(90deg, transparent 3.5%, black 35%, black 65%, transparent 96%);
+    }
+}
+
+
+// .text-blur-anim {
+//     -webkit-backface-visibility: hidden; /* Фикс для iOS */
+//     -webkit-perspective: 1000px; /* Помогает с рендерингом */
+//     transform-style: preserve-3d; /* Для корректного размытия */
+// }
+
+//swiper
+
+.wrapper-running {
+    display: flex !important;
+    align-items: center;
+    -webkit-transition-timing-function: linear !important;
+    transition-timing-function: linear !important;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+// churmbs
+
+.crumbs {
+    display: flex;
+    align-items: center;
+    @include adaptiveClamp(gap, 7, 4);
+
+    a, span {
+        color: rgba(240, 240, 240, 0.3);
+        line-height: 120%;
+        @include adaptiveClamp(font-size, 14, 12);
+        
+        &:hover {
+            color: #f0f0f0;
+        }
+
+        .white-theme & {
+            color: rgba(13, 13, 13, 0.3);
+
+            &:hover {
+                color: #0d0d0d;
+            }
+        }
+        
+        .black-block & {
+            color: rgba(240, 240, 240, 0.3) !important;
+
+            &:hover {
+                color: #f0f0f0 !important;
+            }
+        }
+        .white-block & {
+            color: rgba(13, 13, 13, 0.3) !important;
+
+            &:hover {
+                color: #0d0d0d !important;
+            }
+        }
+    }
+    a:last-child {
+        color: #f0f0f0;
+        
+        .white-theme & {
+            color: #0d0d0d;
+        }
+
+        .black-block & {
+            color: #f0f0f0 !important;
+        }
+        .white-block & {
+            color: #0d0d0d !important;
+        }
+    }
+
+    span {
+        pointer-events: none;
+    }
+}
+
+
+
+// showreel-video
+.showreel-video {
+    width: 100%;
+    img, picture, video {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+
+
+//
+img.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

@@ -24,6 +24,7 @@
     line-height: 120%;
     text-align: center;
     aspect-ratio: 1/1;
+    overflow: hidden;
   
     font-size: 0;
 
@@ -33,7 +34,7 @@
         max-width: rem(90);
         transform: scale(0);
     }
-
+    
     .blue-page & {
         color: var(--white-o-b);
     }
@@ -45,6 +46,10 @@
         em {
             color: rgba(13, 13, 13, 0.7);
         }
+    }
+
+    svg {
+        transition: opacity 0.3s ease  0s;
     }
 
 
@@ -100,6 +105,10 @@
                     color: rgba(255, 255, 255, 0.7);
                 }
             }
+        }
+
+        svg {
+            opacity: 1 !important;
         }
     }
 }

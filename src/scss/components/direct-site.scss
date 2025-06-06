@@ -31,7 +31,7 @@
         gap: rem(10);
         border: rem(1) solid var(--bs-border-color);
         border-radius: rem(10);
-        padding: rem(30) rem(32) rem(33.17);
+        padding: rem(28) rem(32) rem(30.17);
         min-height: rem(171);
 
 
@@ -62,7 +62,8 @@
             right: rem(-124);
             pointer-events: none;
             transition: opacity 0.3s ease  0s;
-
+            z-index: -1;
+            will-change: transform, opacity;
             .blue-page & {
                 background: rgba(0, 102, 255, 0.325);
             }
@@ -91,7 +92,7 @@
         line-height: 132%;
         color: #cdcdd7;
         max-width: rem(324);
-        @include adaptiveClamp(margin-bottom, 15, 13);
+        @include adaptiveClamp(margin-bottom, 11, 8);
 
         .white-theme & {
             color: var(--bs-font-color);

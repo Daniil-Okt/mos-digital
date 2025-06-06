@@ -1,0 +1,179 @@
+.desc-case {
+    
+
+    &__container {
+
+        @media(max-width:950px){
+            .desc-case__item-offer:not(:last-child) {
+                display: none;
+            }
+        }
+    }
+
+    &__row {
+        @include adaptiveClamp(padding-top, 57.5, 40);
+        display: flex;
+        flex-direction: column;
+        @include adaptiveClamp(gap, 99, 81);
+
+        @media(max-width:950px){
+            position: relative;
+            z-index: 1;
+            border-radius: 20px;
+            background-color: #181a1e;
+            padding-left: rem(35);
+            padding-right: rem(35);
+            padding-bottom: rem(90);
+            margin-left: rem(-35);
+            margin-right: rem(-35);
+            margin-top: rem(-40);
+            .white-theme & {
+                background-color: #fafafa;
+            }
+        }
+        @media(max-width:768px){
+            padding-left: rem(20);
+            padding-right: rem(20);
+            margin-left: rem(-20);
+            margin-right: rem(-20);
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: start;
+        @include adaptiveClamp(gap, 64.28, 0);
+        @media(max-width:950px){
+            flex-direction: column;
+            @include adaptiveClamp(gap, 64.28, 64);
+        }
+       
+    }
+    &__item-left {
+        
+        h3, p {
+            line-height: 120%;
+        }
+        h3 {
+            font-weight: 700;
+            font-size: rem(18);
+            color: var(--white-black-color)
+        }
+        p {
+            @include adaptiveClamp(font-size, 16, 14);
+            font-weight: 300;
+        }
+
+        @media(min-width:951px){
+            position: sticky;
+            @include adaptiveClamp(top, 143, 105);
+            @include adaptiveClamp(max-width, 415, 0);
+        }
+
+       
+    }
+
+    &__item-text {
+        display: flex;
+        flex-direction: column;
+        gap: rem(21);
+    }
+
+    &__item-content {
+        display: flex;
+        flex-direction: column;
+        gap: rem(10);
+
+        @media(max-width:950px){
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        @media(max-width:768px){
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__item-img {
+        
+    }
+
+    &__item-video {
+        video {
+            height: 100%;
+        }
+    }
+
+    &__item-offer {
+        @include adaptiveClamp(margin-top, 202.71, 10);
+        @include adaptiveClamp(min-height, 1, 0);
+        border: rem(1) solid rgba(255, 255, 255, 0.15);
+        border-radius: rem(10);
+        padding: rem(15) rem(20) rem(21.53);
+
+        .white-theme & {
+            border-color: var(--bs-border-color);
+        }
+
+
+        h3 {
+            margin-bottom: rem(6);
+            font-size: rem(16);
+
+            @media(min-width:951px){
+                em, i {
+                    font-size: rem(16);
+                    font-style: normal;
+                    font-weight: 700;
+                    color: var(--white-black-color);
+                    font-family: var(--bs-font-family);
+                }
+            }
+        }
+        p {
+            margin-bottom: rem(23.47);
+        }
+
+        @media(max-width:950px){
+            max-width: rem(550);
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: rem(21.53);
+            h3 {
+                margin-bottom: rem(30);
+                font-weight: 600;
+                font-size: rem(35);
+                line-height: 92%;
+            }
+            p {
+                margin-bottom: rem(34);
+            }
+        }
+
+        @media(max-width:620px){
+            border-radius: rem(20);
+            padding-right: rem(20);
+            border: none;
+            background-color: #181a1e;
+            padding-left: rem(20);
+            padding-right: rem(40);
+            margin-left: rem(-20);
+            margin-right: rem(-20);
+            max-width: none;
+
+          
+            .white-theme & {
+                background-color: #fafafa;
+            }
+        }
+    }
+    &__item-offer-btn {
+        width: 100%;
+    }
+
+    &__online {
+        margin-bottom: rem(27);
+    }
+}
+.showreel-video {
+}

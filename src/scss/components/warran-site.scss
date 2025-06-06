@@ -1,0 +1,129 @@
+.warran-site {
+    @include adaptiveClamp(padding-top, 268, 125);
+    
+    &__container {
+    }
+
+    &__head {
+    }
+
+    &__title {
+    }
+
+    &__running-body {
+        @include adaptiveClamp(margin-bottom, 178, 63);
+    }
+  
+    &__running {
+        height: rem(52.17);
+        background-color: var(--bs-title-mark-color);
+        box-shadow: 0 4px 6px 0 rgba(14, 36, 68, 0.35);
+        width: 105%;
+        margin-left: -2.5%;
+        &.white {
+            background: var(--white);
+            box-shadow: none;
+
+            .warran-site__running-item {
+                color: var(--bs-mark-color);
+
+                svg {
+                    path {
+                        fill: var(--bs-mark-color);
+                    }
+                }
+            }
+        }
+
+        .white-theme &.white {
+            background: #ff28155d;
+        }
+        .white-theme.blue-page &.white {
+            background: #d1e2ff;
+        }
+
+
+        
+
+        &:first-child {
+            z-index: 1;
+            transform: rotate(3.78deg);
+
+            @media(max-width:1024px){
+                margin-bottom: rem(-24);
+            }
+        }
+        &:last-child {
+            transform: rotate(-6.62deg);
+
+            @media(max-width:1024px){
+                transform: rotate(-9.61deg);
+            }
+        }
+    }
+
+    &__running-row {
+        padding-right: rem(45);
+        gap: rem(45);
+    }
+
+
+    &__running-item {
+        display: flex;
+        align-items: center;
+        gap: rem(45);
+        font-weight: 600;
+        @include adaptiveClamp(font-size, 22, 18);
+        line-height: 125%;
+        color: var(--white);
+
+        svg {
+            @include adaptiveClamp(width, 17, 16);
+            height: auto;
+       
+            path {
+                transition: all 0.3s ease  0s;
+            }
+
+            .white-theme & {
+                filter: 
+                brightness(0.7) 
+                contrast(2) 
+                saturate(0.9);
+                opacity: 0.7;
+            }
+        }
+    }
+    &__slider {
+        position: relative;
+    }
+
+    &__slide {
+        height: auto;
+    }
+
+    &__button-slider {
+        height: 100%;
+        width: 40%;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+
+        &.swiper-button-disabled {
+            pointer-events: none;
+        }
+
+
+        @media(max-width:1024px){
+            display: none;
+        }
+    }
+    &__button-slider-prev {
+        left: -20%;
+    }
+    &__button-slider-next {
+        right: -20%;
+    }
+}
+
+

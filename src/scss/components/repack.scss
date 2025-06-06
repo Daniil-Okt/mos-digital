@@ -1,0 +1,108 @@
+.repack {
+    @include adaptiveClamp(padding-top, 216.17, 163.4);
+
+    &__container {
+    }
+
+    &__body {
+        @include adaptiveClamp(padding-top, 75, 39.54);
+        @include adaptiveClamp(padding-bottom, 55, 30);
+        @include adaptiveClamp(padding-left, 79, 30);
+        @include adaptiveClamp(padding-right, 79, 30);
+        border: rem(1) solid var(--bs-border-color-two);
+        border-radius: rem(10);
+    }
+
+    &__title {
+        @include adaptiveClamp(font-size, 45, 30);
+        margin-bottom: rem(29);
+        max-width: rem(640);
+
+        @media(max-width:650px){
+            margin-bottom: rem(37.5);
+        }
+    }
+
+    &__text {
+        color: rgba(255, 255, 255, 0.8);
+        @include adaptiveClamp(font-size, 18, 16);
+        margin-bottom: rem(43);
+        max-width: rem(638);
+        .white-theme & {
+            color: var(--bs-font-color);
+        }
+
+        @media(max-width:650px){
+            margin-bottom: rem(65.5);
+        }
+        @media(max-width:550px){
+            color: var(--bs-font-color);
+        }
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(13.5) rem(5);
+        max-width: rem(590);
+        @include adaptiveClamp(margin-bottom, 66.5, 26);
+
+        @media(max-width:650px){
+            gap: rem(7);
+        }
+    }
+
+    &__item {
+        font-size: rem(14);
+        color: var(--white-black-color);
+        padding: rem(8.5) rem(13);
+        display: flex;
+        align-items: center;
+        gap: rem(9);
+        border: rem(1) solid rgba(255, 255, 255, 0.15);
+        border-radius: rem(44);
+
+        .white-theme & {
+            border-color: var(--bs-border-color);
+        }
+
+        &::before {
+            content: '';
+            width: rem(28);
+            height: rem(29);
+            background: url(@img/repack/repack-item-icon.svg) no-repeat center center / contain;
+
+            @media(max-width:650px){
+                display: none;
+            }
+        }
+        @media(max-width:650px){
+            padding: rem(9.75) rem(13.5);
+        }
+        @media(max-width:550px){
+            border-color: #191b21;
+
+            .white-theme & {
+                border-color: var(--bs-border-color);
+            }
+        }
+    }
+
+    &__button {
+        @media(max-width:550px){
+            width: 100%;
+            font-size: rem(13);
+            padding: rem(14) rem(22.3) rem(10);
+        }
+    }
+}
+.title-min {
+}
+.bs-text {
+}
+.button {
+}
+.button-slide {
+}
+.slide-amin {
+}

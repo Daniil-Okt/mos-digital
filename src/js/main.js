@@ -7,8 +7,7 @@
  * Если мы хотим добавить модуль следует его раскомментировать
  */
 // import MousePRLX from './libs/parallaxMouse'
-// import AOS from 'aos'
-// import Swiper, { Navigation, Pagination } from 'swiper';
+
 
 import BaseHelpers from './helpers/base-helpers';
 import PopupManager from './modules/popup-manager';
@@ -21,7 +20,12 @@ import { smoothScroll } from './modules/smoothScroll';
 import { CubeAnimator } from './modules/cubeAnimation';
 import { showreelAnim } from './modules/showreelAnim';
 import { contentBtn } from './modules/connectBtn';
-import { running } from './modules/running';
+import { runningAnit } from './modules/running';
+import focusInput from './modules/focusInput.js';
+import { validForm } from './modules/validFrom.js';
+import { qualServLineAnim } from './modules/qualServLineAnim.js';
+import { initSlider } from './modules/initSlider.js';
+import { textBlurAnim } from './modules/textBlurAnim.js';
 // import Tabs from './modules/tabs';
 // import Accordion from './modules/accordion';
 
@@ -74,11 +78,13 @@ if (window.innerWidth > 1024) {
 /** ===================================================================================
  * <Бегущая строка>
  * */
-	window.addEventListener('load', () => {
-		setTimeout(() => {
-			running()
-		}, 10);
-	})
+	// window.addEventListener('load', () => {
+	// 	setTimeout(() => {
+	// 		running()
+			
+	// 	}, 10);
+	// })
+	runningAnit()
 
 
 /* ТАБЫ ================================================================================================
@@ -139,38 +145,7 @@ maskTel()
 
 /* Инициализация  swiper =================================================================================
 */
-// const swiper = new Swiper('.swiper', {
-//   speed: 800,
-//   spaceBetween: 16,
-//   slidesPerView: 1.4,
-//   modules: [Autoplay, Navigation, Pagination],
-//   loop: true,
-//   initialSlide: 1,
-//   autoplay: {
-//     delay: 2500,
-//     stopOnLastSlide: false,
-//     disableOnIteration: false,
-//   },
-//   navigation: {
-//     prevEl: ".reviews__button-slider-prev",
-//     nextEl: ".reviews__button-slider-next"
-//   },
-//   pagination: {
-//     el: ".card-slider__pagination",
-//     dynamicBullets: true,
-//     clickable: true,
-//   },
-//   breakpoints: {
-//     1400: {
-//       slidesPerView: 4,
-//       spaceBetween: 24,
-//   	},
-//     1650: {
-//         slidesPerView: 4,
-//         spaceBetween: 48,
-//     }
-//   },
-// });
+initSlider()
 
 
 /* Валидация формы ======================================================================================
@@ -218,12 +193,13 @@ focusInput()
 	* При клике на элемент, у всех элементов класс удаляется
 */
 import { toggleActiveClass } from './modules/index.js'
-import focusInput from './modules/focusInput.js';
-import { validForm } from './modules/validFrom.js';
-import { qualServLineAnim } from './modules/qualServLineAnim.js';
+
+
 const directPortMenuItems = document.querySelectorAll('.direct-port__menu-item');
 toggleActiveClass(directPortMenuItems)
 
+const itemQuests = document.querySelectorAll('.item-quest');
+toggleActiveClass(itemQuests)
 
 //кнопка переключения темы
 btnTheme()
@@ -233,7 +209,8 @@ if (window.innerWidth > 1024) {
 	cursor()
 }
 
-
+//анимация текста blur
+textBlurAnim()
 
 //автозапус видео на айфонах
 autoplayVideo()
@@ -257,4 +234,45 @@ if (window.innerWidth > 550) {
 //анимация линий
 window.addEventListener('load', function() {
     qualServLineAnim()
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector('header');
+    
+    // Конфигурация: классы блоков → классы для header
+    const blockConfig = {
+        '.black-block': 'header-black-block',
+        '.white-block': 'header-white-block'
+        // Добавьте другие блоки по необходимости
+    };
+
+    // Проверяем, находится ли центр header над блоками
+    function checkHeaderCenterOverBlocks() {
+        const headerRect = header.getBoundingClientRect();
+        const headerCenterY = headerRect.top + (headerRect.height / 2); // Y-координата центра header
+
+        Object.entries(blockConfig).forEach(([blockSelector, headerClass]) => {
+            const blocks = document.querySelectorAll(blockSelector);
+            let isCenterOverBlock = false;
+
+            blocks.forEach(block => {
+                const blockRect = block.getBoundingClientRect();
+                
+                // Проверяем, попадает ли центр header в границы блока
+                if (headerCenterY >= blockRect.top && headerCenterY <= blockRect.bottom) {
+                    isCenterOverBlock = true;
+                }
+            });
+
+            header.classList.toggle(headerClass, isCenterOverBlock);
+        });
+    }
+
+    // Запускаем проверку при скролле и ресайзе
+    window.addEventListener('scroll', checkHeaderCenterOverBlocks);
+    window.addEventListener('resize', checkHeaderCenterOverBlocks);
+
+    // Первоначальная проверка
+    checkHeaderCenterOverBlocks();
 });
