@@ -46,9 +46,9 @@
   <title>MOS DIGITAL</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250618125005">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250618150852">
 
-  <script defer="defer" src="js/main.min.js?_v=20250618125005"></script>
+  <script defer="defer" src="js/main.min.js?_v=20250618150852"></script>
 </head>
 
   <body>
@@ -1271,7 +1271,7 @@
                     </div>
                     <div class="item-quest__right">
                         <div class="item-quest__img">
-                            <div class="video-start"></div>
+                            <div class="video-start" data-popup-video="static/showreel/showreel.mp4" data-type="popup-video"></div>
                             <img loading="lazy" src="images/quest/quest-img.webp" alt="">
                         </div>
                         <h3 class="item-quest__title-right">
@@ -1654,17 +1654,20 @@
   </div>
 </footer>
 
-        <div class="popup" data-popup="popup-1" data-close-overlay>
+        
+
+
+<div class="popup popup-video" data-popup="popup-video" data-close-overlay>
     <div class="popup__wrapper" data-close-overlay>
-        <div class="popup__content">
-            <button class="button-close popup__close" type="button">x</button>
-            <div class="popup__body">
-                <h2>Базовый пример модального окна</h2>
-            </div>
+        <div class="popup-video__content popup__content">
+            <div class="popup-video__close"></div>
+            <video controls playsinline loading="lazy">
+                <source src="" type="video/mp4">
+            </video>
+            
         </div>
     </div>
 </div>
-
         <div class="cursor-follower"></div>
     </div>
   </body>
