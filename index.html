@@ -46,9 +46,9 @@
   <title>MOS DIGITAL</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250616110515">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250618092102">
 
-  <script defer="defer" src="js/main.min.js?_v=20250616110515"></script>
+  <script defer="defer" src="js/main.min.js?_v=20250618092102"></script>
 </head>
 
   <body>
@@ -148,11 +148,14 @@
 </div>
           <div class="showreel">
     <div class="showreel__container">
-        <div class="showreel-video showreel__video">
-            <video autoplay muted loop playsinline poster="images/showreel/showreel-preview.webp" loading="lazy">
-                <source src="static/showreel/showreel.mp4" type="video/mp4">
-            </video>
+        <div class="showreel__video-body">
+            <div class="showreel-video showreel__video">
+                <video autoplay muted loop playsinline poster="images/showreel/showreel-preview.webp" loading="lazy">
+                    <source src="static/showreel/showreel.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
+
     </div>
 </div>
           <div class="drawing">
@@ -165,13 +168,13 @@
             <div class="drawing__line"></div>
         </div>
         <div class="drawing__right">
-            <h2 class="title-min drawing__title">
+            <h2 class="text-blur-anim title-min drawing__title" data-delay-desktop="1400">
                 Знаем, насколько <em>сложно превратить</em> обилие цифр и фактов в понятную презентацию. Когда презентация <em>не вызывает эмоций,</em> а аудитория быстро теряет интерес 
             </h2>
             <div class="drawing__right-bot">
                 <div class="bs-text drawing__text">
                     Именно поэтому мы создаём презентации, которые балансируют между большим количеством информации 
-                    и эффектной подачей
+                    и эффектной подачей
                 </div>
                 <div class="drawing__user user-drawing" data-da=".drawing__right, 850, first">
                     <img loading="lazy" src="images/drawing/user-drawing.webp" alt="" class="user-drawing__img">
@@ -200,7 +203,7 @@
             </p>
         </div>
 
-        <div class="running leaders__running reverse" data-speed="30">
+        <div class="running leaders__running" data-speed="30">
             <div class="running__row leaders__running-row">
                 <div class="running__item leaders__running-item">
                     <img loading="lazy" src="images/running-img1.webp" alt="">
@@ -595,7 +598,7 @@
           <div class="achiev">
     <div class="achiev__container">
         <div class="achiev__row">
-            <div class="achiev__item item-achiev" data-cursor-hover="Обсудить <em>задачу</em>">
+            <div class="achiev__item item-achiev" data-cursor-white data-cursor-hover="Обсудить <em>задачу</em>">
                 <div class="item-achiev__fon">
                     <img loading="lazy" src="images/about-case/about-case-fon.webp" alt="" class="img-cover">
                 </div>
@@ -630,7 +633,7 @@
                     </div>
                 </div> 
             </div>
-            <div class="achiev__item item-achiev" data-cursor-hover="Обсудить <em>задачу</em>">
+            <div class="achiev__item item-achiev" data-cursor-white data-cursor-hover="Обсудить <em>задачу</em>">
                 <div class="item-achiev__fon">
                     <img loading="lazy" src="images/about-case/about-case-fon.webp" alt="" class="img-cover">
                 </div>
@@ -724,7 +727,6 @@
                 <div class="item-apply__body">
                     <h3 class="title-big item-apply__title">
                         <span>ТОП-3</span>
-                        <span class="up-text">год</span>
                     </h3>
                     <p class="item-apply__bot-text">
                         в тройке лидеров по разработке презентаций в стране
@@ -830,35 +832,6 @@
                         </p>
                     </div>
                 </div>
-                <div class="swiper-slide format__slide slide-format">
-                    <div class="hero-preview-animation">
-                        <div class="hero-preview-animation-line"></div>
-                    </div>
-                    <div class="slide-format__body">
-                        <img src="images/format/format-icon.svg" alt="" class="slide-format__icon">
-                        <h3 class="slide-format__title">
-                            Видео -
-                            презентация
-                        </h3>
-                        <p class="slide-format__text">
-                            Понимаем специфику. Аккуратно используем закрытые данные. Проверяем информацию. 
-                        </p>
-                    </div>
-                </div>
-                <div class="swiper-slide format__slide slide-format">
-                    <div class="hero-preview-animation">
-                        <div class="hero-preview-animation-line"></div>
-                    </div>
-                    <div class="slide-format__body">
-                        <img src="images/format/format-icon.svg" alt="" class="slide-format__icon">
-                        <h3 class="slide-format__title">
-                            WEB - презентация
-                        </h3>
-                        <p class="slide-format__text">
-                            Понимаем специфику. Аккуратно используем закрытые данные. Проверяем информацию. 
-                        </p>
-                    </div>
-                </div>
             </div>
 
             <div class="warran-site__button-slider format__button-prev warran-site__button-slider-prev" data-cursor-str data-cursor-str-prev data-cursor-hover=" "></div>
@@ -870,8 +843,8 @@
           <div class="direct-port">
     <div class="direct-port__container">
         <div class="direct-port__row">
-            <a href="#" class="direct-port__item _three" data-cursor-hover="Смотреть <em>видео</em>">
-                <div class="direct-port__item-img" data-cursor-white>
+            <a href="#" class="direct-port__item _three">
+                <div class="direct-port__item-img" data-cursor-white data-cursor-hover="Смотреть <em>видео</em>">
                     <img loading="lazy" src="images/img-show.webp" alt="">
                 </div>
                 <div class="direct-port__item-body">
@@ -892,8 +865,8 @@
                     <h3>Как мы рисуем дизайн</h3>
                 </div>
             </a>
-            <a href="#" class="direct-port__item _three" data-cursor-hover="Смотреть <em>видео</em>">
-                <div class="direct-port__item-img" data-cursor-white>
+            <a href="#" class="direct-port__item _three">
+                <div class="direct-port__item-img" data-cursor-white data-cursor-hover="Смотреть <em>видео</em>">
                     <img loading="lazy" src="images/img-show.webp" alt="">
                 </div>
                 <div class="direct-port__item-body">
@@ -1212,7 +1185,7 @@
           </div>
           <div class="team">
             <div class="team__container">
-                <h2 class="text-blur-anim team__title title-min">
+                <h2 class="text-blur-anim title-min team__title">
                     Мы <em>нанимаем лучших</em> <br>Это дорого, но того стоит!
                     Благодаря такому подходу в прошлом году мы положили в портфель несколько <em>крупных проектов</em> для лидеров рынка <em>и залетели в ТОП-3</em> по разработке презентаций с мощным дизайном
                 </h2>
