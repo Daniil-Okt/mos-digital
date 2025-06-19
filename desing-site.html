@@ -46,9 +46,9 @@
   <title>MOS DIGITAL</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250618150852">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250619121421">
 
-  <script defer="defer" src="js/main.min.js?_v=20250618150852"></script>
+  <script defer="defer" src="js/main.min.js?_v=20250619121421"></script>
 </head>
 
   <body>
@@ -107,13 +107,12 @@
                     <h1 class="title-big about__title">
                             <span class="web">Разработка   
                                 <em>
-                                    <span class="cube-anim" data-delay="3000">
-                                        <span class="cube-anim__opacity"></span>
-                                        <span class="cube cube-anim__cube">
-                                            <span class="cube__face cube__face-front">надежных</span>
-                                            <span class="cube__face cube__face-bottom">наглядных</span>
-                                            <span class="cube__face cube__face-back">логичных</span>
-                                            <span class="cube__face cube__face-top">стильных</span>
+                                    <span class="slide-up-anim" data-delay="3000">
+                                        <span class="swiper-wrapper slide-up__body">
+                                            <span class="swiper-slide slide-up__item">надежных</span>
+                                            <span class="swiper-slide slide-up__item">наглядных</span>
+                                            <span class="swiper-slide slide-up__item">логичных</span>
+                                            <span class="swiper-slide slide-up__item">стильных</span>
                                         </span>
                                     </span>
                                 </em> 
@@ -125,7 +124,7 @@
                             Удержим интерес до последнего слайда. 
                             <br>Спикеры будут выглядеть убедительно, а аудитория слушать и понимать
                     </p>
-                    <div class="about__button-row">
+                    <div class="about__button-row about__button-row-fixed" data-da=".wrapper, 550, last">
                         <div class="button-slide button about__button">
                             <span class="slide-anim" data-content="Получить расчет"></span>
                         </div>
@@ -140,9 +139,6 @@
                                 <img loading="lazy" src="images/about/btn-connect3.svg" alt="">
                             </a>
                         </div>
-                    </div>
-                    <div class="about__connect-btn about__close-connect">
-                        <img loading="lazy" src="images/about/btn-connect-close.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -224,9 +220,9 @@
         </div>
     </div>
 </div>
-            <div class="_two leaders">
+            <div class="section-p-b _two leaders">
                 <div class="leaders__container">
-                    <div class="head-text text-blur-anim leaders__head-text">
+                    <div class="text-blur-anim head-text leaders__head-text">
                         <h2 class="title-big leaders__title">
                             Запускаем <em>сайты</em> 
                             для бизнеса и государства
@@ -286,7 +282,7 @@
                     </div> 
                 </div>
             </div>
-            <div class="direct-port">
+            <div class="section-p-b direct-port">
                 <div class="direct-port__container">
                     <div class="direct-port__menu" style="--max-width-port-menu: 715px" data-max-width="990px">
                         <div class="button-slide direct-port__menu-item _active">
@@ -315,8 +311,8 @@
                         </div>
                     </div>
                     <div class="direct-port__row">
-                        <a href="#" class="direct-port__item" data-cursor-hover="Смотреть <em>кейс</em>">
-                            <div class="direct-port__item-img" data-cursor-white>
+                        <a href="#" class="direct-port__item">
+                            <div class="direct-port__item-img" data-cursor-hover="Смотреть <em>кейс</em>" data-cursor-white>
                                 <img loading="lazy" src="images/img-show.webp" alt="">
                             </div>
                             <div class="direct-port__item-body">
@@ -327,8 +323,8 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="direct-port__item" data-cursor-hover="Смотреть <em>кейс</em>">
-                            <div class="direct-port__item-img" data-cursor-white>
+                        <a href="#" class="direct-port__item">
+                            <div class="direct-port__item-img" data-cursor-hover="Смотреть <em>кейс</em>" data-cursor-white>
                                 <img loading="lazy" src="images/img-show.webp" alt="">
                             </div>
                             <div class="direct-port__item-body">
@@ -339,8 +335,8 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="direct-port__item" data-cursor-hover="Смотреть <em>кейс</em>">
-                            <div class="direct-port__item-img" data-cursor-white>
+                        <a href="#" class="direct-port__item">
+                            <div class="direct-port__item-img" data-cursor-hover="Смотреть <em>кейс</em>" data-cursor-white>
                                 <img loading="lazy" src="images/img-show.webp" alt="">
                             </div>
                             <div class="direct-port__item-body">
@@ -351,8 +347,8 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="direct-port__item" data-cursor-hover="Смотреть <em>кейс</em>">
-                            <div class="direct-port__item-img" data-cursor-white>
+                        <a href="#" class="direct-port__item">
+                            <div class="direct-port__item-img" data-cursor-hover="Смотреть <em>кейс</em>" data-cursor-white>
                                 <img loading="lazy" src="images/img-show.webp" alt="">
                             </div>
                             <div class="direct-port__item-body">
@@ -375,10 +371,10 @@
                     </div>
                 </div>
             </div>
-            <div class="connect">
+            <div class="section-p-b connect">
     <div class="connect__container">
         <div class="direct-port__item-tag connect__online">Мы онлайн</div>
-        <div class="head-text text-blur-anim connect__head">
+        <div class="text-blur-anim head-text connect__head">
             
             <h2 class="title-big connect__title">
                 Давайте обсудим <em>стоимость и сроки</em> разработки
@@ -441,9 +437,9 @@
         </form>
     </div>
 </div>
-            <div class="expert-site">
+            <div class="section-p-b expert-site">
     <div class="expert-site__container">
-        <div class="head-text text-blur-anim expert-site__head">
+        <div class="text-blur-anim head-text expert-site__head">
             <h2 class="title-big expert-site__title">
                 Имеем <em>экспертизу</em> 
                 в следующих отраслях
@@ -524,7 +520,7 @@
         </div>
     </div>
 </div>
-            <div class="drawing">
+            <div class="section-p-b drawing">
                 <div class="drawing__container">
                     <div class="drawing__left">
                         <div class="drawing__number">
@@ -534,7 +530,7 @@
                         <div class="drawing__line"></div>
                     </div>
                     <div class="drawing__right">
-                        <h2 class="title-min drawing__title">
+                        <h2 class="text-blur-anim drawing__title title-min" data-delay-desktop="1100">
                             Кто-то хорошо рисует, кто-то убедительно пишет, мы делаем все вместе, но с глубоким погружением в компанию и бизнес-процессы
                         </h2>
                         <div class="drawing__right-bot">
@@ -558,9 +554,9 @@
                     </div>
                 </div>
             </div>
-            <div class="expert-site">
+            <div class="section-p-b expert-site">
     <div class="expert-site__container">
-        <div class="head-text text-blur-anim expert-site__head _m-two">
+        <div class="text-blur-anim head-text expert-site__head _m-two">
             <h2 class="title-big expert-site__title">
                 Имеем <em>экспертизу</em> 
                 в следующих отраслях
@@ -618,9 +614,9 @@
         </div>
     </div>
 </div>
-            <div class="stages">
+            <div class="section-p-b stages">
     <div class="stages__container">
-        <div class="head-text text-blur-anim stages__head">
+        <div class="text-blur-anim head-text stages__head">
             <h2 class="title-big stages__title">
                 Имеем <em>экспертизу</em> в следующих отраслях
             </h2>
@@ -630,7 +626,7 @@
         </div>
         <div class="shadow-hidden stages__slider" data-speed="50">
             <div class="running__row stages__wrapper swiper-wrapper wrapper-running">
-                <div class="running__item bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                <div class="swiper-slide bs-card running__item stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                     <div class="stages__number">
                         01.
                     </div>
@@ -638,7 +634,7 @@
                         Обсуждаем цели и задачи проекта, понимаем каких результатов нужно достичь 
                     </h3>
                 </div>
-                <div class="running__item bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                <div class="swiper-slide bs-card running__item stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                     <div class="stages__number">
                         02.
                     </div>
@@ -646,7 +642,7 @@
                         Исследуем целевую аудиторию, анализируем конкурентов и рынок
                     </h3>
                 </div>
-                <div class="running__item bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                <div class="swiper-slide bs-card running__item stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                     <div class="stages__number">
                         03.
                     </div>
@@ -654,7 +650,7 @@
                         Составлем ТЗ, определяем решения, формируем технологический стек 
                     </h3>
                 </div>
-                <div class="running__item bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                <div class="swiper-slide bs-card running__item stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                     <div class="stages__number">
                         04.
                     </div>
@@ -662,7 +658,7 @@
                         Исследуем целевую аудиторию, анализируем конкурентов и рынок
                     </h3>
                 </div>
-                <div class="running__item bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                <div class="swiper-slide bs-card running__item stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                     <div class="stages__number">
                         05.
                     </div>
@@ -676,9 +672,9 @@
 </div>
 
 
-            <div class="_two direct-site">
+            <div class="section-p-b _two direct-site">
                 <div class="direct-site__container">
-                    <div class="head-text text-blur-anim direct-site__head">
+                    <div class="text-blur-anim head-text direct-site__head">
                         <h2 class="title-big direct-site__title">
                             Давайте обсудим <em>стоимость и сроки</em> разработки
                         </h2>
@@ -768,10 +764,10 @@
                     </div>
                 </div>
             </div>
-            <div class="connect">
+            <div class="section-p-b connect">
     <div class="connect__container">
         <div class="direct-port__item-tag connect__online">Мы онлайн</div>
-        <div class="head-text text-blur-anim connect__head">
+        <div class="text-blur-anim head-text connect__head">
             
             <h2 class="title-big connect__title">
                 Давайте обсудим <em>стоимость и сроки</em> разработки
@@ -834,9 +830,9 @@
         </form>
     </div>
 </div>
-            <div class="qual-serv">
+            <div class="section-p-b qual-serv">
     <div class="qual-serv__container">
-        <div class="head-text text-blur-anim qual-serv__head">
+        <div class="text-blur-anim head-text qual-serv__head">
             <h2 class="title-big qual-serv__title">
                 Давайте обсудим <em>стоимость и сроки</em> разработки
             </h2>
@@ -944,9 +940,9 @@
         </div>
     </div>
 </div>
-            <div class="expert-site">
+            <div class="section-p-b expert-site">
     <div class="expert-site__container">
-        <div class="head-text text-blur-anim expert-site__head">
+        <div class="text-blur-anim head-text expert-site__head">
             <h2 class="title-big expert-site__title">
                 Давайте обсудим <em>стоимость и сроки</em> разработки
             </h2>
@@ -996,9 +992,9 @@
         </div>
     </div>
 </div>
-            <div class="._two warran-site">
+            <div class="section-p-b _two warran-site">
     <div class="warran-site__container">
-        <div class="head-text text-blur-anim warran-site__head">
+        <div class="text-blur-anim head-text warran-site__head">
             <h2 class="title-big warran-site__title">
                 Давайте обсудим <em>стоимость и сроки</em> разработки
             </h2>
@@ -1115,7 +1111,7 @@
 
     </div>
 </div>
-            <div class="repack">
+            <div class="section-p-b repack">
     <div class="repack__container">
         <div class="repack__body">
             <h2 class="title-min repack__title">
@@ -1150,9 +1146,9 @@
         </div>
     </div>
 </div>
-            <div class="reviews">
+            <div class="section-p-b reviews">
     <div class="reviews__container">
-        <div class="head-text text-blur-anim reviews__head">
+        <div class="text-blur-anim head-text reviews__head">
             <h2 class="title-big reviews__title">
                 Имеем <em>экспертизу</em> в следующих отраслях
             </h2>
@@ -1244,9 +1240,9 @@
         </div>
     </div>
 </div>
-            <div class="quest">
+            <div class="section-p-b quest">
     <div class="quest__container">
-        <div class="head-text text-blur-anim quest__head">
+        <div class="text-blur-anim head-text quest__head">
             <h2 class="title-big quest__title">
                 Частые вопросы
             </h2>
@@ -1300,7 +1296,7 @@
                     </div>
                     <div class="item-quest__right">
                         <div class="item-quest__img">
-                            <div class="video-start"></div>
+                            <div class="video-start" data-popup-video="static/showreel/showreel.mp4" data-type="popup-video"></div>
                             <img loading="lazy" src="images/quest/quest-img.webp" alt="">
                         </div>
                         <h3 class="item-quest__title-right">
@@ -1382,7 +1378,7 @@
                     </div>
                     <div class="item-quest__right">
                         <div class="item-quest__img">
-                            <div class="video-start"></div>
+                            <div class="video-start" data-popup-video="static/showreel/showreel.mp4" data-type="popup-video"></div>
                             <img loading="lazy" src="images/quest/quest-img.webp" alt="">
                         </div>
                         <h3 class="item-quest__title-right">
@@ -1404,7 +1400,7 @@
             
         </main>
   
-        <footer class="footer">
+        <footer class="footer" data-button-fixed-hidden>
   <div class="footer__container">
     <div class="footer__top top-footer">
       <div class="top-footer__left">
