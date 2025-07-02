@@ -135,7 +135,8 @@ h1, h2, h3, h4, h5 {
     position: relative;
     overflow: hidden;
     color: var(--white-black-color);
-
+    transition: color 0.3s ease  0s, bottom 0.3s ease  0s;
+    bottom: 0;
 
     span {
         display: inline-block;
@@ -144,12 +145,19 @@ h1, h2, h3, h4, h5 {
  
     @media(min-width:769px){
         &:hover {
+            transition: color 0.3s ease  0s, bottom 0.3s ease  0.1s;
             span {
                 transform: translateY(-100%);
             }
             &::after {
                 top: 0;
             }
+
+            bottom: 2px;
+
+            // &::before {
+            //     bottom: -2px;
+            // }
         }
     }
     &::after {
@@ -162,9 +170,20 @@ h1, h2, h3, h4, h5 {
         color: var(--bs-font-color);
         transition: all 0.4s ease  0s;
     }
+
+    // &::before {
+    //     position: absolute;
+    //     content: '';
+    //     bottom: 0;
+    //     left: 0;
+    //     width: 100%;
+    //     height: 100%;
+    //     cursor: pointer;
+    // }
 }
 
 .button {
+    position: relative;
     display: inline-block;
     font-weight: 500;
     font-size: rem(13);
@@ -175,16 +194,35 @@ h1, h2, h3, h4, h5 {
     border-radius: rem(4);
     text-align: center;
     cursor: pointer;
-    transition: background-color 0.3s ease  0s, transform 0.3s ease  0s, opacity 0.3s ease  0s;
+    bottom: 0;
+    transition: background-color 0.3s ease  0s, transform 0.3s ease  0s, opacity 0.3s ease  0s, bottom 0.3s ease  0s;
 
     &:active {
         transform: scale(0.97);
     }
+    @media(min-width:769px){
+        &:hover {
+            background: var(--bs-button-hover-color);
+            bottom: 2px;
+            // transform: translateY(-5px);
+            transition: background-color 0.3s ease  0s, transform 0.3s ease  0s, opacity 0.3s ease  0s, bottom 0.3s ease  0.1s;
 
-    &:hover {
-        background: var(--bs-button-hover-color);
-
+            &::after {
+                bottom: -2px;
+            }
+        }
     }
+
+    &::after {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
 
     &.button-slide .slide-anim::after {
           color: var(--white);

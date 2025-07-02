@@ -212,6 +212,10 @@
     overflow: hidden;
     height: auto;
 
+    &.swiper-slide {
+        @include adaptiveClamp(min-height, 515, 510);
+    }
+
 
 
     @media(min-width:769px){

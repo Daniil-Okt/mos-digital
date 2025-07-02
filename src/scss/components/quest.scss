@@ -48,6 +48,21 @@
         gap: rem(23);
     }
 
+    @media(min-width:769px){
+        &:not(._active):hover {
+            .item-quest__title {
+                color: var(--bs-title-mark-color);
+            }
+            .item-quest__str {
+                svg {
+                    path {
+                        fill: var(--bs-title-mark-color);
+                    }
+                }
+            }
+        }
+    }
+
     .blue-page {
         background: #101216;
     }

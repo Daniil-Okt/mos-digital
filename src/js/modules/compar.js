@@ -13,7 +13,7 @@ export function comparInit() {
         let animationId = null;
         let lastUpdateTime = 0;
         let hasAnimated = false;
-        const edgeThreshold = 5; // Порог в % от края для добавления классов
+        const edgeThreshold = 35; // Порог в % от края для добавления классов
 
         function updateSlider(value) {
             value = Math.max(0, Math.min(100, value));

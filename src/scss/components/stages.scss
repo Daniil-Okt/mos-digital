@@ -89,6 +89,11 @@
             z-index: -1;
             transition: opacity 0.6s ease  0s;
         }
+
+
+        &.swiper-slide {
+            @include adaptiveClamp(min-height, 515, 450);
+        }
     }
 
     &__slide-body {

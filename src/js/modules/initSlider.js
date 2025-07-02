@@ -38,9 +38,9 @@ export function initSlider() {
     });
 
     const swiperStages = new Swiper('.stages__slider', {
-        speed: 1500,
+        speed: 1200,
         spaceBetween: 15,
-        slidesPerView: 1,
+        slidesPerView: 1.13,
         modules: [Autoplay, Navigation, Pagination, Mousewheel, FreeMode],
         loop: true,
         centeredSlides: true,
@@ -117,9 +117,9 @@ export function initSlider() {
 
 
     const swiperExpertSite = new Swiper('.expert-site__slider', {
-        speed: 1700,
+        speed: 1200,
         spaceBetween: 20,
-        slidesPerView: 1,
+        slidesPerView: 1.1,
         modules: [Autoplay, Navigation, Pagination],
         autoplay: {
             delay: 2500,
@@ -134,8 +134,10 @@ export function initSlider() {
             651: {
             slidesPerView: 2,
             spaceBetween: 12,
+            speed: 1500,
             },
             1025: {
+                speed: 2500,
                 slidesPerView: 3,
                 spaceBetween: 15,
             }

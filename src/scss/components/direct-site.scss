@@ -1,5 +1,6 @@
 .direct-site {
-    @include adaptiveClamp(padding-top, 84.6, 0);
+    // @include adaptiveClamp(padding-top, 84.6, 0);
+    @include adaptiveClamp(padding-top, 160, 100);
     &._two {
         @include adaptiveClamp(padding-top, 240, 171);
     }

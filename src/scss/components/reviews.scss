@@ -53,6 +53,9 @@
     @include adaptiveClamp(padding-top, 35, 20);
     @include adaptiveClamp(padding-left, 32, 20);
     @include adaptiveClamp(padding-right, 31.5, 20);
+    // @include adaptiveClamp(min-height, 515, 450);
+    min-height: rem(420);
+
     padding-bottom: rem(27);
     border-radius: 10px;
     border: rem(1) solid var(--bs-border-color-two);
@@ -114,13 +117,13 @@
             min-height: calc(1.36em * 8);
         }
 
-        @media(max-width:650px){
-            -webkit-line-clamp: 7;
-            max-height: calc(1.36em * 7);
-            min-height: calc(1.36em * 7);
-        }
         @media(max-width:550px){
             margin-bottom: rem(39.6);
+        }
+        @media(max-width:500px){
+            -webkit-line-clamp: 10;
+            max-height: calc(1.36em * 10);
+            min-height: calc(1.36em * 10);
         }
 
         // @media(min-width:551px){
@@ -129,6 +132,7 @@
     }
 
     &__info {
+        margin-top: auto;
         display: flex;
         align-items: center;
         gap: rem(16);

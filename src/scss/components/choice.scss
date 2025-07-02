@@ -45,7 +45,9 @@
         &:hover {
             .item-choice__img {
                 opacity: 1;
+                    transition: opacity 0.6s ease  0.15s;
                 img {
+                    transition: bottom 0.6s ease  0.15s;
                     bottom: 0%;
                 }
             }
@@ -140,7 +142,7 @@
         height: 100%;
         overflow: hidden;
         opacity: 0;
-        transition: opacity 0.6s ease  0.1s;
+        transition: opacity 0.6s ease  0s;
         z-index: 1;
         pointer-events: none;
 
@@ -149,7 +151,7 @@
             height: 100%;
             width: auto;
             bottom: -50%;
-            transition: bottom 0.6s ease  0.1s;
+            transition: bottom 0.6s ease  0s;
         }
 
 

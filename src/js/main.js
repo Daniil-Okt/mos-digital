@@ -246,7 +246,7 @@ toggleActiveClass(directPortMenuItems)
 // toggleActiveClass(itemQuests)
 
 // открытие/закрытие вопросов
-document.addEventListener('DOMContentLoaded', questInit());
+document.addEventListener('load', questInit());
 
 
 
@@ -401,3 +401,6 @@ function checkElementsInCenter() {
   
   window.addEventListener('scroll', throttleCheck);
   window.addEventListener('resize', throttleCheck);
+
+
+
