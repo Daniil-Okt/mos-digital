@@ -1,16 +1,57 @@
 .repack {
-    @include adaptiveClamp(padding-top, 216.17, 163.4);
+    // @include adaptiveClamp(padding-top, 216.17, 163.4);
 
     &__container {
     }
 
     &__body {
+        position: relative;
+        z-index: 1;
         @include adaptiveClamp(padding-top, 75, 39.54);
         @include adaptiveClamp(padding-bottom, 55, 30);
         @include adaptiveClamp(padding-left, 79, 30);
         @include adaptiveClamp(padding-right, 79, 30);
         border: rem(1) solid var(--bs-border-color-two);
         border-radius: rem(10);
+        overflow: hidden;
+
+        &::before {
+            position: absolute;
+            content: '';
+            @include adaptiveClamp(width, 613.37, 482);
+            @include adaptiveClamp(height, 1046.89, 824);
+            top: rem(-160.7);
+            left: 84%;
+            border-radius: 100%;
+            background: linear-gradient(270deg, #ff4533 38.5%, #fb0 49%, #ff4533 67%);
+            filter: blur(50px);
+            pointer-events: none;
+            transform: rotate(-57.54deg);
+            opacity: 0.9;
+            z-index: -1;
+            .blue-page & {
+                background: linear-gradient(270deg, #0048b2 38.5%, #0090ff 49%, #0048b2 67%);
+            }
+
+            // @media(max-width:1290px){
+            //     left: 54.5%;
+            // }
+            // @media(max-width:1150px){
+            //     left: 64.5%;
+            // }
+            @media(max-width:950px){
+                left: 95%;
+            }
+            @media(max-width:650px){
+                top: rem(-736);
+                transform: rotate(0deg);
+                left: 19%;
+                overflow: 0.9;
+                .blue-page & {
+                    background: linear-gradient(225deg, #06f 38.1%, #0004ff 82.18%);
+                }
+            }
+        }
     }
 
     &__title {
@@ -95,14 +136,4 @@
             padding: rem(14) rem(22.3) rem(10);
         }
     }
-}
-.title-min {
-}
-.bs-text {
-}
-.button {
-}
-.button-slide {
-}
-.slide-amin {
 }

@@ -1,5 +1,5 @@
 .leaders {
-    @include adaptiveClamp(padding-top, 210, 170);
+    // @include adaptiveClamp(padding-top, 210, 170);
 
     &__container {
     }
@@ -17,86 +17,24 @@
     &__running {
         position: relative;
         width: 100%;
-        
-        &-fon-one {
-            position: absolute;
-            content: '';
-            @include adaptiveClamp(width, 435, 84);
-            height: rem(141);
-            background: linear-gradient(90deg, #0c0e11 39.8%, rgba(12, 14, 17, 0) 52.89%);
-            top:50%;
-            transform: translateY(-50%);
-            left: rem(-5);
-            z-index: 2;
-            transition: opacity 0.3s ease  0s;
-            .white-theme & {
-                opacity: 0;
-            }
-        }
-        &::before {
-            position: absolute;
-            content: '';
-            @include adaptiveClamp(width, 435, 84);
-            height: rem(141);
-            background: linear-gradient(90deg, #fff 30.6%, rgba(255, 255, 255, 0) 41.64%);
-            top:50%;
-            transform: translateY(-50%);
-            left: rem(-5);
-            z-index: 1;
-        }
-        &-fon-two {
-            position: absolute;
-            content: '';
-            @include adaptiveClamp(width, 435, 84);
-            height: rem(141);
-            background: linear-gradient(90deg, #0c0e11 39.8%, rgba(12, 14, 17, 0) 52.89%);
-            top:50%;
-            transform: translateY(-50%) rotate(180deg);
-            right: rem(-5);
-            z-index: 2;
-            transition: opacity 0.3s ease  0s;
-            .white-theme & {
-                opacity: 0;
-            }
-        }
-        &:after {
-            position: absolute;
-            content: '';
-            @include adaptiveClamp(width, 435, 84);
-            height: rem(141);
-            background: linear-gradient(90deg, #fff 30.6%, rgba(255, 255, 255, 0) 41.64%);
-            top:50%;
-            transform: translateY(-50%) rotate(180deg);
-            right: rem(-5);
-            z-index: 1;
-        }
-
-        
+        max-width: rem(800);
+        margin-left: auto;
+        margin-right: auto;
+        mask-image: linear-gradient(90deg, transparent 3.5%, black 35%, black 65%, transparent 96%);
+        -webkit-mask-image: linear-gradient(90deg, transparent 3.5%, black 35%, black 65%, transparent 96%);
 
         &:last-child {
             @include adaptiveClamp(margin-top, 25.23, 18);
         }
 
         ._two & {
-            &-fon-one, &-fon-two {
-                @include adaptiveClamp(width, 678, 84);
-            }
-            &::before,  &::after {
-                @include adaptiveClamp(width, 678, 84);
-            }
+            max-width: rem(850);
+            mask-image: linear-gradient(90deg, transparent 7.5%, black 35%, black 65%, transparent 96%);
+            -webkit-mask-image: linear-gradient(90deg, transparent 7.5%, black 35%, black 65%, transparent 96%);
+
             &:last-child {
-                &-fon-one {
-                    @include adaptiveClamp(width, 630, 84);
-                }
-                &-fon-two {
-                    @include adaptiveClamp(width, 660, 84);
-                }
-                &::before {
-                    @include adaptiveClamp(width, 630, 84);
-                }
-                &::after {
-                    @include adaptiveClamp(width, 660, 84);
-                }
+                mask-image: linear-gradient(90deg, transparent 3.5%, black 35%, black 65%, transparent 92%);
+                -webkit-mask-image: linear-gradient(90deg, transparent 3.5%, black 35%, black 65%, transparent 92%);
             }
         }
 

@@ -12,10 +12,10 @@
             <div class="about">
                 <div class="about__bg bg video">
                     <picture>
-                        <source media="(max-width: 550px)" srcset="@img/about/about-bg-blue-mob.png">
-                        <img loading="lazy" src="@img/about/about-bg-blue.png" alt="">
+                        <source media="(max-width: 550px)" srcset="@img/about/about-bg-blue-mob.webp">
+                        <img loading="lazy" src="@img/about/about-bg-blue.webp" alt="">
                     </picture>
-                    <!-- <video  autoplay muted loop playsinline poster="@img/showreel/showreel-preview.png" loading="lazy">
+                    <!-- <video  autoplay muted loop playsinline poster="@img/showreel/showreel-preview.webp" loading="lazy">
                         <source src="static/showreel/showreel.mp4" type="video/mp4">
                     </video> -->
                 </div>
@@ -39,13 +39,12 @@
                     <h1 class="about__title title-big">
                             <span class="web">Разработка   
                                 <em>
-                                    <span class="cube-anim" data-delay="3000">
-                                        <span class="cube-anim__opacity"></span>
-                                        <span class="cube-anim__cube cube">
-                                            <span class="cube__face cube__face-front">надежных</span>
-                                            <span class="cube__face cube__face-bottom">наглядных</span>
-                                            <span class="cube__face cube__face-back">логичных</span>
-                                            <span class="cube__face cube__face-top">стильных</span>
+                                    <span class="slide-up-anim" data-delay="3000">
+                                        <span class="slide-up__body swiper-wrapper">
+                                            <span class="slide-up__item swiper-slide">надежных</span>
+                                            <span class="slide-up__item swiper-slide">наглядных</span>
+                                            <span class="slide-up__item swiper-slide">логичных</span>
+                                            <span class="slide-up__item swiper-slide">стильных</span>
                                         </span>
                                     </span>
                                 </em> 
@@ -57,7 +56,7 @@
                             Удержим интерес до последнего слайда. 
                             <br>Спикеры будут выглядеть убедительно, а аудитория слушать и понимать
                     </p>
-                    <div class="about__button-row">
+                    <div class="about__button-row about__button-row-fixed" data-da=".wrapper, 550, last">
                         <div class="about__button button button-slide">
                             <span class="slide-anim" data-content="Получить расчет"></span>
                         </div>
@@ -73,13 +72,10 @@
                             </a>
                         </div>
                     </div>
-                    <div class="about__close-connect about__connect-btn">
-                        <img loading="lazy" src="@img/about/btn-connect-close.svg" alt="">
-                    </div>
                 </div>
             </div>
             @@include('html/direct-site.html')
-            <div class="leaders _two">
+            <div class="leaders section-p-b _two">
                 <div class="leaders__container">
                     <div class="leaders__head-text head-text text-blur-anim">
                         <h2 class="leaders__title title-big">
@@ -91,57 +87,57 @@
                         </p>
                     </div>
             
-                    <div class="leaders__running running reverse" data-speed="30">
-                        <div class="leaders__running-fon-one"></div>
-                        <div class="leaders__running-fon-two"></div>
-                        <div class="leaders__running-row running__row">
-                            <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img1.png" alt="">
-                            </div>
-                            <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img2.png" alt="">
-                            </div>
-                            <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img3.png" alt="">
-                            </div>
-                            <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img4.png" alt="">
-                            </div>
-                            <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img5.png" alt="">
-                            </div>
-                            <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img6.png" alt="">
-                            </div>
-                        </div>
-                    </div> 
                     <div class="leaders__running running" data-speed="30">
                         <div class="leaders__running-fon-one"></div>
                         <div class="leaders__running-fon-two"></div>
                         <div class="leaders__running-row running__row">
                             <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img1.png" alt="">
+                                <img loading="lazy" src="@img/running-img1.webp" alt="">
                             </div>
                             <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img2.png" alt="">
+                                <img loading="lazy" src="@img/running-img2.webp" alt="">
                             </div>
                             <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img3.png" alt="">
+                                <img loading="lazy" src="@img/running-img3.webp" alt="">
                             </div>
                             <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img4.png" alt="">
+                                <img loading="lazy" src="@img/running-img4.webp" alt="">
                             </div>
                             <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img5.png" alt="">
+                                <img loading="lazy" src="@img/running-img5.webp" alt="">
                             </div>
                             <div class="leaders__running-item running__item">
-                                <img loading="lazy" src="@img/running-img6.png" alt="">
+                                <img loading="lazy" src="@img/running-img6.webp" alt="">
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="leaders__running running reverse" data-speed="30">
+                        <div class="leaders__running-fon-one"></div>
+                        <div class="leaders__running-fon-two"></div>
+                        <div class="leaders__running-row running__row">
+                            <div class="leaders__running-item running__item">
+                                <img loading="lazy" src="@img/running-img1.webp" alt="">
+                            </div>
+                            <div class="leaders__running-item running__item">
+                                <img loading="lazy" src="@img/running-img2.webp" alt="">
+                            </div>
+                            <div class="leaders__running-item running__item">
+                                <img loading="lazy" src="@img/running-img3.webp" alt="">
+                            </div>
+                            <div class="leaders__running-item running__item">
+                                <img loading="lazy" src="@img/running-img4.webp" alt="">
+                            </div>
+                            <div class="leaders__running-item running__item">
+                                <img loading="lazy" src="@img/running-img5.webp" alt="">
+                            </div>
+                            <div class="leaders__running-item running__item">
+                                <img loading="lazy" src="@img/running-img6.webp" alt="">
                             </div>
                         </div>
                     </div> 
                 </div>
             </div>
-            <div class="direct-port">
+            <div class="direct-port section-p-b fon-one">
                 <div class="direct-port__container">
                     <div class="direct-port__menu" style="--max-width-port-menu: 715px" data-max-width="990px">
                         <div class="direct-port__menu-item button-slide _active">
@@ -170,9 +166,9 @@
                         </div>
                     </div>
                     <div class="direct-port__row">
-                        <a href="#" class="direct-port__item" data-cursor-hover='Смотреть <em>кейс</em>'>
-                            <div class="direct-port__item-img" data-cursor-white>
-                                <img loading="lazy" src="@img/img-show.png" alt="">
+                        <a href="#" class="direct-port__item">
+                            <div class="direct-port__item-img" data-cursor-hover='Смотреть <em>кейс</em>' data-cursor-white>
+                                <img loading="lazy" src="@img/img-show.webp" alt="">
                             </div>
                             <div class="direct-port__item-body">
                                 <h3>Геоспецстрой</h3>
@@ -182,9 +178,9 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="direct-port__item" data-cursor-hover='Смотреть <em>кейс</em>'>
-                            <div class="direct-port__item-img" data-cursor-white>
-                                <img loading="lazy" src="@img/img-show.png" alt="">
+                        <a href="#" class="direct-port__item">
+                            <div class="direct-port__item-img" data-cursor-hover='Смотреть <em>кейс</em>' data-cursor-white>
+                                <img loading="lazy" src="@img/img-show.webp" alt="">
                             </div>
                             <div class="direct-port__item-body">
                                 <h3>Геоспецстрой</h3>
@@ -194,9 +190,9 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="direct-port__item" data-cursor-hover='Смотреть <em>кейс</em>'>
-                            <div class="direct-port__item-img" data-cursor-white>
-                                <img loading="lazy" src="@img/img-show.png" alt="">
+                        <a href="#" class="direct-port__item">
+                            <div class="direct-port__item-img" data-cursor-hover='Смотреть <em>кейс</em>' data-cursor-white>
+                                <img loading="lazy" src="@img/img-show.webp" alt="">
                             </div>
                             <div class="direct-port__item-body">
                                 <h3>Геоспецстрой</h3>
@@ -206,9 +202,9 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="direct-port__item" data-cursor-hover='Смотреть <em>кейс</em>'>
-                            <div class="direct-port__item-img" data-cursor-white>
-                                <img loading="lazy" src="@img/img-show.png" alt="">
+                        <a href="#" class="direct-port__item">
+                            <div class="direct-port__item-img" data-cursor-hover='Смотреть <em>кейс</em>' data-cursor-white>
+                                <img loading="lazy" src="@img/img-show.webp" alt="">
                             </div>
                             <div class="direct-port__item-body">
                                 <h3>Геоспецстрой</h3>
@@ -220,8 +216,8 @@
                         </a>
                     </div>
                     <div class="direct-port__button-row">
-                        <a href="#" class="direct-port__button button-circe">
-                            Смотреть <br/>еще
+                        <a href="#" class="direct-port__button button-circe str">
+                            <span>Смотреть <br/>еще</span>
             
                             <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white" />
@@ -232,7 +228,7 @@
             </div>
             @@include('html/connect.html')
             @@include('html/desing-site/expert-site.html')
-            <div class="drawing">
+            <div class="drawing section-p-b">
                 <div class="drawing__container">
                     <div class="drawing__left">
                         <div class="drawing__number">
@@ -242,7 +238,7 @@
                         <div class="drawing__line"></div>
                     </div>
                     <div class="drawing__right">
-                        <h2 class="drawing__title title-min">
+                        <h2 class="drawing__title title-min text-blur-anim" data-delay-desktop="1100">
                             Кто-то хорошо рисует, кто-то убедительно пишет, мы делаем все вместе, но с глубоким погружением в компанию и бизнес-процессы
                         </h2>
                         <div class="drawing__right-bot">
@@ -252,7 +248,7 @@
                                 в своих нишах
                             </div>
                             <div class="drawing__user user-drawing" data-da=".drawing__right, 850, first">
-                                <img loading="lazy" src="@img/drawing/user-drawing.png" alt="" class="user-drawing__img">
+                                <img loading="lazy" src="@img/drawing/user-drawing.webp" alt="" class="user-drawing__img">
                                 <div class="user-drawing__body">
                                     <h3 class="user-drawing__name">Николай Мостовой</h3>
                                     <p class="user-drawing__text">Основатель</p>
@@ -268,7 +264,9 @@
             </div>
             @@include('html/desing-site/expert-site-link.html')
             @@include('html/stages.html')
-            <div class="direct-site _two">
+            @@include('html/desing-site/advant.html')
+            
+            <div class="direct-site section-p-b _two">
                 <div class="direct-site__container">
                     <div class="direct-site__head head-text text-blur-anim">
                         <h2 class="direct-site__title title-big">

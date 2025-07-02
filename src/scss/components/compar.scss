@@ -1,0 +1,134 @@
+/* Основные стили контейнера */
+.compar-img {
+    position: relative;
+    width: 100%;
+    padding-top: 0;
+    border: none;
+    overflow: hidden;
+
+    @media(max-width:550px){
+        margin-left: rem(-20);
+        margin-right: rem(-20);
+
+        width: calc(100% + 2.5rem);
+    }
+
+  /* Обертка для изображений */
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    // @include adaptiveClamp(height, 456, 407);
+    aspect-ratio: 16 / 9;
+    padding-top: 56.25%;
+  }
+  
+  /* Стили для изображений */
+  &__img-bef,
+  &__img-af {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  &__img-af {
+    clip-path: inset(0 0 0 50%); /* Начальное положение разделения */
+    // border-left: 1px solid rgb(255, 255, 255);
+
+  }
+  
+  /* Слайдер (прозрачный, но активный) */
+  &__slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    z-index: 3;
+    cursor: ew-resize;
+  }
+  
+  /* Кнопка слайдера */
+  &__slider-button {
+  
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    width: rem(2);
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.15);
+    // background: #fff;
+
+    z-index: 2;
+    
+    pointer-events: none; /* Чтобы не перехватывала события мыши */
+
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: rem(74.5);
+        height: rem(74.5);
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: "";
+        background: url("data:image/svg+xml,%3Csvg width='21' height='14' viewBox='0 0 21 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.9804 1.2931C13.0811 1.19157 13.2009 1.11097 13.333 1.05597C13.465 1.00097 13.6066 0.972656 13.7496 0.972656C13.8926 0.972656 14.0342 1.00097 14.1662 1.05597C14.2982 1.11097 14.418 1.19157 14.5187 1.2931L19.9354 6.70977C20.037 6.81048 20.1175 6.9303 20.1725 7.06231C20.2275 7.19433 20.2559 7.33593 20.2559 7.47894C20.2559 7.62195 20.2275 7.76355 20.1725 7.89556C20.1175 8.02758 20.037 8.1474 19.9354 8.24811L14.5187 13.6648C14.418 13.7663 14.2982 13.8469 14.1662 13.9019C14.0342 13.9569 13.8926 13.9852 13.7496 13.9852C13.6066 13.9852 13.465 13.9569 13.333 13.9019C13.2009 13.8469 13.0811 13.7663 12.9804 13.6648C12.8789 13.5641 12.7983 13.4442 12.7433 13.3122C12.6883 13.1802 12.66 13.0386 12.66 12.8956C12.66 12.7526 12.6883 12.611 12.7433 12.479C12.7983 12.347 12.8789 12.2271 12.9804 12.1264L17.6387 7.47894L12.9804 2.83144C12.8789 2.73073 12.7983 2.61091 12.7433 2.4789C12.6883 2.34688 12.66 2.20528 12.66 2.06227C12.66 1.91926 12.6883 1.77766 12.7433 1.64565C12.7983 1.51363 12.8789 1.39381 12.9804 1.2931ZM1.06375 6.70977L6.48041 1.2931C6.58142 1.1921 6.70133 1.11197 6.83331 1.05731C6.96528 1.00264 7.10673 0.974505 7.24958 0.974505C7.53807 0.974505 7.81475 1.08911 8.01875 1.2931C8.11975 1.39411 8.19988 1.51403 8.25454 1.646C8.30921 1.77798 8.33734 1.91942 8.33734 2.06227C8.33734 2.35076 8.22274 2.62744 8.01875 2.83144L3.36041 7.47894L8.01875 12.1264C8.12029 12.2271 8.20088 12.347 8.25588 12.479C8.31088 12.611 8.33919 12.7526 8.33919 12.8956C8.33919 13.0386 8.31088 13.1802 8.25588 13.3122C8.20088 13.4442 8.12029 13.5641 8.01875 13.6648C7.91804 13.7663 7.79822 13.8469 7.6662 13.9019C7.53419 13.9569 7.39259 13.9852 7.24958 13.9852C7.10657 13.9852 6.96497 13.9569 6.83295 13.9019C6.70094 13.8469 6.58112 13.7663 6.48041 13.6648L1.06375 8.24811C0.962208 8.1474 0.881611 8.02758 0.826612 7.89556C0.771612 7.76355 0.743298 7.62195 0.743298 7.47894C0.743298 7.33593 0.771612 7.19433 0.826612 7.06231C0.881611 6.9303 0.962208 6.81048 1.06375 6.70977Z' fill='white'/%3E%3C/svg%3E") no-repeat center;
+        z-index: 1;
+        width: rem(21);
+        height: rem(14);
+    }
+  }
+
+  &__mark {
+    position: absolute;
+    @include adaptiveClamp(bottom, 39.35, 36);
+    display: inline-block;
+    @include adaptiveClamp(font-size, 14, 12);
+    background: var(--bs-mark-color);
+    border-radius: 7px;
+    border: 1px solid var(--bs-border-color);
+    padding-left: rem(19);
+    padding-right: rem(19);
+    line-height: 1;
+    @include adaptiveClamp(padding-top, 12.5, 8);
+    @include adaptiveClamp(padding-bottom, 12.5, 8);
+    color: var(--white);
+    z-index: 2;
+    pointer-events: none;
+    font-weight: 600;
+    transition: color 0.3s ease  0s, background-color 0.3s ease  0s, opacity 0.3s ease  0s, border-color 0.3s ease  0s;
+    &.before {
+        @include adaptiveClamp(left, 30, 20);
+
+        ._bef & {
+            opacity: 0;
+        }
+    }
+    &.after {
+        @include adaptiveClamp(right, 30, 20);
+
+        ._af & {
+            opacity: 0;
+        }
+    }
+  }
+
+}

@@ -1,9 +1,15 @@
 .drawing {
-    @include adaptiveClamp(padding-top, 285, 171);
+    position: relative;
+    // @include adaptiveClamp(padding-top, 285, 171);
+
+
+    
     &__container {
+        position: relative;
         display: flex;
         align-items: start;
         gap: rem(42);
+        max-width: rem(1402);
         @media(max-width:1200px){
             gap: rem(32);
         }
@@ -11,6 +17,56 @@
             flex-direction: column-reverse;
             gap: rem(52);
         }
+
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: rem(399);
+            height: rem(298.4);
+            background: linear-gradient(223deg, #fb0 0%, #ff4533 38.5%, #ff4533 67%);
+            // top:rem(214);
+            top: rem(-71);
+            // top: 25%;
+            right: rem(-210);
+            transform: rotate(-57.54deg);
+            filter: blur(200px);
+            border-radius: 100%;
+            z-index: -1;
+           
+    
+            .blue-page & {
+                background: linear-gradient(270deg, #06f 38.5%, #2600ff 49%, #06f 67%);
+            }
+
+            @media(max-width:650px){
+                display: none;
+            }
+        }
+        &::after {
+            position: absolute;
+            content: '';
+            width: rem(399);
+            @include adaptiveClamp(width, 399, 199);
+            @include adaptiveClamp(height, 684, 484);
+            background:linear-gradient(270deg, #ff4533 38.5%, #fb0 49%, #ff4533 67%);
+            top:rem(10);
+            left: rem(-259);
+            border-radius: 100%;
+            transform: rotate(-57.54deg);
+            z-index: -1;
+            filter: blur(50px);
+            opacity: 0.9;
+
+            .blue-page & {
+                background: linear-gradient(270deg, #06f 38.5%, #0004ff 49%, #06f 67%);
+            }
+
+            @media(max-width:950px){
+                display: none;
+            }
+        }
+    
     }
 
     &__left {
@@ -25,6 +81,7 @@
     }
 
     &__number {
+        // width: 100%;
     }
 
     &__number-figure {
@@ -38,7 +95,9 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-      
+        width: 100%;
+
+        min-width: rem(294);
         &::after {
             display: inline;
             content: '+';
@@ -54,6 +113,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: var(--white-o-b);
+            margin-left: auto;
         }
 
         .blue-page & {
@@ -65,12 +125,14 @@
 
         @media(max-width:1200px){
             font-size: rem(140);
+            min-width: rem(205);
             &:after {
                 font-size: rem(56);
             }
 
             @media(max-width:850px){
                 font-size: rem(200);
+                min-width: rem(294);
                 &:after {
                     font-size: rem(80);
                 }
@@ -95,11 +157,35 @@
     }
 
     &__line {
+        position: relative;
         width: rem(169);
         height: rem(1);
-        background: var(--bs-title-mark-color);
         margin-top: rem(20);
 
+        &::before {
+            position: absolute;
+            content: '';
+            width: 0%;
+            height: 100%;
+            background: var(--bs-title-mark-color);
+            top:0;
+            left: 0;
+            transition: background-color 0.3s ease  0s, width 0.7s ease  1s;
+
+            ._start & {
+                width: 100%;
+            }
+
+            @media(max-width:900px){
+                transition: background-color 0.3s ease  0s, height 0.7s ease  0s;
+                width: 100%;
+                height: 0;
+
+                ._start & {
+                    height: 100%;
+                }
+            }
+        }
         @media(max-width:1250px){
             width: rem(119);
         }
@@ -132,8 +218,9 @@
 
 .user-drawing {
     display: flex;
-    gap: rem(17);
+    gap: rem(16);
     margin-top: rem(40);
+    
     @media(max-width:850px){
         margin-top: 0;
         margin-bottom: rem(40);
@@ -143,7 +230,7 @@
         height: rem(86);
         border-radius: rem(10);
         border: 1px solid #303030;
-        
+        overflow: hidden;
         .white-theme & {
             border-color: var(--bs-border-color);
         }
@@ -192,9 +279,6 @@
         display: flex;
         gap: rem(4);
 
-        @media(max-width:550px){
-            display: none;
-        }
     }
 
     &__link {

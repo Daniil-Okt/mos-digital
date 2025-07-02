@@ -46,9 +46,12 @@
         @include adaptiveClamp(gap, 64.28, 0);
         @media(max-width:950px){
             flex-direction: column;
-            @include adaptiveClamp(gap, 64.28, 64);
+            @include adaptiveClamp(gap, 65.28, 64);
         }
-       
+        @media(max-width:390px){
+            gap: rem(64);
+        }
+    
     }
     &__item-left {
         

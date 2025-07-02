@@ -22,7 +22,7 @@
 * Библиотеки
 * раскомментировать для использования
 */
-// @import 'libs/aos';
+@import 'libs/aos';
 @import 'libs/swiper';
 @import 'libs/running';
 
@@ -60,9 +60,17 @@
 @import 'components/drawing';
 @import 'components/leaders';
 @import 'components/direct-port';
+@import 'components/compar';
 @import 'components/stages';
-@import 'components/quest';
+@import 'components/choice';
+@import 'components/team';
+@import 'components/achiev';
+@import 'components/apply';
+@import 'components/service-pr';
+@import 'components/format';
 
+
+@import 'components/quest';
 
 @import 'components/footer';
 
@@ -74,12 +82,26 @@
 @import 'components/warran-site';
 @import 'components/repack';
 @import 'components/reviews';
+@import 'components/advant';
+
 
 
 //case-page
 @import 'components/case-page/about-case';
 @import 'components/case-page/desc-case';
 @import 'components/case-page/other-case';
+
+
+
+//pers-show
+@import 'components/show/countries';
+@import 'components/show/gpt';
+
+@import 'components/show/firma';
+@import 'components/show/launch';
+@import 'components/show/partners';
+
+
 
 
 

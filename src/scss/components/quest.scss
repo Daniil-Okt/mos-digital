@@ -1,13 +1,15 @@
 .quest {
-    @include adaptiveClamp(padding-top, 240, 80);
+    // @include adaptiveClamp(padding-top, 240, 80);
 
     &__container {
     }
 
     &__head {
+        @include adaptiveClamp(margin-bottom, 85, 40);
     }
 
     &__title {
+        margin-bottom: 0;
     }
 
     &__row {
@@ -22,10 +24,7 @@
     &__item {
     }
 }
-.head-text {
-}
-.title-big {
-}
+
 .item-quest {
     position: relative;
     padding-top: rem(27);
@@ -69,7 +68,7 @@
         border-radius: 50%;
         opacity: 0; 
         transform: translateY(50%) rotate(-57.54deg);
-        transition: opacity 0.8s ease  0s, transform 0.8s ease  0s;
+        transition: opacity 0s ease  0s, transform 0s ease  0s;
 
         .blue-page & {
             background: linear-gradient(225deg, #06f 38.1%, #0004ff 82.18%);
@@ -95,6 +94,7 @@
         &::before {
             opacity: 0.9;
             transform: translateY(0) rotate(-57.54deg);
+            transition: opacity 0.8s ease  0s, transform 0.8s ease  0s;
         }
     }
     
@@ -107,6 +107,7 @@
         }
         @media(max-width:800px){
             flex-direction: column;
+            gap: 0;
         }
     }
 
@@ -139,13 +140,16 @@
         flex: auto;
         gap: rem(40);
         padding-top: rem(0);
-        transition: padding-top 0.6s ease  0s;
+        padding-top: rem(20);
+        transition: margin-bottom 0.5s ease  0s, opacity 0.5s ease  0s;
         overflow: hidden;
-        height: 0;
-
+        opacity: 0;
+        pointer-events: none;
         ._active & {
             padding-top: rem(20);
-            height: max-content;
+            // height: max-content;
+            opacity: 1;
+            pointer-events: all;
         }
 
         @media(max-width:890px){
@@ -179,19 +183,21 @@
     }
 
     &__right {
+
         position: relative;
-        display: none;
-        overflow: hidden;
-        animation: opacity 1.5s forwards;
+        // display: none;
+        // overflow: hidden;
+        // animation: opacity 1.5s forwards;
         transition: max-height 0.5s ease-in  0s;
-        height: 0;
         min-width: rem(308);
         margin-left: rem(30);
         z-index: 1;
-
+        transition: margin-bottom 0.5s ease  0s, opacity 0.5s ease  0s;
+        opacity: 0;
+        pointer-events: none;
         ._active & {
-            display: block;
-            height: max-content;
+            opacity: 1;
+            pointer-events: all;
         }
 
         @media(max-width:1024px){
@@ -204,6 +210,8 @@
             width: calc(100% + 2.5625rem);
             margin-right: rem(-41);
             margin-bottom: rem(-13);
+            padding-top: rem(34);
+            opacity: 1;
         }
     }
 
@@ -295,7 +303,7 @@
         width: rem(18);
         height: rem(17);
         cursor: pointer;
-        
+        transition: transform 0.5s ease  0s;
         svg {
             transition: margin-bottom 0.3s ease  0s;
             margin-bottom: rem(-7);
@@ -304,9 +312,16 @@
             path {
                 transition: all 0.3s ease  0s;
             }
+
+            .white-theme & {
+                path {
+                    fill: rgba(59, 59, 59, 0.4);
+                }
+            }
         }
 
         ._active & {
+            transform: rotate(90deg);
             svg {
                 margin-bottom: 0;
                 path {
@@ -315,10 +330,4 @@
             }
         }
     }
-}
-.button {
-}
-.button-slide {
-}
-.slide-anim {
 }

@@ -64,7 +64,7 @@
 
   &__logo {
     @include adaptiveClamp(font-size, 20, 16);
-    font-family: 'Benzin', sans-serif;
+    font-family: var(--font-logo);
     margin-right: auto;
     color: var(--white-black-color);
     line-height: 120%;

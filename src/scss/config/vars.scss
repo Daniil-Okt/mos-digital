@@ -10,6 +10,7 @@ $footerHeight: 100;
 
 :root {
   --bs-font-family: 'InterTight', sans-serif; // Семейство шрифта по умолчанию
+  --font-logo: 'Benzin', sans-serif;
   --bs-font-size: 16px; // Размер шрифта по умолчанию
   --bs-font-weight: 400; // Жирность шрифта по умолчанию
   --bs-line-height: 125%; // Базовая высота шрифта
@@ -22,10 +23,12 @@ $footerHeight: 100;
   --bs-title-mark-color: #ff4533;
   --bs-border-color:rgba(255, 255, 255, 0.1);
   --bs-border-color-two:rgba(255, 255, 255, 0.07);
+  --bs-border-img-color: #212121;
 
   --bs-button-text-color: rgb(207, 207, 207);
   --bs-button-hover-color: #ff3320;
   --body-color: #0c0e11;
+  --body-card-color: #101214;
   --white: #fff;
   --blue: #0090ff;
   --orange: #ff4533;
@@ -50,10 +53,12 @@ html.white-theme {
   --bs-title-color: #0d0d0d;
   --bs-border-color: #dfdfdf;
   --bs-border-color-two: #dfdfdf;
+  --bs-border-img-color: rgba(25, 27, 33, 0.1);
   --body-color: #fff;
   --white-o-b: #ff4533;
 
   --white-black-color: #0d0d0d;
+  --body-card-color: #fafafa;
 
   &.blue-page {
     --white-o-b: #06f;

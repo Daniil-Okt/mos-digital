@@ -1,5 +1,5 @@
 .connect {
-    @include adaptiveClamp(margin-top, 190, 177);
+    // @include adaptiveClamp(margin-top, 190, 177);
 
     @media(max-width:550px){
         @include adaptiveClamp(padding-top, 100, 20);

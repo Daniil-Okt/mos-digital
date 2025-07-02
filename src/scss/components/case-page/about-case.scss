@@ -1,6 +1,6 @@
 .about-case {
     position: relative;
-    @include adaptiveClamp(padding-top, 135, 100);
+    
     @include adaptiveClamp(padding-bottom, 135.78, 93);
     overflow: hidden;
     
@@ -40,10 +40,6 @@
     //     }
     // }
 
-    @media(max-width:650px){
-        @include adaptiveClamp(padding-top, 550, 441.8);
-    }
-
     &__fon {
         position: absolute;
         top: 0;
@@ -53,11 +49,25 @@
         object-fit: cover;
     }
     &__container {
+        position: relative;
+        z-index: 2;
+
+        @include adaptiveClamp(padding-top, 135, 100);
+
+        @media(max-width:650px){
+            @include adaptiveClamp(padding-top, 550, 442);
+        }
+
+        @media(max-width:390px){
+            padding-top: rem(442);
+        }
     }
 
     &__body {
         position: relative;
         z-index: 2;
+
+       
     }
 
     &__crumbs {
@@ -113,6 +123,17 @@
     &.white-block .direct-port__item-tag{
         border-color: #dfdfdf;
         color: rgba(59, 59, 59, 0.6);
+    }
+
+
+    .about__button-row {
+        margin-top: rem(25);
+        @media(min-width:551px){
+            display: none;
+        }
+    }
+    .about__close-connect._active {
+        right: rem(20);
     }
 }
 

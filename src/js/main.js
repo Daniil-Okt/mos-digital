@@ -6,12 +6,13 @@
 
  * Если мы хотим добавить модуль следует его раскомментировать
  */
-// import MousePRLX from './libs/parallaxMouse'
-
+import MousePRLX from './libs/parallax-mouse'
+import AOS from 'aos'
 
 import BaseHelpers from './helpers/base-helpers';
 import PopupManager from './modules/popup-manager';
 import BurgerMenu from './modules/burger-menu';
+
 
 import { btnTheme } from './modules/btnTheme';
 import { cursor } from './modules/cursor';
@@ -19,13 +20,26 @@ import { autoplayVideo } from './modules/autoplayVideo';
 import { smoothScroll } from './modules/smoothScroll';
 import { CubeAnimator } from './modules/cubeAnimation';
 import { showreelAnim } from './modules/showreelAnim';
-import { contentBtn } from './modules/connectBtn';
 import { runningAnit } from './modules/running';
 import focusInput from './modules/focusInput.js';
 import { validForm } from './modules/validFrom.js';
 import { qualServLineAnim } from './modules/qualServLineAnim.js';
 import { initSlider } from './modules/initSlider.js';
 import { textBlurAnim } from './modules/textBlurAnim.js';
+import { gptAnimation } from './modules/gptAnimation.js';
+import { comparInit } from './modules/compar.js';
+import { questInit } from './modules/quest.js';
+import { headerWhiteBlack } from './modules/headerWhiteBlack.js';
+import { reviewsLike } from './modules/reviewsLike.js';
+import { numberDrawingAnim } from './modules/numberDrawingAnim.js';
+import { videoOpen } from './modules/videoOpen.js';
+import { fixedBtnAbout } from './modules/fixedBtnAbout.js';
+import { connectBtn } from './modules/connectBtn.js';
+import { fixVHUnitsOnMobile } from './modules/fixVHUnitsOnMobile.js';
+import { simpleParallaxInit } from './libs/simple-parallax.js';
+
+
+// import { SimpleParallax } from './libs/simple-parallax.js';
 // import Tabs from './modules/tabs';
 // import Accordion from './modules/accordion';
 
@@ -47,7 +61,7 @@ BaseHelpers.headerFixed();
  * На обертку(.popup) окна добавь атрибут '[data-close-overlay]'
  * На кнопку для закрытия окна добавь класс '.button-close'
  * */
-// new PopupManager();
+new PopupManager();
 
 /** ===================================================================================
  *  Модуль для работы с меню (Бургер)
@@ -55,10 +69,24 @@ BaseHelpers.headerFixed();
 new BurgerMenu().init();
 
 
+simpleParallaxInit()
+
 // Скролл с инерцией
-if (window.innerWidth > 1024) {
-	// smoothScroll()
-}
+// if (window.innerWidth > 1024) {
+// 	smoothScroll()
+// }
+// smoothScroll()
+
+
+// // Вариант 2 - с явным указанием .default
+// import { simpleParallax } from 'simple-parallax-js';
+
+// // Вариант 3 - импорт из dist-файла
+// import SimpleParallax from 'simple-parallax-js/dist/simpleParallax.min';
+
+
+// // Вариант 4 - через require (если используете CommonJS)
+// const SimpleParallax = require('simple-parallax-js').default;
 
 
 
@@ -67,12 +95,23 @@ if (window.innerWidth > 1024) {
  *  Библиотека для анимаций
  *  документация: https://michalsnik.github.io/aos
  * */
-// AOS.init();
+
+window.addEventListener('load', () => {
+	setTimeout(() => {
+		AOS.init();
+	}, 10);
+})
 
 /** ===================================================================================
  * Параллакс мышей
  * */
-// new MousePRLX();
+new MousePRLX();
+
+/** ===================================================================================
+ * Параллакс блоков
+ * */
+
+// parallaxInit()
 
 
 /** ===================================================================================
@@ -145,7 +184,8 @@ maskTel()
 
 /* Инициализация  swiper =================================================================================
 */
-initSlider()
+document.addEventListener('DOMContentLoaded', initSlider());
+
 
 
 /* Валидация формы ======================================================================================
@@ -193,13 +233,22 @@ focusInput()
 	* При клике на элемент, у всех элементов класс удаляется
 */
 import { toggleActiveClass } from './modules/index.js'
+import { textWordAnim } from './libs/textWordAnim.js';
+
+
+
 
 
 const directPortMenuItems = document.querySelectorAll('.direct-port__menu-item');
 toggleActiveClass(directPortMenuItems)
 
-const itemQuests = document.querySelectorAll('.item-quest');
-toggleActiveClass(itemQuests)
+// const itemQuests = document.querySelectorAll('.item-quest');
+// toggleActiveClass(itemQuests)
+
+// открытие/закрытие вопросов
+document.addEventListener('DOMContentLoaded', questInit());
+
+
 
 //кнопка переключения темы
 btnTheme()
@@ -210,24 +259,26 @@ if (window.innerWidth > 1024) {
 }
 
 //анимация текста blur
-textBlurAnim()
+window.addEventListener('load', textBlurAnim())
+
+
 
 //автозапус видео на айфонах
-autoplayVideo()
+window.addEventListener('load', autoplayVideo())
+
+
 
 
 //about ============================
-//анимация about
-showreelAnim()
 
-contentBtn()
+connectBtn()
 
 //анимация куба
-if (window.innerWidth > 550) {
-	document.querySelectorAll('.cube-anim').forEach(el => {
-		new CubeAnimator(el);
-	});
-}
+// if (window.innerWidth > 550) {
+// 	document.querySelectorAll('.cube-anim').forEach(el => {
+// 		new CubeAnimator(el);
+// 	});
+// }
 
 
 
@@ -236,43 +287,117 @@ window.addEventListener('load', function() {
     qualServLineAnim()
 });
 
+//анимация gpt
+gptAnimation()
 
-document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('header');
-    
-    // Конфигурация: классы блоков → классы для header
-    const blockConfig = {
-        '.black-block': 'header-black-block',
-        '.white-block': 'header-white-block'
-        // Добавьте другие блоки по необходимости
-    };
+//белый/черны header относительно блоков
+headerWhiteBlack()
 
-    // Проверяем, находится ли центр header над блоками
-    function checkHeaderCenterOverBlocks() {
-        const headerRect = header.getBoundingClientRect();
-        const headerCenterY = headerRect.top + (headerRect.height / 2); // Y-координата центра header
 
-        Object.entries(blockConfig).forEach(([blockSelector, headerClass]) => {
-            const blocks = document.querySelectorAll(blockSelector);
-            let isCenterOverBlock = false;
+//блоки сравнения изображений
+comparInit()
 
-            blocks.forEach(block => {
-                const blockRect = block.getBoundingClientRect();
-                
-                // Проверяем, попадает ли центр header в границы блока
-                if (headerCenterY >= blockRect.top && headerCenterY <= blockRect.bottom) {
-                    isCenterOverBlock = true;
-                }
-            });
+//лайк отзывов
+reviewsLike()
 
-            header.classList.toggle(headerClass, isCenterOverBlock);
-        });
-    }
+//анимация цифр +
+window.addEventListener('load', numberDrawingAnim())
 
-    // Запускаем проверку при скролле и ресайзе
-    window.addEventListener('scroll', checkHeaderCenterOverBlocks);
-    window.addEventListener('resize', checkHeaderCenterOverBlocks);
 
-    // Первоначальная проверка
-    checkHeaderCenterOverBlocks();
+//анимация шоурила
+document.addEventListener('DOMContentLoaded', showreelAnim());
+
+
+//откртие видео
+document.addEventListener('DOMContentLoaded', videoOpen());
+
+
+//скрыть/показать фиксированные кнопки
+document.addEventListener('DOMContentLoaded', fixedBtnAbout());
+
+
+
+
+
+
+// vh на мобилках
+window.addEventListener('load', fixVHUnitsOnMobile);
+
+let lastWidth = window.innerWidth;
+window.addEventListener('resize', () => {
+    const currentWidth = window.innerWidth;
+    if (currentWidth === lastWidth) return;
+    lastWidth = currentWidth;
+    fixVHUnitsOnMobile();
 });
+
+
+
+
+//анимация слов
+
+document.addEventListener('load', textWordAnim());
+
+
+
+
+
+function checkElementsInCenter() {
+	// Работает только на экранах ≤ 768px
+	if (window.innerWidth > 768) {
+	  // У всех элементов снимаем класс, если ширина больше 768px
+	  document.querySelectorAll('[data-ctr-scr]').forEach(el => {
+		el.classList.remove('_scr-activ');
+	  });
+	  return;
+	}
+  
+	const elements = document.querySelectorAll('[data-ctr-scr]');
+	if (elements.length === 0) return;
+  
+	let activeElement = null;
+	const windowHeight = window.innerHeight;
+	const centerThreshold = windowHeight / 2;
+  
+	// Определяем зону "центра" (например, ±30% от центра экрана)
+	const centerZoneMin = centerThreshold * 0.7; // 30% выше центра
+	const centerZoneMax = centerThreshold * 1.3; // 30% ниже центра
+  
+	elements.forEach(element => {
+	  const rect = element.getBoundingClientRect();
+	  const elementCenter = (rect.top + rect.bottom) / 2;
+  
+	  // Если центр элемента попадает в зону центра экрана
+	  if (elementCenter >= centerZoneMin && elementCenter <= centerZoneMax) {
+		// Если ещё не нашли активный элемент или этот элемент ближе к центру
+		if (!activeElement || 
+			Math.abs(elementCenter - centerThreshold) < 
+			Math.abs((activeElement.getBoundingClientRect().top + activeElement.getBoundingClientRect().bottom) / 2 - centerThreshold)
+		) {
+		  activeElement = element;
+		}
+	  }
+	});
+  
+	// У всех убираем класс, затем добавляем только активному (если он есть)
+	elements.forEach(element => element.classList.remove('_scr-activ'));
+	if (activeElement) activeElement.classList.add('_scr-activ');
+  }
+  
+  // Запускаем проверку при загрузке, скролле и ресайзе
+  window.addEventListener('load', checkElementsInCenter);
+  window.addEventListener('scroll', checkElementsInCenter);
+  window.addEventListener('resize', checkElementsInCenter);
+  
+  // Оптимизация: Throttle для scroll/resize
+  let isThrottled = false;
+  function throttleCheck() {
+	if (!isThrottled) {
+	  checkElementsInCenter();
+	  isThrottled = true;
+	  setTimeout(() => isThrottled = false, 100);
+	}
+  }
+  
+  window.addEventListener('scroll', throttleCheck);
+  window.addEventListener('resize', throttleCheck);

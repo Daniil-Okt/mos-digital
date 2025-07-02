@@ -1,16 +1,16 @@
-<div class="about">
+<div class="about fix-vh-mob">
     <div class="about__bg bg video">
         <picture>
             <source media="(max-width: 550px)" srcset="@img/about/@@srcBgMob">
             <img loading="lazy" src="@img/about/@@srcBg" alt="">
         </picture>
 
-        <!-- <video  autoplay muted loop playsinline poster="@img/showreel/showreel-preview.png" loading="lazy">
+        <!-- <video  autoplay muted loop playsinline poster="@img/showreel/showreel-preview.webp" loading="lazy">
             <source src="static/showreel/showreel.mp4" type="video/mp4">
         </video> -->
     </div>
     <div class="about__container">
-        <div class="about__running running" data-speed="50">
+        <div class="about__running running" data-speed="40">
             <div class="about__running-row running__row">
                 <div class="about__running-item running__item">
                     Информационные системы
@@ -29,13 +29,13 @@
         <h1 class="about__title title-big">
                 <span class="web">Создаем 
                     <em>
-                        <span class="cube-anim" data-delay="3000">
-                            <span class="cube-anim__opacity"></span>
-                            <span class="cube-anim__cube cube">
-                                <span class="cube__face cube__face-front">понятные</span>
-                                <span class="cube__face cube__face-bottom">наглядные</span>
-                                <span class="cube__face cube__face-back">логичные</span>
-                                <span class="cube__face cube__face-top">стильные</span>
+                        <span class="slide-up-anim" data-delay="3000">
+                            
+                            <span class="slide-up__body swiper-wrapper">
+                                <span class="slide-up__item swiper-slide">понятные</span>
+                                <span class="slide-up__item swiper-slide">наглядные</span>
+                                <span class="slide-up__item swiper-slide">логичные</span>
+                                <span class="slide-up__item swiper-slide">стильные</span>
                             </span>
                         </span>
                     </em> 
@@ -46,7 +46,7 @@
                 Удержим интерес до последнего слайда. 
                 <br>Спикеры будут выглядеть убедительно, а аудитория слушать и понимать
         </p>
-        <div class="about__button-row">
+        <div class="about__button-row about__button-row-fixed" data-da=".wrapper, 550, last">
             <div class="about__button button button-slide">
                 <span class="slide-anim" data-content="Получить расчет"></span>
             </div>
@@ -62,8 +62,8 @@
                 </a>
             </div>
         </div>
-        <div class="about__close-connect about__connect-btn">
+        <!-- <div class="about__close-connect about__connect-btn">
             <img loading="lazy" src="@img/about/btn-connect-close.svg" alt="">
-        </div>
+        </div> -->
     </div>
 </div>

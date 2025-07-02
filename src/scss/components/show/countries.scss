@@ -1,0 +1,69 @@
+.countries {
+    // @include adaptiveClamp(padding-top, 278, 107);
+
+    &__container {
+    }
+
+    &__head {
+        @include adaptiveClamp(margin-bottom, 34.3, 30);
+        
+    }
+    &__title.title-big {
+        max-width: rem(680);
+    }
+    &__text.bs-text {
+        max-width: rem(450);
+    }
+
+    &__item-row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        @include adaptiveClamp(gap, 10, 5);
+        @include adaptiveClamp(max-width, 400, 280);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include adaptiveClamp(gap, 9, 5.3);
+        @include adaptiveClamp(font-size, 18, 10);
+        color: var(--white-black-color);
+        @include adaptiveClamp(padding-top, 10, 8);
+        @include adaptiveClamp(padding-bottom, 10, 8);
+        @include adaptiveClamp(padding-right, 21, 12.5);
+        @include adaptiveClamp(padding-left, 21, 12.5);
+        @include adaptiveClamp(border-radius, 7, 5);
+        border: 1px solid var(--bs-border-color);
+        line-height: 1;
+        min-width: rem(76);
+
+        &:not(.countries__item-btn) {
+            &::before {
+                content: '';
+                width: rem(10);
+                @include adaptiveClamp(width, 14.06, 9);
+                @include adaptiveClamp(height, 14.06, 9);
+                background-color: currentColor; 
+                mask: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M14.1437 1.98413L9.33812 14.1834C9.26641 14.3657 9.139 14.5209 8.97402 14.6266C8.80904 14.7324 8.61491 14.7834 8.41924 14.7725C8.22357 14.7615 8.03635 14.6891 7.88421 14.5656C7.73207 14.4421 7.62277 14.2737 7.57187 14.0844L6.14031 8.77913L0.834998 7.34757C0.64575 7.29667 0.477379 7.18737 0.353849 7.03524C0.230318 6.8831 0.157922 6.69587 0.146965 6.50021C0.136008 6.30454 0.187048 6.1104 0.292821 5.94542C0.398594 5.78044 0.55371 5.65303 0.736092 5.58132L12.9353 0.775696C13.1042 0.709218 13.2888 0.693505 13.4665 0.730488C13.6442 0.767471 13.8072 0.855538 13.9356 0.983878C14.0639 1.11222 14.152 1.27524 14.189 1.45293C14.2259 1.63062 14.2102 1.81525 14.1437 1.98413Z' fill='%23currentColor'/%3E%3C/svg%3E") no-repeat center;
+                mask-size: contain;
+                content: '';
+                color: var(--white-black-color);
+                top:rem(1.5);
+                right: 0;
+                transition: color 0.3s ease  0s;
+            }
+        }
+    }
+
+    &__item-btn {
+        display: flex;
+        
+        .white-theme & {
+            color: var(--white);
+        }
+    }
+}

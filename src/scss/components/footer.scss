@@ -1,6 +1,6 @@
 .footer {
   position: relative;
-  z-index: 1;
+  // z-index: 1;
   @include adaptiveClamp(margin-top, 130, 97);
   @include adaptiveClamp(padding-top, 62, 47.92);
   @include adaptiveClamp(padding-bottom, 24, 15);
@@ -12,15 +12,20 @@
       @include adaptiveClamp(width, 446.87, 301.13);
       @include adaptiveClamp(height, 762.7, 513.95);
       border-radius: 100%;
-      background: linear-gradient(225deg, #06f 38.1%, #0004ff 82.18%);
+      background: linear-gradient(270deg, #ff4533 38.5%, #fb0 49%, #ff4533 67%);
       filter: blur(40px);
       transform: rotate(-57.54deg);
       top:rem(-159.14);
       left: 39.3%;
       z-index: -2;
+      pointer-events: none;
       transition: opacity 0.3s ease  0s;
       .white-theme & {
         opacity: 0;
+      }
+
+      .blue-page & {
+        background: linear-gradient(225deg, #06f 38.1%, #0004ff 82.18%);
       }
   }
   &::after {
@@ -107,7 +112,7 @@
 
   &__bottom {
     display: flex;
-    justify-content: space-between;
+
     gap: rem(15);
     flex-wrap: wrap;
     a,p {
@@ -126,7 +131,15 @@
         color: var(--bs-title-color);
       }
     }
-
+ 
+    @media(min-width:1361px){
+      p:last-child {
+        margin-left: auto;
+      }
+    }
+    @media(max-width:1360px){
+      justify-content: space-between;
+    }
     @media(max-width:875px){
         p:first-child {
           order: 3;
@@ -143,8 +156,12 @@
   }
   &__bottom-link {
     display: flex;
-    gap: rem(138);
+    gap: rem(148);
     margin-right: rem(109);
+    margin-left: rem(201);
+    @media(max-width:1360px){
+      margin-left: rem(48);
+    }
     @media(max-width:1280px){
       margin-right: 0;
       gap: rem(70);
@@ -153,6 +170,7 @@
     @media(max-width:875px){
       width: 100%;
       order: 1;
+      margin-left: 0;
     }
 
     @media(max-width:650px){
@@ -545,7 +563,7 @@
           color: rgba(255, 255, 255, 0.5);
           top:rem(3);
           right: 0;
-          transition: color 0.3s ease  0s;
+          transition: color 0.3s ease  0s, transform 0.3s ease  0s;
   
           .white-theme & {
             color: rgba(59, 59, 59, 0.4);
@@ -555,11 +573,12 @@
       @media(min-width:769px){
         &:hover::after {
           color: var(--white-black-color);
+          transform: rotate(45deg);
         }
       }
       @media(max-width:650px){
           padding-left: rem(41);
-          padding-bottom: rem(25);
+          padding-bottom: rem(19);
 
           &::before {
               position: absolute;

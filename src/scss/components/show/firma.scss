@@ -1,0 +1,113 @@
+.firma {
+    // @include adaptiveClamp(padding-top, 190, 150);
+
+    &__container {
+    }
+
+    &__card {
+        overflow: hidden;
+        position: relative;
+        @include adaptiveClamp(padding-top, 54, 40);
+        @include adaptiveClamp(padding-bottom, 63, 30);
+        @include adaptiveClamp(padding-left, 56, 30);
+        @include adaptiveClamp(padding-right, 56, 30);
+        @include adaptiveClamp(border-radius, 30, 10);
+        border: 1px solid #2b2b2b;
+        background: #0c0e11;
+        
+
+
+        &::before {
+            position: absolute;
+            content: '';
+            @include adaptiveClamp(width, 613.37, 482);
+            @include adaptiveClamp(height, 1046.89, 824);
+            top: rem(-160.7);
+            left: 44.5%;
+            border-radius: 100%;
+            background: linear-gradient(270deg, #ff4533 38.5%, #fb0 49%, #ff4533 67%);
+            filter: blur(50px);
+            pointer-events: none;
+            transform: rotate(-57.54deg);
+
+            .blue-page & {
+                background: linear-gradient(270deg, #06f 38.5%, #0004ff 49%, #06f 67%);
+            }
+
+            @media(max-width:1290px){
+                left: 54.5%;
+            }
+            @media(max-width:1150px){
+                left: 64.5%;
+            }
+            @media(max-width:890px){
+                left: 78%;
+            }
+            @media(max-width:650px){
+                top: rem(-736);
+                transform: rotate(0deg);
+                left: 19%;
+                overflow: 0.9;
+            }
+        }
+    }
+
+    &__card-body {
+        position: relative;
+        z-index: 1;
+        @media(min-width:551px){
+            max-width: rem(400);
+        }
+    }
+
+    &__title {
+        @include adaptiveClamp(font-size, 40, 30);
+        @include adaptiveClamp(margin-bottom, 30, 25);
+        color: #f0f0f0;
+    }
+
+    &__text {
+        margin-bottom: rem(45);
+        color: rgba(255, 255, 255, 0.6);
+        @media(min-width:551px){
+            display: none;
+        }
+
+    }
+
+    &__tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(5);
+        margin-bottom: rem(45);
+        @media(max-width:550px){
+            margin-bottom: rem(72);
+            gap: rem(7);
+        }
+    }
+
+    &__tag {
+        @media(max-width:550px){
+            padding: rem(11) rem(13) rem(12);
+            &::before {
+                display: none;
+            }
+        }
+    }
+
+    &__button {
+        @media(max-width:550px){
+            width: 100%;
+        }
+    }
+}
+.title-min {
+}
+.tag {
+}
+.button {
+}
+.button-slide {
+}
+.anim-slide {
+}
