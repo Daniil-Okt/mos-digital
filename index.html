@@ -46,9 +46,11 @@
   <title>MOS DIGITAL</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250729182804">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250805111251">
+  
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12?_v=20250805111251"></script>
+  <script defer="defer" src="js/main.min.js?_v=20250805111251"></script>
 
-  <script defer="defer" src="js/main.min.js?_v=20250729182804"></script>
 </head>
 
   <body>
@@ -84,7 +86,7 @@
 </header>
         <main class="page">
           <div data-observ></div>
-          <div class="fix-vh-mob about">
+          <div class="about fix-vh-mob">
     <div class="about__bg bg video">
         <picture>
             <source media="(max-width: 550px)" srcset="images/about/about-bg-orange-mob.webp">
@@ -116,24 +118,14 @@
                 </div>
             </div>
         </div>  
-        <h1 class="title-big about__title">
-                <span class="web">Создаем 
-                    <em>
-                        <span class="slide-up-anim" data-delay="3000">
-                            <span class="swiper-wrapper slide-up__body">
-                                <span class="swiper-slide slide-up__item">профессиональные</span>
-                                <span class="swiper-slide slide-up__item">убедительные</span>
-                                <span class="swiper-slide slide-up__item">эффектные</span>
-                            </span>
-                        </span>
-                    </em> 
-                    презентации для бизнеса и государства под ключ</span>
-                <span class="mob">Создаем презентации для бизнеса и государства под ключ</span>
+        <h1 class="title-big t-c about__title">
+            Создаем <em><span id="typewriter" data-typed-words='["красивые", "понятные", "эффектные"]'></span></em> 
+            <br>презентации под ключ
         </h1>
         <p class="bs-text t-c about__text">
-            За 8 лет накопили достаточно опыта, поэтому быстро 
-            поймем что нужно и предложим несколько вариантов решения. 
-            <br>Кстати, вернем деньги, если что-то пойдет не так!            
+            Удержим интерес до конца. 
+            <br>Спикеры будут выглядеть убедительно,
+            <br>а аудитория слушать и понимать           
         </p>
         <div class="about__button-row about__button-row-fixed" data-da=".wrapper, 550, last">
             <div class="button-slide button about__button">
@@ -141,49 +133,61 @@
             </div>
             <div class="about__connect">
                 <a class="about__connect-btn" href="#">
-                    <img loading="lazy" src="images/about/btn-connect1.svg" alt="">
+                    <img loading="lazy" src="images/about/btn-connect2.svg" alt="">
                 </a>
                 <a class="about__connect-btn" href="#">
                     <img loading="lazy" src="images/about/btn-connect2.svg" alt="">
                 </a>
                 <a class="about__connect-btn" href="#">
-                    <img loading="lazy" src="images/about/btn-connect3.svg" alt="">
+                    <img loading="lazy" src="images/about/btn-connect2.svg" alt="">
+                </a>
+                <a class="about__connect-btn" href="#">
+                    <img loading="lazy" src="images/about/btn-connect1.svg" alt="">
                 </a>
             </div>
         </div>
         
     </div>
 </div>
+
+
+
           <div class="showreel" data-button-fixed-hidden>
     <div class="showreel__container">
-        <div class="fix-vh-mob showreel__video-body">
-            <div class="fix-vh-mob showreel-video showreel__video" data-cursor-hover="Showreel">
+        <div class="showreel__video-body">
+            <div class="showreel__time">
+                <img src="images/showreel/icon-time.svg" alt="">
+                <p>00:40</p>
+            </div>
+            <div class="showreel-video showreel__video" data-cursor-hover="Showreel">
                 <video autoplay muted loop playsinline poster="images/showreel/showreel-preview.webp" loading="lazy">
                     <source src="static/showreel/showreel.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
-
     </div>
 </div>
-          <div class="section-p-b drawing">
+          <div class="section-p-t drawing">
     <div class="drawing__container">
         <div class="drawing__left">
             <div class="drawing__number">
-                <p class="drawing__number-figure">158</p>
+                <p class="drawing__number-figure">258</p>
                 <p class="drawing__number-text">презентаций создали в 2024 году</p>
             </div>
             <div class="drawing__line"></div>
         </div>
         <div class="drawing__right">
             <h2 class="text-word-anim title-min drawing__title">
-                Я регулярно вижу, с чем приходят наши клиенты — заводы, строители, промышленники. Их презентации перегружены и выглядят откровенно плохо: слишком много цифр, схем, терминов — всё сложно, тяжело воспринимается и неактуально времени. Мы помогаем превратить этот хаос в ясную, аккуратную и красиво оформленную структуру. Чтобы презентацию было не стыдно показывать, а клиентам и партнерам — приятно смотреть 
+                Я регулярно вижу, с чем приходят наши клиенты.
+                <br>Их презентации перегружены и <em>выглядят откровенно плохо.</em> Слишком много цифр, схем, терминов — всё сложно, тяжело воспринимается
+                и неактуально времени.
+                <em>Мы помогаем превратить</em> этот хаос в ясную и красиво оформленную структуру 
             </h2>
             <div class="drawing__right-bot">
                 <div class="bs-text drawing__text">
                     Для того, чтобы достичь максимального качества в работе, мы выстраиваем тесные и доверительные отношениям со всеми клиентами. В своих каналах рассказываю как мы работаем и показываю интересные проекты — подписывайтесь, рад каждому!
                 </div>
-                <div class="drawing__user user-drawing" data-da=".drawing__right, 850, first">
+                <div class="drawing__user user-drawing" data-da=".drawing__right, 1000, first">
                     <img loading="lazy" src="images/drawing/user-drawing.webp" alt="" class="user-drawing__img">
                     <div class="user-drawing__body">
                         <h3 class="user-drawing__name">Николай Мостовой</h3>
@@ -199,7 +203,7 @@
     </div>
 </div>
           
-          <div class="section-p-b direct-port fon-one">
+          <div class="section-p-t direct-port fon-one">
     <div class="direct-port__container">
         <div class="running leaders__running" data-speed="30">
             <div class="running__row leaders__running-row">
@@ -217,40 +221,36 @@
                 </div>
             </div>
         </div> 
-        <div class="head-text text-blur-anim leaders__head-text">
-            <h2 class="title-big leaders__title">
-                Гордимся <em>работой с компаниями,</em> которые задают правила игры на своих рынках
+        <div class="head-text text-blur-anim direct-port__head-text m-b">
+            <h2 class="title-big m-b t-c direct-port__title" style="--max-width-title: 58%">
+                Пятерочка, Газпром, Ситилинк, KDL, Т2
+                и ещё <em>100+ компаний заказывают</em>
+                презентации у нас
             </h2>
-            <p class="bs-text t-c leaders__text">
-                Пятерочка, Газпром, Ситилинк, KDL, Теле2 и ещё 100+ компаний заказывают презентации у нас
+            <p class="bs-text t-c direct-port__text" style="--max-width-text: 360px">
+                Гордимся работой с компаниями, которые задают правила игры на своих рынках
             </p>
         </div>
 
 
-        <div class="direct-port__menu" style="--max-width-port-menu: 650px" data-max-width="600px">
+        <div class="direct-port__menu" style="--max-width-port-menu: 1250px" data-max-width="600px">
             <div class="button-slide direct-port__menu-item _active">
-                <span class="slide-anim" data-content="Все"></span> 
+                <span class="slide-anim" data-content="Все презентации"></span> 
             </div>
             <div class="button-slide direct-port__menu-item">
-                <span class="slide-anim" data-content="Для бизнеса"></span>
+                <span class="slide-anim" data-content="Производство"></span>
             </div>
             <div class="button-slide direct-port__menu-item">
-                <span class="slide-anim" data-content="Для выступлений"></span>
+                <span class="slide-anim" data-content="Промышленность"></span>
             </div>
             <div class="button-slide direct-port__menu-item">
-                <span class="slide-anim" data-content="Для государства"></span>
+                <span class="slide-anim" data-content="Строительство"></span>
             </div>
             <div class="button-slide direct-port__menu-item">
-                <span class="slide-anim" data-content="Анимация"></span>
+                <span class="slide-anim" data-content="Недвижимость"></span>
             </div>
             <div class="button-slide direct-port__menu-item">
-                <span class="slide-anim" data-content="Шаблон"></span>
-            </div>
-            <div class="button-slide direct-port__menu-item">
-                <span class="slide-anim" data-content="Тендер"></span>
-            </div>
-            <div class="button-slide direct-port__menu-item">
-                <span class="slide-anim" data-content="Каталоги"></span>
+                <span class="slide-anim" data-content="Логистика"></span>
             </div>
         </div>
         <div class="_two direct-port__row">
@@ -263,26 +263,16 @@
                     </div>
                 </div>
                 <div class="case-port__body">
-                    <div class="case-port__top">
+
                         <div class="case-port__year">
                             2025
                         </div>
-                        <div class="case-port__text">
-                            Meet In-House. A clean and
-                            meaningful Framer template crafted
-                            with intent, perfect for agencies and
-                            creative minds alike.
-                        </div>
-                    </div>
-
-                    <div class="case-port__bot">
-                        <div class="case-port__left">
                             <div class="case-port__logo">
                                 <img src="images/case-port/case-port-logo.png" alt="">
                             </div>
-                            <h2 class="case-port__title">
+                            <h3 class="case-port__title">
                                 ГЛАВГОРСТРОЙ
-                            </h2>
+                            </h3>
                             <p class="case-port__up-text">
                                 Строительная компания
                             </p>
@@ -297,11 +287,6 @@
                                     Сайт
                                 </div>
                             </div>
-                        </div>
-                        <div class="case-port__number">
-                            / 001 /
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="case-port direct-port__case">
@@ -313,26 +298,16 @@
                     </div>
                 </div>
                 <div class="case-port__body">
-                    <div class="case-port__top">
                         <div class="case-port__year">
                             2025
                         </div>
-                        <div class="case-port__text">
-                            Meet In-House. A clean and
-                            meaningful Framer template crafted
-                            with intent, perfect for agencies and
-                            creative minds alike.
-                        </div>
-                    </div>
 
-                    <div class="case-port__bot">
-                        <div class="case-port__left">
                             <div class="case-port__logo">
                                 <img src="images/case-port/case-port-logo.png" alt="">
                             </div>
-                            <h2 class="case-port__title">
+                            <h3 class="case-port__title">
                                 ГЛАВГОРСТРОЙ
-                            </h2>
+                            </h3>
                             <p class="case-port__up-text">
                                 Строительная компания
                             </p>
@@ -347,11 +322,6 @@
                                     Сайт
                                 </div>
                             </div>
-                        </div>
-                        <div class="case-port__number">
-                            / 001 /
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -368,7 +338,7 @@
 </div>
 
 
-          <div class="section-p-b connect" data-button-fixed-hidden>
+          <div class="section-p-t connect" data-button-fixed-hidden>
     <div class="connect__container">
         <div class="connect__online direct-port__item-tag">Мы онлайн</div>
         <div class="head-text text-blur-anim connect__head">
@@ -434,285 +404,337 @@
         </form>
     </div>
 </div>
-          <div class="section-p-b arranged black-block black-fon-sec stages">
+          <div class="section-p-t fon-two arranged black-block black-fon-sec stages">
     <div class="black-fon-sec__container stages__container">
-        <div class="head-text text-blur-anim stages__head">
-            <h2 class="title-big stages__title">
-                Как у нас <br><em>устроена работа</em>
-            </h2>
-            <p class="bs-text t-c stages__text">
-                Мы гордимся работой с компаниями, которые задают правила игры на своих рынках 
-            </p>
-        </div>
-        <div class="shadow-hidden stages__slider">
-            <div class="swiper-wrapper stages__wrapper">
-                <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                    <div class="stages__slide-body">
-                        <div class="item-expert-site__discount-prc">
-                            1 этап
+        <div class="flex-content stages__content">
+            <div class="stages__left">
+                <div class="head-text text-blur-anim stages__head">
+                    <div class="m-b denom stages__denom">
+                        <div class="denom__icon">
+                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="6.93408" cy="7.30518" r="6.92822" fill="white"/>
+                                <path d="M11.6009 7.97201H7.60091V11.972H6.26758V7.97201H2.26758V6.63867H6.26758V2.63867H7.60091V6.63867H11.6009V7.97201Z" fill="black"/>
+                            </svg>
                         </div>
-                        <h3 class="stages__title-slide">
-                            Погружаемся в проект
-                        </h3>
-                        <div class="stages__text-slide">
-                            На первом этапе мы знакомимся с вашим бизнесом: обсуждаем задачи и цели проекта, уточняем детали и задаем вопросы. Формулируем ожидаемый результат
-                        </div>
+                        <span>Процесс</span>
                     </div>
-                    <div class="stages__img-slide">
-                        <img src="images/stages/item-stages1-orange.png" alt="">
-                    </div>
-                </div>
-                <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                    <div class="stages__slide-body">
-                        <div class="item-expert-site__discount-prc">
-                            2 этап
-                        </div>
-                        <h3 class="stages__title-slide">
-                            Разбираемся в контексте
-                        </h3>
-                        <div class="stages__text-slide">
-                            Исследуем аудиторию и рынок, смотрим, как принято подавать информацию в вашей отрасли, чтобы презентация выглядела уместно, актуально и сразу «читалась» вашими клиентами или партнерами
-                        </div>
-                    </div>
-
-                    <div class="stages__img-slide">
-                        <img src="images/stages/item-stages2-orange.png" alt="">
-                    </div>
-                </div>
-                <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                    <div class="stages__slide-body">
-                        <div class="item-expert-site__discount-prc">
-                            3 этап
-                        </div>
-                        <h3 class="stages__title-slide">
-                            Продумываем логику и содержание
-                        </h3>
-                        <div class="stages__text-slide">
-                            Формируем логичную структуру и пишем текст без воды и клише, с акцентом на главное. Подачу выстраиваем так, чтобы она мотивировала аудиторию к целевому действию 
-                        </div>
-                    </div>
-                    <div class="stages__img-slide">
-                        <img src="images/stages/item-stages3-orange.png" alt="">
-                    </div>
-                </div>
-                <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                    <div class="stages__slide-body">
-                        <div class="item-expert-site__discount-prc">
-                            4 этап
-                        </div>
-                        <h3 class="stages__title-slide">
-                            Задаем стиль
-                        </h3>
-                        <div class="stages__text-slide">
-                            Определяем стиль, шрифты, цвета, формы — чтобы всё соответствовало бренду компании и отрасли. Если брендбука нет, ориентируемся на современные тренды и формируем новую основу
-                        </div>
-                    </div>
-
-                    <div class="stages__img-slide">
-                        <img src="images/stages/item-stages2-orange.png" alt="">
-                    </div>
-                </div>
-                <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                    <div class="stages__slide-body">
-                        <div class="item-expert-site__discount-prc">
-                            5 этап
-                        </div>
-                        <h3 class="stages__title-slide">
-                            Собираем готовые слайды                        
-                        </h3>
-                        <div class="stages__text-slide">
-                            Верстаем слайды в рамках согласованной концепции — аккуратно, по сетке, с правильной типографикой и визуальными акцентами
-                        </div>
-                    </div>
-                    <div class="stages__img-slide">
-                        <img src="images/stages/item-stages3-orange.png" alt="">
-                    </div>
-                </div>
-                <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                    <div class="stages__slide-body">
-                        <div class="item-expert-site__discount-prc">
-                            6 этап
-                        </div>
-                        <h3 class="stages__title-slide">
-                            Формируем и передаем архив с файлами                       
-                        </h3>
-                        <div class="stages__text-slide">
-                            <ul>
-                                <li>Презентация для рассылки </li>
-                                <li>Презентация для печати</li>
-                                <li>Презентация для выступления</li>
-                                <li>Видео-презентация</li>
-                                <li>WEB - Презентация</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="stages__img-slide">
-                        <img src="images/stages/item-stages3-orange.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-          <div class="section-p-b service-pr">
-    <div class="service-pr__container">
-        <div class="head-text text-blur-anim service-pr__head-text">
-            <h2 class="title-big service-pr__title">
-                Как <em>формируется</em> стоимость
-            </h2>
-            <p class="bs-text t-c service-pr__text">
-                Мы не продаём «дизайн слайдов» — <br>мы решаем задачи бизнеса через презентацию.
-            </p>
-        </div>
-
-        <div class="service-pr__row">
-            <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
-                <h3 class="service-pr__item-title">
-                    Разработка концепции 
-                </h3>
-                <p class="service-pr__price">
-                    от 35 000 ₽
-                </p>
-            </div>
-            <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
-                <h3 class="service-pr__item-title">
-                    Дизайн 
-                </h3>
-                <p class="service-pr__price">
-                    от 10 000 ₽ / слайд
-                </p>
-            </div>
-            <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
-                <h3 class="service-pr__item-title">
-                    Копирайт
-                </h3>
-                <p class="service-pr__price">
-                    от 10 000 ₽ / слайд
-                </p>
-            </div>
-            <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
-                <h3 class="service-pr__item-title">
-                    Презентация под ключ (концепция + дизайна+ копирайт) 
-                </h3>
-                <p class="service-pr__price">
-                    от 12 000 ₽ / слайд
-                </p>
-            </div>
-            <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
-                <h3 class="service-pr__item-title">
-                    Переверстка в другой формат (А4 / А3 / Квадрат / 16:9 )
-                </h3>
-                <p class="service-pr__price">
-                    от 2 000 ₽ / слайд
-                </p>
-            </div>
-            <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
-                <h3 class="service-pr__item-title">
-                    Анимация
-                </h3>
-                <p class="service-pr__price">
-                    от 5 000 ₽ / слайд
-                </p>
-            </div>
-            <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
-                <h3 class="service-pr__item-title">
-                    3D-визуализация
-                </h3>
-                <p class="service-pr__price">
-                    от 30 000 ₽ / модель
-                </p>
-            </div>
-            <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
-                <h3 class="service-pr__item-title">
-                    Перевод
-                </h3>
-                <p class="service-pr__price">
-                    от 2 000 ₽ / слайд
-                </p>
-            </div>
-            <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
-                <h3 class="service-pr__item-title">
-                    Фотограф
-                </h3>
-                <p class="service-pr__price">
-                    от 15 000 ₽ / час
-                </p>
-            </div>
-        </div>
-    </div>
-
-</div>
-          <div class="section-p-b expert-site">
-            <div class="expert-site__container">
-                <div class="head-text text-blur-anim expert-site__head">
-                    <h2 class="title-big expert-site__title">
-                        Давайте обсудим <em>стоимость и сроки</em> разработки
+                    <h2 class="title-big m-b stages__title">
+                        Как у нас устроена работа над проектом
                     </h2>
-                    <p class="bs-text t-c expert-site__text">
-                        Мы познакомимся, зададим вопросы, расскажем о наших процессах и дадим предварительную оценку проекта
+                    <p class="bs-text stages__text">
+                        Мы организовали процесс так, чтобы для клиента всё было прозрачно, понятно и удобно. Вы всегда знаете, на каком этапе проект, видите результат и можете вносить правки.
+                        <br>В итоге — никаких сюрпризов и расстройств о потраченном времени: вы получаете презентацию, которая на 100% соответствует вашим целям и задачам бизнеса
                     </p>
                 </div>
-                <div class="expert-site__slider">
-                    <div class="swiper-wrapper expert-site__wrapper">
-                        <div class="swiper-slide expert-site__item item-expert-site">
-                            <div class="item-expert-site__discount-prc">~ 3 недели</div>
-                            <h3 class="item-expert-site__title">Одностраничный сайт на Tilda</h3>
-                            <p class="item-expert-site__text">Для продукта, события или услуги. Упакуем смыслы, подберем визуал, подключим аналитику и подготовим к запуску рекламы</p>
-                            <div class="item-expert-site__discount"></div>
-                            <div class="_m-t-two item-expert-site__price">
-                                <span class="big">350 000 ₽</span>
+            </div>
+            <div class="stages__right">
+                <div class="stages__slide-row">
+                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                        <div class="stages__slide-body">
+                            <div class="item-expert-site__discount-prc">
+                                Этап #1
                             </div>
-                            <div class="button-slide button item-expert-site__button">
-                                <span class="slide-anim" data-content="Заказать сайт"></span>
-                            </div>
-                        </div>
-                        <div class="swiper-slide expert-site__item item-expert-site">
-                            <div class="item-expert-site__discount-prc">~ 12 недель</div>
-                            <h3 class="item-expert-site__title">Корпоративный сайт на Bitrix / WP</h3>
-                            <p class="item-expert-site__text">С разделами, каталогом, новостями, интеграциями и админ-панелью. Создадим архитектуру, дизайн и backend</p>
-                            <div class="item-expert-site__discount"></div>
-                            <div class="_m-t-two item-expert-site__price">
-                                <span class="big">1 000 000 ₽</span>
-                            </div>
-                            <div class="button-slide button item-expert-site__button">
-                                <span class="slide-anim" data-content="Заказать сайт"></span>
+                            <h3 class="stages__title-slide">
+                                Погружаемся в проект
+                            </h3>
+                            <div class="stages__text-slide">
+                                На первом этапе мы знакомимся с вашим бизнесом: обсуждаем задачи и цели проекта, уточняем детали и задаем вопросы. Формулируем ожидаемый результат
                             </div>
                         </div>
-                        <div class="swiper-slide expert-site__item item-expert-site">
-                            <div class="item-expert-site__discount-prc">~ 3 недели</div>
-                            <h3 class="item-expert-site__title">Фирменный стиль компании</h3>
-                            <p class="item-expert-site__text">Разработаем современную айдентику: логотип, шрифты, цвета, гайды, мерч и брендбук</p>
-                            <div class="item-expert-site__discount"></div>
-                            <div class="_m-t-two item-expert-site__price">
-                                <span class="big">500 000 ₽</span>
+                        <div class="stages__img-slide">
+                            <img src="images/stages/item-stages1-orange.png" alt="">
+                        </div>
+                    </div>
+                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                        <div class="stages__slide-body">
+                            <div class="item-expert-site__discount-prc">
+                                Этап #2
                             </div>
-                            <div class="button-slide button item-expert-site__button">
-                                <span class="slide-anim" data-content="Заказать сайт"></span>
+                            <h3 class="stages__title-slide">
+                                Разбираемся в контексте
+                            </h3>
+                            <div class="stages__text-slide">
+                                Исследуем аудиторию и рынок, смотрим, как принято подавать информацию в вашей отрасли, чтобы презентация выглядела уместно, актуально и сразу «читалась» вашими клиентами или партнерами
                             </div>
                         </div>
-                        <div class="swiper-slide expert-site__item item-expert-site">
-                          <div class="item-expert-site__discount-prc">~ 3 недели</div>
-                          <h3 class="item-expert-site__title">Видео инфографика</h3>
-                          <p class="item-expert-site__text">Эффектно расскажем об услуге, процессе или продукте с помощью графики, анимации и саунд-дизайна</p>
-                          <div class="item-expert-site__discount"></div>
-                          <div class="_m-t-two item-expert-site__price">
-                              <span class="big">400 000 ₽</span>
-                          </div>
-                          <div class="button-slide button item-expert-site__button">
-                              <span class="slide-anim" data-content="Заказать сайт"></span>
-                          </div>
-                      </div>
+    
+                        <div class="stages__img-slide">
+                            <img src="images/stages/item-stages2-orange.png" alt="">
+                        </div>
+                    </div>
+                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                        <div class="stages__slide-body">
+                            <div class="item-expert-site__discount-prc">
+                                Этап #3
+                            </div>
+                            <h3 class="stages__title-slide">
+                                Продумываем логику и содержание
+                            </h3>
+                            <div class="stages__text-slide">
+                                Формируем логичную структуру и пишем текст без воды и клише, с акцентом на главное. Подачу выстраиваем так, чтобы она мотивировала аудиторию к целевому действию 
+                            </div>
+                        </div>
+                        <div class="stages__img-slide">
+                            <img src="images/stages/item-stages3-orange.png" alt="">
+                        </div>
+                    </div>
+                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                        <div class="stages__slide-body">
+                            <div class="item-expert-site__discount-prc">
+                                Этап #4
+                            </div>
+                            <h3 class="stages__title-slide">
+                                Задаем стиль
+                            </h3>
+                            <div class="stages__text-slide">
+                                Определяем стиль, шрифты, цвета, формы — чтобы всё соответствовало бренду компании и отрасли. Если брендбука нет, ориентируемся на современные тренды и формируем новую основу
+                            </div>
+                        </div>
+    
+                        <div class="stages__img-slide">
+                            <img src="images/stages/item-stages2-orange.png" alt="">
+                        </div>
+                    </div>
+                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                        <div class="stages__slide-body">
+                            <div class="item-expert-site__discount-prc">
+                                Этап #5
+                            </div>
+                            <h3 class="stages__title-slide">
+                                Собираем готовые слайды                        
+                            </h3>
+                            <div class="stages__text-slide">
+                                Верстаем слайды в рамках согласованной концепции — аккуратно, по сетке, с правильной типографикой и визуальными акцентами
+                            </div>
+                        </div>
+                        <div class="stages__img-slide">
+                            <img src="images/stages/item-stages3-orange.png" alt="">
+                        </div>
+                    </div>
+                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                        <div class="stages__slide-body">
+                            <div class="item-expert-site__discount-prc">
+                                Этап #6
+                            </div>
+                            <h3 class="stages__title-slide">
+                                Формируем и передаем архив с файлами                       
+                            </h3>
+                            <div class="stages__text-slide">
+                                <ul>
+                                    <li>Презентация для рассылки </li>
+                                    <li>Презентация для печати</li>
+                                    <li>Презентация для выступления</li>
+                                    <li>Видео-презентация</li>
+                                    <li>WEB - Презентация</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="stages__img-slide">
+                            <img src="images/stages/item-stages3-orange.png" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-          </div>
-          <div class="section-p-b choice white-block">
+        </div>
+    </div>
+</div>
+
+
+          <div class="section-p-t service-pr">
+    <div class="service-pr__container">
+        <div class="flex-content service-pr__content">
+            <div class="service-pr__left">
+                <div class="head-text text-blur-anim f-l service-pr__head-text">
+                    <div class="m-b denom stages__denom">
+                        <div class="denom__icon">
+                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="6.93408" cy="7.30518" r="6.92822" fill="white"/>
+                                <path d="M11.6009 7.97201H7.60091V11.972H6.26758V7.97201H2.26758V6.63867H6.26758V2.63867H7.60091V6.63867H11.6009V7.97201Z" fill="black"/>
+                            </svg>
+                        </div>
+                        <span>Стоимость</span>
+                    </div>
+                    <h2 class="title-big m-b min service-pr__title">
+                        Мы не продаём <em>«дизайн слайдов»</em> — мы решаем задачи бизнеса через презентацию
+                    </h2>
+                    <p class="bs-text service-pr__text">
+                        Мы организовали процесс так, чтобы
+                        для клиента всё было прозрачно, понятно
+                        и удобно. Вы всегда знаете, на каком этапе проект, видите результат и можете вносить правки
+                    </p>
+                </div>
+            </div>
+            <div class="service-pr__right">
+                <div class="service-pr__row">
+                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
+                        <div class="service-pr__item-number">
+                            001
+                        </div>
+                        <h3 class="service-pr__item-title">
+                            Разработка концепции 
+                        </h3>
+                        <p class="service-pr__price">
+                            от 35 000 ₽
+                        </p>
+                    </div>
+                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
+                        <div class="service-pr__item-number">
+                            002
+                        </div>
+                        <h3 class="service-pr__item-title">
+                            Дизайн 
+                        </h3>
+                        <p class="service-pr__price">
+                            от 10 000 ₽ / слайд
+                        </p>
+                    </div>
+                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
+                        <div class="service-pr__item-number">
+                            003
+                        </div>
+                        <h3 class="service-pr__item-title">
+                            Копирайт
+                        </h3>
+                        <p class="service-pr__price">
+                            от 10 000 ₽ / слайд
+                        </p>
+                    </div>
+                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
+                        <div class="service-pr__item-number">
+                            004
+                        </div>
+                        <h3 class="service-pr__item-title">
+                            Презентация под ключ (концепция + дизайна+ копирайт) 
+                        </h3>
+                        <p class="service-pr__price">
+                            от 12 000 ₽ / слайд
+                        </p>
+                    </div>
+                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
+                        <div class="service-pr__item-number">
+                            005
+                        </div>
+                        <h3 class="service-pr__item-title">
+                            Переверстка в другой формат (А4 / А3 / Квадрат / 16:9 )
+                        </h3>
+                        <p class="service-pr__price">
+                            от 2 000 ₽ / слайд
+                        </p>
+                    </div>
+                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
+                        <div class="service-pr__item-number">
+                            006
+                        </div>
+                        <h3 class="service-pr__item-title">
+                            Анимация
+                        </h3>
+                        <p class="service-pr__price">
+                            от 5 000 ₽ / слайд
+                        </p>
+                    </div>
+                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
+                        <div class="service-pr__item-number">
+                            007
+                        </div>
+                        <h3 class="service-pr__item-title">
+                            3D-визуализация
+                        </h3>
+                        <p class="service-pr__price">
+                            от 30 000 ₽ / модель
+                        </p>
+                    </div>
+                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
+                        <div class="service-pr__item-number">
+                            008
+                        </div>
+                        <h3 class="service-pr__item-title">
+                            Перевод
+                        </h3>
+                        <p class="service-pr__price">
+                            от 2 000 ₽ / слайд
+                        </p>
+                    </div>
+                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>" data-ctr-scr>
+                        <div class="service-pr__item-number">
+                            009
+                        </div>
+                        <h3 class="service-pr__item-title">
+                            Фотограф
+                        </h3>
+                        <p class="service-pr__price">
+                            от 15 000 ₽ / час
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+          <div class="section-p-t packages">
+    <div class="packages__container">
+        <div class="packages__head">
+            <h2 class="title-big t-c packages__title">
+                Пакеты
+            </h2>
+        </div>
+
+        <div class="packages__row">
+            <div class="expert-site__item glass-style item-expert-site packages-item-prlx-1">
+                    
+                    <div class="item-expert-site__tern">~ 3 недели</div>
+                    <h3 class="item-expert-site__title">Презентация + <br>лендинг сайт на Tilda</h3>
+                    <p class="item-expert-site__text">Быстро запустим лендинг или небольшой сайт</p>
+                    <div class="item-expert-site__discount-row">
+                        <div class="item-expert-site__discount">500 000 ₽</div>
+                        <div class="item-expert-site__discount-prc">-25%</div>
+                    </div>
+
+                    <div class="_m-t-two item-expert-site__price">
+                        <span class="big">350 000 ₽</span>
+                    </div>
+                    <div class="button-slide button item-expert-site__button">
+                        <span class="slide-anim" data-content="Заказать сайт"></span>
+                    </div>
+            </div>
+            <div class="expert-site__item glass-style item-expert-site packages-item-prlx-2">
+                    <div class="item-expert-site__tern">~ 12 недель</div>
+                    <h3 class="item-expert-site__title">Корпоративный сайт на Bitrix / WP</h3>
+                    <p class="item-expert-site__text">Быстро запустим лендинг или небольшой сайт</p>
+                    <div class="item-expert-site__discount-row">
+                        <div class="item-expert-site__discount">1200 000 ₽</div>
+                        <div class="item-expert-site__discount-prc">-25%</div>
+                    </div>
+                    <div class="_m-t-two item-expert-site__price">
+                        <span class="big">1 000 000 ₽</span>
+                    </div>
+                    <div class="button-slide button item-expert-site__button">
+                        <span class="slide-anim" data-content="Заказать сайт"></span>
+                    </div>
+            </div>
+            <div class="expert-site__item glass-style item-expert-site">
+                    <div class="item-expert-site__tern">~ 3 недели</div>
+                    <h3 class="item-expert-site__title">Брендинг + презентация + корпоративный сайт</h3>
+                    <p class="item-expert-site__text">Быстро запустим лендинг или небольшой сайт</p>
+                    <div class="item-expert-site__discount-row">
+                        <div class="item-expert-site__discount">1500 000 ₽</div>
+                        <div class="item-expert-site__discount-prc">-25%</div>
+                    </div>
+                    <div class="_m-t-two item-expert-site__price">
+                        <span class="big">500 000 ₽</span>
+                    </div>
+                    <div class="button-slide button item-expert-site__button">
+                        <span class="slide-anim" data-content="Заказать сайт"></span>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+          <div class="section-p-t choice white-block">
     <div class="choice__container">
         
-        <div class="head-text choice__head">
-            <h2 class="title-big choice__title">
+        <div class="head-text m-b choice__head">
+            <h2 class="title-big m-b t-c choice__title">
                 Почему <em>клиенты выбирают</em> работать с нами
             </h2>
             <p class="bs-text t-c choice__text">
@@ -831,7 +853,7 @@
         </div>
     </div>
 </div>
-          <div class="section-p-b apply fon-two">
+          <div class="section-p-t fon-two apply">
     <div class="apply__container">
         <div class="head-text text-blur-anim apply__head">
             <h2 class="title-big apply__title">
@@ -961,7 +983,7 @@
                 </div>
             </div>
           </div>
-          <div class="section-p-b reviews">
+          <div class="section-p-t reviews">
     <div class="reviews__container">
         <div class="head-text text-blur-anim reviews__head">
             <h2 class="title-big reviews__title">
@@ -1066,7 +1088,7 @@
 
 
 
-          <div class="section-p-b quest">
+          <div class="section-p-t quest">
     <div class="quest__container">
         <div class="head-text text-blur-anim quest__head">
             <h2 class="title-big quest__title">
@@ -1213,7 +1235,7 @@
         </div>
     </div>
 </div>
-          <div class="section-p-b connect" data-button-fixed-hidden>
+          <div class="section-p-t connect" data-button-fixed-hidden>
     <div class="connect__container">
         <div class="connect__online direct-port__item-tag">Мы онлайн</div>
         <div class="head-text text-blur-anim connect__head">

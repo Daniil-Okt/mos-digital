@@ -46,9 +46,11 @@
   <title>MOS DIGITAL</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250729182804">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250805111251">
+  
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12?_v=20250805111251"></script>
+  <script defer="defer" src="js/main.min.js?_v=20250805111251"></script>
 
-  <script defer="defer" src="js/main.min.js?_v=20250729182804"></script>
 </head>
 
   <body>
@@ -84,7 +86,7 @@
 </header>
         <main class="page">
             <div data-observ></div>
-            <div class="fix-vh-mob about">
+            <div class="about fix-vh-mob">
     <div class="about__bg bg video">
         <picture>
             <source media="(max-width: 550px)" srcset="images/about/about-bg-orange-mob.webp">
@@ -116,24 +118,14 @@
                 </div>
             </div>
         </div>  
-        <h1 class="title-big about__title">
-                <span class="web">Создаем 
-                    <em>
-                        <span class="slide-up-anim" data-delay="3000">
-                            <span class="swiper-wrapper slide-up__body">
-                                <span class="swiper-slide slide-up__item">профессиональные</span>
-                                <span class="swiper-slide slide-up__item">убедительные</span>
-                                <span class="swiper-slide slide-up__item">эффектные</span>
-                            </span>
-                        </span>
-                    </em> 
-                    презентации для бизнеса и государства под ключ</span>
-                <span class="mob">Создаем презентации для бизнеса и государства под ключ</span>
+        <h1 class="t-c about__title title-big">
+            Создаем <em><span id="typewriter" data-typed-words='["красивые", "понятные", "эффектные"]'></span></em> 
+            <br>презентации под ключ
         </h1>
         <p class="bs-text t-c about__text">
-            За 8 лет накопили достаточно опыта, поэтому быстро 
-            поймем что нужно и предложим несколько вариантов решения. 
-            <br>Кстати, вернем деньги, если что-то пойдет не так!            
+            Удержим интерес до конца. 
+            <br>Спикеры будут выглядеть убедительно,
+            <br>а аудитория слушать и понимать           
         </p>
         <div class="about__button-row about__button-row-fixed" data-da=".wrapper, 550, last">
             <div class="button-slide button about__button">
@@ -141,49 +133,61 @@
             </div>
             <div class="about__connect">
                 <a class="about__connect-btn" href="#">
-                    <img loading="lazy" src="images/about/btn-connect1.svg" alt="">
+                    <img loading="lazy" src="images/about/btn-connect2.svg" alt="">
                 </a>
                 <a class="about__connect-btn" href="#">
                     <img loading="lazy" src="images/about/btn-connect2.svg" alt="">
                 </a>
                 <a class="about__connect-btn" href="#">
-                    <img loading="lazy" src="images/about/btn-connect3.svg" alt="">
+                    <img loading="lazy" src="images/about/btn-connect2.svg" alt="">
+                </a>
+                <a class="about__connect-btn" href="#">
+                    <img loading="lazy" src="images/about/btn-connect1.svg" alt="">
                 </a>
             </div>
         </div>
         
     </div>
 </div>
+
+
+
             <div class="showreel" data-button-fixed-hidden>
     <div class="showreel__container">
-        <div class="fix-vh-mob showreel__video-body">
-            <div class="fix-vh-mob showreel-video showreel__video" data-cursor-hover="Showreel">
+        <div class="showreel__video-body">
+            <div class="showreel__time">
+                <img src="images/showreel/icon-time.svg" alt="">
+                <p>00:40</p>
+            </div>
+            <div class="showreel-video showreel__video" data-cursor-hover="Showreel">
                 <video autoplay muted loop playsinline poster="images/showreel/showreel-preview.webp" loading="lazy">
                     <source src="static/showreel/showreel.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
-
     </div>
 </div>
-            <div class="section-p-b drawing">
+            <div class="section-p-t drawing">
     <div class="drawing__container">
         <div class="drawing__left">
             <div class="drawing__number">
-                <p class="drawing__number-figure">158</p>
+                <p class="drawing__number-figure">258</p>
                 <p class="drawing__number-text">презентаций создали в 2024 году</p>
             </div>
             <div class="drawing__line"></div>
         </div>
         <div class="drawing__right">
             <h2 class="title-min drawing__title text-word-anim">
-                Я регулярно вижу, с чем приходят наши клиенты — заводы, строители, промышленники. Их презентации перегружены и выглядят откровенно плохо: слишком много цифр, схем, терминов — всё сложно, тяжело воспринимается и неактуально времени. Мы помогаем превратить этот хаос в ясную, аккуратную и красиво оформленную структуру. Чтобы презентацию было не стыдно показывать, а клиентам и партнерам — приятно смотреть 
+                Я регулярно вижу, с чем приходят наши клиенты.
+                <br>Их презентации перегружены и <em>выглядят откровенно плохо.</em> Слишком много цифр, схем, терминов — всё сложно, тяжело воспринимается
+                и неактуально времени.
+                <em>Мы помогаем превратить</em> этот хаос в ясную и красиво оформленную структуру 
             </h2>
             <div class="drawing__right-bot">
                 <div class="bs-text drawing__text">
                     Для того, чтобы достичь максимального качества в работе, мы выстраиваем тесные и доверительные отношениям со всеми клиентами. В своих каналах рассказываю как мы работаем и показываю интересные проекты — подписывайтесь, рад каждому!
                 </div>
-                <div class="drawing__user user-drawing" data-da=".drawing__right, 850, first">
+                <div class="drawing__user user-drawing" data-da=".drawing__right, 1000, first">
                     <img loading="lazy" src="images/drawing/user-drawing.webp" alt="" class="user-drawing__img">
                     <div class="user-drawing__body">
                         <h3 class="user-drawing__name">Николай Мостовой</h3>
@@ -198,7 +202,7 @@
         </div>
     </div>
 </div>
-            <div class="section-p-b leaders">
+            <div class="section-p-t leaders">
     <div class="leaders__container">
         <div class="text-blur-anim head-text leaders__head-text">
             <h2 class="title-big leaders__title">
@@ -229,7 +233,7 @@
         
     </div>
 </div>
-            <div class="section-p-b direct-port">
+            <div class="section-p-t direct-port">
                 <div class="direct-port__container">
                     <div class="_one-grid _sticky direct-port__row">
                         <a href="#" class="_two direct-port__item">
@@ -267,7 +271,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section-p-b countries">
+            <div class="section-p-t countries">
     <div class="countries__container">
         <div class="text-blur-anim head-text countries__head">
             <h2 class="title-big countries__title">
@@ -308,7 +312,7 @@
         </div>
         <div class="gpt__animation-row" data-prlx-mouse>
             <div class="gpt__animation" id="spline-target">
-                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js?_v=20250729182804"></script>
+                <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.2/build/spline-viewer.js?_v=20250805111251"></script>
                 <spline-viewer url="https://prod.spline.design/H3NJrn7HdSNCUs54/scene.splinecode"></spline-viewer>
             </div>
         </div>
@@ -317,7 +321,7 @@
         
     </div>
 </div>
-            <div class="section-p-b _two black-block black-fon-sec stages" data-cursor-white>
+            <div class="section-p-t _two black-block black-fon-sec stages" data-cursor-white>
                 <div class="black-fon-sec__container stages__container">
                     <div class="text-blur-anim head-text stages__head">
                         <h2 class="title-big stages__title">
@@ -328,8 +332,8 @@
                         </p>
                     </div>
                     <div class="shadow-hidden stages__slider">
-                        <div class="swiper-wrapper stages__wrapper">
-                            <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                        <div class="stages__wrapper swiper-wrapper">
+                            <div class="bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                                 <div class="stages__slide-body">
                                     <div class="stages__number">
                                         01.
@@ -342,7 +346,7 @@
                                     <img src="images/stages/item-stages1.png" alt="">
                                 </div>
                             </div>
-                            <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                            <div class="bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                                 <div class="stages__slide-body">
                                     <div class="stages__number">
                                         02.
@@ -356,7 +360,7 @@
                                     <img src="images/stages/item-stages2.png" alt="">
                                 </div>
                             </div>
-                            <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                            <div class="bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                                 <div class="stages__slide-body">
                                     <div class="stages__number">
                                         03.
@@ -369,7 +373,7 @@
                                     <img src="images/stages/item-stages3.png" alt="">
                                 </div>
                             </div>
-                            <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                            <div class="bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                                 <div class="stages__slide-body">
                                     <div class="stages__number">
                                         04.
@@ -383,7 +387,7 @@
                                     <img src="images/stages/item-stages2.png" alt="">
                                 </div>
                             </div>
-                            <div class="swiper-slide bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
+                            <div class="bs-card stages__slide swiper-slide" data-cursor-hover="Cмотреть <em>zoom</em>">
                                 <div class="stages__slide-body">
                                     <div class="stages__number">
                                         05.
@@ -409,7 +413,7 @@
                 </div>
             </div>
             
-            <div class="section-p-b firma">
+            <div class="section-p-t firma">
     <div class="firma__container">
         <div class="firma__card">
             <div class="firma__card-body">
@@ -432,7 +436,7 @@
         </div>
     </div>
 </div>
-            <div class="section-p-b launch">
+            <div class="section-p-t launch">
     <div class="launch__container">
         <div class="launch__img start-video" data-popup-video="static/showreel/showreel.mp4" data-type="popup-video">
             <img src="images/launch/launch-preview.webp" alt="">
@@ -512,7 +516,7 @@
     </div>
 </div>
             
-            <div class="section-p-b reviews">
+            <div class="section-p-t reviews">
     <div class="reviews__container">
         <div class="text-blur-anim head-text reviews__head">
             <h2 class="title-big reviews__title">
@@ -617,7 +621,7 @@
 
 
 
-            <div class="section-p-b quest">
+            <div class="section-p-t quest">
     <div class="quest__container">
         <div class="text-blur-anim head-text quest__head">
             <h2 class="title-big quest__title">
