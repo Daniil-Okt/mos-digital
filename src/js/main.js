@@ -391,49 +391,49 @@ document.addEventListener('DOMContentLoaded', createBottomBlur);
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-	const main = document.querySelector('main.page');
-	if (!main) return;
+// document.addEventListener('DOMContentLoaded', function() {
+// 	const main = document.querySelector('main.page');
+// 	if (!main) return;
   
-	const sections = Array.from(main.querySelectorAll('section'));
-	const visibleRange = 2; // Количество видимых секций в каждую сторону
+// 	const sections = Array.from(main.querySelectorAll('section'));
+// 	const visibleRange = 2; // Количество видимых секций в каждую сторону
   
-	function updateVisibility() {
-	  // Находим первую видимую секцию (в зоне viewport)
-	  let activeIndex = -1;
+// 	function updateVisibility() {
+// 	  // Находим первую видимую секцию (в зоне viewport)
+// 	  let activeIndex = -1;
 	  
-	  sections.forEach((section, index) => {
-		const rect = section.getBoundingClientRect();
-		const isVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+// 	  sections.forEach((section, index) => {
+// 		const rect = section.getBoundingClientRect();
+// 		const isVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
 		
-		if (isVisible) {
-		  activeIndex = index;
-		}
-	  });
+// 		if (isVisible) {
+// 		  activeIndex = index;
+// 		}
+// 	  });
   
-	  // Если не нашли активную секцию, используем первую
-	  if (activeIndex === -1) {
-		activeIndex = 0;
-	  }
+// 	  // Если не нашли активную секцию, используем первую
+// 	  if (activeIndex === -1) {
+// 		activeIndex = 0;
+// 	  }
   
-	  // Обновляем видимость всех секций
-	  sections.forEach((section, index) => {
-		const isInRange = Math.abs(index - activeIndex) <= visibleRange;
+// 	  // Обновляем видимость всех секций
+// 	  sections.forEach((section, index) => {
+// 		const isInRange = Math.abs(index - activeIndex) <= visibleRange;
 		
-		if (isInRange) {
-		  section.style.visibility = 'visible';
-		//   section.style.opacity = '1';
-		//   section.style.transition = 'opacity 0.3s ease';
-		} else {
-		  section.style.visibility = 'hidden';
-		//   section.style.opacity = '0';
-		//   section.style.transition = 'opacity 0.3s ease';
-		}
-	  });
-	}
+// 		if (isInRange) {
+// 		  section.style.visibility = 'visible';
+// 		//   section.style.opacity = '1';
+// 		//   section.style.transition = 'opacity 0.3s ease';
+// 		} else {
+// 		  section.style.visibility = 'hidden';
+// 		//   section.style.opacity = '0';
+// 		//   section.style.transition = 'opacity 0.3s ease';
+// 		}
+// 	  });
+// 	}
   
-	// Инициализация и обработка скролла
-	updateVisibility();
-	window.addEventListener('scroll', updateVisibility);
-	window.addEventListener('resize', updateVisibility);
-  });
+// 	// Инициализация и обработка скролла
+// 	updateVisibility();
+// 	window.addEventListener('scroll', updateVisibility);
+// 	window.addEventListener('resize', updateVisibility);
+//   });
