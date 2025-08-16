@@ -10,6 +10,21 @@
     &__title {
     }
 
+    &__row {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: rem(10);
+        @media(max-width:1024px){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media(max-width:650px){
+            grid-template-columns: 1fr;
+            margin-left: rem(-10);
+            margin-right: rem(-10);
+        }
+    }
+
+    //бег строка
     &__running-body {
         @include adaptiveClamp(margin-bottom, 178, 63);
     }
@@ -48,9 +63,9 @@
         &:first-child {
             z-index: 1;
             transform: rotate(3.78deg);
-
+            margin-bottom: rem(-24);
             @media(max-width:1024px){
-                margin-bottom: rem(-24);
+                margin-bottom: rem(-34);
             }
         }
         &:last-child {
@@ -72,7 +87,7 @@
         display: flex;
         align-items: center;
         gap: rem(45);
-        font-weight: 600;
+        font-weight: 500;
         @include adaptiveClamp(font-size, 22, 18);
         line-height: 125%;
         color: var(--white);
@@ -94,6 +109,9 @@
             }
         }
     }
+
+
+
     &__slider {
         position: relative;
     }
@@ -104,7 +122,7 @@
 
     &__button-slider {
         height: 100%;
-        width: 40%;
+        width: 100%;
         position: absolute;
         top: 0;
         z-index: 2;
@@ -119,10 +137,10 @@
         }
     }
     &__button-slider-prev {
-        left: -20%;
+        left: -80%;
     }
     &__button-slider-next {
-        right: -20%;
+        right: -80%;
     }
 }
 

@@ -68,12 +68,16 @@
 @import 'components/achiev';
 @import 'components/apply';
 @import 'components/service-pr';
+@import 'components/packages';
 @import 'components/format';
-
 
 @import 'components/quest';
 
 @import 'components/footer';
+
+@import 'components/menu';
+
+@import 'components/bubble-trans';
 
 //desing-site
 @import 'components/direct-site';
@@ -87,10 +91,15 @@
 
 
 
-//case-page
+
+
+//case-all-page/case-page
+@import 'components/case-page/case-grid';
+
 @import 'components/case-page/about-case';
 @import 'components/case-page/desc-case';
 @import 'components/case-page/other-case';
+
 
 
 
@@ -108,25 +117,6 @@
 
 
 
-
-// html, body {
-//     margin: 0;
-//     padding: 0;
-//     overflow-x: hidden; /* Запретить горизонтальный скролл */
-//     touch-action: pan-y;
-//     height: 100%;
-//   }
-  
-//   .smooth-wrapper {
-//     height: 100vh;
-//     overflow: hidden;
-//   }
-  
-//   .smooth-content {
-//     will-change: transform;
-//     overflow-x: hidden;
-//   }
-  
 
 html.lenis {
     height: auto;

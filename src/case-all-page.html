@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/head.html', {
+    'title': 'MOS DIGITAL - Тетракор'
+  })
+  <body>
+    <!-- @@include('html/preload.html') -->
+    <div class="wrapper">
+      @@include('html/header.html')
+      @@include('html/menu.html', {})
+        <main class="page">
+            <div data-observ></div>
+            <section class="about fix-vh-mob _case-all">
+                <div class="about__container">
+                    <div class="about__crumbs crumbs">
+                        <a href="index.html">Главная</a>
+                        <span>/</span>
+                        <a href="#">Кейсы</a>
+                    </div>
+                    <div class="about__content grid-content _three">
+                        <div class="about__left grid-content__left">
+                            <div class="about__denom denom m-b">
+                                <div class="denom__icon">
+                                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <circle cx="6.93408" cy="7.30518" r="6.92822" fill="white" />
+                                        <path d="M11.6009 7.97201H7.60091V11.972H6.26758V7.97201H2.26758V6.63867H6.26758V2.63867H7.60091V6.63867H11.6009V7.97201Z" fill="black" />
+                                    </svg>
+                                </div>
+                                <span>Наши кейсы</span>
+                            </div>
+                        </div>
+                        <div class="about__right grid-content__right">
+                            <h1 class="about__title title-big">
+                                Пятерочка, Газпром, Ситилинк, KDL, Т2 и ещё 100+ компаний заказывают презентации у нас
+                            </h1>
+                            <p class="about__text bs-text">
+                                Гордимся работой с компаниями, которые <br/>задают правила игры на своих рынках         
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="about__close-connect about__connect-btn">
+                        <img loading="lazy" src="@img/about/btn-connect-close.svg" alt="">
+                    </div> -->
+                </div>
+            </section>
+            @@include('html/case-page/case-grid.html')
+            @@include('html/connect.html')
+        </main>
+
+  
+        @@include('html/footer.html')
+
+        @@include('html/popup-example.html')
+        <div class="cursor-follower"></div>
+    </div>
+  </body>
+</html>

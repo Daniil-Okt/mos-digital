@@ -1,14 +1,16 @@
 .advant {
-    margin-top: rem(-20);
-    .white-theme & {
-        margin-top: rem(-150);
-        @media(max-width:1024px){
-            margin-top: rem(-120);
+    &.bubble-trans.white-block {
+        z-index: 7;
+
+        & + section {
+            z-index: 8;
         }
-        @media(max-width:650px){
-            margin-top: rem(-80);
+
+        & + section + section {
+            z-index: 8;
         }
     }
+
     &__container {
     }
 
@@ -24,7 +26,7 @@
     &__row {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        gap: rem(16);
+        gap: rem(10);
 
         @media(max-width:1024px){
             grid-template-columns: 1fr 1fr;
@@ -60,7 +62,7 @@
 .item-advant {
     position: relative;
     border: 1px solid rgba(46, 53, 63, 0.52);
-    border-radius: rem(20);
+    border-radius: rem(10);
     overflow: hidden;
     height: auto;
     display: flex;
@@ -68,80 +70,79 @@
     flex: auto;
 
     &._f-one {
-        &::before {
-            position: absolute;
-            content: '';
-            width: rem(244);
-            height: rem(187);
-            background-color: var(--bs-title-mark-color);
-            bottom:rem(-26.55);
-            left: rem(-29.5);
-            border-radius: 100%;
-            filter: blur(60px);
-            pointer-events: none;
-            opacity: 0.8;
-        }
+        // &::before {
+        //     position: absolute;
+        //     content: '';
+        //     width: rem(244);
+        //     height: rem(187);
+        //     background-color: var(--bs-title-mark-color);
+        //     bottom:rem(-26.55);
+        //     left: rem(-29.5);
+        //     border-radius: 100%;
+        //     filter: blur(60px);
+        //     pointer-events: none;
+        //     opacity: 0.8;
+        // }
     }
     &._f-two, &._f-four {
-        &::before {
-            position: absolute;
-            content: '';
-            width: rem(600);
-            height: rem(340);
-            background-color: var(--bs-title-mark-color);
-            bottom:rem(-97);
-            left: rem(-65);
-            border-radius: 100%;
-            filter: blur(125px);
-            pointer-events: none;
-            opacity: 0.52;
-        }
+        // &::before {
+        //     position: absolute;
+        //     content: '';
+        //     width: rem(600);
+        //     height: rem(340);
+        //     background-color: var(--bs-title-mark-color);
+        //     bottom:rem(-97);
+        //     left: rem(-65);
+        //     border-radius: 100%;
+        //     filter: blur(125px);
+        //     pointer-events: none;
+        //     opacity: 0.52;
+        // }
     }
     &._f-three {
-        &::before {
-            position: absolute;
-            content: '';
-            width: 100%;
-            height: rem(389);
-            left: 0;
-            bottom: 0;
-            z-index: 2;
-            pointer-events: none;
-            background: linear-gradient(
-                180deg,
-                rgba(255, 69, 51, 0) 0%,
-                rgba(255, 69, 51, 0.4) 44.97%,
-                rgba(210, 40, 30, 1) 100%  /* Затемнённый вариант #ff4533 */
-            );
-            .blue-page & {
-                background: linear-gradient(180deg, rgba(17, 26, 43, 0) 0%, rgba(17, 26, 43, 0.4) 44.97%, #111a2b 100%);
-            }
-        }
+        // &::before {
+        //     position: absolute;
+        //     content: '';
+        //     width: 100%;
+        //     height: rem(389);
+        //     left: 0;
+        //     bottom: 0;
+        //     z-index: 2;
+        //     pointer-events: none;
+        //     background: linear-gradient(
+        //         180deg,
+        //         rgba(255, 69, 51, 0) 0%,
+        //         rgba(255, 69, 51, 0.4) 44.97%,
+        //         rgba(210, 40, 30, 1) 100%  /* Затемнённый вариант #ff4533 */
+        //     );
+        //     .blue-page & {
+        //         background: linear-gradient(180deg, rgba(17, 26, 43, 0) 0%, rgba(17, 26, 43, 0.4) 44.97%, #111a2b 100%);
+        //     }
+        // }
     }
     &._f-four {
-        &::before {
-            bottom:rem(-279);
-            opacity: 0.52;
-        }
+        // &::before {
+        //     bottom:rem(-279);
+        //     opacity: 0.52;
+        // }
     }
     &._f-img .item-advant__img {
-        position: relative;
-        &::after {
-            position: absolute;
-            content: '';
-            width: rem(532);
-            height: rem(501);
-            background-color: var(--bs-title-mark-color);
-            left: 50%;
-            transform: translateX(-50%);
-            top: rem(-153);
-            z-index: 1;
-            filter: blur(117px);
-            border-radius: 100%;
-            opacity: 0.16;
-            pointer-events: none;
-        }
-
+        // position: relative;
+        // &::after {
+        //     position: absolute;
+        //     content: '';
+        //     width: rem(532);
+        //     height: rem(501);
+        //     background-color: var(--bs-title-mark-color);
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //     top: rem(-153);
+        //     z-index: 1;
+        //     filter: blur(117px);
+        //     border-radius: 100%;
+        //     opacity: 0.16;
+        //     pointer-events: none;
+        // }
     }
 
     &__body {
@@ -159,13 +160,13 @@
     &__title {
         margin-bottom: rem(8);
         @include adaptiveClamp(font-size, 20, 18);
-        color: var(--white);
+        // color: var(--white);
         font-weight: 600;
     }
 
     &__text {
         font-weight: 500;
-        color: #cdcdd7;
+        // color: #cdcdd7;
         line-height: 116%;
     }
 
@@ -173,7 +174,8 @@
         margin-top: rem(26.6);
         font-weight: 600;
         font-size: rem(120);
-        color: rgba(255, 255, 255, 0.8);
+        // color: rgba(255, 255, 255, 0.8); 
+        color: var(--bs-title-mark-color);
         margin-bottom: rem(-26.6);
     }
 
@@ -200,6 +202,7 @@
         width: max-content;
         padding-right: rem(22);
         margin-top: rem(16);
+        color: #0d0d0d;
     
         .slide-anim {
             font-size: rem(16);
@@ -222,7 +225,7 @@
             mask: url('data:image/svg+xml;utf8,<svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.25 9.36914L3.75 9.36914" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M9 14.6191L14.25 9.36914L9 4.11914" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></svg>') no-repeat center;
             mask-size: contain;
             -webkit-mask-size: contain;
-            background-color: #fff;
+            background-color:  #0d0d0d;
             right: 0;
             top: rem(1);
             transition: background-color 0.3s ease  0s, right 0.3s ease  0s;

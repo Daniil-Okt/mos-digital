@@ -79,6 +79,6 @@
     "locomotive-scroll": "^4.1.4",
     "simple-parallax-js": "^6.2.1",
     "smooth-scrollbar": "^8.8.4",
-    "swiper": "^8.4.5"
+    "swiper": "^11.2.10"
   }
 }

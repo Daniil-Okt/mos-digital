@@ -76,6 +76,64 @@ class BaseHelpers {
       headerStickyObserver.observe(BaseHelpers.firstScreen);
     }
   }
+
+   /** Функция направления скролла */
+  // static handleScrollDirection(threshold = 100) {
+  //   let lastScroll = window.scrollY || document.documentElement.scrollTop;
+    
+  //   window.addEventListener('scroll', () => {
+  //     const currentScroll = window.scrollY || document.documentElement.scrollTop;
+  //     const isScrollingDown = currentScroll > lastScroll;
+  //     const scrollDelta = Math.abs(currentScroll - lastScroll);
+  
+  //     // Срабатываем только если скролл больше порога (threshold)
+  //     if (scrollDelta > threshold) {
+  //       if (isScrollingDown) {
+  //         document.documentElement.classList.add('scroll-bot');
+  //       } else {
+  //         document.documentElement.classList.remove('scroll-bot');
+  //       }
+  //       lastScroll = currentScroll; // Обновляем последнюю позицию скролла
+  //     }
+  //   });
+  // }
+
+  static handleScrollDirection(threshold = 100) {
+    let lastScroll = window.scrollY || document.documentElement.scrollTop;
+    let scrollTimer = null;
+    let lastDirection = null; // 'up' или 'down'
+  
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY || document.documentElement.scrollTop;
+      const isScrollingDown = currentScroll > lastScroll;
+      const scrollDelta = Math.abs(currentScroll - lastScroll);
+      const currentDirection = isScrollingDown ? 'down' : 'up';
+  
+      // Срабатываем только если скролл больше порога (threshold)
+      if (scrollDelta > threshold) {
+        // Если направление изменилось, сбрасываем таймер
+        if (currentDirection !== lastDirection && scrollTimer) {
+          clearTimeout(scrollTimer);
+          scrollTimer = null;
+        }
+  
+        // Запускаем новый таймер, если его еще нет
+        if (!scrollTimer) {
+          scrollTimer = setTimeout(() => {
+            if (currentDirection === 'down') {
+              document.documentElement.classList.add('scroll-bot');
+            } else {
+              document.documentElement.classList.remove('scroll-bot');
+            }
+            scrollTimer = null;
+          }, 1000); // 2 секунды
+        }
+  
+        lastDirection = currentDirection;
+        lastScroll = currentScroll; // Обновляем последнюю позицию скролла
+      }
+    });
+  }
 }
 
 export default BaseHelpers;

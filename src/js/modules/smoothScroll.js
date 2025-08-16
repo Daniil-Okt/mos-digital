@@ -4,21 +4,42 @@
 
 import Lenis from '@studio-freight/lenis'
 
+
+
 export function smoothScroll() {
-	const lenis = new Lenis({
-        lerp: 0.1,          // Плавность (0.1 - стандартное значение)
-        smooth: false,        // Включить плавный скролл
-        direction: 'vertical', // Направление ('vertical' или 'horizontal')
-        smoothTouch: true, // Критически важно для мобильных
-        touchMultiplier: 1.5,
-    })
-    
-      // Цикл анимации
-    function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
-    }
-    
-    requestAnimationFrame(raf)
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints;
+  if (isTouchDevice) return null;
+
+  const mainLenis = new Lenis({
+      lerp: 0.09,
+      smooth: true,
+      direction: 'vertical',
+      wrapper: window,
+      content: document.documentElement,
+  });
+
+  const menuRight = document.querySelector('.menu-right');
+  let menuRightLenis = null;
+
+  if (menuRight) {
+      const container = menuRight.querySelector('.menu-right__list') || menuRight;
+
+      menuRightLenis = new Lenis({
+          lerp: 0.09,
+          smooth: true,
+          direction: 'vertical',
+          wrapper: menuRight,
+          content: container,
+      });
+  }
+
+  function raf(time) {
+      mainLenis.raf(time);
+      if (menuRightLenis) menuRightLenis.raf(time);
+      requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  return { main: mainLenis, menuRight: menuRightLenis };
 }
 

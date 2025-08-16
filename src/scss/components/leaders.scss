@@ -4,24 +4,30 @@
     &__container {
     }
     &__head-text {
-        @include adaptiveClamp(margin-bottom, 72.86, 30);
+        // @include adaptiveClamp(margin-bottom, 72.86, 30);
+
+        // добавились
+        // @include adaptiveClamp(margin-bottom,110, 50);
     }
     &__title {
-        max-width: rem(735);
+        // max-width: rem(735);
     }
 
     &__text {
-        max-width: rem(440);
+        // max-width: rem(440);
     }
 
     &__running {
         position: relative;
         width: 100%;
-        max-width: rem(800);
+        max-width: rem(990);
         margin-left: auto;
         margin-right: auto;
         mask-image: linear-gradient(90deg, transparent 3.5%, black 35%, black 65%, transparent 96%);
         -webkit-mask-image: linear-gradient(90deg, transparent 3.5%, black 35%, black 65%, transparent 96%);
+        // добавились
+        @include adaptiveClamp(margin-bottom, 65.75, 60);
+
 
         &:last-child {
             @include adaptiveClamp(margin-top, 25.23, 18);
@@ -44,13 +50,15 @@
 
 
     &__running-row {
-        gap: rem(20);
-        padding-right: rem(20);
+        // gap: rem(20);
+        // padding-right: rem(20);
+        @include adaptiveClamp(padding-right, 20, 15);
+        @include adaptiveClamp(gap, 20, 15);
     }
 
     &__running-item {
-        width: rem(200);
-        height: rem(80);
+        @include adaptiveClamp(width, 183.13, 151.05);
+        @include adaptiveClamp(height, 73.25, 60.4);
 
         img {
             width: 100%;

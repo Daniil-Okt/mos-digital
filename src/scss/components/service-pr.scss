@@ -1,35 +1,74 @@
 .service-pr {
     // @include adaptiveClamp(padding-top, 240, 171);
-
+   
     &__container {
     }
 
-    &__head-text {
+    &__content.grid-content {
+        @media(max-width:1024px){
+            grid-template-columns: 1fr;
+        }
     }
 
-    &__title {
+    &__left {
+        @include adaptiveClamp(padding-right, 60, 40);
+        width: 100%;
+
+        @media(max-width:1024px){
+            @include adaptiveClamp(margin-bottom, 100, 80);
+            @include adaptiveClamp(padding-right, 30, 0);
+        }
+    }
+
+    &__right {
+        @media(max-width:1150px){
+            max-width: unset;
+            width: auto;
+        }
+       
+    }
+
+    &__head-text {
+        max-width: 100%;
+    }
+
+    &__title.title-big {
+        text-align: left;
+
+        @media(max-width:1340px){
+            @include adaptiveClamp(font-size, 40, 35);
+        }
+        @media(max-width:1150px){
+            max-width: rem(820);
+        }
+      
     }
 
     &__text {
     }
 
     &__row {
-        max-width: rem(968);
+        // max-width: rem(968);
         margin-left: auto;
         margin-right: auto;
+
+        @media(min-width:1025px){
+            overflow: hidden;
+        }
     }
 
     &__item {
         position: relative;
-        height: rem(59);
+        min-height: rem(59);
         display: flex;
-        justify-content: space-between;
+        // justify-content: space-between;
         align-items: center;
-        gap: rem(20);
-        padding-left: rem(30);
+        gap: rem(30);
+        padding-left: rem(20);
         padding-right: rem(26.85);
-        padding-top: rem(15);
-        padding-bottom: rem(15);
+        @include adaptiveClamp(padding-right, 23, 20);
+        padding-top: rem(10);
+        padding-bottom: rem(10);
         border-bottom: 1px solid var(--bs-border-color-two);
         cursor: pointer;
         
@@ -68,6 +107,18 @@
                         color: var(--white);
                     }
                 }
+
+                .service-pr__item-number {
+                    color: rgba(0, 0, 0, 0.25);
+
+                    .white-theme & {
+                        color: rgba(255, 255, 255, 0.8);
+                    }
+
+                    @media(min-width:1281px){
+                        @include adaptiveClamp(margin-right, 48.5, 0);
+                    }
+                }
     
                 @media(min-width:1025px){
                     border-color: var(--bs-title-color);
@@ -75,35 +126,88 @@
             }
         }
         @media(max-width:768px){
-            &._scr-activ {
+            &:active {
 
                 &::before {
                     height: calc(100% + 1px);
                 }
 
-                .service-pr__item-title, .service-pr__price {
+                .service-pr__item-number {
+                    color: rgba(0, 0, 0, 0.25);
+
+                    .white-theme & {
+                        color: rgba(255, 255, 255, 0.8);
+                    }
+                }
+
+                .service-pr__price {
                     color: #000;
     
                     .white-theme & {
                         color: var(--white);
                     }
                 }
+                .service-pr__item-title {
+                    color: #000;
+    
+                    .white-theme & {
+                        color: var(--white);
+                    }
+
+                    @media(max-width:550px){
+                        color: rgba(59, 59, 59, 0.6);
+
+                        .white-theme & {
+                            color: rgba(255, 255, 255, 0.6);
+                        }
+                    }
+                }
             }
         }
 
     }
+    
+    &__item-number {
+        position: relative;
+        z-index: 1;
+        font-size: rem(14);
+        color: rgba(255, 255, 255, 0.25);
+        font-weight: 500;
+    
+        transition: color 0.3s ease  0s, margin-right 0.3s ease  0s;
+        .white-theme & {
+            color: rgba(59, 59, 59, 0.6);
+        }
 
+        @media(min-width:1281px){
+            @include adaptiveClamp(margin-right, 58.5, 0);
+        }
+
+        @media(max-width:550px){
+            display: none;
+        }
+    }
     &__item-title,  &__price {
         position: relative;
         z-index: 1;
         line-height: 120%;
         color: var(--white-black-color);
-        @include adaptiveClamp(font-size, 18, 16);
+        @include adaptiveClamp(font-size, 16, 14);
         font-weight: 500;
+    }
+
+    &__item-title {
+        position: relative;
+
+        @media(max-width:550px){
+            color: var(--bs-font-color);
+        }
     }
 
     &__price {
         text-align: right;
+        margin-left: auto;
+        white-space: nowrap;
     }
 
 }

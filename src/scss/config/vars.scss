@@ -2,7 +2,7 @@ $mainOffset: 50; // отступы безопасности для контей�
 $maxWidth: 1920; // максимальная ширина страницы
 $minWidth: 320; // минимальная ширина телефона
 $minWidthMaket: 390; // минимальная ширина телефона в макете
-$containerWidth: 1340; // ширина контейнера из макета
+$containerWidth: 1520; // ширина контейнера из макета
 $maxWidthContainer: $containerWidth + ($mainOffset * 2); // ширина контейнера с учетом padding слева и справа
 
 $headerHeight: 100;
@@ -11,14 +11,14 @@ $footerHeight: 100;
 :root {
   --bs-font-family: 'InterTight', sans-serif; // Семейство шрифта по умолчанию
   --font-logo: 'Benzin', sans-serif;
-  --bs-font-size: 16px; // Размер шрифта по умолчанию
+  --bs-font-size: 20px; // Размер шрифта по умолчанию
   --bs-font-weight: 400; // Жирность шрифта по умолчанию
   --bs-line-height: 125%; // Базовая высота шрифта
   --bs-transition: .3s ease-in-out;
   --bs-radius: 10px;
 
   --bs-font-color: rgba(255, 255, 255, 0.6); // Цвет шрифта по умолчанию
-  --bs-title-color: #f0f0f0;
+  --bs-title-color: #fff;
   --bs-mark-color: #ff4533;
   --bs-title-mark-color: #ff4533;
   --bs-border-color:rgba(255, 255, 255, 0.1);
@@ -27,8 +27,8 @@ $footerHeight: 100;
 
   --bs-button-text-color: rgb(207, 207, 207);
   --bs-button-hover-color: #ff3320;
-  --body-color: #0c0e11;
-  --body-card-color: #101214;
+  --body-color: #0e1016;
+  --body-card-color: #0e1016;
   --white: #fff;
   --blue: #0090ff;
   --orange: #ff4533;
@@ -58,7 +58,7 @@ html.white-theme {
   --white-o-b: #ff4533;
 
   --white-black-color: #0d0d0d;
-  --body-card-color: #fafafa;
+  --body-card-color: #fff;
 
   &.blue-page {
     --white-o-b: #06f;

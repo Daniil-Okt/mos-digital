@@ -1,0 +1,202 @@
+.black-theme .bubble-trans.white-block {
+    position: relative;
+    z-index: 5;
+    opacity: 0;
+    transition: background-color 0.3s ease  0.3s, opacity 0.5s ease  0.3s;
+
+    &.visible {
+        opacity: 1;
+        transition: background-color 0.3s ease  0s, opacity 0.5s ease  0s;
+
+        &::before {
+            transition: all 0.6s ease-in  0s;
+            min-width: 250vw;
+            min-height: 250vw;
+            top:-125vw;
+        }
+
+        .bubble-trans__container {
+            opacity: 1;
+            transition: opacity 0.6s ease-out 0.3s;
+            &::before  {
+                height: 90%;
+                transition: all 0.6s ease-out 0.3s;
+            }
+        }
+    }
+
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        min-width: 0;
+        min-height: 0;
+        background: #fff;
+        @include adaptiveClamp(top, 350, 241);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        z-index: -1;
+        transition: all 0.6s ease-out 0s;
+        aspect-ratio: 1 / 1;
+    }
+
+    @media(max-width:550px){
+        &.visible::before {
+            transition: all 0.5s ease-in  0s;
+            bottom: 0;
+        }
+
+        &::before {
+            width: 100vw;
+            height: calc(100% + 300vw);
+            background: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            transition: all 0.5s ease-out 0s;
+            min-width: 100vw;
+            min-height: calc(100% + 300vw);
+            // bottom: -130vh;
+            bottom: -40%;
+            border-radius: 0;
+        }
+    }
+
+
+    .bubble-trans__container {
+        position: relative;
+        opacity: 0;
+        transition: opacity 0.6s ease-out 0s;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 105vw;
+            height: 0;
+            background: #fff;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            transition: all 0.6s ease-out 0s;
+            bottom: 0;
+
+            @media(max-width:550px){
+                display: none;
+            }
+        }
+    }
+}
+
+.white-theme .bubble-trans.black-block {
+    position: relative;
+    z-index: 5;
+    opacity: 0;
+    transition: background-color 0.3s ease  0.3s, opacity 0.5s ease  0.3s;
+    background: none;
+
+    &.visible {
+        opacity: 1;
+        transition: background-color 0.3s ease  0s, opacity 0.5s ease  0s;
+
+        &::before {
+            transition: all 0.6s ease-in  0s;
+            min-width: 250vw;
+            min-height: 250vw;
+            
+            top:-125vw;
+        }
+
+        .bubble-trans__container {
+            opacity: 1;
+            transition: opacity 0.6s ease-out 0.3s;
+
+            &::before  {
+                height: 90%;
+                transition: all 0.6s ease-out 0.3s;
+            }
+        }
+    }
+
+    &::before {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        min-width: 0;
+        min-height: 0;
+        background: #0e1016;
+        @include adaptiveClamp(top, 350, 241);
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        z-index: -1;
+        transition: all 0.6s ease-out 0s;
+        aspect-ratio: 1 / 1;
+    }
+
+    @media(max-width:550px){
+        &.visible::before {
+            transition: all 0.5s ease-in  0s;
+            bottom: 0;
+        }
+
+        &::before {
+            width: 100vw;
+            height: calc(100% + 300vw);
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            transition: all 0.5s ease-out 0s;
+            min-width: 100vw;
+            min-height: calc(100% + 300vw);
+            // bottom: -130vh;
+            bottom: -40%;
+            border-radius: 0;
+        }
+    }
+
+
+    .bubble-trans__container {
+        position: relative;
+        opacity: 0;
+        transition: opacity 0.6s ease-out 0s;
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 105vw;
+            height: 0;
+            background: #0e1016;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            transition: all 0.6s ease-out 0s;
+            bottom: 0;
+
+            @media(max-width:550px){
+                display: none;
+            }
+        }
+    }
+}
+
+.bubble-trans {
+    & + section {
+        position: relative;
+        background-color: var(--body-color);
+        transition: background-color 0.3s ease  0s;
+        z-index: 6;
+    }
+    & + section + section {
+        position: relative;
+        background-color: var(--body-color);
+        transition: background-color 0.3s ease  0s;
+        z-index: 6;
+    }
+}
+.bubble-trans__container {
+    @include adaptiveClamp(padding-bottom, 120, 65);
+}

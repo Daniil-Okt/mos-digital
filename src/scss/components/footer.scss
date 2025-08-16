@@ -1,31 +1,40 @@
 .footer {
   position: relative;
-  // z-index: 1;
-  @include adaptiveClamp(margin-top, 130, 97);
-  @include adaptiveClamp(padding-top, 62, 47.92);
-  @include adaptiveClamp(padding-bottom, 24, 15);
+  z-index: 2;
+  @include adaptiveClamp(margin-top, 343, 122);
 
   // background: rgba(16, 18, 20, 0.35);
-  &::before {
-      position: absolute;
-      content: '';
-      @include adaptiveClamp(width, 446.87, 301.13);
-      @include adaptiveClamp(height, 762.7, 513.95);
-      border-radius: 100%;
-      background: linear-gradient(270deg, #ff4533 38.5%, #fb0 49%, #ff4533 67%);
-      filter: blur(40px);
-      transform: rotate(-57.54deg);
-      top:rem(-159.14);
-      left: 39.3%;
-      z-index: -2;
-      pointer-events: none;
-      transition: opacity 0.3s ease  0s;
-      .white-theme & {
-        opacity: 0;
-      }
 
-      .blue-page & {
-        background: linear-gradient(225deg, #06f 38.1%, #0004ff 82.18%);
+
+  &__content {
+    @include adaptiveClamp(padding-top, 62, 47.92);
+    @include adaptiveClamp(padding-bottom, 24, 15);
+  }
+  &__logo {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      left: 0;
+      bottom: 100%;
+      color: var(--bs-title-color);
+      font-family: var(--font-logo);
+      @include adaptiveClamp(font-size, 195, 53);
+      line-height: 92%;
+      letter-spacing: -0.02em;
+      text-align: center;
+      width: 100%;
+      z-index: -1;
+
+      @media(max-width:1500px){
+        @include adaptiveClamp(font-size, 181, 53);
+      }
+      &-text {
+        // display: inline-block;
+        // position: relative;
+        // left: 50%;
+        transform: translateY(50%);
+        // width: max-content;
+        white-space: nowrap;
       }
   }
   &::after {
@@ -33,22 +42,27 @@
     content: '';
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(75px);
-    -webkit-backdrop-filter: blur(75px); 
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); 
     background: rgba(16, 18, 20, 0.35);
     pointer-events: none;
     top: 0;
     left: 0;
     z-index: -1;
     .white-theme & {
-      background: #fafafa;
+      background: #fafafa62;
+    }
+
+    @media(max-width:550px){
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px); 
     }
   }
   
 
 
   &__container {
-
+    max-width: 100%;
   }
 
 
@@ -116,7 +130,7 @@
     gap: rem(15);
     flex-wrap: wrap;
     a,p {
-      font-size: rem(14);
+      font-size: rem(15);
       color: var(--bs-font-color);
       transition: color 0.3s ease  0s;
       line-height: 120%;
@@ -150,7 +164,7 @@
     }
     @media(max-width:650px){
         p, a {
-          font-size: rem(12);
+          font-size: rem(14);
         }
     }
   }
@@ -201,6 +215,52 @@
       }
     }
 
+  }
+
+
+  &__accent {
+    overflow: hidden;
+    @include adaptiveClamp(min-height, 545, 190);
+  }
+
+  &__accent-box {
+    height: 0px;
+    overflow: hidden;
+    background: var(--bs-title-mark-color);
+
+    width: 100%;
+
+    will-change: height;
+  }
+
+  &__accent-body {
+    position: relative;
+    
+    @include adaptiveClamp(bottom, 272.5, 95);
+    will-change: bottom;
+    display: flex;
+    align-items: end;
+    @include adaptiveClamp(padding-top, 42, 15.72);
+    @include adaptiveClamp(padding-bottom, 42, 15.72);
+    @include adaptiveClamp(min-height, 545, 190);
+  }
+
+  &__accent-text {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    @include adaptiveClamp(font-size, 80, 24);
+    letter-spacing: -0.02em;
+    text-align: right;
+    color: #0e1016;
+
+    line-height: 105%;
+    font-weight: 500;
+    margin-left: auto;
+
+    .white-theme & {
+      color: #fff;
+    }
   }
 }
 
@@ -345,16 +405,10 @@
     flex-direction: column;
     gap: rem(23);
     align-items: start;
-    background: #f5f5f500;
     margin-right: rem(-20);
     margin-left: rem(-20);
     padding-left: rem(20);
     padding-right: rem(20);
-
-    .white-theme & {
-      background: #f5f5f5;
-    }
-
   }
   .foot-tender {
     @media(max-width:650px){
@@ -386,6 +440,10 @@
   .direct-port__item-tag.connect__online {
     margin-bottom: 0;
 
+    // убрать если изменится оригинал
+    color: #fff;
+    font-weight: 500;
+
     &.not-point {
       padding-left: rem(13);
       &::before {
@@ -412,6 +470,7 @@
     padding-bottom: rem(24);
     width: 100%;
     font-weight: 500;
+    font-size: rem(16);
 
     svg {
       width: rem(16);
@@ -472,6 +531,10 @@
     &__online {
     }
   }
+
+  &__tag {
+    color: var(--bs-title-color) !important;
+  }
 }
 
 .foot-menu {
@@ -479,13 +542,13 @@
   grid-template-columns: 1fr 1fr 1fr;
   @include adaptiveClamp(column-gap, 95, 20);
   row-gap: rem(40);
-  max-width: rem(943);
+  max-width: rem(1043);
   width: 100%;
 
   @media(max-width:1280px){
     @include adaptiveClamp(column-gap, 35, 20);
   }
-  @media(max-width:1140px){
+  @media(max-width:1200px){
     grid-template-columns: 1fr 1fr;
   }
   @media(max-width:850px){
@@ -537,10 +600,10 @@
       position: relative;
       display: block;
       padding-right: rem(16);
-      padding-bottom: rem(3);
+      padding-bottom: rem(4);
       border-bottom: 1px solid var(--bs-border-color);
       line-height: 120%;
-      font-size: rem(14);
+      font-size: rem(15.5);
       &.button-slide .slide-anim {
         color: var(--bs-font-color);
 
@@ -554,14 +617,14 @@
       &::after {
           position: absolute;
           content: '';
-          width: rem(10);
-          height: rem(10);
+          width: rem(11);
+          height: rem(11);
           background-color: currentColor; 
           mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M9.85 1.38477C9.85 0.915324 9.46944 0.534766 9 0.534766L1.35 0.534765C0.880558 0.534766 0.5 0.915323 0.5 1.38477C0.5 1.85421 0.880558 2.23477 1.35 2.23477L8.15 2.23477L8.15 9.03477C8.15 9.50421 8.53056 9.88477 9 9.88477C9.46944 9.88477 9.85 9.50421 9.85 9.03477L9.85 1.38477ZM1 9.38477L1.60104 9.98581L9.60104 1.98581L9 1.38477L8.39896 0.783725L0.398959 8.78372L1 9.38477Z"/></svg>') no-repeat center;
           mask-size: contain;
           content: '';
           color: rgba(255, 255, 255, 0.5);
-          top:rem(3);
+          top:rem(2);
           right: 0;
           transition: color 0.3s ease  0s, transform 0.3s ease  0s;
   
@@ -579,7 +642,6 @@
       @media(max-width:650px){
           padding-left: rem(41);
           padding-bottom: rem(19);
-
           &::before {
               position: absolute;
               color: var(--bs-font-color);

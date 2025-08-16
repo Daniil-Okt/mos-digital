@@ -9,6 +9,7 @@
 import MousePRLX from './libs/parallax-mouse'
 import AOS from 'aos'
 
+
 import BaseHelpers from './helpers/base-helpers';
 import PopupManager from './modules/popup-manager';
 import BurgerMenu from './modules/burger-menu';
@@ -37,6 +38,11 @@ import { fixedBtnAbout } from './modules/fixedBtnAbout.js';
 import { connectBtn } from './modules/connectBtn.js';
 import { fixVHUnitsOnMobile } from './modules/fixVHUnitsOnMobile.js';
 import { simpleParallaxInit } from './libs/simple-parallax.js';
+import { textWordAnim } from './libs/textWordAnim.js';
+import { descItemCase } from './modules/descItemCase.js';
+import { setupAccurateParallaxOverlap } from './libs/setupAccurateParallaxOverlap.js';
+import { checkElementsInCenter } from './modules/checkElementsInCenter.js';
+import { typeWriteAbout } from './modules/typeWriteAbout.js';
 
 
 // import { SimpleParallax } from './libs/simple-parallax.js';
@@ -50,6 +56,8 @@ BaseHelpers.checkWebpSupport();
 BaseHelpers.addLoadedClass();
 /* Фиксированный header */
 BaseHelpers.headerFixed();
+/* Направления скролла */
+BaseHelpers.handleScrollDirection()
 
 
 /** ===================================================================================
@@ -68,27 +76,23 @@ new PopupManager();
  * */
 new BurgerMenu().init();
 
-
-simpleParallaxInit()
-
 // Скролл с инерцией
-// if (window.innerWidth > 1024) {
-// 	smoothScroll()
-// }
-// smoothScroll()
+if (window.innerWidth > 1024) {
+	smoothScroll()
+}
 
 
-// // Вариант 2 - с явным указанием .default
-// import { simpleParallax } from 'simple-parallax-js';
+window.addEventListener('load', () => {
+	setTimeout(() => {
+		simpleParallaxInit()
+	}, 500);
 
-// // Вариант 3 - импорт из dist-файла
-// import SimpleParallax from 'simple-parallax-js/dist/simpleParallax.min';
-
-
-// // Вариант 4 - через require (если используете CommonJS)
-// const SimpleParallax = require('simple-parallax-js').default;
+})
 
 
+
+//Анимация слов заголвка первого экрана
+document.addEventListener('DOMContentLoaded', typeWriteAbout);
 
 
 /** ===================================================================================
@@ -98,8 +102,12 @@ simpleParallaxInit()
 
 window.addEventListener('load', () => {
 	setTimeout(() => {
-		AOS.init();
-	}, 10);
+		AOS.init({
+			once: true, // Анимация сработает только один раз
+			duration: 800,
+			anchorPlacement: 'bottom-bottom'
+		})
+	}, 1300);
 })
 
 /** ===================================================================================
@@ -117,12 +125,6 @@ new MousePRLX();
 /** ===================================================================================
  * <Бегущая строка>
  * */
-	// window.addEventListener('load', () => {
-	// 	setTimeout(() => {
-	// 		running()
-			
-	// 	}, 10);
-	// })
 	runningAnit()
 
 
@@ -184,7 +186,7 @@ maskTel()
 
 /* Инициализация  swiper =================================================================================
 */
-document.addEventListener('DOMContentLoaded', initSlider());
+// document.addEventListener('DOMContentLoaded', initSlider());
 
 
 
@@ -233,7 +235,13 @@ focusInput()
 	* При клике на элемент, у всех элементов класс удаляется
 */
 import { toggleActiveClass } from './modules/index.js'
-import { textWordAnim } from './libs/textWordAnim.js';
+import { whiteBlacBlockVisible } from './modules/whiteBlackBlockVisible.js';
+import { menuEncl } from './modules/menuEncl.js';
+import { createBottomBlur } from './modules/createBottomBlur.js';
+import { animGsapInit } from './modules/animGsapInit.js';
+import { animateTitleWords } from './modules/animateTitleWords.js';
+
+
 
 
 
@@ -246,7 +254,11 @@ toggleActiveClass(directPortMenuItems)
 // toggleActiveClass(itemQuests)
 
 // открытие/закрытие вопросов
-document.addEventListener('load', questInit());
+window.addEventListener('load', () => {
+	setTimeout(() => {
+		questInit()
+	}, 100);
+});
 
 
 
@@ -259,11 +271,11 @@ if (window.innerWidth > 1024) {
 }
 
 //анимация текста blur
-window.addEventListener('load', textBlurAnim())
+// window.addEventListener('load', textBlurAnim())
 
 
 
-//автозапус видео на айфонах
+//автозапус видео 
 window.addEventListener('load', autoplayVideo())
 
 
@@ -305,7 +317,7 @@ window.addEventListener('load', numberDrawingAnim())
 
 
 //анимация шоурила
-document.addEventListener('DOMContentLoaded', showreelAnim());
+// document.addEventListener('DOMContentLoaded', showreelAnim());
 
 
 //откртие видео
@@ -333,74 +345,95 @@ window.addEventListener('resize', () => {
 
 
 
-
-//анимация слов
-
-document.addEventListener('load', textWordAnim());
-
-
+// функция активности элемента в центре при скролле
+window.addEventListener('load', checkElementsInCenter);
+window.addEventListener('scroll', checkElementsInCenter);
+window.addEventListener('resize', checkElementsInCenter);
 
 
 
-function checkElementsInCenter() {
-	// Работает только на экранах ≤ 768px
-	if (window.innerWidth > 768) {
-	  // У всех элементов снимаем класс, если ширина больше 768px
-	  document.querySelectorAll('[data-ctr-scr]').forEach(el => {
-		el.classList.remove('_scr-activ');
-	  });
-	  return;
-	}
+
+
+
+
+// станица кейса =====================================================================
+// Инициализация парралакста для страницы кейса
+// document.addEventListener('DOMContentLoaded', () => {
+// 	const cleanup = setupAccurateParallaxOverlap(
+// 		'.desc-case', // Наезжающий блок
+// 		'.about-case', // Блок, на который наезжают
+// 		950,          // Брейкпоинт
+// 		0.6           // Интенсивность (по умолчанию 0.5)
+// 	);
+// });
+
+//паддинги
+descItemCase()
+
+
+
+//добавление класс visible к черным/белым блокам
+window.addEventListener('load', whiteBlacBlockVisible);
+
+//вся анимация gsap
+animGsapInit()
+
+
+//элементы меню
+document.addEventListener('DOMContentLoaded', menuEncl());
+
+
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', createBottomBlur);
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+	const main = document.querySelector('main.page');
+	if (!main) return;
   
-	const elements = document.querySelectorAll('[data-ctr-scr]');
-	if (elements.length === 0) return;
+	const sections = Array.from(main.querySelectorAll('section'));
+	const visibleRange = 2; // Количество видимых секций в каждую сторону
   
-	let activeElement = null;
-	const windowHeight = window.innerHeight;
-	const centerThreshold = windowHeight / 2;
-  
-	// Определяем зону "центра" (например, ±30% от центра экрана)
-	const centerZoneMin = centerThreshold * 0.7; // 30% выше центра
-	const centerZoneMax = centerThreshold * 1.3; // 30% ниже центра
-  
-	elements.forEach(element => {
-	  const rect = element.getBoundingClientRect();
-	  const elementCenter = (rect.top + rect.bottom) / 2;
-  
-	  // Если центр элемента попадает в зону центра экрана
-	  if (elementCenter >= centerZoneMin && elementCenter <= centerZoneMax) {
-		// Если ещё не нашли активный элемент или этот элемент ближе к центру
-		if (!activeElement || 
-			Math.abs(elementCenter - centerThreshold) < 
-			Math.abs((activeElement.getBoundingClientRect().top + activeElement.getBoundingClientRect().bottom) / 2 - centerThreshold)
-		) {
-		  activeElement = element;
+	function updateVisibility() {
+	  // Находим первую видимую секцию (в зоне viewport)
+	  let activeIndex = -1;
+	  
+	  sections.forEach((section, index) => {
+		const rect = section.getBoundingClientRect();
+		const isVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
+		
+		if (isVisible) {
+		  activeIndex = index;
 		}
+	  });
+  
+	  // Если не нашли активную секцию, используем первую
+	  if (activeIndex === -1) {
+		activeIndex = 0;
 	  }
-	});
   
-	// У всех убираем класс, затем добавляем только активному (если он есть)
-	elements.forEach(element => element.classList.remove('_scr-activ'));
-	if (activeElement) activeElement.classList.add('_scr-activ');
-  }
-  
-  // Запускаем проверку при загрузке, скролле и ресайзе
-  window.addEventListener('load', checkElementsInCenter);
-  window.addEventListener('scroll', checkElementsInCenter);
-  window.addEventListener('resize', checkElementsInCenter);
-  
-  // Оптимизация: Throttle для scroll/resize
-  let isThrottled = false;
-  function throttleCheck() {
-	if (!isThrottled) {
-	  checkElementsInCenter();
-	  isThrottled = true;
-	  setTimeout(() => isThrottled = false, 100);
+	  // Обновляем видимость всех секций
+	  sections.forEach((section, index) => {
+		const isInRange = Math.abs(index - activeIndex) <= visibleRange;
+		
+		if (isInRange) {
+		  section.style.visibility = 'visible';
+		//   section.style.opacity = '1';
+		//   section.style.transition = 'opacity 0.3s ease';
+		} else {
+		  section.style.visibility = 'hidden';
+		//   section.style.opacity = '0';
+		//   section.style.transition = 'opacity 0.3s ease';
+		}
+	  });
 	}
-  }
   
-  window.addEventListener('scroll', throttleCheck);
-  window.addEventListener('resize', throttleCheck);
-
-
-
+	// Инициализация и обработка скролла
+	updateVisibility();
+	window.addEventListener('scroll', updateVisibility);
+	window.addEventListener('resize', updateVisibility);
+  });

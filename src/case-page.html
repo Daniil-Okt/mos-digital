@@ -7,79 +7,34 @@
     <!-- @@include('html/preload.html') -->
     <div class="wrapper">
       @@include('html/header.html')
+      @@include('html/menu.html', {})
         <main class="page">
             <div data-observ></div>
             @@include('html/case-page/about-case.html')
             @@include('html/case-page/desc-case.html')
             @@include('html/case-page/other-case.html')
             
-            <div class="connect section-p-b">
-                <div class="connect__container">
-                    <div class="connect__online direct-port__item-tag">Мы онлайн</div>
-                    <div class="connect__head head-text text-blur-anim">
-                        
-                        <h2 class="connect__title title-big">
-                            Опыт работы <br/>на <em>крупных площадках</em> страны и заграницей
-                        </h2>
-                        <p class="connect__text bs-text t-c">
-                            Мы гордимся работой с компаниями, которые задают <br/>правила игры на своих рынках 
-                        </p>
-                    </div>
-                    <form action="#" class="connect__form">
-                        
-                        <div class="connect__row-input row-input">
-                            <div class="connect__item-input item-input">
-                                <lavel class="item-input__label"><span class="ok">Имя</span><span class="error">Введите имя</span></lavel>
-                                <input type="text" name="name" class="item-input__input text _req _email">
-                            </div>
-                            <div class="connect__item-input item-input">
-                                <lavel class="item-input__label"><span class="ok">Телефон</span><span class="error">Введите телефон</span></lavel>
-                                <input type="text" placeholder="" name="phone" class="item-input__input text _req tel">
-                            </div>
-                        </div>
-                        <div class="connect__radio">
-                            <div class="connect__radio-label">Бюджет проекта</div>
-                            <div class="connect__radio-row">
-                                <label class="connect__radio-item">
-                                    <input checked type="radio" value="до 500 тыс." name="budget">
-                                    <div class="connect__radio-item-body button-slide">
-                                        <span class="slide-anim" data-content="до 500 тыс."></span>
-                                    </div>
-                                </label>
-                                <label class="connect__radio-item">
-                                    <input type="radio" value="до 1 млн" name="budget">
-                                    <div class="connect__radio-item-body button-slide">
-                                        <span class="slide-anim" data-content="до 1 млн"></span>
-                                    </div>
-                                </label>
-                                <label class="connect__radio-item">
-                                    <input type="radio" value="1-3 млн" name="budget">
-                                    <div class="connect__radio-item-body button-slide">
-                                        <span class="slide-anim" data-content="1-3 млн"></span>
-                                    </div>
-                                </label>
-                                <label class="connect__radio-item">
-                                    <input type="radio" value="3+ млн" name="budget">
-                                    <div class="connect__radio-item-body button-slide">
-                                        <span class="slide-anim" data-content="3+ млн"></span>
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="connect__form-bot">
-                            <button class="connect__button button button-slide">
-                                <span class="slide-anim" data-content="Получить расчет"></span>
-                            </button>
-                            <label class="connect__personal-data personal-data">
-                                <input checked type="checkbox" name="personal-data _req">
-                                <div class="personal-data__icon"></div>
-                                <span>Я даю согласие на обработку <a href="#">персональных данных</a></span>
-                            </label>
-                        </div>
-                    </form>
+            @@include('html/connect.html')
+
+            <div class="case-page-btns about__button-row about__button-row-fixed">
+                <div class="about__btn-pat button">
+                    <span>Купить шаблон</span>
+                    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="7.5" cy="7.5" r="7.5" fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M8.31411 3.0175C8.38301 3.03932 8.44278 3.08035 8.48507 3.13486C8.52736 3.18937 8.55006 3.25464 8.55002 3.32157V6.85726H10.6501C10.7157 6.85727 10.7801 6.87424 10.8357 6.90625C10.8914 6.93825 10.9361 6.98399 10.9648 7.03823C10.9935 7.09248 11.005 7.15304 10.998 7.21301C10.991 7.27297 10.9657 7.32991 10.9252 7.37732L7.07509 11.8773C7.03011 11.9298 6.96841 11.9682 6.89859 11.987C6.82877 12.0058 6.7543 12.0042 6.68553 11.9823C6.61677 11.9605 6.55713 11.9195 6.51491 11.8651C6.47269 11.8106 6.45 11.7455 6.44998 11.6786V8.14296H4.34994C4.28427 8.14295 4.21993 8.12597 4.16427 8.09397C4.10861 8.06197 4.06388 8.01623 4.03518 7.96198C4.00649 7.90774 3.99499 7.84717 4.002 7.78721C4.00901 7.72725 4.03426 7.67031 4.07484 7.62289L7.92491 3.12293C7.96982 3.0704 8.03143 3.03203 8.10118 3.01313C8.17093 2.99424 8.24535 2.99577 8.31411 3.0175Z" fill="#FF4533" />
+                    </svg>
+                </div>
+                <div class="about__connect">
+                    <a class="about__connect-btn" href="#">
+                        <img loading="lazy" src="@img/about/btn-connect1.svg" alt="">
+                    </a>
+                    <a class="about__connect-btn" href="#">
+                        <img loading="lazy" src="@img/about/btn-connect2.svg" alt="">
+                    </a>
                 </div>
             </div>
         </main>
+
   
         @@include('html/footer.html')
 

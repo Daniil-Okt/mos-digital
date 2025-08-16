@@ -1,3 +1,5 @@
+import { setupResizeHandler } from "./setupResizeHandler";
+
 export function questInit() {
     const questRows = document.querySelectorAll('.quest__row');
 
@@ -9,13 +11,9 @@ export function questInit() {
             const left = item.querySelector('.item-quest__left');
             const leftBody = left?.querySelector('.item-quest__body');
             const right = item.querySelector('.item-quest__right');
-            const title = left?.querySelector('.item-quest__title');
             const isActive = item.classList.contains('_active'); // Проверка начального состояния
 
-            // Установка начальных стилей
-            if (left && title) {
-                left.style.minHeight = `${title.scrollHeight}px`;
-            }
+            // Удалено установка minHeight для left
 
             if (leftBody) {
                 const leftHeight = leftBody.scrollHeight;
@@ -26,6 +24,9 @@ export function questInit() {
                 const rightHeight = right.scrollHeight;
                 right.style.marginBottom = isActive ? '0' : `-${rightHeight}px`;
             }
+
+            // Новый функционал для margin-top изображения
+            adjustImageMargin(item);
         });
 
         // Обработчики событий (остаются без изменений)
@@ -73,6 +74,8 @@ export function questInit() {
             item.classList.add('_active');
             if (leftBody) leftBody.style.marginBottom = '0';
             if (right) right.style.marginBottom = '0';
+            adjustImageMargin(item); // Обновляем margin при открытии
+            setupResizeHandler()
         }
 
         function closeItem(item, leftBody, right) {
@@ -83,6 +86,39 @@ export function questInit() {
             if (right) {
                 right.style.marginBottom = `-${right.scrollHeight}px`;
             }
+            adjustImageMargin(item); // Обновляем margin при закрытии
+            setupResizeHandler()
         }
+
+        // Функция для регулировки margin-top изображения
+        function adjustImageMargin(item) {
+            const img = item.querySelector('.item-quest__img');
+            const topSection = item.querySelector('.item-quest__top');
+            
+            if (!img || !topSection) return;
+
+            // Проверяем ширину экрана
+            if (window.innerWidth > 800) {
+                const topHeight = topSection.scrollHeight;
+                img.style.marginTop = `-${topHeight}px`;
+            } else {
+                img.style.marginTop = ''; // Сбрасываем на больших экранах
+            }
+        }
+
+        // Обработчик изменения размера окна
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 800) {
+                questItems.forEach(item => adjustImageMargin(item));
+            } else {
+                // Сбрасываем margin-top на больших экранах
+                questItems.forEach(item => {
+                    const img = item.querySelector('.item-quest__img');
+                    if (img) img.style.marginTop = '';
+                });
+            }
+        });
     });
+
+    setupResizeHandler()
 }

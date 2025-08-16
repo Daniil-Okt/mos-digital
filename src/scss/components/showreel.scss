@@ -3,17 +3,28 @@
     z-index: 4;
     // background: var(--body-color);
     &__container {
+
         @media(max-width:550px){
             padding: 0;
         }
     }
     &__video-body {
-        @media(min-width:1025px){
+        position: relative;
+        display: flex;
+        // max-height: 100vh;
+        border-radius: rem(10);
+        overflow: hidden;
+
+        @media(min-width:1150px){
             transform: scale(0.5);
+            transform-origin: center top;
         }
         @media(max-width:550px){
-            min-height: 100vh;
-            min-height: 100dvh;
+            // min-height: rem(535);
+            min-width: 100vw;
+            aspect-ratio: 390 / 535;
+            // @include adaptiveClamp(min-height, 1000, 535);
+            // min-height: 100dvh;
 
             .showreel-video  {
                 min-height: inherit;
@@ -31,12 +42,23 @@
         }
 
         
+        &::before {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(55.77% 55.77% at 45.35% 52.75%, rgba(14, 16, 22, 0) 0%, rgba(14, 16, 22, 0.3) 100%);
+            top:0;
+            left: 0;
+            border-radius: rem(10);
+        }
     }
     &__video {
         
         width: 100%;
         img, picture, video {
             width: 100%;
+            height: 100%;
             object-fit: cover;
         }
         
@@ -56,6 +78,33 @@
     }
 }
 
+
+.video-lazy__time {
+    position: absolute;
+    @include adaptiveClamp(top, 31.17, 17.18);
+    @include adaptiveClamp(right, 36, 20);
+    display: flex;
+    align-items: center;
+
+    @include adaptiveClamp(gap, 9, 7);
+
+    
+    color: var(--white);
+    z-index: 1;
+    img {
+        @include adaptiveClamp(width, 11, 9);
+    }
+    p {
+        @include adaptiveClamp(font-size, 18, 14);
+        // text-align: right;
+        // @include adaptiveClamp(width, 55, 43);
+
+        span {
+            display: inline-block;
+            @include adaptiveClamp(width, 21, 16.7);
+        }
+    }
+}
 
 .sticky-before-showreel {
     transform: translateZ(0); /* Активирует GPU acceleration */

@@ -1,66 +1,115 @@
-<div class="connect section-p-b">
-    <div class="connect__container">
-        <div class="connect__online direct-port__item-tag">Мы онлайн</div>
-        <div class="connect__head head-text text-blur-anim">
-            
-            <h2 class="connect__title title-big">
-                Давайте обсудим <em>стоимость и сроки</em> разработки
-            </h2>
-            <p class="connect__text bs-text t-c">
-                Мы познакомимся, зададим вопросы, расскажем о наших процессах и дадим предварительную оценку проекта
-            </p>
+<section class="connect section-p-t" data-button-fixed-hidden>
+    
+    <div class="connect__content">
+        <div class="connect__fon">
+            <div class="showreel__video showreel-video">
+                <video class="lazy" autoplay muted loop playsinline poster="@img/connect/connect-fon-preview.webp" loading="lazy">
+                    <source data-src="static/connect/connect-fon.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
-        <form action="#" class="connect__form">
-            
-            <div class="connect__row-input row-input">
-                <div class="connect__item-input item-input">
-                    <lavel class="item-input__label"><span class="ok">Имя</span><span class="error">Введите имя</span></lavel>
-                    <input type="text" name="name" class="item-input__input text _req _email">
+        <div class="connect__container">
+            <div class="connect__left">
+                <div class="connect__online direct-port__item-tag tag-oline">Мы онлайн</div>
+                <div class="connect__icon">
+                    <svg width="131" height="104" viewBox="0 0 131 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.6465 103.218H0.65625L27.5199 0.783203H71.4402L16.6465 103.218Z" fill="white" />
+                        <path d="M75.2559 103.218H59.2656L86.1292 0.783203H130.05L75.2559 103.218Z" fill="white" />
+                    </svg>
                 </div>
-                <div class="connect__item-input item-input">
-                    <lavel class="item-input__label"><span class="ok">Телефон</span><span class="error">Введите телефон</span></lavel>
-                    <input type="text" placeholder="" name="phone" class="item-input__input text _req tel">
+                <h2 class="connect__title title-big text-word-anim">
+                    Давайте обсудим <em>стоимость и сроки</em> разработки
+                </h2>
+                <div class="connect__account">
+                    <div class="connect__account-img">
+                        <img loading="lazy" src="@img/drawing/user-drawing.webp" alt="">
+                    </div>
+                    <div class="connect__account-row">
+                        <p class="big">Зарва Елена</p>
+                        <p>Менеджер по продажам</p>
+                    </div>
                 </div>
+                <a target="_blank" href="#" class="connect__link">Политика конфиденциальности</a>
             </div>
-            <div class="connect__radio">
-                <div class="connect__radio-label">Бюджет проекта</div>
-                <div class="connect__radio-row">
-                    <label class="connect__radio-item">
-                        <input checked type="radio" value="до 500 тыс." name="budget">
-                        <div class="connect__radio-item-body button-slide">
-                            <span class="slide-anim" data-content="до 500 тыс."></span>
-                        </div>
-                    </label>
-                    <label class="connect__radio-item">
-                        <input type="radio" value="до 1 млн" name="budget">
-                        <div class="connect__radio-item-body button-slide">
-                            <span class="slide-anim" data-content="до 1 млн"></span>
-                        </div>
-                    </label>
-                    <label class="connect__radio-item">
-                        <input type="radio" value="1-3 млн" name="budget">
-                        <div class="connect__radio-item-body button-slide">
-                            <span class="slide-anim" data-content="1-3 млн"></span>
-                        </div>
-                    </label>
-                    <label class="connect__radio-item">
-                        <input type="radio" value="3+ млн" name="budget">
-                        <div class="connect__radio-item-body button-slide">
-                            <span class="slide-anim" data-content="3+ млн"></span>
-                        </div>
-                    </label>
+            <div class="connect__right">
+                <div class="connect__human">
+                    <div class="connect__human-img">
+                        <img loading="lazy" src="@img/connect/human.webp" alt="">
+                    </div>
+                    <div class="connect__human-body">
+                        <div class="connect__human-title">Meet In-House. A clean and meaningful Framer</div>
+                        <div class="connect__human-text">Пару слов важных</div>
+                    </div>
+                    
                 </div>
+                <form action="#" class="connect__form">
+                    
+                    <div class="connect__row-input row-input">
+                        <div class="connect__item-input item-input">
+                            <lavel class="item-input__label"><span class="ok">Имя</span><span class="error">Введите имя</span></lavel>
+                            <input type="text" name="name" class="item-input__input text _req">
+                        </div>
+                        <div class="connect__item-input item-input">
+                            <lavel class="item-input__label"><span class="ok">Телефон</span><span class="error">Введите телефон</span></lavel>
+                            <input type="text" placeholder="" name="phone" class="item-input__input text _req tel">
+                        </div>
+                        <div class="connect__item-input item-input">
+                            <lavel class="item-input__label"><span class="ok">Email</span><span class="error">Введите email</span></lavel>
+                            <input type="text" placeholder="" name="email" class="item-input__input text _req _email">
+                        </div>
+                    </div>
+                    <div class="connect__radio">
+                        <div class="connect__radio-label">Какая презентация нужна?</div>
+                        <div class="connect__radio-row">
+                            <label class="connect__radio-item">
+                                <input checked type="radio" value="Для бизнеса" name="budget">
+                                <div class="connect__radio-item-body button-slide">
+                                    <span class="slide-anim" data-content="Для бизнеса"></span>
+                                </div>
+                            </label>
+                            <label class="connect__radio-item">
+                                <input type="radio" value="Для государства" name="budget">
+                                <div class="connect__radio-item-body button-slide">
+                                    <span class="slide-anim" data-content="Для государства"></span>
+                                </div>
+                            </label>
+                            <label class="connect__radio-item">
+                                <input type="radio" value="Для выступления" name="budget">
+                                <div class="connect__radio-item-body button-slide">
+                                    <span class="slide-anim" data-content="Для выступления"></span>
+                                </div>
+                            </label>
+                            <label class="connect__radio-item">
+                                <input type="radio" value="Шаблон" name="budget">
+                                <div class="connect__radio-item-body button-slide">
+                                    <span class="slide-anim" data-content="Шаблон"></span>
+                                </div>
+                            </label>
+                            <label class="connect__radio-item">
+                                <input type="radio" value="Отчет" name="budget">
+                                <div class="connect__radio-item-body button-slide">
+                                    <span class="slide-anim" data-content="Отчет"></span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="connect__form-bot">
+                        <button class="connect__button button button-slide">
+                            <span class="slide-anim" data-content="Обсудить задачу"></span>
+                        </button>
+                        <label class="connect__personal-data personal-data">
+                            <input type="checkbox" name="personal-data" class="_req">
+                            <div class="personal-data__icon"></div>
+                            <span>Я даю согласие на обработку <a href="#">персональных данных</a></span>
+                        </label>
+                    </div>
+                </form>
             </div>
-            <div class="connect__form-bot">
-                <button class="connect__button button button-slide">
-                    <span class="slide-anim" data-content="Получить расчет"></span>
-                </button>
-                <label class="connect__personal-data personal-data">
-                    <input checked type="checkbox" name="personal-data _req">
-                    <div class="personal-data__icon"></div>
-                    <span>Я даю согласие на обработку <a href="#">персональных данных</a></span>
-                </label>
-            </div>
-        </form>
+        </div>
+
+
+
     </div>
-</div>
+</section>
+
+<!-- src="static/connect/connect-fon.mp4" -->

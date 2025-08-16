@@ -7,7 +7,7 @@
     &__container {
     }
     &__head {
-        @include adaptiveClamp(margin-bottom, 84, 75);
+        // @include adaptiveClamp(margin-bottom, 84, 75);
     }
     &__title {
 
@@ -37,14 +37,8 @@
         
 
 
-        @media(min-width:769px){
+        @media(min-width:1024px){
             &:hover::after {
-                opacity: 1;
-                right: rem(-124);
-            }
-        }
-        @media(max-width:768px){
-            &.swiper-slide-active::after {
                 opacity: 1;
                 right: rem(-124);
             }
@@ -59,34 +53,38 @@
             bottom:0;
             right: 0;
             pointer-events: none;
+            transition: filter 0.3s ease  0s;
 
             .white-theme & {
                 background: url(@img/direct-site/direct-site-item-bg-black.webp) no-repeat center center / cover;
+                filter: brightness(30%);
             }
         }
 
         &::after {
-            position: absolute;
-            content: '';
-            width: rem(317);
-            height: rem(296);
-            border-radius: 50%;
-            background: #ff443377;
-            filter: blur(120px);
-            bottom:rem(10);
-            right: rem(-224);
-            pointer-events: none;
-            transition: opacity 0.5s ease  0s, right 0.5s ease  0s;
-            z-index: -1;
-            will-change: transform, opacity;
-            opacity: 0;
-
-            .blue-page & {
-                background: rgba(0, 102, 255, 0.325);
-            }
-
-            .white-theme & {
-                // opacity: 0;
+            @media(min-width:1025px){
+                position: absolute;
+                content: '';
+                width: rem(317);
+                height: rem(296);
+                border-radius: 50%;
+                background: #ff443377;
+                filter: blur(120px);
+                bottom:rem(10);
+                right: rem(-224);
+                pointer-events: none;
+                transition: opacity 0.5s ease  0s, right 0.5s ease  0s;
+                z-index: -1;
+                will-change: transform, opacity;
+                opacity: 0;
+    
+                .blue-page & {
+                    background: rgba(0, 102, 255, 0.325);
+                }
+    
+                .white-theme & {
+                    opacity: 0;
+                }
             }
         }
     }

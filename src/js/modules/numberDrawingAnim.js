@@ -21,7 +21,7 @@ export function numberDrawingAnim() {
             });
         }, { 
             threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px' // Небольшой отступ снизу для более раннего срабатывания
+            rootMargin: '0px 0px -200px 0px' // Небольшой отступ снизу для более раннего срабатывания
         });
         
         observer.observe(container);

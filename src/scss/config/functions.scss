@@ -15,3 +15,9 @@
   $result: math.div($px, 16) + em;
   @return $result;
 }
+
+
+// !TO VW:
+@function vw($value, $designWidth: 1440) {
+  @return math.div($value, $designWidth) * 100vw;
+}

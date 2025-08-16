@@ -1,18 +1,53 @@
 // import AOS from 'aos'
-import Swiper, { Navigation, Pagination, Autoplay, Mousewheel, FreeMode } from 'swiper';
+import { Swiper } from 'swiper';
+import { Autoplay, Navigation, Pagination, FreeMode } from 'swiper/modules';
 
 export function initSlider() {
+
+
+    const directPortItemSlider = new Swiper('.direct-port__item-slider', {
+        speed: 1200,
+        spaceBetween: 0,
+        slidesPerView: 'auto',
+        modules: [Autoplay, Pagination],
+        // loop: true,
+        initialSlide: 0,
+        // autoplay: {
+        //     delay: 2500,
+        //     stopOnLastSlide: false,
+        //     disableOnIteration: false,
+        // },
+        pagination: {
+            el: ".direct-port__item-pagination",
+            dynamicBullets: true,
+            clickable: true,
+        },
+        breakpoints: {
+            651: {
+            speed: 1500,
+            },
+            1025: {
+                speed: 2000,
+            }
+        },
+    });
+
     const swiperWarranSite = new Swiper('.warran-site__slider', {
-        speed: 1000,
-        spaceBetween: 12,
+        speed: 1200,
+        spaceBetween: 10,
         slidesPerView: 1,
         modules: [Autoplay, Navigation, Pagination, FreeMode],
         freeMode: {
-            enabled: true,       // Разрешаем свободное перетаскивание
-            // momentum: true,      // Инерция при прокрутке
-            sticky: true,        // Плавное замедление и прилипание
+            enabled: true,
+            momentum: true,
+            // momentumRatio: 0.9,      // Чуть менее резкая инерция
+            momentumBounce: false,   // Убираем отскок для плавности
+            // momentumVelocityRatio: 0.9,
+            // minimumVelocity: 0.9,
+            sticky: false
         },
         autoplay: {
+            enabled: false,
             delay: 2500,
             stopOnLastSlide: false,
             disableOnIteration: false,
@@ -23,108 +58,140 @@ export function initSlider() {
         },
         breakpoints: {
             651: {
-            slidesPerView: 2,
-            spaceBetween: 12,
-            speed: 1700,
-                
+                slidesPerView: 2,
+                spaceBetween: 10,
+                speed: 1500,
             },
             1025: {
                 freeMode: false,
                 speed: 2000,
                 slidesPerView: 3,
-                spaceBetween: 15,
+                spaceBetween: 10,
+                autoplay: {
+                    enabled: true,
+                }
             }
         },
+    });
+    swiperWarranSite.on('init', function() {
+        this.navigation.update(); // Принудительно обновляем кнопки
     });
 
     const swiperStages = new Swiper('.stages__slider', {
         speed: 1200,
-        spaceBetween: 15,
-        slidesPerView: 1.13,
-        modules: [Autoplay, Navigation, Pagination, Mousewheel, FreeMode],
-        loop: true,
+        spaceBetween: 14,
+        slidesPerView: 1,
+        modules: [Autoplay, Navigation, Pagination, FreeMode],
+        loop: false,
         centeredSlides: true,
-
+        freeMode: {
+            enabled: true,
+            momentum: true,
+            // momentumRatio: 0.9,      // Чуть менее резкая инерция
+            momentumBounce: false,   // Убираем отскок для плавности
+            // momentumVelocityRatio: 0.9,
+            // minimumVelocity: 0.9,
+            sticky: false
+        },
 
         autoplay: {
-            delay: 3000,
+            enabled: false,
+            delay: 2500,
             disableOnInteraction: true,
         },
 
         breakpoints: {
             651: {
-            speed: 1500,
-            slidesPerView: 2,
-            spaceBetween: 15,
+                loop: true,
+                speed: 1500,
+                slidesPerView: 2,
+                spaceBetween: 15,
             },
             1025: {
+                loop: true,
                 speed: 2500,
                 slidesPerView: 3,
                 spaceBetween: 15,
+                freeMode: {
+                    enabled: false,
+                },
+                autoplay: {
+                    enabled: true,
+                }
             }
         },
     });
 
-    const swiperPartners = new Swiper('.partners__slider', {
-        speed: 6000,
-        spaceBetween: 15,
-        slidesPerView: 1,
-        modules: [Autoplay, Navigation, Pagination, Mousewheel, FreeMode],
-        loop: true,
-        // centeredSlides: true,
+    // const swiperPartners = new Swiper('.partners__slider', {
+    //     speed: 6000,
+    //     spaceBetween: 15,
+    //     slidesPerView: 1,
+    //     modules: [Autoplay, Navigation, Pagination, Mousewheel, FreeMode],
+    //     loop: true,
+    //     // centeredSlides: true,
         
-        // Autoplay
-        autoplay: {
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            waitForTransition: false  
-        },
-        allowTouchMove: false,       
-        simulateTouch: false,       
-        resistance: false,         
-        noSwiping: true,           
-        noSwipingClass: 'swiper-slide',
+    //     // Autoplay
+    //     autoplay: {
+    //         delay: 0,
+    //         disableOnInteraction: false,
+    //         pauseOnMouseEnter: false,
+    //         waitForTransition: false  
+    //     },
+    //     allowTouchMove: false,       
+    //     simulateTouch: false,       
+    //     resistance: false,         
+    //     noSwiping: true,           
+    //     noSwipingClass: 'swiper-slide',
 
-        // observer: true,
-        // observeParents: true,
-        // preventInteractionOnTransition: true,
+    //     // observer: true,
+    //     // observeParents: true,
+    //     // preventInteractionOnTransition: true,
     
 
-        mousewheel: {
-            // enabled: false,       
-        },
-        mousewheel: {
-            enabled: true,
-            forceToAxis: true,  
-            invert: false,      
-            sensitivity: 0.8,   
-        },
+    //     mousewheel: {
+    //         // enabled: false,       
+    //     },
+    //     mousewheel: {
+    //         enabled: true,
+    //         forceToAxis: true,  
+    //         invert: false,      
+    //         sensitivity: 0.8,   
+    //     },
         
 
         
-        breakpoints: {
-            390: {
-                slidesPerView: 'auto',
-                spaceBetween: 15,
-            },
-            651: {
-                slidesPerView: 'auto',
-                spaceBetween: 20,
-            }
-        },
-    });
+    //     breakpoints: {
+    //         390: {
+    //             slidesPerView: 'auto',
+    //             spaceBetween: 15,
+    //         },
+    //         651: {
+    //             slidesPerView: 'auto',
+    //             spaceBetween: 20,
+    //         }
+    //     },
+    // });
 
 
     const swiperExpertSite = new Swiper('.expert-site__slider', {
         speed: 1200,
-        spaceBetween: 20,
-        slidesPerView: 1.1,
-        modules: [Autoplay, Navigation, Pagination],
+        spaceBetween: 14,
+        slidesPerView: 1,
+        modules: [Autoplay, Navigation, Pagination, FreeMode],
+        centeredSlides: true,
         autoplay: {
+            enabled: false,
             delay: 2500,
-            stopOnLastSlide: false,
             disableOnIteration: false,
+        },
+        freeMode: {
+            enabled: true,
+            momentum: true,
+            // momentumRatio: 0.8,      // Чуть менее резкая инерция
+            momentumBounce: false,   // Убираем отскок для плавности
+            // momentumVelocityRatio: 0.3,
+            // minimumVelocity: 0.01,
+            sticky: false
         },
         navigation: {
             prevEl: ".warran-site__button-slider-prev",
@@ -132,14 +199,30 @@ export function initSlider() {
         },
         breakpoints: {
             651: {
-            slidesPerView: 2,
-            spaceBetween: 12,
-            speed: 1500,
+                slidesPerView: 1.8,
+                spaceBetween: 15,
+                speed: 1500,
+                // loop: true,
+                centeredSlides: false,
+            },
+            751: {
+                slidesPerView: 2.2,
+                spaceBetween: 15,
+                speed: 1500,
+                // loop: true,
+                centeredSlides: false,
             },
             1025: {
                 speed: 2500,
                 slidesPerView: 3,
                 spaceBetween: 15,
+                centeredSlides: false,
+                freeMode: {
+                    enabled: false,
+                },
+                autoplay: {
+                    enabled: true,
+                }
             }
         },
     });
@@ -154,64 +237,161 @@ export function initSlider() {
         loop: true,
         initialSlide: 0,
         autoplay: {
-           delay: 2500,
-           stopOnLastSlide: false,
-           disableOnInteraction: false,
-           reverseDirection: false // Можно изменить на true для обратного направления
+            delay: 2500,
+            stopOnLastSlide: false,
+            disableOnInteraction: false,
+            reverseDirection: false // Можно изменить на true для обратного направления
         },
     });
 
 
-    
-    //format sliders
-    const slidersFormat = document.querySelectorAll('.format__slider');
-    if (slidersFormat.length > 0) {
-        slidersFormat.forEach((sliderEl) => {
-            const prevBtn = sliderEl.querySelector('.format__button-prev');
-            const nextBtn = sliderEl.querySelector('.format__button-next');
-            const paginationEl = sliderEl.querySelector('.format__slider-pagination');
 
-            new Swiper(sliderEl, {
-                speed: 1700,
-                spaceBetween: 16,
-                slidesPerView: 'auto',
-                modules: [Autoplay, Navigation, Pagination],
+    const sliderFormatOne = new Swiper('.format__slider-one', {
+        speed: 1200,
+        spaceBetween: 4,
+        slidesPerView: 'auto',
+        modules: [Autoplay, Navigation, Pagination, FreeMode],
+        centeredSlides: true,
+        autoplay: {
+            enabled: false,
+            delay: 2000,
+            stopOnLastSlide: false,
+            disableOnIteration: false,
+        },
+        freeMode: {
+            enabled: true,
+            momentum: true,
+            // momentumRatio: 0.8,      // Чуть менее резкая инерция
+            momentumBounce: false,   // Убираем отскок для плавности
+            // momentumVelocityRatio: 0.3,
+            // minimumVelocity: 0.01,
+            sticky: false
+        },
+        navigation: {
+            prevEl: '.format__slider-one-prev',
+            nextEl: '.format__slider-one-next',
+        },
+        pagination: {
+            el: '.format__slider-one-pagin',
+            dynamicBullets: true,
+            clickable: true,
+        },
+        breakpoints: {
+            451: {
                 loop: true,
-                freeMode: true,
+                spaceBetween: 4,
+            },
+            651: {  
+                speed: 1500,
+                loop: true,
+                spaceBetween: 16,
+            },
+            1025: {
+                centeredSlides: false,
+                loop: false,
+                freeMode: {
+                    enabled: false,
+                },
                 autoplay: {
-                delay: 3000,
-                stopOnLastSlide: false,
-                disableOnIteration: false,
-                },
-                navigation: {
-                prevEl: prevBtn,
-                nextEl: nextBtn,
-                },
-                // pagination: {
-                //     el: paginationEl,
-                //     dynamicBullets: true,
-                //     clickable: true,
-                // },
-                breakpoints: {
-                1341: {
-                    loop: false,
-                    slidesPerView: 5,
-                    spaceBetween: 16,
-                },
-                },
-                on: {
-                init() {
-                    this.autoplay.stop();
+                    // enabled: true,
                 }
+            },
+            1341: {
+                speed: 2000,
+                loop: false,
+                slidesPerView: 5,
+                spaceBetween: 16,
+                centeredSlides: false,
+                freeMode: {
+                    enabled: false,
+                },
+                autoplay: {
+                    // enabled: true,
                 }
-            });
-        });
-    }
+            },
+        },
+        // on: {
+        //     init() {
+        //         this.autoplay.stop();
+        //     }
+        // }
+    });
+    const sliderFormatTwo = new Swiper('.format__slider-two', {
+        speed: 1200,
+        spaceBetween: 4,
+        slidesPerView: 'auto',
+        modules: [Autoplay, Navigation, Pagination, FreeMode],
+        centeredSlides: true,
+        autoplay: {
+            enabled: false,
+            delay: 2000,
+            stopOnLastSlide: false,
+            disableOnIteration: false,
+        },
+        freeMode: {
+            enabled: true,
+            momentum: true,
+            // momentumRatio: 0.8,      // Чуть менее резкая инерция
+            momentumBounce: false,   // Убираем отскок для плавности
+            // momentumVelocityRatio: 0.3,
+            // minimumVelocity: 0.01,
+            sticky: false
+        },
+        navigation: {
+            prevEl: '.format__slider-two-prev',
+            nextEl: '.format__slider-two-next',
+        },
+        pagination: {
+            el: '.format__slider-two-pagin',
+            dynamicBullets: true,
+            clickable: true,
+        },
+        breakpoints: {
+            451: {
+                loop: true,
+                spaceBetween: 4,
+            },
+            651: {  
+                speed: 1500,
+                loop: true,
+                spaceBetween: 16,
+            },
+            1025: {
+                centeredSlides: false,
+                loop: false,
+                freeMode: {
+                    enabled: false,
+                },
+                autoplay: {
+                    // enabled: true,
+                }
+            },
+            1341: {
+                speed: 2000,
+                loop: false,
+                slidesPerView: 5,
+                spaceBetween: 16,
+                centeredSlides: false,
+                freeMode: {
+                    enabled: false,
+                },
+                autoplay: {
+                    // enabled: true,
+                }
+            },
+        },
+        // on: {
+        //     init() {
+        //         this.autoplay.stop();
+        //     }
+        // }
+    });
+
 
     
-    const visibilityManagerSwiperFormat = enableAutoplayOnVisible('.format__slider', {
-        threshold: 0.5 // Срабатывать при 30% видимости
-    });
+    // const visibilityManagerSwiperFormat = enableAutoplayOnVisible('.format__slider', {
+    //     threshold: 0.1 // Срабатывать при 30% видимости
+    // });
 
 
 

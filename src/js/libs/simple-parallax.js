@@ -16,7 +16,59 @@ export function simpleParallaxInit() {
         // startScroll: -100,
         delay: 0.2,
     });
-   
+
+    if(document.querySelector('.direct-port__row.anim-prlx-case')) {
+        const casePortFonBody = document.querySelectorAll('.case-port__fon-body');
+        const parallax = new simpleParallax (casePortFonBody, {
+            scale: 1.5,
+            orientation: 'up',
+            // startScroll: -100,
+            // transition: 'cubic-bezier(0,0,0,1)',
+            delay: 0,
+            // overflow: true 
+        });
+    }
+
+
+    const packagesTitle = document.querySelector('.packages__title');
+    new simpleParallax (packagesTitle, {
+        scale: 1.7,
+        orientation: 'down',
+        startScroll: 200,
+        delay: 0.2,
+        overflow: true 
+    });
+    
+    const packagesItemPrlxOne = document.querySelector('.packages-item-prlx-1');
+    new simpleParallax (packagesItemPrlxOne, {
+        scale: 1.1,
+        orientation: 'down',
+        startScroll: 200,
+        delay: 0.2,
+        overflow: true 
+    });
+
+    const packagesItemPrlxTwo = document.querySelector('.packages-item-prlx-2');
+    new simpleParallax (packagesItemPrlxTwo, {
+        scale: 1.2,
+        orientation: 'up',
+        startScroll: 200,
+        delay: 0.2,
+        overflow: true 
+    });
+
+    const footerLogo = document.querySelector('.footer__logo');
+    new simpleParallax (footerLogo, {
+        scale: 1.5,
+        orientation: 'down',
+        startScroll: 200,
+        delay: 0.2,
+        overflow: true 
+    });
+
+
+
+    window.dispatchEvent(new Event('resize'));
 }
 
 

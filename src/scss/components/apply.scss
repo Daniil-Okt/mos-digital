@@ -29,18 +29,18 @@
     &__row {
         position: relative;
         z-index: 1;
-        margin-left: rem(-50);
-        margin-right: rem(-50);
+        // margin-left: rem(-50);
+        // margin-right: rem(-50);
 
-        @media(max-width:1000px){
-            margin-left: rem(-35);
-            margin-right: rem(-35);
-        }
+        // @media(max-width:1000px){
+        //     margin-left: rem(-35);
+        //     margin-right: rem(-35);
+        // }
 
-        @media(max-width:768px){
-            margin-left: rem(-20);
-            margin-right: rem(-20);
-        }
+        // @media(max-width:768px){
+        //     margin-left: rem(-20);
+        //     margin-right: rem(-20);
+        // }
     }
 
     &__item {
@@ -50,12 +50,12 @@
 
 .item-apply {
     position: relative;
-    @include adaptiveClamp(padding-top, 15, 10);
+    @include adaptiveClamp(padding-top, 17, 15);
     @include adaptiveClamp(padding-bottom, 127.46, 28.09);
     padding-right: rem($mainOffset);
     padding-left: rem($mainOffset);
     border-top: 1px solid var(--bs-border-color);
-    @include adaptiveClamp(min-height, 360, 127);
+    @include adaptiveClamp(min-height, 371.72, 152.52);
 
     &:last-child {
         border-bottom: 1px solid var(--bs-border-color);
@@ -172,23 +172,23 @@
     @media(max-width:768px){
         &._scr-activ {
             &::before {
-                height: 25%;
+                height: 25.5%;
                 transition-delay: 0s;
             }
     
             &::after {
-                height: 25%;
+                height: 25.5%;
                 transition-delay: 0.1s;
             }
     
             .item-apply__fon {
                 &::before {
-                    height: 25%;
+                    height: 25.5%;
                     transition-delay: 0.2s;
                 }
     
                 &::after {
-                    height: 25%;
+                    height: 25.5%;
                     transition-delay: 0.3s;
                 }
             }
@@ -198,6 +198,9 @@
     
     &__body {
         mix-blend-mode: difference;
+        max-width: rem(1520);
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__title.title-big  {
@@ -232,7 +235,7 @@
 
     &__bot-text {
         color: rgba(255, 255, 255, 0.6);
-        @include adaptiveClamp(font-size, 18, 12);
+        @include adaptiveClamp(font-size, 24, 14);
     }
 }
 
