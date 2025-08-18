@@ -38,7 +38,6 @@ import { fixedBtnAbout } from './modules/fixedBtnAbout.js';
 import { connectBtn } from './modules/connectBtn.js';
 import { fixVHUnitsOnMobile } from './modules/fixVHUnitsOnMobile.js';
 import { simpleParallaxInit } from './libs/simple-parallax.js';
-import { textWordAnim } from './libs/textWordAnim.js';
 import { descItemCase } from './modules/descItemCase.js';
 import { setupAccurateParallaxOverlap } from './libs/setupAccurateParallaxOverlap.js';
 import { checkElementsInCenter } from './modules/checkElementsInCenter.js';
@@ -92,7 +91,7 @@ window.addEventListener('load', () => {
 
 
 //Анимация слов заголвка первого экрана
-document.addEventListener('DOMContentLoaded', typeWriteAbout);
+window.addEventListener('load', typeWriteAbout);
 
 
 /** ===================================================================================
