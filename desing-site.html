@@ -2,8 +2,18 @@
 <html lang="ru" class="blue-page">
   <head>
   <style>
-    html { opacity: 0; }
-    /* main { transform: translateY(5%);} */
+    .preload-open {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99999999;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+    }
+    .white-theme   .preload-open {
+      background: #0E1016;
+    }
 
     .preload {
       position: fixed;
@@ -46,10 +56,10 @@
   <title>MOS DIGITAL</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250816161144">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250819135117">
   
-  <script defer="defer" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12?_v=20250816161144"></script>
-  <script defer="defer" src="js/main.min.js?_v=20250816161144"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12?_v=20250819135117"></script>
+  <script defer="defer" src="js/main.min.js?_v=20250819135117"></script>
 
 </head>
 
@@ -59,14 +69,14 @@
       <header class="header">
   <div class="header__top">
     <div class="header__container header__top-container">
-      <a href="index.html" class="header__logo logo">
+      <a href="index.html" class="header__logo logo" data-going-page>
         MOS <span class="web">DIGITAL</span>
       </a>
       <div class="button-slide btn-theme header__btn-theme">
         <span class="slide-anim" data-content="Свет"></span>
       </div>
       <div class="header__row-phone">
-        <a href="tel:8-800-555-77-77" class="link-slide header__phone" data-content="8-800-555-77-77">
+        <a href="tel:8-800-555-77-77" class="link-slide header__phone" data-content="8-800-555-77-77" data-going-page>
           <span>8-800-555-77-77</span>
         </a>
         <div class="header__btn-callback">Перезвоните мне, пожалуйста</div>
@@ -87,46 +97,46 @@
 
   <div class="header__bot">
     <div class="header__container header__bot-container">
-      <a href="#" class="header__home">
+      <a href="#" class="header__home" data-going-page>
         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0.445312 11.1934V4.97535C0.445312 4.75657 0.499701 4.5493 0.608478 4.35355C0.717254 4.15779 0.867142 3.99658 1.05814 3.86992L5.65434 0.760872C5.92245 0.576632 6.22887 0.484512 6.57358 0.484512C6.9183 0.484512 7.22471 0.576632 7.49282 0.760872L12.089 3.86992C12.2805 3.99658 12.4307 4.15779 12.5395 4.35355C12.6482 4.5493 12.7024 4.75657 12.7019 4.97535V11.1934C12.7019 11.5734 12.5517 11.8988 12.2514 12.1697C11.9511 12.4405 11.5906 12.5757 11.1698 12.5752H8.87168C8.65464 12.5752 8.47283 12.5089 8.32627 12.3763C8.1797 12.2436 8.10616 12.0796 8.10565 11.8843V8.42985C8.10565 8.23409 8.03211 8.07012 7.88503 7.93793C7.73795 7.80574 7.55615 7.73941 7.33962 7.73895H5.80755C5.59051 7.73895 5.4087 7.80527 5.26213 7.93793C5.11556 8.07058 5.04203 8.23455 5.04151 8.42985V11.8843C5.04151 12.0801 4.96798 12.2443 4.8209 12.377C4.67382 12.5096 4.49201 12.5757 4.27548 12.5752H1.97738C1.55606 12.5752 1.19551 12.4401 0.89574 12.1697C0.595966 11.8993 0.445823 11.5739 0.445312 11.1934Z" fill="#FF4533"/>
         </svg>
       </a>
       <div class="header__bot-menu">
-        <a href="#" class="button-slide header__bot-link">
+        <a href="#" class="button-slide header__bot-link" data-going-page>
           <span class="slide-anim" data-content="Кто мы?"></span>
         </a>
-        <a href="#" class="button-slide header__bot-link">
+        <a href="#" class="button-slide header__bot-link" data-going-page>
           <span class="slide-anim" data-content="Услуги"></span>
         </a>
         <div class="header__bot-link-over">
           <div class="header__bot-link-over-text">258</div>
-          <a href="case-all-page.html" class="button-slide header__bot-link">
+          <a href="case-all-page.html" class="button-slide header__bot-link" data-going-page>
             <span class="slide-anim" data-content="Кейсы"></span>
           </a>
         </div>
-        <a href="#" class="button-slide header__bot-link">
+        <a href="#" class="button-slide header__bot-link" data-going-page>
           <span class="slide-anim" data-content="Статьи"></span>
         </a>
-        <a href="#" class="button-slide header__bot-link">
+        <a href="#" class="button-slide header__bot-link" data-going-page>
           <span class="slide-anim" data-content="Связь"></span>
         </a>
       </div>
-      <a href="mailto:inbox@mos-digital.com" class="button-slide header__bot-link header__bot-email">
+      <a href="mailto:inbox@mos-digital.com" class="button-slide header__bot-link header__bot-email" data-going-page>
         <span class="slide-anim" data-content="inbox@mos-digital.com"></span>
       </a>
       
-      <a href="tel:8-800-555-77-77" class="button-slide header__bot-link header__bot-phone">
+      <a href="tel:8-800-555-77-77" class="button-slide header__bot-link header__bot-phone" data-going-page>
         <span class="slide-anim" data-content="8-800-555-77-77"></span>
       </a>
       <div class="header__bot-right">
-        <a href="#" class="button-slide header__bot-link">
+        <a href="#" class="button-slide header__bot-link" data-going-page>
           <span class="slide-anim" data-content="Пригласить в тендер"></span>
         </a>
-        <a href="#" class="button-slide header__bot-link">
+        <a href="#" class="button-slide header__bot-link" data-going-page>
           <span class="slide-anim" data-content="Хочешь в команду?"></span>
         </a>
-        <a href="#" class="button-slide header__bot-link">
+        <a href="#" class="button-slide header__bot-link" data-going-page>
           <span class="slide-anim" data-content="Стать партнером"></span>
         </a>
       </div>
@@ -166,19 +176,19 @@
                     </a>
                 </li>
                 <li class="menu-right__item">
-                    <a href="#" class="button-slide menu-right__link">
+                    <a href="#" class="button-slide menu-right__link" data-going-page>
                         <span class="slide-anim" data-content="КТО МЫ?"></span>
                     </a>
                 </li>
                 <li class="menu-right__item">
-                    <a href="case-all-page.html" class="button-slide menu-right__link">
+                    <a href="case-all-page.html" class="button-slide menu-right__link" data-going-page>
                         <span class="slide-anim" data-content="КЕЙСЫ"></span>
                     </a>
                 </li>
                 <li class="menu-right__item menu-encl">
-                    <a href="#" class="button-slide menu-right__link menu-encl__head">
+                    <div class="button-slide menu-right__link menu-encl__head">
                         <span class="slide-anim" data-content="УСЛУГИ"></span>
-                    </a>
+                    </div>
                     <div class="menu-encl__body">
                         <div class="encl-item menu-encl__body-item">
                             <div class="encl-item__content">
@@ -194,22 +204,22 @@
                                             Категории
                                         </div>
                                         <div class="encl-item__cat-row">
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Корпоративные"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Лендинги"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="E-commerce"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Web-сервисы"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Личные кабинеты"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Техническая поддержка"></span>
                                             </a>
                                         </div>
@@ -232,22 +242,22 @@
                                             Категории
                                         </div>
                                         <div class="encl-item__cat-row">
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Корпоративные"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Лендинги"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="E-commerce"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Web-сервисы"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Личные кабинеты"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Техническая поддержка"></span>
                                             </a>
                                         </div>
@@ -270,22 +280,22 @@
                                             Категории
                                         </div>
                                         <div class="encl-item__cat-row">
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Корпоративные"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Лендинги"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="E-commerce"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Web-сервисы"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Личные кабинеты"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Техническая поддержка"></span>
                                             </a>
                                         </div>
@@ -308,22 +318,22 @@
                                             Категории
                                         </div>
                                         <div class="encl-item__cat-row">
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Корпоративные"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Лендинги"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="E-commerce"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Web-сервисы"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Личные кабинеты"></span>
                                             </a>
-                                            <a href="#" class="button-slide encl-item__cat-item">
+                                            <a href="#" class="button-slide encl-item__cat-item" data-going-page>
                                                 <span class="slide-anim" data-content="Техническая поддержка"></span>
                                             </a>
                                         </div>
@@ -335,22 +345,22 @@
                     </div>
                 </li>
                 <li class="menu-right__item">
-                    <a href="#" class="button-slide menu-right__link">
+                    <a href="#" class="button-slide menu-right__link" data-going-page>
                         <span class="slide-anim" data-content="ВАКАНСИИ"></span>
                     </a>
                 </li>
                 <li class="menu-right__item">
-                    <a href="#" class="button-slide menu-right__link">
+                    <a href="#" class="button-slide menu-right__link" data-going-page>
                         <span class="slide-anim" data-content="СТАТЬ ПАРТНЕРОМ"></span>
                     </a>
                 </li>
                 <li class="menu-right__item">
-                    <a href="#" class="button-slide menu-right__link">
+                    <a href="#" class="button-slide menu-right__link" data-going-page>
                         <span class="slide-anim" data-content="ИНСАЙТЫ"></span>
                     </a>
                 </li>
                 <li class="menu-right__item">
-                    <a href="#" class="button-slide menu-right__link">
+                    <a href="#" class="button-slide menu-right__link" data-going-page>
                         <span class="slide-anim" data-content="СВЯЗЬ"></span>
                     </a>
                 </li>
