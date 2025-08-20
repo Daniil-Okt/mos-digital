@@ -2,7 +2,14 @@
 <html lang="ru" class="">
   <head>
   <style>
-    .preload-open {
+    .wrapper {
+      visibility: hidden;
+    }
+    .loaded .wrapper {
+      visibility: visible;
+    }
+
+    .preload-open, .preload {
       position: fixed;
       top: 0;
       left: 0;
@@ -11,18 +18,11 @@
       height: 100%;
       background: #fff;
     }
-    .white-theme   .preload-open {
+    .white-theme .preload-open, .white-theme .preload {
       background: #0E1016;
     }
 
     .preload {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 99999999;
-      width: 100%;
-      height: 100%;
-      background: #fff;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -31,9 +31,6 @@
       display: inline-block;
       transform: scale(0.4) translateY(300%);
       opacity: 0;
-    }
-    .white-theme .preload {
-      background: #0E1016;
     }
     .preload__body {
       transform: translateY(0vh);
@@ -63,10 +60,10 @@
   <title>MOS DIGITAL</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250820154644">
   
-  <script defer="defer" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  <script defer="defer" src="js/main.min.js"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12?_v=20250820154644"></script>
+  <script defer="defer" src="js/main.min.js?_v=20250820154644"></script>
 
 </head>
 
@@ -160,9 +157,7 @@
             <img loading="lazy" src="images/about/about-bg-orange.webp" alt="">
         </picture>
 
-        <!-- <video  autoplay muted loop playsinline poster="images/showreel/showreel-preview.webp" loading="lazy">
-            <source src="static/showreel/showreel.mp4" type="video/mp4">
-        </video> -->
+        
     </div>
     <div class="about__container">
         <div class="about__crumbs crumbs">
@@ -235,27 +230,12 @@
             </div>
         </div>
         
-        <!-- <div class="about__close-connect about__connect-btn">
-            <img loading="lazy" src="images/about/btn-connect-close.svg" alt="">
-        </div> -->
+        
     </div>
 </section>
 
 
-<!-- 
-<h1 class="about__title title-big">
-    <span>Создаем 
-        <em>
-            <span class="slide-up-anim" data-delay="3000">
-                <span class="slide-up__body swiper-wrapper">
-                    <span class="slide-up__item swiper-slide">красивые</span>
-                    <span class="slide-up__item swiper-slide">понятные</span>
-                    <span class="slide-up__item swiper-slide">эффектные</span>
-                </span>
-            </span>
-        </em> 
-        презентации под ключ</span>
-</h1> -->
+
           <section class="showreel" data-button-fixed-hidden>
     <div class="showreel__container">
         <div class="showreel__video-body video-lazy" data-cursor-white>
@@ -452,32 +432,7 @@
     </div>
 </section>
 
-<!-- 
-<a href="#" class="direct-port__item">
-    <div class="direct-port__item-img" data-cursor-hover='Смотреть <em>кейс</em>' data-cursor-white >
-        <div class="direct-port__item-slider">
-            <div class="direct-port__item-wrapper swiper-wrapper">
-                <div class="direct-port__item-slide swiper-slide">
-                    <img loading="lazy" src="images/img-show.webp" alt="">
-                </div>
-                <div class="direct-port__item-slide swiper-slide">
-                    <img loading="lazy" src="images/img-show.webp" alt="">
-                </div>
-                <div class="direct-port__item-slide swiper-slide">
-                    <img loading="lazy" src="images/img-show.webp" alt="">
-                </div>
-            </div>
-            <div class="direct-port__item-pagination swiper-pagination"></div>
-        </div>
-    </div>
-    <div class="direct-port__item-body">
-        <h3>Геоспецстрой</h3>
-        <div class="direct-port__item-row">
-            <div class="direct-port__item-tag">Корпоративный</div>
-            <div class="direct-port__item-tag">Строительство</div>
-        </div>
-    </div>
-</a> -->
+
           <section class="section-p-t connect" data-button-fixed-hidden>
     
     <div class="connect__content">
@@ -592,7 +547,7 @@
     </div>
 </section>
 
-<!-- src="static/connect/connect-fon.mp4" -->
+
           <section class="section-p-t arranged stages">
     <div class="fon-two stages__fon-body"></div>
     <div class="stages__container">
@@ -921,7 +876,7 @@
           </section>
           <section class="section-p-t bubble-trans choice white-block">
     <div class="bubble-trans__container choice__container">
-        <!-- text-blur-anim -->
+        
         <div class="_three grid-content">
             <div class="grid-content__left"></div>
             <div class="m-b grid-content__right head-text choice__head">
@@ -945,7 +900,7 @@
 
         <div class="choice__row">
             <div class="bs-card-min _p choice__item item-choice" data-ctr-scr>
-                <!-- <div class="item-choice__fon"></div> -->
+                
                 <h3 class="item-choice__title">
                     Несколько итераций
                 </h3>
@@ -957,7 +912,7 @@
                 </div>
             </div>
             <div class="bs-card-min _p choice__item item-choice" data-ctr-scr>
-                <!-- <div class="item-choice__fon"></div> -->
+                
                 <h3 class="item-choice__title">
                     Чат с командой
                 </h3>
@@ -969,7 +924,7 @@
                 </div>
             </div>
             <div class="bs-card-min _p choice__item item-choice" data-ctr-scr>
-                <!-- <div class="item-choice__fon"></div> -->
+                
                 <h3 class="item-choice__title">
                     Прозрачная работа
                 </h3>
@@ -981,7 +936,7 @@
                 </div>
             </div>
             <div class="bs-card-min _p choice__item item-choice" data-ctr-scr>
-                <!-- <div class="item-choice__fon"></div> -->
+                
                 <h3 class="item-choice__title">
                     Быстро 
                 </h3>
@@ -993,7 +948,7 @@
                 </div>
             </div>
             <div class="bs-card-min _p choice__item item-choice" data-ctr-scr>
-                <!-- <div class="item-choice__fon"></div> -->
+                
                 <h3 class="item-choice__title">
                     Под ключ
                 </h3>
@@ -1005,7 +960,7 @@
                 </div>
             </div>
             <div class="bs-card-min _p choice__item item-choice" data-ctr-scr>
-                <!-- <div class="item-choice__fon"></div> -->
+                
                 <h3 class="item-choice__title">
                     Все в одном окне
                 </h3>
@@ -1017,7 +972,7 @@
                 </div>
             </div>
             <div class="bs-card-min _p choice__item item-choice" data-ctr-scr>
-                <!-- <div class="item-choice__fon"></div> -->
+                
                 <h3 class="item-choice__title">
                     NDA
                 </h3>
@@ -1029,7 +984,7 @@
                 </div>
             </div>
             <div class="bs-card-min _p choice__item item-choice" data-ctr-scr>
-                <!-- <div class="item-choice__fon"></div> -->
+                
                 <h3 class="item-choice__title">
                     Аккредитованы
                 </h3>
@@ -1041,7 +996,7 @@
                 </div>
             </div>
             <div class="bs-card-min _p choice__item item-choice" data-ctr-scr>
-                <!-- <div class="item-choice__fon"></div> -->
+                
                 <h3 class="item-choice__title">
                     Безопасно
                 </h3>
@@ -1296,88 +1251,7 @@
         </div>
 
 
-        <!-- <div class="reviews__slider">
-            <div class="reviews__wrapper wrapper-running swiper-wrapper">
-                <div class="reviews__slide slide-reviews swiper-slide" data-cursor-hover="Смотреть отзыв">
-                    <div class="slide-reviews__logo">
-                        <img loading="lazy" src="images/reviews/slide-reviews-logo.svg" alt="" >
-                    </div>
-                    <p class="slide-reviews__text">
-                        Таким образом новая модель организационной деятельности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий.
-                    </p>
-                    <div class="slide-reviews__info">
-                        <img loading="lazy" src="images/reviews/slide-reviews-img.webp" alt="" class="slide-reviews__info-img">
-                        <div class="slide-reviews__info-body">
-                            <div class="slide-reviews__info-name">Ирина Сергеева</div>
-                            <p class="slide-reviews__info-post">Коммерческий директор</p>
-                        </div>
-                    </div>
-                    <div class="slide-reviews__bottom">
-                        <div class="slide-reviews__date">03 марта 2025</div>
-                        <div class="slide-reviews__like" data-reviews-like="1">
-                            <div class="slide-reviews__like-icon">
-                                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.31527 0.333985C2.78402 0.333985 0.731934 2.38607 0.731934 4.91732C0.731934 9.50065 6.1486 13.6673 9.06527 14.6365C11.9819 13.6673 17.3986 9.50065 17.3986 4.91732C17.3986 2.38607 15.3465 0.333985 12.8153 0.333985C11.2653 0.333985 9.89443 1.10357 9.06527 2.28149C8.64256 1.67956 8.08108 1.18832 7.42833 0.849329C6.77559 0.510337 6.05079 0.33357 5.31527 0.333985Z" fill="white" />
-                                </svg>
-                            </div>
-                            <span class="slide-reviews__like-number">1 052</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="reviews__slide slide-reviews swiper-slide" data-cursor-hover="Смотреть отзыв">
-                    <div class="slide-reviews__logo">
-                        <img loading="lazy" src="images/reviews/slide-reviews-logo.svg" alt="" >
-                    </div>
-                    <p class="slide-reviews__text">
-                        Таким образом новая модель организационной деятельности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий. Таким образом рамки и место обучения кадров требуют от нас анализа модели развития Таким образом новая модель организационной деятельности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий. Таким образом рамки и место обучения кадров требуют от нас анализа модели развития
-                    </p>
-                    <div class="slide-reviews__info">
-                        <img loading="lazy" src="images/reviews/slide-reviews-img.webp" alt="" class="slide-reviews__info-img">
-                        <div class="slide-reviews__info-body">
-                            <div class="slide-reviews__info-name">Николай Мостовой</div>
-                            <p class="slide-reviews__info-post">Founder</p>
-                        </div>
-                    </div>
-                    <div class="slide-reviews__bottom">
-                        <div class="slide-reviews__date">03 марта 2025</div>
-                        <div class="slide-reviews__like" data-reviews-like="1">
-                            <div class="slide-reviews__like-icon">
-                                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.31527 0.333985C2.78402 0.333985 0.731934 2.38607 0.731934 4.91732C0.731934 9.50065 6.1486 13.6673 9.06527 14.6365C11.9819 13.6673 17.3986 9.50065 17.3986 4.91732C17.3986 2.38607 15.3465 0.333985 12.8153 0.333985C11.2653 0.333985 9.89443 1.10357 9.06527 2.28149C8.64256 1.67956 8.08108 1.18832 7.42833 0.849329C6.77559 0.510337 6.05079 0.33357 5.31527 0.333985Z" fill="white" />
-                                </svg>
-                            </div>
-                            <span class="slide-reviews__like-number">1 052</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="reviews__slide slide-reviews swiper-slide" data-cursor-hover="Смотреть отзыв">
-                    <div class="slide-reviews__logo">
-                        <img loading="lazy" src="images/reviews/slide-reviews-logo.svg" alt="" >
-                    </div>
-                    <p class="slide-reviews__text">
-                        Таким образом новая модель организационной деятельности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий. Таким образом рамки и место обучения кадров требуют от нас анализа модели развития Таким образом новая модель организационной деятельности влечет за собой процесс внедрения и модернизации существенных финансовых и административных условий. Таким образом рамки и место обучения кадров требуют от нас анализа модели развития
-                    </p>
-                    <div class="slide-reviews__info">
-                        <img loading="lazy" src="images/reviews/slide-reviews-img.webp" alt="" class="slide-reviews__info-img">
-                        <div class="slide-reviews__info-body">
-                            <div class="slide-reviews__info-name">Ирина Сергеева</div>
-                            <p class="slide-reviews__info-post">Коммерческий директор</p>
-                        </div>
-                    </div>
-                    <div class="slide-reviews__bottom">
-                        <div class="slide-reviews__date">03 марта 2025</div>
-                        <div class="slide-reviews__like" data-reviews-like="1">
-                            <div class="slide-reviews__like-icon">
-                                <svg width="18" height="15" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M5.31527 0.333985C2.78402 0.333985 0.731934 2.38607 0.731934 4.91732C0.731934 9.50065 6.1486 13.6673 9.06527 14.6365C11.9819 13.6673 17.3986 9.50065 17.3986 4.91732C17.3986 2.38607 15.3465 0.333985 12.8153 0.333985C11.2653 0.333985 9.89443 1.10357 9.06527 2.28149C8.64256 1.67956 8.08108 1.18832 7.42833 0.849329C6.77559 0.510337 6.05079 0.33357 5.31527 0.333985Z" fill="white" />
-                                </svg>
-                            </div>
-                            <span class="slide-reviews__like-number">1 052</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+        
     </div>
 </section>
 
@@ -1487,16 +1361,7 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="item-quest__right">
-                            <div class="item-quest__img">
-                                <div class="video-start" data-popup-video="static/showreel/showreel.mp4" data-type="popup-video"></div>
-                                <img loading="lazy" src="images/quest/quest-img.webp" alt="">
-                            </div>
-                            <h3 class="item-quest__title-right">
-                                Сколько времени занимает 
-                            </h3>
-                            <div class="item-quest__time">30 сек.</div>
-                        </div> -->
+                        
                     </div>
     
                 </div>
@@ -1515,21 +1380,10 @@
                                     Срок зависит от площади квартиры и детальности проекта. В среднем разработка занимает от 30 до 45 рабочего дней
                                     Срок зависит от площади квартиры и детальности проекта. В среднем разработка занимает от 30 до 45 рабочего дней
                                 </p>
-                                <!-- <div class="item-quest__button button button-slide">
-                                    <span class="slide-anim" data-content="Обсудить задачу"></span>
-                                </div> -->
+                                
                             </div>
                         </div>
-                        <!-- <div class="item-quest__right">
-                            <div class="item-quest__img">
-                                <div class="video-start" data-popup-video="static/showreel/showreel.mp4" data-type="popup-video"></div>
-                                <img loading="lazy" src="images/quest/quest-img.webp" alt="">
-                            </div>
-                            <h3 class="item-quest__title-right">
-                                Сколько времени занимает 
-                            </h3>
-                            <div class="item-quest__time">30 сек.</div>
-                        </div> -->
+                        
                     </div>
                 </div>
                 <div class="item-quest quest__item">
@@ -1681,7 +1535,7 @@
     </div>
 </section>
 
-<!-- src="static/connect/connect-fon.mp4" -->
+
 
 
 
@@ -2513,16 +2367,7 @@
 
 <div class="bottom-blur"></div>
 
-        <!-- <div class="popup" data-popup="popup-1" data-close-overlay>
-    <div class="popup__wrapper" data-close-overlay>
-        <div class="popup__content">
-            <button class="popup__close button-close" type="button">x</button>
-            <div class="popup__body">
-                <h2>Базовый пример модального окна</h2>
-            </div>
-        </div>
-    </div>
-</div> -->
+        
 
 
 <div class="popup popup-video" data-popup="popup-video" data-close-overlay>
