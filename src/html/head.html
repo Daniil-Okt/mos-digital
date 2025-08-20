@@ -1,7 +1,17 @@
 <head>
   <style>
-    html { opacity: 0; }
-    /* main { transform: translateY(5%);} */
+    .preload-open {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99999999;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+    }
+    .white-theme   .preload-open {
+      background: #0E1016;
+    }
 
     .preload {
       position: fixed;

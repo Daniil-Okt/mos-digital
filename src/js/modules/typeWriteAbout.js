@@ -1,3 +1,4 @@
+
 export function typeWriteAbout() {
     const element = document.getElementById('typewriter');
 	

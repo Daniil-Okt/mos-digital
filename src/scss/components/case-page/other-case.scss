@@ -69,6 +69,9 @@
                 transform: scale(1.1) !important;
                 filter: blur(3px)
             }
+            .case-port__logo img {
+                transform: scale(0.9);
+            }
         }
         &.case-port .case-port {
             &__fon {
@@ -83,7 +86,7 @@
             }
         
             &__img {
-                transition: transform 1s ease-in-out  0s, filter 0.7s ease-in-out  0s;
+                transition: transform 0.6s cubic-bezier(.93,.22,.31,.93)  0s, filter 0.7s cubic-bezier(.93,.22,.31,.93)  0s;
             }
         
             &__body {
@@ -100,6 +103,10 @@
             &__logo {
                 @include adaptiveClamp(width, 74.6, 74.5);
                 @include adaptiveClamp(margin-bottom, 19.6, 19.5);
+            
+                img {
+                    transition: transform 0.6s cubic-bezier(.93,.22,.31,.93)  0s;
+                }
             }
         
             &__title {

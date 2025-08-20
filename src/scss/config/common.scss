@@ -1345,3 +1345,25 @@ img.img-cover {
     }
 
 }
+
+
+//перлоад на закрытие
+
+.preload-close {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 99999999;
+    width: 100%;
+    height: 0%;
+    background: #fff;
+    visibility: hidden;
+}
+.white-theme .preload-close {
+    background: #0E1016;
+}
+
+html.going-page .preload-close  {
+    height: 100%;
+    transition: height 0.8s cubic-bezier(1,-0.03,.39,1)  0s;
+}

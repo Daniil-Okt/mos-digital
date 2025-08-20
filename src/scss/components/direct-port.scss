@@ -697,6 +697,7 @@
         font-weight: 600;
         @include adaptiveClamp(font-size, 16, 14);
         line-height: 125%;
+        color: rgba(255, 255, 255, 0.6);
     }
 
     &__row-mark {

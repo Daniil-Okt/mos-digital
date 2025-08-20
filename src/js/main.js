@@ -6,6 +6,45 @@
 
  * Если мы хотим добавить модуль следует его раскомментировать
  */
+import { btnTheme } from './modules/btnTheme';
+//кнопка переключения темы
+btnTheme()
+
+document.addEventListener('DOMContentLoaded', function() {
+	// Находим все ссылки с data-attribute
+	const links = document.querySelectorAll('a[data-going-page]');
+	
+	// Добавляем обработчик для каждой ссылки
+	links.forEach(link => {
+		link.addEventListener('click', function(e) {
+			// Блокируем стандартное поведение
+			e.preventDefault();
+			
+			// Добавляем класс к html
+			document.querySelector('.preload-close').style.visibility = 'visible';
+			document.documentElement.classList.add('going-page');
+			
+			// Получаем URL ссылки
+			const targetUrl = this.href;
+			
+			// Запускаем таймер на 3 секунды
+			setTimeout(() => {
+				// Удаляем класс перед переходом
+				
+				
+				
+				// Выполняем переход
+				window.location.href = targetUrl;
+
+				setTimeout(() => {
+					document.documentElement.classList.remove('going-page');
+					// document.querySelector('.preload-close').style.visibility = 'hidden';
+				}, 400);
+			}, 800);
+		});
+	});
+});
+
 import MousePRLX from './libs/parallax-mouse'
 import AOS from 'aos'
 
@@ -15,7 +54,7 @@ import PopupManager from './modules/popup-manager';
 import BurgerMenu from './modules/burger-menu';
 
 
-import { btnTheme } from './modules/btnTheme';
+
 import { cursor } from './modules/cursor';
 import { autoplayVideo } from './modules/autoplayVideo';
 import { smoothScroll } from './modules/smoothScroll';
@@ -42,6 +81,11 @@ import { descItemCase } from './modules/descItemCase.js';
 import { setupAccurateParallaxOverlap } from './libs/setupAccurateParallaxOverlap.js';
 import { checkElementsInCenter } from './modules/checkElementsInCenter.js';
 import { typeWriteAbout } from './modules/typeWriteAbout.js';
+import { whiteBlacBlockVisible } from './modules/whiteBlackBlockVisible.js';
+import { menuEncl } from './modules/menuEncl.js';
+import { createBottomBlur } from './modules/createBottomBlur.js';
+import { animGsapInit } from './modules/animGsapInit.js';
+import { animateTitleWords } from './modules/animateTitleWords.js';
 
 
 // import { SimpleParallax } from './libs/simple-parallax.js';
@@ -234,11 +278,7 @@ focusInput()
 	* При клике на элемент, у всех элементов класс удаляется
 */
 import { toggleActiveClass } from './modules/index.js'
-import { whiteBlacBlockVisible } from './modules/whiteBlackBlockVisible.js';
-import { menuEncl } from './modules/menuEncl.js';
-import { createBottomBlur } from './modules/createBottomBlur.js';
-import { animGsapInit } from './modules/animGsapInit.js';
-import { animateTitleWords } from './modules/animateTitleWords.js';
+
 
 
 
@@ -260,9 +300,6 @@ window.addEventListener('load', () => {
 });
 
 
-
-//кнопка переключения темы
-btnTheme()
 
 //курсор
 if (window.innerWidth > 1024) {
