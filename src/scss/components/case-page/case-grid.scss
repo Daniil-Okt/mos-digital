@@ -228,6 +228,8 @@
         padding-right: rem(16);
         white-space: nowrap;
         transition: color 0.3s ease  0s;
+        overflow: hidden; 
+        text-overflow: ellipsis;
 
         &:hover {
             color: var(--bs-title-mark-color);

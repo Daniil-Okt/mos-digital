@@ -124,7 +124,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="desc-case__item-row _bot-sticky">
+                    <!-- <div class="desc-case__item-row _bot-sticky">
                         <div class="desc-case__item-box desc-box desc-box-pay">
                             <div class="desc-box__icon">
                                 <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +143,7 @@
                                 <div class="desc-box__btn-plus"></div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
 
                 <div class="desc-case__item-right grid-content__right">
@@ -160,6 +160,8 @@
                             <div class="desc-case__item-img-mark">Фирменный стиль</div>
                             <img loading="lazy" class="img-cover" src="@img/desc-case/desc-case-img1.webp" alt="">
                         </div>
+
+                        <!-- видео -->
                         <!-- <div class="desc-case__item-img" data-anim-qr>
                             <video class="lazy"  autoplay muted loop playsinline poster="@img/showreel/showreel-preview.webp" loading="lazy">
                                 <source  data-src="static/showreel/showreel.mp4" type="video/mp4">
@@ -181,6 +183,24 @@
                                 </svg>
                             </div>
                             <span>Процесс</span>
+                        </div>
+                        <div class="desc-case__item-box desc-box desc-box-pay">
+                            <div class="desc-box__icon">
+                                <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.6605 8.2C13.4305 7.9 13.1505 7.64 12.8905 7.38C12.2205 6.78 11.4605 6.35 10.8205 5.72C9.33054 4.26 9.00054 1.85 9.95054 0C9.00054 0.23 8.17054 0.75 7.46054 1.32C4.87054 3.4 3.85054 7.07 5.07054 10.22C5.11054 10.32 5.15054 10.42 5.15054 10.55C5.15054 10.77 5.00054 10.97 4.80054 11.05C4.57054 11.15 4.33054 11.09 4.14054 10.93C4.08378 10.8825 4.03632 10.8248 4.00054 10.76C2.87054 9.33 2.69054 7.28 3.45054 5.64C1.78054 7 0.870538 9.3 1.00054 11.47C1.06054 11.97 1.12054 12.47 1.29054 12.97C1.43054 13.57 1.70054 14.17 2.00054 14.7C3.08054 16.43 4.95054 17.67 6.96054 17.92C9.10054 18.19 11.3905 17.8 13.0305 16.32C14.8605 14.66 15.5005 12 14.5605 9.72L14.4305 9.46C14.2205 9 13.6605 8.2 13.6605 8.2ZM10.5005 14.5C10.2205 14.74 9.76054 15 9.40054 15.1C8.28054 15.5 7.16054 14.94 6.50054 14.28C7.69054 14 8.40054 13.12 8.61054 12.23C8.78054 11.43 8.46054 10.77 8.33054 10C8.21054 9.26 8.23054 8.63 8.50054 7.94C8.69054 8.32 8.89054 8.7 9.13054 9C9.90054 10 11.1105 10.44 11.3705 11.8C11.4105 11.94 11.4305 12.08 11.4305 12.23C11.4605 13.05 11.1005 13.95 10.5005 14.5Z" fill="#FF4533" />
+                                </svg>
+                            </div>
+                            <div class="desc-box__title">Можно <b>купить шаблон</b> этой презентации!</div>
+                            <div class="desc-box__text">
+                                Шаблон полностью подготовлен к быстрому редактированию
+                                и наполнению контента
+                            </div>
+                            <div class="desc-box__btn-price button-slide">
+                                <div class="desc-box__price">
+                                    <span class="slide-anim" data-content="6 990."></span>
+                                </div>
+                                <div class="desc-box__btn-plus"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -220,12 +240,12 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- добавил счетчик -->
                 <div class="desc-case__item-right grid-content__right">
                     <div class="desc-case__key-row">
                         <div class="desc-case__key-item">
                             <div class="desc-case__key-title">
-                                85%
+                                <span data-counter-anim>85</span>%
                             </div>
                             <div class="desc-case__key-text">
                                 выход на digital рынок страны
@@ -233,7 +253,7 @@
                         </div>
                         <div class="desc-case__key-item">
                             <div class="desc-case__key-title">
-                                х2
+                                х<span data-counter-anim>2</span>
                             </div>
                             <div class="desc-case__key-text">
                                 выход на digital рынок страны
@@ -241,7 +261,7 @@
                         </div>
                         <div class="desc-case__key-item">
                             <div class="desc-case__key-title">
-                                $1.2М
+                                $<span data-counter-anim>1.2</span>М
                             </div>
                             <div class="desc-case__key-text">
                                 выход на digital рынок страны
@@ -287,15 +307,3 @@
 </section>
 
 
-<!-- 
-
-
-
-<div class="desc-case__item-img">
-    <img loading="lazy" class="img-cover" src="@img/desc-case/desc-case-img1.webp" alt="">
-</div>
-<div class="desc-case__item-video showreel-video">
-    <video  autoplay muted loop playsinline poster="@img/showreel/showreel-preview.webp" loading="lazy">
-        <source src="static/showreel/showreel.mp4" type="video/mp4">
-    </video>
-</div> -->

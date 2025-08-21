@@ -10,44 +10,13 @@ import { btnTheme } from './modules/btnTheme';
 //кнопка переключения темы
 btnTheme()
 
-document.addEventListener('DOMContentLoaded', function() {
-	// Находим все ссылки с data-attribute
-	const links = document.querySelectorAll('a[data-going-page]');
-	
-	// Добавляем обработчик для каждой ссылки
-	links.forEach(link => {
-		link.addEventListener('click', function(e) {
-			// Блокируем стандартное поведение
-			e.preventDefault();
-			
-			// Добавляем класс к html
-			document.querySelector('.preload-close').style.visibility = 'visible';
-			document.documentElement.classList.add('going-page');
-			
-			// Получаем URL ссылки
-			const targetUrl = this.href;
-			
-			// Запускаем таймер на 3 секунды
-			setTimeout(() => {
-				// Удаляем класс перед переходом
-				
-				
-				
-				// Выполняем переход
-				window.location.href = targetUrl;
+import { goingPage } from './modules/goingPage.js';
+document.addEventListener('DOMContentLoaded', goingPage());
 
-				setTimeout(() => {
-					document.documentElement.classList.remove('going-page');
-					// document.querySelector('.preload-close').style.visibility = 'hidden';
-				}, 400);
-			}, 800);
-		});
-	});
-});
 
-import MousePRLX from './libs/parallax-mouse'
+
+// import MousePRLX from './libs/parallax-mouse'
 import AOS from 'aos'
-
 
 import BaseHelpers from './helpers/base-helpers';
 import PopupManager from './modules/popup-manager';
@@ -58,16 +27,10 @@ import BurgerMenu from './modules/burger-menu';
 import { cursor } from './modules/cursor';
 import { autoplayVideo } from './modules/autoplayVideo';
 import { smoothScroll } from './modules/smoothScroll';
-import { CubeAnimator } from './modules/cubeAnimation';
-import { showreelAnim } from './modules/showreelAnim';
 import { runningAnit } from './modules/running';
 import focusInput from './modules/focusInput.js';
 import { validForm } from './modules/validFrom.js';
 import { qualServLineAnim } from './modules/qualServLineAnim.js';
-import { initSlider } from './modules/initSlider.js';
-import { textBlurAnim } from './modules/textBlurAnim.js';
-import { gptAnimation } from './modules/gptAnimation.js';
-import { comparInit } from './modules/compar.js';
 import { questInit } from './modules/quest.js';
 import { headerWhiteBlack } from './modules/headerWhiteBlack.js';
 import { reviewsLike } from './modules/reviewsLike.js';
@@ -78,7 +41,6 @@ import { connectBtn } from './modules/connectBtn.js';
 import { fixVHUnitsOnMobile } from './modules/fixVHUnitsOnMobile.js';
 import { simpleParallaxInit } from './libs/simple-parallax.js';
 import { descItemCase } from './modules/descItemCase.js';
-import { setupAccurateParallaxOverlap } from './libs/setupAccurateParallaxOverlap.js';
 import { checkElementsInCenter } from './modules/checkElementsInCenter.js';
 import { typeWriteAbout } from './modules/typeWriteAbout.js';
 import { whiteBlacBlockVisible } from './modules/whiteBlackBlockVisible.js';
@@ -87,6 +49,13 @@ import { createBottomBlur } from './modules/createBottomBlur.js';
 import { animGsapInit } from './modules/animGsapInit.js';
 import { animateTitleWords } from './modules/animateTitleWords.js';
 
+
+
+// import { initSlider } from './modules/initSlider.js';
+// import { textBlurAnim } from './modules/textBlurAnim.js';
+// import { gptAnimation } from './modules/gptAnimation.js';
+// import { comparInit } from './modules/compar.js';
+// import { setupAccurateParallaxOverlap } from './libs/setupAccurateParallaxOverlap.js';
 
 // import { SimpleParallax } from './libs/simple-parallax.js';
 // import Tabs from './modules/tabs';
@@ -156,7 +125,7 @@ window.addEventListener('load', () => {
 /** ===================================================================================
  * Параллакс мышей
  * */
-new MousePRLX();
+// new MousePRLX();
 
 /** ===================================================================================
  * Параллакс блоков
@@ -286,6 +255,7 @@ import { toggleActiveClass } from './modules/index.js'
 
 
 
+
 const directPortMenuItems = document.querySelectorAll('.direct-port__menu-item');
 toggleActiveClass(directPortMenuItems)
 
@@ -336,14 +306,14 @@ window.addEventListener('load', function() {
 });
 
 //анимация gpt
-gptAnimation()
+// gptAnimation()
 
 //белый/черны header относительно блоков
 headerWhiteBlack()
 
 
-//блоки сравнения изображений
-comparInit()
+//блоки сравнения изображений до/после
+// comparInit()
 
 //лайк отзывов
 reviewsLike()
@@ -352,8 +322,6 @@ reviewsLike()
 window.addEventListener('load', numberDrawingAnim())
 
 
-//анимация шоурила
-// document.addEventListener('DOMContentLoaded', showreelAnim());
 
 
 //откртие видео
@@ -473,3 +441,123 @@ document.addEventListener('DOMContentLoaded', createBottomBlur);
 // 	window.addEventListener('scroll', updateVisibility);
 // 	window.addEventListener('resize', updateVisibility);
 //   });
+
+
+export function initCounterAnimation() {
+    const elements = document.querySelectorAll('[data-counter-anim]');
+    
+    if (!elements.length) return;
+
+    // Сначала заменяем все значения на 0
+    elements.forEach(element => {
+        const originalValue = element.textContent;
+        element.setAttribute('data-original-value', originalValue);
+        element.textContent = '0';
+        prepareElementWidth(element, originalValue);
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                const originalValue = element.getAttribute('data-original-value');
+                const numericValue = parseFloat(originalValue);
+                const isDecimal = numericValue % 1 !== 0;
+                const decimalPlaces = originalValue.split('.')[1]?.length || 0;
+                
+                // Добавляем задержку 1 секунду перед запуском анимации
+                setTimeout(() => {
+                    animateCounter(element, numericValue, isDecimal, decimalPlaces);
+                }, 1000);
+                
+                observer.unobserve(element);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '80% 0px -20% 0px'
+    });
+
+    elements.forEach(element => observer.observe(element));
+
+    function prepareElementWidth(element, originalValue) {
+		const value = parseFloat(originalValue);
+		const isDecimal = value % 1 !== 0;
+		const decimalPlaces = originalValue.split('.')[1]?.length || 0;
+	
+		// возможные варианты для теста
+		const testValues = [];
+	
+		// Ноль (с точками если нужно)
+		testValues.push(isDecimal ? (0).toFixed(decimalPlaces) : '0');
+	
+		// Само оригинальное значение
+		testValues.push(originalValue);
+	
+		// Максимальное по количеству цифр (например, "9999.99")
+		const intPartLength = Math.floor(value).toString().length;
+		if (isDecimal) {
+			testValues.push('9'.repeat(intPartLength) + '.' + '9'.repeat(decimalPlaces));
+		} else {
+			testValues.push('9'.repeat(intPartLength));
+		}
+	
+		// создаём контейнер для измерения
+		const tempContainer = document.createElement('div');
+		tempContainer.style.position = 'absolute';
+		tempContainer.style.visibility = 'hidden';
+		tempContainer.style.whiteSpace = 'nowrap';
+		tempContainer.style.font = getComputedStyle(element).font;
+		document.body.appendChild(tempContainer);
+	
+		let maxWidth = 0;
+		testValues.forEach(testValue => {
+			const tempElement = document.createElement('span');
+			tempElement.textContent = testValue;
+			tempContainer.appendChild(tempElement);
+			maxWidth = Math.max(maxWidth, tempElement.offsetWidth);
+			tempContainer.removeChild(tempElement);
+		});
+	
+		document.body.removeChild(tempContainer);
+	
+		element.style.minWidth = `${maxWidth + 4}px`;
+		element.style.display = 'inline-block';
+		element.style.textAlign = 'center';
+	}
+	
+
+    function animateCounter(element, targetValue, isDecimal, decimalPlaces) {
+        const duration = 1500;
+        const startTime = performance.now();
+        const startValue = 0;
+        
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            let currentValue;
+            
+            if (isDecimal) {
+                currentValue = (startValue + (targetValue - startValue) * easeOut)
+                    .toFixed(decimalPlaces);
+            } else {
+                currentValue = Math.floor(startValue + (targetValue - startValue) * easeOut);
+            }
+            
+            element.textContent = currentValue;
+            
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                element.textContent = isDecimal ? targetValue.toFixed(decimalPlaces) : targetValue.toString();
+            }
+        }
+        
+        requestAnimationFrame(update);
+    }
+}
+
+// Инициализация
+document.addEventListener('DOMContentLoaded', initCounterAnimation);

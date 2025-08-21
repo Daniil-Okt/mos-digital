@@ -388,10 +388,11 @@
     max-width: rem(348);
 
     &.desc-box-online {
-        margin-bottom: rem(302);
+        // margin-bottom: rem(302);
     }
     &.desc-box-pay {
-        margin-top: rem(330);
+        // margin-top: rem(330);
+        margin-top: rem(50);
     }
 
     // @media(max-width:1150px){
