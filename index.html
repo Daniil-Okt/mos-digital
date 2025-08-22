@@ -60,10 +60,10 @@
   <title>MOS DIGITAL</title>
 
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/main.min.css?_v=20250820154644">
+  <link rel="stylesheet" href="css/main.min.css?_v=20250822215638">
   
-  <script defer="defer" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12?_v=20250820154644"></script>
-  <script defer="defer" src="js/main.min.js?_v=20250820154644"></script>
+  <script defer="defer" src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12?_v=20250822215638"></script>
+  <script defer="defer" src="js/main.min.js?_v=20250822215638"></script>
 
 </head>
 
@@ -81,6 +81,7 @@
     
     <div class="wrapper" id="scroll-wrapper">
       <header class="header">
+  <div class="header__scrollbar"></div>
   <div class="header__top">
     <div class="header__container header__top-container">
       <a href="index.html" class="header__logo logo" data-going-page>
@@ -184,7 +185,7 @@
         <div class="menu-right menu__right">
             <ul class="menu-right__list">
                 <li class="menu-right__item">
-                    <a href="index.html" class="button-slide menu-right__link link-icon">
+                    <a href="index.html" class="button-slide menu-right__link link-icon" data-going-page>
                         <div class="home menu-right__link-icon"></div>
                         <span class="slide-anim" data-content="HOME"></span>
                     </a>
@@ -388,92 +389,74 @@
 </nav>
         <main class="page">
           <div data-observ></div>
-          <section class="about fix-vh-mob">
-    <div class="about__bg bg video">
+          <section class="about agency">
+    <div class="agency__fon">
         <picture>
-            <source media="(max-width: 550px)" srcset="images/about/about-bg-orange-mob.webp">
-            <img loading="lazy" src="images/about/about-bg-orange.webp" alt="">
+            <source media="(max-width: 550px)" srcset="images/agency/agency-fon-mob.png">
+            <img decoding="async" src="images/agency/agency-fon.png" alt="">
         </picture>
-
-        
     </div>
-    <div class="about__container">
-        <div class="about__crumbs crumbs">
-            <a href="index.html">Главная</a>
-            <span>/</span>
-            <a href="#">Услуги</a>
-            <span>/</span>
-            <a href="#">Презентации</a>
+    <div class="agency__target black-block"></div>
+    <div class="about__container agency__container">
+        <div class="agency__top-text">
+            The Design 
+            <br><span>Agency</span> 
         </div>
-        <div class="grid-content _three about__content">
-            <div class="grid-content__left about__left">
-                <div class="m-b denom about__denom">
-                    <div class="denom__icon">
-                        <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="6.93408" cy="7.30518" r="6.92822" fill="white"/>
-                            <path d="M11.6009 7.97201H7.60091V11.972H6.26758V7.97201H2.26758V6.63867H6.26758V2.63867H7.60091V6.63867H11.6009V7.97201Z" fill="black"/>
-                        </svg>
+        <h1 class="agency__title">
+            <span class="agency__title-left">MOS</span>
+            <span class="agency__title-right">DIGITAL</span>
+        </h1>
+        <div class="agency__row">
+            <div class="agency__estim estim">
+                <div class="estim__top">
+                    <div class="estim__star">
+                        <img src="images/agency/estim-star.svg" alt="">
                     </div>
-                    <span>Презентации</span>
+                    <div class="estim__number">5.0</div>
                 </div>
+                <p>100+ клиентов</p>
             </div>
-            <div class="grid-content__right about__right">
-                <div class="about__running">
-                    <div class="running about__running-body" data-speed="40">
-                        <div class="running__row about__running-row">
-                            <div class="running__item about__running-item">
-                                Бизнес 
-                            </div>
-                            <div class="running__item about__running-item">
-                                Производство 
-                            </div>
-                            <div class="running__item about__running-item">
-                                Строительство 
-                            </div>
-                            <div class="running__item about__running-item">
-                                Промышленность 
-                            </div>
-                            <div class="running__item about__running-item">
-                                Медицина 
-                            </div>
-                            <div class="running__item about__running-item">
-                                Государство
-                            </div>
-                        </div>
-                    </div>
-
-                </div>  
-                <h1 class="title-big about__title">
-                    Создаем <em><span id="typewriter" data-typed-words='["красивые", "понятные", "эффектные"]'></span></em> 
-                    <br>презентации под ключ
-                </h1>
-                <p class="bs-text about__text">
-                    Удержим интерес до конца. 
-                    <br>Спикеры будут выглядеть убедительно,
-                    <br>а аудитория слушать и понимать           
-                </p>
-                <div class="about__button-row about__button-row-fixed" data-da=".wrapper, 550, last">
-                    <div class="button-slide button about__button">
-                        <span class="slide-anim" data-content="Получить расчет"></span>
-                    </div>
-                    <div class="about__connect">
-                        <a class="about__connect-btn" href="#">
-                            <img loading="lazy" src="images/about/btn-connect1.svg" alt="">
-                        </a>
-                        <a class="about__connect-btn" href="#">
-                            <img loading="lazy" src="images/about/btn-connect2.svg" alt="">
-                        </a>
-                    </div>
-                </div>
+            <div class="agency__menu">
+                <a href="#" class="agency__link bs-link">
+                    Web
+                </a>
+                <a href="#" class="agency__link bs-link">
+                    Branding
+                </a>
+                <a href="#" class="agency__link bs-link">
+                    Presentation
+                </a>
+                <a href="#" class="agency__link bs-link">
+                    Animation
+                </a>
+                <a href="#" class="agency__link bs-link">
+                    3D
+                </a>
             </div>
         </div>
-        
-        
+        <div class="agency__bot">
+            <div class="agency__year">
+                <span>©</span> Since — 2019
+            </div>
+            <div class="running leaders__running" data-speed="30">
+                <div class="running__row leaders__running-row">
+                    <div class="running__item leaders__running-item">
+                        <img loading="lazy" src="images/running-img1.webp" alt="">
+                    </div>
+                    <div class="running__item leaders__running-item">
+                        <img loading="lazy" src="images/running-img2.webp" alt="">
+                    </div>
+                    <div class="running__item leaders__running-item">
+                        <img loading="lazy" src="images/running-img3.webp" alt="">
+                    </div>
+                    <div class="running__item leaders__running-item">
+                        <img loading="lazy" src="images/running-img4.webp" alt="">
+                    </div>
+                </div>
+            </div> 
+        </div>
     </div>
 </section>
-
-
-
           <section class="showreel" data-button-fixed-hidden>
     <div class="showreel__container">
         <div class="showreel__video-body video-lazy" data-cursor-white>
@@ -489,38 +472,227 @@
         </div>
     </div>
 </section>
-          <section class="section-p-t drawing">
-    <div class="grid-content _three drawing__container">
-        <div class="grid-content__left drawing__left">
-            <div class="drawing__number">
-                <p class="drawing__number-figure">258</p>
-                <p class="drawing__number-text">презентаций создали в 2024 году</p>
-            </div>
-            <div class="drawing__line"></div>
-        </div>
-        <div class="grid-content__right drawing__right">
-            <h2 class="title-min text-word-anim drawing__title" data-text-trigger="1">
-                Я регулярно вижу, с чем приходят наши клиенты.
-                <br>Их презентации перегружены и <em>выглядят откровенно плохо.</em> Слишком много цифр, схем, терминов — всё сложно, тяжело воспринимается
-                и неактуально времени.
-                <em>Мы помогаем превратить</em> этот хаос в ясную и красиво оформленную структуру 
-            </h2>
-            <div class="drawing__right-bot">
-                <div class="bs-text drawing__text" data-text-anim="1">
-                    Мы выстраиваем тесные и доверительные отношениям
-                    со всеми клиентами. В своих каналах рассказываю
-                    как мы работаем и показываю интересные проекты — подписывайтесь, рад каждому!
+          <section class="section-p-t services">
+    <div class="services__container">
+        <div class="services__head">
+            <div class="denom services__denom">
+                <div class="denom__icon">
+                    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="6.93408" cy="7.30518" r="6.92822" fill="white"/>
+                        <path d="M11.6009 7.97201H7.60091V11.972H6.26758V7.97201H2.26758V6.63867H6.26758V2.63867H7.60091V6.63867H11.6009V7.97201Z" fill="black"/>
+                    </svg>
                 </div>
-                <div class="drawing__user user-drawing" data-da=".drawing__right, 1000, first">
-                    <img loading="lazy" src="images/drawing/user-drawing.webp" alt="" class="user-drawing__img">
-                    <div class="user-drawing__body">
-                        <h3 class="user-drawing__name">Николай Мостовой</h3>
-                        <p class="user-drawing__text">Основатель</p>
-                        <div class="user-drawing__row">
-                            <a href="#" class="button-slide user-drawing__link"><span class="slide-anim" data-content="Instagram"></span></a>
-                            <a href="#" class="button-slide user-drawing__link"><span class="slide-anim" data-content="Telegram"></span></a>
+                <span>Что мы делаем</span>
+            </div>
+            <h2 class="title-big services__title t-c">
+                Услуги.
+
+                <span class="services__title-number">5</span>
+            </h2>
+        </div>
+    </div>
+    <div class="services__row">
+        <div class="item-services services__item blue">
+            <div class="item-services__container">
+                <div class="item-services__body">
+                    <div class="item-services__head">
+                        <div class="item-services__head-left">
+                            <div class="item-services__number">
+                                / 001 / 
+                            </div>
+                            <div class="item-services__title-box">
+                                <div class="item-services__title">
+                                    WEB
+                                </div>
+                                <div class="item-services__title border">
+                                    WEB
+                                </div>
+                            </div>
                         </div>
+                        <div class="item-quest__plus item-services__plus"></div>
                     </div>
+                    <div class="item-services__text">
+                        Давайте рассчитаем стоимость и сроки проекта! Расскажите про задачу подробнее. Мы дадим предварительную оценку Гордимся работой с компаниями, которые задают правила 
+                    </div>
+
+                    <div class="item-services__btn-row">
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Лендинги</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Web-сервисы</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Личные кабинеты</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Корпоративные</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Техническая
+                                поддержка</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="item-services__img">
+                    <img src="images/services/item-services1.png" alt="">
+                </div>
+            </div>
+           
+            
+        </div>
+        <div class="item-services services__item orange">
+            <div class="item-services__container">
+                <div class="item-services__body">
+                    <div class="item-services__head">
+                        <div class="item-services__head-left">
+                            <div class="item-services__number">
+                                / 002 / 
+                            </div>
+                            <div class="item-services__title-box">
+                                <div class="item-services__title">
+                                    PRESENTATION
+                                </div>
+                                <div class="item-services__title border">
+                                    PRESENTATION
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-quest__plus item-services__plus"></div>
+                    </div>
+                    <div class="item-services__text">
+                        Давайте рассчитаем стоимость и сроки проекта! Расскажите про задачу подробнее. Мы дадим предварительную оценку Гордимся работой с компаниями, которые задают правила 
+                    </div>
+
+                    <div class="item-services__btn-row">
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Лендинги</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Web-сервисы</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Личные кабинеты</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Корпоративные</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Техническая
+                                поддержка</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="item-services__img">
+                    <img src="images/services/item-services2.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="item-services services__item green">
+            <div class="item-services__container">
+                <div class="item-services__body">
+                    <div class="item-services__head">
+                        <div class="item-services__head-left">
+                            <div class="item-services__number">
+                                / 003 / 
+                            </div>
+                            <div class="item-services__title-box">
+                                <div class="item-services__title">
+                                    BRANDING
+                                </div>
+                                <div class="item-services__title border">
+                                    BRANDING
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-quest__plus item-services__plus"></div>
+                    </div>
+                    <div class="item-services__text">
+                        Давайте рассчитаем стоимость и сроки проекта! Расскажите про задачу подробнее. Мы дадим предварительную оценку Гордимся работой с компаниями, которые задают правила 
+                    </div>
+
+                    <div class="item-services__btn-row">
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Лендинги</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Web-сервисы</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Личные кабинеты</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Корпоративные</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="button-circe str services__btn-str">
+                            <span>Техническая
+                                поддержка</span>
+    
+                            <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="item-services__img">
+                    <img src="images/services/item-services3.png" alt="">
                 </div>
             </div>
         </div>
@@ -785,361 +957,81 @@
 </section>
 
 
-          <section class="section-p-t arranged stages">
-    <div class="fon-two stages__fon-body"></div>
-    <div class="stages__container">
-        <div class="_two grid-content stages__content">
-            <div class="grid-content__left stages__left">
-                <div class="stages__head head-text">
-                    <div class="m-b denom stages__denom">
-                        <div class="denom__icon">
-                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="6.93408" cy="7.30518" r="6.92822" fill="white"/>
-                                <path d="M11.6009 7.97201H7.60091V11.972H6.26758V7.97201H2.26758V6.63867H6.26758V2.63867H7.60091V6.63867H11.6009V7.97201Z" fill="black"/>
-                            </svg>
-                        </div>
-                        <span>Процесс</span>
-                    </div>
-                    <h2 class="title-big text-word-anim m-b stages__title" data-text-trigger="3">
-                        Как у нас устроена работа над проектом
-                    </h2>
-                    <p class="bs-text stages__text" data-text-anim="3">
-                        Мы организовали процесс так, чтобы для клиента всё было прозрачно, понятно и удобно. Вы всегда знаете, на каком этапе проект, видите результат и можете вносить правки.
-                        <br>В итоге — никаких сюрпризов и расстройств о потраченном времени: вы получаете презентацию, которая на 100% соответствует вашим целям и задачам бизнеса
-                    </p>
-                </div>
-            </div>
-            <div class="grid-content__right stages__right">
-                <div class="stages__slide-row">
-                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                        <div class="stages__slide-body">
-                            <div class="item-expert-site__discount-prc">
-                                Этап #1
-                            </div>
-                            <h3 class="_two stages__title-slide">
-                                На первом этапе мы знакомимся с вашим бизнесом: обсуждаем задачи и цели проекта, уточняем детали и задаем вопросы. Формулируем ожидаемый результат
-                            </h3>
-                            <div class="stages__text-slide">
-                            </div>
-                        </div>
-                        <div class="stages__img-slide">
-                            <img class="black" loading="lazy" src="images/stages/item-stages1-orange.png" alt="">
-                            <img class="white" loading="lazy" src="images/stages/item-stages1-orange-white.png" alt="">
-                        </div>
-                    </div>
-                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                        <div class="stages__slide-body">
-                            <div class="item-expert-site__discount-prc">
-                                Этап #2
-                            </div>
-                            <h3 class="_two stages__title-slide">
-                                Исследуем аудиторию и рынок, смотрим, как принято подавать информацию в вашей отрасли, чтобы презентация выглядела уместно, актуально и сразу «читалась» вашими клиентами или партнерами
-                            </h3>
-                            <div class="stages__text-slide">
-                            </div>
-                        </div>
-    
-                        <div class="stages__img-slide">
-                            <img class="black" loading="lazy" src="images/stages/item-stages2-orange.png" alt="">
-                            <img class="white" loading="lazy" src="images/stages/item-stages2-orange-white.png" alt="">
-                        </div>
-                    </div>
-                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                        <div class="stages__slide-body">
-                            <div class="item-expert-site__discount-prc">
-                                Этап #3
-                            </div>
-                            <h3 class="_two stages__title-slide">
-                                Формируем логичную структуру и пишем текст без воды и клише, с акцентом на главное. Подачу выстраиваем так, чтобы она мотивировала аудиторию к целевому действию 
-                            </h3>
-                            <div class="stages__text-slide">
-                            </div>
-                        </div>
-                        <div class="stages__img-slide">
-                            <img class="black" loading="lazy" src="images/stages/item-stages3-orange.png" alt="">
-                            <img class="white" loading="lazy" src="images/stages/item-stages3-orange-white.png" alt="">
-                        </div>
-                    </div>
-                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                        <div class="stages__slide-body">
-                            <div class="item-expert-site__discount-prc">
-                                Этап #4
-                            </div>
-                            <h3 class="_two stages__title-slide">
-                                Определяем стиль, шрифты, цвета, формы — чтобы всё соответствовало бренду компании и отрасли. Если брендбука нет, ориентируемся на современные тренды и формируем новую основу
-                            </h3>
-                            <div class="stages__text-slide">
-                            </div>
-                        </div>
-    
-                        <div class="stages__img-slide">
-                            <img class="black" loading="lazy" src="images/stages/item-stages2-orange.png" alt="">
-                            <img class="white" loading="lazy" src="images/stages/item-stages2-orange-white.png" alt="">
-                        </div>
-                    </div>
-                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                        <div class="stages__slide-body">
-                            <div class="item-expert-site__discount-prc">
-                                Этап #5
-                            </div>
-                            <h3 class="_two stages__title-slide">
-                                Верстаем слайды в рамках согласованной концепции — аккуратно, по сетке, с правильной типографикой и визуальными акцентами                    
-                            </h3>
-                            <div class="stages__text-slide">
-                            </div>
-                        </div>
-                        <div class="stages__img-slide">
-                            <img class="black" loading="lazy" src="images/stages/item-stages3-orange.png" alt="">
-                            <img class="white" loading="lazy" src="images/stages/item-stages3-orange-white.png" alt="">
-                        </div>
-                    </div>
-                    <div class="bs-card stages__slide" data-cursor-hover="Cмотреть <em>zoom</em>">
-                        <div class="stages__slide-body">
-                            <div class="item-expert-site__discount-prc">
-                                Этап #6
-                            </div>
-                            <h3 class="_two stages__title-slide">
-                                Формируем и передаем архив с файлами                       
-                            </h3>
-                            <div class="stages__text-slide">
-                            </div>
-                        </div>
-                        <div class="stages__img-slide">
-                            <img class="black" loading="lazy" src="images/stages/item-stages2-orange.png" alt="">
-                            <img class="white" loading="lazy" src="images/stages/item-stages2-orange-white.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-          <section class="section-p-t service-pr">
-    <div class="service-pr__container">
-        <div class="_two grid-content service-pr__content">
-            <div class="grid-content__left service-pr__left">
-                <div class="f-l head-text service-pr__head-text">
-                    <div class="m-b denom stages__denom">
-                        <div class="denom__icon">
-                            <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="6.93408" cy="7.30518" r="6.92822" fill="white"/>
-                                <path d="M11.6009 7.97201H7.60091V11.972H6.26758V7.97201H2.26758V6.63867H6.26758V2.63867H7.60091V6.63867H11.6009V7.97201Z" fill="black"/>
-                            </svg>
-                        </div>
-                        <span>Стоимость</span>
-                    </div>
-                    <h2 class="title-big text-word-anim m-b service-pr__title" data-text-trigger="4">
-                        Мы не продаём <em>«дизайн слайдов»</em> — мы решаем задачи бизнеса через презентацию
-                    </h2>
-                    <p class="bs-text service-pr__text" data-text-anim="4">
-                        Мы организовали процесс так, чтобы
-                        для клиента всё было прозрачно, понятно
-                        и удобно. Вы всегда знаете, на каком этапе проект, видите результат и можете вносить правки
-                    </p>
-                </div>
-            </div>
-            <div class="grid-content__right service-pr__right">
-                <div class="service-pr__row">
-                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>">
-                        <div class="service-pr__item-number">
-                            001
-                        </div>
-                        <h3 class="service-pr__item-title">
-                            Разработка концепции 
-                        </h3>
-                        <p class="service-pr__price">
-                            от 35 000 ₽
-                        </p>
-                    </div>
-                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>">
-                        <div class="service-pr__item-number">
-                            002
-                        </div>
-                        <h3 class="service-pr__item-title">
-                            Дизайн 
-                        </h3>
-                        <p class="service-pr__price">
-                            от 10 000 ₽ / слайд
-                        </p>
-                    </div>
-                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>">
-                        <div class="service-pr__item-number">
-                            003
-                        </div>
-                        <h3 class="service-pr__item-title">
-                            Копирайт
-                        </h3>
-                        <p class="service-pr__price">
-                            от 10 000 ₽ / слайд
-                        </p>
-                    </div>
-                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>">
-                        <div class="service-pr__item-number">
-                            004
-                        </div>
-                        <h3 class="service-pr__item-title">
-                            Презентация под ключ (концепция + дизайна+ копирайт) 
-                        </h3>
-                        <p class="service-pr__price">
-                            от 12 000 ₽ / слайд
-                        </p>
-                    </div>
-                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>">
-                        <div class="service-pr__item-number">
-                            005
-                        </div>
-                        <h3 class="service-pr__item-title">
-                            Переверстка в другой формат (А4 / А3 / Квадрат / 16:9 )
-                        </h3>
-                        <p class="service-pr__price">
-                            от 2 000 ₽ / слайд
-                        </p>
-                    </div>
-                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>">
-                        <div class="service-pr__item-number">
-                            006
-                        </div>
-                        <h3 class="service-pr__item-title">
-                            Анимация
-                        </h3>
-                        <p class="service-pr__price">
-                            от 5 000 ₽ / слайд
-                        </p>
-                    </div>
-                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>">
-                        <div class="service-pr__item-number">
-                            007
-                        </div>
-                        <h3 class="service-pr__item-title">
-                            3D-визуализация
-                        </h3>
-                        <p class="service-pr__price">
-                            от 30 000 ₽ / модель
-                        </p>
-                    </div>
-                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>">
-                        <div class="service-pr__item-number">
-                            008
-                        </div>
-                        <h3 class="service-pr__item-title">
-                            Перевод
-                        </h3>
-                        <p class="service-pr__price">
-                            от 2 000 ₽ / слайд
-                        </p>
-                    </div>
-                    <div class="service-pr__item" data-cursor-hover="Заказать <em>услугу</em>">
-                        <div class="service-pr__item-number">
-                            009
-                        </div>
-                        <h3 class="service-pr__item-title">
-                            Фотограф
-                        </h3>
-                        <p class="service-pr__price">
-                            от 15 000 ₽ / час
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</section>
-          <section class="section-p-t packages">
-    <div class="packages__container">
-        <div class="packages__head">
-            <h2 class="title-big packages__title t-c">
-                Пакеты
-            </h2>
-        </div>
-
-        <div class="packages__row">
-            <div class="expert-site__item glass-style item-expert-site packages-item-prlx-1" data-ctr-scr="50vh">
-                    
-                    <div class="item-expert-site__tern">~ 3 недели</div>
-                    <h3 class="item-expert-site__title">Презентация + <br>лендинг сайт на Tilda</h3>
-                    <p class="item-expert-site__text">Быстро запустим лендинг или небольшой сайт</p>
-                    
-                    <div class="item-expert-site__row">
-                        <div class="item-expert-site__row-left">
-                            <div class="item-expert-site__discount-row">
-                                <div class="item-expert-site__discount">500 000 ₽</div>
-                                <div class="item-expert-site__discount-prc">-25%</div>
-                            </div>
-                            <div class="_m-t-two item-expert-site__price">
-                                <span class="big">350 000 ₽</span>
-                            </div>
-                        </div>
-                        <div class="item-expert-site__row-right">
-                            <a href="#" class="button-circe str item-expert-site__btn-circe">
-                                <span>Заказать</span>
-                                <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="button-slide button item-expert-site__button">
-                        <span class="slide-anim" data-content="Заказать сайт"></span>
-                    </div>
-            </div>
-            <div class="expert-site__item glass-style item-expert-site packages-item-prlx-2" data-ctr-scr="50vh">
-                    <div class="item-expert-site__tern">~ 12 недель</div>
-                    <h3 class="item-expert-site__title">Корпоративный сайт на Bitrix / WP</h3>
-                    <p class="item-expert-site__text">Быстро запустим лендинг или небольшой сайт</p>
-                    <div class="item-expert-site__row">
-                        <div class="item-expert-site__row-left">
-                            <div class="item-expert-site__discount-row">
-                                <div class="item-expert-site__discount">1200 000 ₽</div>
-                                <div class="item-expert-site__discount-prc">-25%</div>
-                            </div>
-                            <div class="_m-t-two item-expert-site__price">
-                                <span class="big">1 000 000 ₽</span>
-                            </div>
-                        </div>
-                        <div class="item-expert-site__row-right">
-                            <a href="#" class="button-circe str item-expert-site__btn-circe">
-                                <span>Заказать</span>
-                                <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
           
-                    <div class="button-slide button item-expert-site__button">
-                        <span class="slide-anim" data-content="Заказать сайт"></span>
-                    </div>
+          
+          <section class="section-p-t apply fon-two">
+    <div class="apply__container">
+        <div class="grid-content _three">
+            <div class="grid-content__left"></div>
+            <div class="grid-content__right head-text a-c-m apply__head">
+                <h2 class="title-big text-word-anim m-b t-c-m apply__title" style="--max-width-title: 80%" data-text-trigger="5">
+                    К нам обращаются <br><em>за экспертизой</em>
+                </h2>
+                <p class="bs-text t-c-m apply__text" style="--max-width-text: 658px" data-text-anim="5">
+                    Когда надо сделать презентацию под ключ, взяв ответственность за результат. Когда надо поработать с текстом, наглядно показать сложные данные через графики и диаграммы или когда надо продать идею или продукт
+                </p>
             </div>
-            <div class="expert-site__item glass-style item-expert-site" data-ctr-scr="50vh">
-                    <div class="item-expert-site__tern">~ 3 недели</div>
-                    <h3 class="item-expert-site__title">Брендинг + презентация + корпоративный сайт</h3>
-                    <p class="item-expert-site__text">Быстро запустим лендинг или небольшой сайт</p>
-                    <div class="item-expert-site__row">
-                        <div class="item-expert-site__row-left">
-                            <div class="item-expert-site__discount-row">
-                                <div class="item-expert-site__discount">1500 000 ₽</div>
-                                <div class="item-expert-site__discount-prc">-25%</div>
-                            </div>
-                            <div class="_m-t-two item-expert-site__price">
-                                <span class="big">500 000 ₽</span>
-                            </div>
-                        </div>
-                        <div class="item-expert-site__row-right">
-                            <a href="#" class="button-circe str item-expert-site__btn-circe">
-                                <span>Заказать</span>
-                                <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M19.3687 1.94238C19.3687 1.11396 18.6971 0.442384 17.8687 0.442384L4.36865 0.442382C3.54023 0.442382 2.86865 1.11396 2.86865 1.94238C2.86865 2.77081 3.54023 3.44238 4.36865 3.44238L16.3687 3.44238L16.3687 15.4424C16.3687 16.2708 17.0402 16.9424 17.8687 16.9424C18.6971 16.9424 19.3687 16.2708 19.3687 15.4424L19.3687 1.94238ZM1.86865 17.9424L2.92931 19.003L18.9293 3.00304L17.8687 1.94238L16.808 0.881723L0.807992 16.8817L1.86865 17.9424Z" fill="white"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="button-slide button item-expert-site__button">
-                        <span class="slide-anim" data-content="Заказать сайт"></span>
-                    </div>
+        </div>
+        
+    </div>
+    <div class="apply__row">
+        <div class="apply__item item-apply" data-ctr-scr>
+            <div class="item-apply__fon"></div>
+            <div class="item-apply__body">
+                <h3 class="title-big item-apply__title">
+                    <span>2018</span>
+                    <span class="up-text">год</span>
+                </h3>
+                <p class="item-apply__bot-text">
+                    выход на digital рынок страны
+                </p>
+            </div>
+        </div>
+        <div class="apply__item item-apply" data-ctr-scr>
+            <div class="item-apply__fon"></div>
+            <div class="item-apply__body">
+                <h3 class="title-big item-apply__title">
+                    <span>582</span>
+                    <span class="up-text">презентации</span>
+                </h3>
+                <p class="item-apply__bot-text">
+                    создали за два последних года
+                </p>
+            </div>
+        </div>
+        <div class="apply__item item-apply" data-ctr-scr>
+            <div class="item-apply__fon"></div>
+            <div class="item-apply__body">
+                <h3 class="title-big item-apply__title">
+                    <span>32</span>
+                    <span class="up-text">эксперта</span>
+                </h3>
+                <p class="item-apply__bot-text">
+                    в команде MOS DIGITAL
+                </p>
+            </div>
+        </div>
+        <div class="apply__item item-apply" data-ctr-scr>
+            <div class="item-apply__fon"></div>
+            <div class="item-apply__body">
+                <h3 class="title-big item-apply__title">
+                    <span>ТОП-3</span>
+                </h3>
+                <p class="item-apply__bot-text">
+                    в тройке лидеров по разработке презентаций в стране
+                </p>
+            </div>
+        </div>
+        <div class="apply__item item-apply" data-ctr-scr>
+            <div class="item-apply__fon"></div>
+            <div class="item-apply__body">
+                <h3 class="title-big item-apply__title _two">
+                    АККРЕДИТОВАНЫ
+                    В МИНЦИФРЫ РФ
+                </h3>
+                <p class="item-apply__bot-text">
+                    IT-компания
+                </p>
             </div>
         </div>
     </div>
@@ -1280,145 +1172,6 @@
         </div>
     </div>
 </section>
-          <section class="section-p-t fon-two apply">
-    <div class="apply__container">
-        <div class="grid-content _three">
-            <div class="grid-content__left"></div>
-            <div class="grid-content__right head-text a-c-m apply__head">
-                <h2 class="title-big text-word-anim m-b t-c-m apply__title" style="--max-width-title: 80%" data-text-trigger="5">
-                    К нам обращаются <br><em>за экспертизой</em>
-                </h2>
-                <p class="bs-text t-c-m apply__text" style="--max-width-text: 658px" data-text-anim="5">
-                    Когда надо сделать презентацию под ключ, взяв ответственность за результат. Когда надо поработать с текстом, наглядно показать сложные данные через графики и диаграммы или когда надо продать идею или продукт
-                </p>
-            </div>
-        </div>
-        
-    </div>
-    <div class="apply__row">
-        <div class="apply__item item-apply" data-ctr-scr>
-            <div class="item-apply__fon"></div>
-            <div class="item-apply__body">
-                <h3 class="title-big item-apply__title">
-                    <span>2018</span>
-                    <span class="up-text">год</span>
-                </h3>
-                <p class="item-apply__bot-text">
-                    выход на digital рынок страны
-                </p>
-            </div>
-        </div>
-        <div class="apply__item item-apply" data-ctr-scr>
-            <div class="item-apply__fon"></div>
-            <div class="item-apply__body">
-                <h3 class="title-big item-apply__title">
-                    <span>582</span>
-                    <span class="up-text">презентации</span>
-                </h3>
-                <p class="item-apply__bot-text">
-                    создали за два последних года
-                </p>
-            </div>
-        </div>
-        <div class="apply__item item-apply" data-ctr-scr>
-            <div class="item-apply__fon"></div>
-            <div class="item-apply__body">
-                <h3 class="title-big item-apply__title">
-                    <span>32</span>
-                    <span class="up-text">эксперта</span>
-                </h3>
-                <p class="item-apply__bot-text">
-                    в команде MOS DIGITAL
-                </p>
-            </div>
-        </div>
-        <div class="apply__item item-apply" data-ctr-scr>
-            <div class="item-apply__fon"></div>
-            <div class="item-apply__body">
-                <h3 class="title-big item-apply__title">
-                    <span>ТОП-3</span>
-                </h3>
-                <p class="item-apply__bot-text">
-                    в тройке лидеров по разработке презентаций в стране
-                </p>
-            </div>
-        </div>
-        <div class="apply__item item-apply" data-ctr-scr>
-            <div class="item-apply__fon"></div>
-            <div class="item-apply__body">
-                <h3 class="title-big item-apply__title _two">
-                    АККРЕДИТОВАНЫ
-                    В МИНЦИФРЫ РФ
-                </h3>
-                <p class="item-apply__bot-text">
-                    IT-компания
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-          <section class="section-p-t fon-two team">
-    <div class="team__container">
-        <div class="grid-content _three">
-            <div class="grid-content__left"></div>
-            <div class="grid-content__right">
-                <h2 class="title-min text-word-anim team__title">
-                    Мы <em>нанимаем лучших</em> <br>Это дорого, но того стоит!
-                    Благодаря такому подходу в прошлом году мы положили в портфель несколько <em>крупных проектов</em> для лидеров рынка и <em>залетели в ТОП-3</em> по разработке презентаций  с мощным дизайном
-                </h2>
-            </div>
-        </div>
-        <div class="team__head">
-            <a href="#" class="button-slide team__link">
-                <span class="slide-anim" data-content="Команда"></span>
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12.1786 1.72708C12.1786 1.25764 11.798 0.877082 11.3286 0.877082L3.67858 0.877082C3.20914 0.877082 2.82858 1.25764 2.82858 1.72708C2.82858 2.19652 3.20914 2.57708 3.67858 2.57708L10.4786 2.57708L10.4786 9.37708C10.4786 9.84652 10.8591 10.2271 11.3286 10.2271C11.798 10.2271 12.1786 9.84652 12.1786 9.37708L12.1786 1.72708ZM1.05371 12.002L1.65475 12.603L11.9296 2.32812L11.3286 1.72708L10.7275 1.12604L0.45267 11.4009L1.05371 12.002Z" fill="#FF4533"/>
-                </svg>
-            </a>
-        </div>
-        
-        <div class="running reverse shadow-hidden team__running" data-speed="50">
-            <div class="running__row team__row">
-                <div class="running__item item-team team__item">
-                    <img loading="lazy" src="images/team/item-team1.webp" alt="" class="img-cover item-team__img">
-                    <div class="item-team__body">
-                        <h3 class="item-team__name">
-                            Николай Мостовой
-                        </h3>
-                        <p>Founder </p>
-                    </div>
-                </div>
-                <div class="running__item item-team team__item">
-                    <img loading="lazy" src="images/team/item-team2.webp" alt="" class="img-cover item-team__img">
-                    <div class="item-team__body">
-                        <h3 class="item-team__name">
-                            Николай Мостовой
-                        </h3>
-                        <p>Founder </p>
-                    </div>
-                </div>
-                <div class="running__item item-team team__item">
-                    <img loading="lazy" src="images/team/item-team3.webp" alt="" class="img-cover item-team__img">
-                    <div class="item-team__body">
-                        <h3 class="item-team__name">
-                            Николай Мостовой
-                        </h3>
-                        <p>Founder </p>
-                    </div>
-                </div>
-                <div class="running__item item-team team__item">
-                    <img loading="lazy" src="images/team/item-team4.webp" alt="" class="img-cover item-team__img">
-                    <div class="item-team__body">
-                        <h3 class="item-team__name">
-                            Николай Мостовой
-                        </h3>
-                        <p>Founder </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
           <section class="section-p-t reviews">
     <div class="reviews__container">
         <div class="grid-content _three">
@@ -1537,9 +1290,10 @@
 
 
 
+
           <section class="section-p-t quest">
     <div class="quest__container">
-        <div class="_two grid-content quest__content">
+        <div class="grid-content _two quest__content">
             <div class="grid-content__left head-text quest__head">
                 <div class="m-b denom stages__denom">
                     <div class="denom__icon">
