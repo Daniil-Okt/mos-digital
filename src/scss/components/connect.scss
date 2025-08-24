@@ -371,7 +371,7 @@
         @include adaptiveClamp(padding-left, 42.5, 30);
         @include adaptiveClamp(padding-right, 42.5, 30);
         width: 100%;
-        pointer-events: all;
+        // pointer-events: all;
     }
 
     &__personal-data {

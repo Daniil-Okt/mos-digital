@@ -2,27 +2,30 @@
 <html lang="ru">
   @@include('html/head.html', {
     'title': 'MOS DIGITAL',
-    'script':"<script defer data-src='js/index.min.js'></script>"
+    'script':""
   })
   <body>
-    @@include('html/preload.html')
-    <!-- <div class="preload-open"></div> -->
+    <div class="preload-open"></div>
     <div class="wrapper" id="scroll-wrapper">
       @@include('html/header.html')
       @@include('html/menu.html', {})
         <main class="page">
           <div data-observ></div>
-          @@include('html/agency.html')
+          @@include('html/about.html', {
+            'srcBg':'about-bg-orange.webp',
+            'srcBgMob':'about-bg-orange-mob.webp',
+          })
           @@include('html/showreel.html')
-          @@include('html/services.html')
+          @@include('html/drawing.html')
           @@include('html/direct-port.html')
           @@include('html/connect.html')
-          <!-- @@include('html/service-pr.html') -->
-          <!-- @@include('html/packages.html') -->
-          @@include('html/apply.html')
+          @@include('html/arranged.html')
+          @@include('html/service-pr.html')
+          @@include('html/packages.html')
           @@include('html/choice.html')
+          @@include('html/apply.html')
+          @@include('html/team-two.html')
           @@include('html/reviews.html')
-
           @@include('html/quest.html')
           @@include('html/connect.html')
         </main>

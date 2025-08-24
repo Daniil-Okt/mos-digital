@@ -18,6 +18,7 @@ $footerHeight: 100;
   --bs-radius: 10px;
 
   --bs-font-color: rgba(255, 255, 255, 0.6); // Цвет шрифта по умолчанию
+  --static-font-color: rgba(255, 255, 255, 0.6);
   --bs-title-color: #fff;
   --bs-mark-color: #ff4533;
   --bs-title-mark-color: #ff4533;
@@ -33,6 +34,11 @@ $footerHeight: 100;
   --blue: #0090ff;
   --orange: #ff4533;
   --green: #02d92d;
+  --blueBody: #06f;
+  --greenBody: #00b050;
+  --violet: #7f02fe;
+  --pink: #ee01c6;
+
 
   --primary-color: #131313;
   --primary-hover-color: #2d2d2d;
@@ -70,3 +76,20 @@ html.blue-page {
   --bs-title-mark-color: #06f;
   --bs-button-hover-color: rgb(0, 89, 222);
 }
+html.green-page {
+  --bs-mark-color: #01b954;
+  --bs-title-mark-color: #00b050;
+  --bs-button-hover-color: #009c46;
+}
+html.violet-page {
+  --bs-mark-color: #8206ff;
+  --bs-title-mark-color: #7f02fe;
+  --bs-button-hover-color: #7203e0;
+}
+html.pink-page {
+  --bs-mark-color: #f701ce;
+  --bs-title-mark-color: #ee01c6;
+  --bs-button-hover-color: #de04ba;
+}
+
+

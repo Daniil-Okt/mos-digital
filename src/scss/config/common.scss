@@ -1018,7 +1018,8 @@ form {
         color: rgba(240, 240, 240, 0.3);
         line-height: 120%;
         @include adaptiveClamp(font-size, 14, 12);
-        
+        transition: color 0.3s ease  0s;
+
         &:hover {
             color: #f0f0f0;
         }
@@ -1211,8 +1212,18 @@ img.img-cover {
         border-radius: 100%;
         z-index: -1;
 
+      
         .blue-page & {
             background: linear-gradient(270deg, #06f 38.5%, #2600ff 49%, #06f 67%);
+        }
+        .green-page & {
+            background: linear-gradient(270deg, #01b954 38.5%, #00b050 49%, #01b954 67%);
+        }
+        .violet-page & {
+            background: linear-gradient(270deg, #8206ff 38.5%, #7f02fe 49%, #8206ff 67%);
+        }
+        .pink-page & {
+            background: linear-gradient(270deg, #f701ce 38.5%, #ee01c6 49%, #f701ce 67%);
         }
 
         @media(max-width:650px){
@@ -1240,6 +1251,16 @@ img.img-cover {
         .blue-page & {
             background: linear-gradient(270deg, #06f 38.5%, #0004ff 49%, #06f 67%);
         }
+        .green-page & {
+            background: linear-gradient(270deg, #01b954 38.5%, #00b050 49%, #01b954 67%);
+        }
+        .violet-page & {
+            background: linear-gradient(270deg, #8206ff 38.5%, #7f02fe 49%, #8206ff 67%);
+        }
+        .pink-page & {
+            background: linear-gradient(270deg, #f701ce 38.5%, #ee01c6 49%, #f701ce 67%);
+        }
+
 
         @media(max-width:950px){
             display: none;
@@ -1264,6 +1285,16 @@ img.img-cover {
         .blue-page & {
             background: linear-gradient(270deg, #06f 38.5%, #0004ff 49%, #06f 67%);
         }
+        .green-page & {
+            background: linear-gradient(270deg, #01b954 38.5%, #00b050 49%, #01b954 67%);
+        }
+        .violet-page & {
+            background: linear-gradient(270deg, #8206ff 38.5%, #7f02fe 49%, #8206ff 67%);
+        }
+        .pink-page & {
+            background: linear-gradient(270deg, #f701ce 38.5%, #ee01c6 49%, #f701ce 67%);
+        }
+
 
         @media(max-width:650px){
             display: none;
@@ -1378,3 +1409,20 @@ html.going-page .page {
     // transition: min-width 0.3s ease;
     // font-variant-numeric: tabular-nums; /* Для одинаковой ширины цифр */
 }
+
+
+
+// .circle {
+//     position: absolute;
+//     width: 171px;
+//     height: 171px;
+//     border-radius: 50%;
+//     bottom: 0;
+//     transform: translateY(-300px);
+//     border: 1px solid rgba(255, 255, 255, 0.25);
+//   }
+  
+//   .circle-1 { background: #ff6b6b; right: 10%;   transform: translateY(-450px); }
+//   .circle-2 { background: #4ecdc4; right: 15%;   transform: translateY(-300px); }
+//   .circle-3 { background: #ffd166; right: 30%;   transform: translateY(-300px); }
+//   .circle-4 { background: #6a0572; right: 20%;   transform: translateY(-500px); }

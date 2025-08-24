@@ -13,10 +13,10 @@
   @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
     $widthFrom: $maxWidth;
   }
-  @if ($minSize <= 0) {
+  @if ($minSize == 0) {
     $minSize: 0.0001;
   }
-  @if ($startSize <= 0) {
+  @if ($startSize == 0) {
     $startSize: 0.0001;
   }
 

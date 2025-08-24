@@ -38,6 +38,14 @@ export function simpleParallaxInit() {
         delay: 0.2,
         overflow: true 
     });
+    const servicesTitle = document.querySelector('.services__title');
+    new simpleParallax (servicesTitle, {
+        scale: 1.7,
+        orientation: 'down',
+        startScroll: 200,
+        delay: 0.2,
+        overflow: true 
+    });
     
     const packagesItemPrlxOne = document.querySelector('.packages-item-prlx-1');
     new simpleParallax (packagesItemPrlxOne, {

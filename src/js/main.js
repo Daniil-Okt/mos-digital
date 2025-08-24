@@ -48,6 +48,7 @@ import { menuEncl } from './modules/menuEncl.js';
 import { createBottomBlur } from './modules/createBottomBlur.js';
 import { animGsapInit } from './modules/animGsapInit.js';
 import { animateTitleWords } from './modules/animateTitleWords.js';
+import { initCounterAnimation } from './modules/initCounterAnimation.js';
 
 
 
@@ -251,13 +252,11 @@ import { toggleActiveClass } from './modules/index.js'
 
 
 
-
-
-
-
-
 const directPortMenuItems = document.querySelectorAll('.direct-port__menu-item');
 toggleActiveClass(directPortMenuItems)
+
+
+
 
 // const itemQuests = document.querySelectorAll('.item-quest');
 // toggleActiveClass(itemQuests)
@@ -388,176 +387,196 @@ document.addEventListener('DOMContentLoaded', menuEncl());
 
 
 
-// Инициализация при загрузке страницы
+// Инициализация при загрузке страницы нижнего блюра
 document.addEventListener('DOMContentLoaded', createBottomBlur);
 
 
+// Анимация счетчика
+document.addEventListener('DOMContentLoaded', initCounterAnimation);
 
-
-
-// document.addEventListener('DOMContentLoaded', function() {
-// 	const main = document.querySelector('main.page');
-// 	if (!main) return;
-  
-// 	const sections = Array.from(main.querySelectorAll('section'));
-// 	const visibleRange = 2; // Количество видимых секций в каждую сторону
-  
-// 	function updateVisibility() {
-// 	  // Находим первую видимую секцию (в зоне viewport)
-// 	  let activeIndex = -1;
-	  
-// 	  sections.forEach((section, index) => {
-// 		const rect = section.getBoundingClientRect();
-// 		const isVisible = rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2;
-		
-// 		if (isVisible) {
-// 		  activeIndex = index;
-// 		}
-// 	  });
-  
-// 	  // Если не нашли активную секцию, используем первую
-// 	  if (activeIndex === -1) {
-// 		activeIndex = 0;
-// 	  }
-  
-// 	  // Обновляем видимость всех секций
-// 	  sections.forEach((section, index) => {
-// 		const isInRange = Math.abs(index - activeIndex) <= visibleRange;
-		
-// 		if (isInRange) {
-// 		  section.style.visibility = 'visible';
-// 		//   section.style.opacity = '1';
-// 		//   section.style.transition = 'opacity 0.3s ease';
-// 		} else {
-// 		  section.style.visibility = 'hidden';
-// 		//   section.style.opacity = '0';
-// 		//   section.style.transition = 'opacity 0.3s ease';
-// 		}
-// 	  });
-// 	}
-  
-// 	// Инициализация и обработка скролла
-// 	updateVisibility();
-// 	window.addEventListener('scroll', updateVisibility);
-// 	window.addEventListener('resize', updateVisibility);
-//   });
-
-
-export function initCounterAnimation() {
-    const elements = document.querySelectorAll('[data-counter-anim]');
-    
-    if (!elements.length) return;
-
-    // Сначала заменяем все значения на 0
-    elements.forEach(element => {
-        const originalValue = element.textContent;
-        element.setAttribute('data-original-value', originalValue);
-        element.textContent = '0';
-        prepareElementWidth(element, originalValue);
+/**
+ * Скрипт для отложенной загрузки скриптов с data-src атрибутами
+ * Ищет все <script defer data-src='путь'> и загружает их правильно
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Ждем полную загрузку страницы
+    window.addEventListener('load', function() {
+        processDataSrcScripts();
     });
+});
 
-    const observer = new IntersectionObserver((entries) => {
+function processDataSrcScripts() {
+    // Находим все script элементы с data-src атрибутом
+    const lazyScripts = document.querySelectorAll('script[data-src]');
+    
+    console.log(`Found ${lazyScripts.length} lazy scripts to load`);
+    
+    lazyScripts.forEach((scriptElement, index) => {
+        const dataSrc = scriptElement.getAttribute('data-src');
+        const shouldDefer = scriptElement.hasAttribute('defer');
+        const shouldAsync = scriptElement.hasAttribute('async');
+        
+        if (dataSrc) {
+            // Создаем новый script элемент
+            const newScript = document.createElement('script');
+            newScript.src = dataSrc;
+            
+            // Сохраняем оригинальные атрибуты
+            if (shouldDefer) newScript.defer = true;
+            if (shouldAsync) newScript.async = true;
+            
+            // Копируем другие атрибуты (кроме data-src)
+            Array.from(scriptElement.attributes).forEach(attr => {
+                if (attr.name !== 'data-src' && attr.name !== 'src') {
+                    newScript.setAttribute(attr.name, attr.value);
+                }
+            });
+            
+            // Обработчики событий
+            newScript.onload = function() {
+                console.log(`Script loaded: ${dataSrc}`);
+                // Можно вызвать кастомное событие
+                document.dispatchEvent(new CustomEvent('lazyScriptLoaded', {
+                    detail: { src: dataSrc, element: newScript }
+                }));
+            };
+            
+            newScript.onerror = function() {
+                console.error(`Script failed to load: ${dataSrc}`);
+                document.dispatchEvent(new CustomEvent('lazyScriptError', {
+                    detail: { src: dataSrc, element: newScript }
+                }));
+            };
+            
+            // Заменяем старый элемент на новый
+            scriptElement.parentNode.replaceChild(newScript, scriptElement);
+            
+            console.log(`Loading script: ${dataSrc} (defer: ${shouldDefer}, async: ${shouldAsync})`);
+        }
+    });
+}
+
+// Альтернативная версия с поддержкой Intersection Observer для загрузки при видимости
+function processDataSrcScriptsAdvanced(options = {}) {
+    const {
+        threshold = 0.1,
+        rootMargin = '0px',
+        loadImmediately = false
+    } = options;
+    
+    const lazyScripts = document.querySelectorAll('script[data-src]');
+    
+    if (loadImmediately || !('IntersectionObserver' in window)) {
+        // Простая загрузка всех скриптов сразу
+        loadAllScriptsImmediately(lazyScripts);
+        return;
+    }
+    
+    // Используем Intersection Observer для загрузки при появлении в viewport
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const element = entry.target;
-                const originalValue = element.getAttribute('data-original-value');
-                const numericValue = parseFloat(originalValue);
-                const isDecimal = numericValue % 1 !== 0;
-                const decimalPlaces = originalValue.split('.')[1]?.length || 0;
-                
-                // Добавляем задержку 1 секунду перед запуском анимации
-                setTimeout(() => {
-                    animateCounter(element, numericValue, isDecimal, decimalPlaces);
-                }, 1000);
-                
-                observer.unobserve(element);
+                const scriptElement = entry.target;
+                loadSingleScript(scriptElement);
+                observer.unobserve(scriptElement);
             }
         });
-    }, {
-        threshold: 0.1,
-        rootMargin: '80% 0px -20% 0px'
+    }, { threshold, rootMargin });
+    
+    // Наблюдаем за каждым script элементом
+    lazyScripts.forEach(scriptElement => {
+        observer.observe(scriptElement);
     });
+}
 
-    elements.forEach(element => observer.observe(element));
+function loadAllScriptsImmediately(scriptElements) {
+    scriptElements.forEach(loadSingleScript);
+}
 
-    function prepareElementWidth(element, originalValue) {
-		const value = parseFloat(originalValue);
-		const isDecimal = value % 1 !== 0;
-		const decimalPlaces = originalValue.split('.')[1]?.length || 0;
-	
-		// возможные варианты для теста
-		const testValues = [];
-	
-		// Ноль (с точками если нужно)
-		testValues.push(isDecimal ? (0).toFixed(decimalPlaces) : '0');
-	
-		// Само оригинальное значение
-		testValues.push(originalValue);
-	
-		// Максимальное по количеству цифр (например, "9999.99")
-		const intPartLength = Math.floor(value).toString().length;
-		if (isDecimal) {
-			testValues.push('9'.repeat(intPartLength) + '.' + '9'.repeat(decimalPlaces));
-		} else {
-			testValues.push('9'.repeat(intPartLength));
-		}
-	
-		// создаём контейнер для измерения
-		const tempContainer = document.createElement('div');
-		tempContainer.style.position = 'absolute';
-		tempContainer.style.visibility = 'hidden';
-		tempContainer.style.whiteSpace = 'nowrap';
-		tempContainer.style.font = getComputedStyle(element).font;
-		document.body.appendChild(tempContainer);
-	
-		let maxWidth = 0;
-		testValues.forEach(testValue => {
-			const tempElement = document.createElement('span');
-			tempElement.textContent = testValue;
-			tempContainer.appendChild(tempElement);
-			maxWidth = Math.max(maxWidth, tempElement.offsetWidth);
-			tempContainer.removeChild(tempElement);
-		});
-	
-		document.body.removeChild(tempContainer);
-	
-		element.style.minWidth = `${maxWidth + 4}px`;
-		element.style.display = 'inline-block';
-		element.style.textAlign = 'center';
-	}
-	
-
-    function animateCounter(element, targetValue, isDecimal, decimalPlaces) {
-        const duration = 1500;
-        const startTime = performance.now();
-        const startValue = 0;
-        
-        function update(currentTime) {
-            const elapsed = currentTime - startTime;
-            const progress = Math.min(elapsed / duration, 1);
-            
-            const easeOut = 1 - Math.pow(1 - progress, 3);
-            let currentValue;
-            
-            if (isDecimal) {
-                currentValue = (startValue + (targetValue - startValue) * easeOut)
-                    .toFixed(decimalPlaces);
-            } else {
-                currentValue = Math.floor(startValue + (targetValue - startValue) * easeOut);
-            }
-            
-            element.textContent = currentValue;
-            
-            if (progress < 1) {
-                requestAnimationFrame(update);
-            } else {
-                element.textContent = isDecimal ? targetValue.toFixed(decimalPlaces) : targetValue.toString();
-            }
+function loadSingleScript(scriptElement) {
+    const dataSrc = scriptElement.getAttribute('data-src');
+    const shouldDefer = scriptElement.hasAttribute('defer');
+    const shouldAsync = scriptElement.hasAttribute('async');
+    
+    if (!dataSrc) return;
+    
+    const newScript = document.createElement('script');
+    newScript.src = dataSrc;
+    
+    if (shouldDefer) newScript.defer = true;
+    if (shouldAsync) newScript.async = true;
+    
+    // Копируем все атрибуты кроме data-src и src
+    Array.from(scriptElement.attributes).forEach(attr => {
+        if (attr.name !== 'data-src' && attr.name !== 'src') {
+            newScript.setAttribute(attr.name, attr.value);
         }
-        
-        requestAnimationFrame(update);
+    });
+    
+    // Обработчики событий
+    newScript.onload = function() {
+        console.log(`✅ Script loaded: ${dataSrc}`);
+        scriptElement.dispatchEvent(new CustomEvent('lazyLoadComplete', {
+            bubbles: true,
+            detail: { success: true, src: dataSrc }
+        }));
+    };
+    
+    newScript.onerror = function() {
+        console.error(`❌ Script failed: ${dataSrc}`);
+        scriptElement.dispatchEvent(new CustomEvent('lazyLoadComplete', {
+            bubbles: true,
+            detail: { success: false, src: dataSrc }
+        }));
+    };
+    
+    // Заменяем элемент
+    scriptElement.parentNode.replaceChild(newScript, scriptElement);
+}
+
+// Автоматическая инициализация при полной загрузке
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLazyLoader);
+} else {
+    initLazyLoader();
+}
+
+function initLazyLoader() {
+    // Ждем полную загрузку страницы
+    if (document.readyState === 'complete') {
+        startLazyLoading();
+    } else {
+        window.addEventListener('load', startLazyLoading);
     }
 }
 
-// Инициализация
-document.addEventListener('DOMContentLoaded', initCounterAnimation);
+function startLazyLoading() {
+    // Проверяем, есть ли скрипты для ленивой загрузки
+    const hasLazyScripts = document.querySelectorAll('script[data-src]').length > 0;
+    
+    if (hasLazyScripts) {
+        console.log('🚀 Starting lazy script loading...');
+        processDataSrcScriptsAdvanced({
+            threshold: 0.1,
+            rootMargin: '50px',
+            loadImmediately: false // Меняйте на true для немедленной загрузки
+        });
+    }
+}
+
+// Экспортируем функции для использования в других модулях
+window.LazyScriptLoader = {
+    processDataSrcScripts,
+    processDataSrcScriptsAdvanced,
+    loadAllScriptsImmediately,
+    loadSingleScript,
+    init: initLazyLoader
+};
+
+
+
+
+
+
+
+

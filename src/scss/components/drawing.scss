@@ -57,12 +57,21 @@
             filter: blur(200px);
             border-radius: 100%;
             z-index: -1;
-           
+            
     
             .blue-page & {
                 background: linear-gradient(270deg, #06f 38.5%, #2600ff 49%, #06f 67%);
             }
-
+            .green-page & {
+                background: linear-gradient(270deg, #01b954 38.5%, #00b050 49%, #01b954 67%);
+            }
+            .violet-page & {
+                background: linear-gradient(270deg, #8206ff 38.5%, #7f02fe 49%, #8206ff 67%);
+            }
+            .pink-page & {
+                background: linear-gradient(270deg, #f701ce 38.5%, #ee01c6 49%, #f701ce 67%);
+            }
+            
             @media(max-width:650px){
                 display: none;
             }
@@ -85,6 +94,17 @@
             .blue-page & {
                 background: linear-gradient(270deg, #06f 38.5%, #0004ff 49%, #06f 67%);
             }
+            .green-page & {
+                background: linear-gradient(270deg, #01b954 38.5%, #00b050 49%, #01b954 67%);
+            }
+            .violet-page & {
+                background: linear-gradient(270deg, #8206ff 38.5%, #7f02fe 49%, #8206ff 67%);
+            }
+            .pink-page & {
+                background: linear-gradient(270deg, #f701ce 38.5%, #ee01c6 49%, #f701ce 67%);
+            }
+     
+            
 
             @media(max-width:950px){
                 display: none;
@@ -162,6 +182,27 @@
             &::after {
                 -webkit-text-fill-color: var(--white-o-b);
             }
+        }
+
+        .green-page & {
+            -webkit-text-fill-color: #00b050;
+        }
+        .white-theme.green-page &::after {
+            -webkit-text-fill-color: #00b050;
+        }
+
+        .violet-page & {
+            -webkit-text-fill-color: #7f02fe;
+        }
+        .white-theme.violet-page &::after {
+            -webkit-text-fill-color: #7f02fe;
+        }
+
+        .pink-page & {
+            -webkit-text-fill-color: #ee01c6;
+        }
+        .white-theme.pink-page &::after {
+            -webkit-text-fill-color: #ee01c6;
         }
 
         @media(max-width:1300px){
