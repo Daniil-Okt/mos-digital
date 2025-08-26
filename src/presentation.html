@@ -2,7 +2,7 @@
 <html lang="ru">
   @@include('html/head.html', {
     'title': 'MOS DIGITAL',
-    'script':""
+    'script':"<script defer data-src='js/marquiz.min.js'></script>"
   })
   <body>
     <div class="preload-open"></div>
@@ -33,6 +33,11 @@
         @@include('html/footer.html')
         @@include('html/popup-example.html')
         <div class="cursor-follower"></div>
+
+        <div class="marquiz-content">
+          <div data-marquiz-id="60e4682df30452003eeba144"></div>
+          <script>(function(t, p) {window.Marquiz ? Marquiz.add([t, p]) : document.addEventListener('marquizLoaded', function() {Marquiz.add([t, p])})})('Button', {id: '60e4682df30452003eeba144', buttonText: '«Старт»', bgColor: '#d34085', textColor: '#ffffff', rounded: true, shadow: 'rgba(211, 64, 133, 0.5)', blicked: true, fixed: false, disableOnMobile: false})</script>
+        </div>
     </div>
     <div class="preload-close"></div>
   </body>

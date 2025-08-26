@@ -438,6 +438,7 @@
         @include adaptiveClamp(height, 60, 53);
         padding-bottom: rem(4);
         padding-top: rem(4);
+        text-transform: uppercase;
 
         bottom: 0;
         padding-right: rem($mainOffset);
@@ -605,6 +606,7 @@
         letter-spacing: -0.02em;
         margin-bottom: rem(-5);
         min-width: rem(200);
+        text-transform: uppercase;
         transition: color 0.3s ease  0s;
 
         @media(max-width:1200px){

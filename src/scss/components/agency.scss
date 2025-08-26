@@ -104,7 +104,7 @@
             flex-direction: column;
             @include adaptiveClamp(padding-top, 222, 127);
             @include adaptiveClamp(margin-bottom, 235, 60);
-            padding-bottom: 5vh;
+            padding-bottom: 5%;
         }
     }
 
