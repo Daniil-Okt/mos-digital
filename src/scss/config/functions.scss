@@ -18,6 +18,6 @@
 
 
 // !TO VW:
-@function vw($value, $designWidth: 1440) {
+@function vw($value, $designWidth: 2001) {
   @return math.div($value, $designWidth) * 100vw;
 }

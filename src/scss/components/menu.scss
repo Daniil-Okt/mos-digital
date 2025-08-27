@@ -616,11 +616,12 @@
 
     &__cat {
         max-height: 0;
+        width: 100%;
         overflow: hidden;
         opacity: 0; 
         pointer-events: none;
         transition: opacity 0.6s ease-in-out  0s, max-height 0.6s ease-in-out  0s, padding 0.6s ease-in-out  0s;
-        margin-left: rem(16);
+        margin-left: rem(32);
         ._active & {
             max-height: 1000px;
             opacity: 1;

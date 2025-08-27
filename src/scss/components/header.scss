@@ -58,22 +58,20 @@
     // background: var(--body-color);
   }
 
-  @media(max-width:650px){
-      &::before {
-          position: absolute;
-          content: '';
-          width: 47.7%;
-          height: rem(5.17);
-          background: var(--bs-title-mark-color);
-          top:0;
-          left: 0;
-          transition: height 1s ease  0s;
+  &__scrollbar {
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: rem(5.17);
+    background: var(--bs-title-mark-color);
+    top:0;
+    left: 0;
+    transition: height 1s ease  0s, width 0.2s ease  0s;
 
-          .scroll-bot & {
-            height: rem(3.17);
-          }
-      }
-  }
+    .scroll-bot & {
+      height: rem(3.17);
+    }
+}
 
 
   // .header__container

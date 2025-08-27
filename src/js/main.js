@@ -49,6 +49,10 @@ import { createBottomBlur } from './modules/createBottomBlur.js';
 import { animGsapInit } from './modules/animGsapInit.js';
 import { animateTitleWords } from './modules/animateTitleWords.js';
 import { initCounterAnimation } from './modules/initCounterAnimation.js';
+import { processDataSrcScripts } from './modules/processDataSrcScripts.js';
+import { marquizBtn } from './modules/marquizBtn.js';
+import { ScrollProgress } from './modules/scrollProgress.js';
+import { detectSafari } from './modules/detectSafari.js';
 
 
 
@@ -62,7 +66,7 @@ import { initCounterAnimation } from './modules/initCounterAnimation.js';
 // import Tabs from './modules/tabs';
 // import Accordion from './modules/accordion';
 
-BaseHelpers.checkWebpSupport();
+// BaseHelpers.checkWebpSupport();
 /* Добавление класса touch для HTML если браузер мобильный */
 // BaseHelpers.addTouchClass();
 /* Добавление loaded для HTML после полной загрузки страницы */
@@ -71,6 +75,11 @@ BaseHelpers.addLoadedClass();
 BaseHelpers.headerFixed();
 /* Направления скролла */
 BaseHelpers.handleScrollDirection()
+
+// Проверка на сафари
+detectSafari();
+
+
 
 
 /** ===================================================================================
@@ -248,8 +257,7 @@ focusInput()
 	* При клике на элемент, у всех элементов класс удаляется
 */
 import { toggleActiveClass } from './modules/index.js'
-import { processDataSrcScripts } from './modules/processDataSrcScripts.js';
-import { marquizBtn } from './modules/marquizBtn.js';
+
 
 
 
@@ -372,9 +380,9 @@ window.addEventListener('resize', checkElementsInCenter);
 // 	);
 // });
 
+
 //паддинги
 descItemCase()
-
 
 
 //добавление класс visible к черным/белым блокам
@@ -389,12 +397,31 @@ document.addEventListener('DOMContentLoaded', menuEncl());
 
 
 
-// Инициализация при загрузке страницы нижнего блюра
-document.addEventListener('DOMContentLoaded', createBottomBlur);
-
 
 // Анимация счетчика
 document.addEventListener('DOMContentLoaded', initCounterAnimation);
+
+
+
+
+// Cкроллбар
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollbarElement = document.querySelector('.header__scrollbar');
+    if (scrollbarElement) {
+        new ScrollProgress(scrollbarElement);
+    }
+});
+
+
+
+
+// кнопки марквиза
+marquizBtn()
+
+
+// Инициализация при загрузке страницы нижнего блюра
+document.addEventListener('DOMContentLoaded', createBottomBlur);
+
 
 /**
  * Скрипт для отложенной загрузки скриптов с data-src атрибутами
@@ -406,12 +433,3 @@ document.addEventListener('DOMContentLoaded', function() {
         processDataSrcScripts();
     });
 });
-// кнопки марквиза
-marquizBtn()
-
-
-
-
-
-
-

@@ -86,7 +86,7 @@
         align-items: start;
     }
 
-    &__title.title-big {
+    h2.stages.title-big {
         text-align: left;
         max-width: rem(650);
         @media(max-width:650px){

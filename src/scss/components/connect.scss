@@ -19,6 +19,7 @@
         display: flex;
         overflow: hidden;
         border-radius: 10px;
+        pointer-events: none;
 
         &::before {
             position: absolute;
@@ -379,6 +380,10 @@
         
         .personal-data__icon {
             margin-top: rem(4);
+        }
+
+        .white-theme & a {
+            color: var(--bs-title-mark-color);
         }
     }
 

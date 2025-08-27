@@ -37,3 +37,6 @@ export function headerWhiteBlack() {
     // Первоначальная проверка
     checkHeaderCenterOverBlocks();
 }
+
+document.documentElement.classList.remove('white-theme')
+document.documentElement.classList.add('black-theme')

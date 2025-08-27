@@ -7,9 +7,11 @@ class PopupManager extends Popup {
     const defaultOptions = {
       isOpenClass: 'is-open',
       buttonCloseName: 'button-close',
+      visibilityDelay: 3000, // 3 секунды задержки
     };
 
     this.options = { ...defaultOptions, ...options };
+    this.timers = new Map(); // Хранилище таймеров для каждого попапа
 
     this.init();
     this.addEventListeners();
@@ -18,6 +20,7 @@ class PopupManager extends Popup {
   init() {
     this.popups.forEach((popup) => {
       popup.setAttribute('aria-hidden', 'true');
+      popup.style.visibility = 'hidden'; // Изначально скрываем
     });
   }
 
@@ -39,7 +42,6 @@ class PopupManager extends Popup {
       }
     }
 
-    // Проверяем только нажатие на явные элементы закрытия
     const targetCloseElement = target.closest(`.${this.options.buttonCloseName}`) ||
       (target.hasAttribute('data-close-overlay') && target);
 
@@ -65,13 +67,65 @@ class PopupManager extends Popup {
   }
 
   openPopup(popup) {
-    popup.classList.add(this.options.isOpenClass);
-    popup.setAttribute('aria-hidden', 'false');
+    // Отменяем таймер скрытия если он есть
+    this.clearPopupTimer(popup);
+    
+    // Сначала делаем видимым, потом добавляем класс открытия
+    popup.style.visibility = 'visible';
+    
+    // Небольшая задержка для плавности (опционально)
+    setTimeout(() => {
+      popup.classList.add(this.options.isOpenClass);
+      popup.setAttribute('aria-hidden', 'false');
+    }, 10);
   }
 
   closePopup(popup) {
+    // Убираем класс открытия
     popup.classList.remove(this.options.isOpenClass);
     popup.setAttribute('aria-hidden', 'true');
+    
+    // Отменяем предыдущий таймер если есть
+    this.clearPopupTimer(popup);
+    
+    // Устанавливаем новый таймер для скрытия visibility
+    const timerId = setTimeout(() => {
+      popup.style.visibility = 'hidden';
+      this.timers.delete(popup); // Удаляем из хранилища после выполнения
+    }, this.options.visibilityDelay);
+    
+    // Сохраняем ID таймера для этого попапа
+    this.timers.set(popup, timerId);
+  }
+
+  clearPopupTimer(popup) {
+    // Отменяем таймер для конкретного попапа если он существует
+    if (this.timers.has(popup)) {
+      clearTimeout(this.timers.get(popup));
+      this.timers.delete(popup);
+    }
+  }
+
+  // Дополнительный метод для принудительного закрытия всех попапов
+  closeAllPopups() {
+    this.popups.forEach(popup => {
+      this.clearPopupTimer(popup);
+      popup.classList.remove(this.options.isOpenClass);
+      popup.setAttribute('aria-hidden', 'true');
+      popup.style.visibility = 'hidden';
+    });
+    this.toggleBodyLock(false);
+  }
+
+  // Очистка всех таймеров при уничтожении экземпляра
+  destroy() {
+    this.timers.forEach((timerId, popup) => {
+      clearTimeout(timerId);
+    });
+    this.timers.clear();
+    
+    // Убираем обработчики событий
+    document.removeEventListener('click', this.togglePopup.bind(this));
   }
 }
 

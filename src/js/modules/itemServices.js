@@ -48,11 +48,13 @@ export function itemServices() {
 
             item.addEventListener('mouseenter', () => {
                 item.classList.add('_active');
+                setupResizeHandler()
                 startAnimation(itemId, btnRow, buttons);
             });
 
             item.addEventListener('mouseleave', () => {
                 item.classList.remove('_active');
+                setupResizeHandler()
                 stopAnimationWithDelay(itemId);
             });
         } else {
@@ -61,6 +63,7 @@ export function itemServices() {
 
                 if (item.classList.contains('_active')) {
                     item.classList.remove('_active');
+                    setupResizeHandler()
                     stopAnimation(itemId);
                     return;
                 }
@@ -75,6 +78,7 @@ export function itemServices() {
                     });
 
                 item.classList.add('_active');
+                setupResizeHandler()
                 startAnimation(itemId, btnRow, buttons);
                 e.stopPropagation();
             });
@@ -86,6 +90,7 @@ export function itemServices() {
             document.querySelectorAll('.item-services._active').forEach(item => {
                 const itemId = item.getAttribute('data-id');
                 item.classList.remove('_active');
+                setupResizeHandler()
                 stopAnimation(itemId);
             });
         }
@@ -344,7 +349,7 @@ export function itemServices() {
         const anim = animations[itemId];
         if (!anim) return;
         if (anim.timeout) clearTimeout(anim.timeout);
-        anim.timeout = setTimeout(() => stopAnimation(itemId), 4000);
+        anim.timeout = setTimeout(() => stopAnimation(itemId), 1500);
     }
 
     let previousWidth = window.innerWidth;
@@ -355,6 +360,7 @@ export function itemServices() {
                 const itemId = item.getAttribute('data-id');
                 stopAnimation(itemId);
                 item.classList.remove('_active');
+                setupResizeHandler()
             });
             previousWidth = currentWidth;
         }

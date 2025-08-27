@@ -1,4 +1,4 @@
-.black-theme .bubble-trans.white-block {
+.bubble-trans.white-block {
     position: relative;
     z-index: 5;
     opacity: 0;
@@ -10,9 +10,9 @@
 
         &::before {
             transition: all 0.6s ease-in  0s;
-            min-width: 250vw;
-            min-height: 250vw;
-            top:-125vw;
+            min-width: 200vw;
+            min-height: 200vw;
+            top:-100vw;
         }
 
         .bubble-trans__container {
@@ -90,7 +90,7 @@
     }
 }
 
-.white-theme .bubble-trans.black-block {
+.bubble-trans.black-block {
     position: relative;
     z-index: 5;
     opacity: 0;
@@ -103,10 +103,10 @@
 
         &::before {
             transition: all 0.6s ease-in  0s;
-            min-width: 250vw;
-            min-height: 250vw;
+            min-width: 200vw;
+            min-height: 200vw;
             
-            top:-125vw;
+            top:-100vw;
         }
 
         .bubble-trans__container {
