@@ -16,12 +16,13 @@
   padding: rem(52) rem(10);
   background-color: rgba(#000, 70%);
   z-index: 2000;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.4s ease-in-out 0.1s;
+
 
   &.is-open {
     opacity: 1;
     pointer-events: auto;
-
+    transition: opacity 0.4s ease-in-out;
     .popup__content {
       transform: translateY(0);
       opacity: 1;
@@ -48,6 +49,10 @@
     transform: translateY(rem(-200));
     opacity: 0;
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+    .is-open & {
+      transition: transform 0.3s ease-in-out 0.1s, opacity 0.3s ease-in-out 0.1s;
+    }
   }
 
   // .popup__close
@@ -64,7 +69,7 @@
     transform: rotate(45deg);
     cursor: pointer;
     &::before, &::after {
-      // background-color: #86878a;
+      background-color: #fff;
       @include adaptiveClamp(width, 16.5, 15);
       height: rem(1.5);
     }

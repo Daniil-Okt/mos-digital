@@ -318,6 +318,14 @@
         span {
             margin-top: rem(0.5);
         }
+        opacity: 0;
+        transform: translateY(150%);
+        transition: opacity 0.6s ease  0s, transform 0.6s ease  0s;
+
+        &._active {
+            opacity: 1;
+            transform: translateY(0%);
+        }
     }
 
     &__connect {

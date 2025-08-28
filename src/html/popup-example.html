@@ -10,8 +10,8 @@
 </div> -->
 
 
-<div class="popup popup-video" data-popup="popup-video" data-close-overlay>
-    <div class="popup__wrapper" data-close-overlay>
+<div class="popup popup-video" data-popup="popup-video">
+    <div class="popup__wrapper">
         <div class="popup__content  popup-video__content">
             <div class="popup-video__close"></div>
             <video controls  playsinline loading="lazy">
@@ -21,8 +21,8 @@
     </div>
 </div>
 
-<div class="popup popup-form" data-popup="popup-from" data-close-overlay>
-    <div class="popup__wrapper connect" data-close-overlay>
+<div class="popup popup-form" data-popup="popup-from">
+    <div class="popup__wrapper connect">
         
         <div class="popup__content popup-form__content connect__content">
             <div class="popup__close button-close item-quest__plus"></div>
@@ -41,7 +41,8 @@
                 </h2>
             </div>
             <form action="#" class="connect__form">
-                    
+                <input type="hidden" name="name-page">
+                <input type="hidden" name="name-block" data-input-name-block>
                     <div class="connect__row-input row-input">
                         <div class="connect__item-input item-input">
                             <lavel class="item-input__label"><span class="ok">Имя</span><span class="error">Введите имя</span></lavel>
@@ -105,3 +106,4 @@
         </div>
     </div>
 </div>
+

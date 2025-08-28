@@ -35,6 +35,17 @@
     .header__btn-theme span::after, .header__phone::after, .header__bot-link::after {
       color: rgba(255, 255, 255, 0.6);
     }
+
+    .header__top {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+    .header__btn-callback {
+      color: rgba(255, 255, 255, 0.6);
+
+      &:hover {
+        color: var(--white);
+      }
+    }
   }
 
   &.header-white-block, &.header-white-buble {

@@ -257,6 +257,8 @@ focusInput()
 	* При клике на элемент, у всех элементов класс удаляется
 */
 import { toggleActiveClass } from './modules/index.js'
+import { pay } from './modules/pay.js';
+import { inputNameBlock } from './modules/inputNameBlock.js';
 
 
 
@@ -433,3 +435,11 @@ document.addEventListener('DOMContentLoaded', function() {
         processDataSrcScripts();
     });
 });
+
+
+// функция показа покупки шаблона
+pay()
+
+
+
+inputNameBlock()

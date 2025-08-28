@@ -42,9 +42,9 @@ class PopupManager extends Popup {
       }
     }
 
-    const targetCloseElement = target.closest(`.${this.options.buttonCloseName}`) ||
-      (target.hasAttribute('data-close-overlay') && target);
-
+    // Проверяем клик по кнопке закрытия
+    const targetCloseElement = target.closest(`.${this.options.buttonCloseName}`);
+    
     if (targetCloseElement) {
       const popupToClose = targetCloseElement.closest('[data-popup]');
       if (popupToClose) {
@@ -52,6 +52,28 @@ class PopupManager extends Popup {
         this.toggleBodyLock(false);
       }
     }
+
+    // Проверяем клик вне контента попапа (заменяет data-close-overlay)
+    const isOverlayClick = this.isOverlayClick(target);
+    if (isOverlayClick) {
+      const popupToClose = target.closest('[data-popup]');
+      if (popupToClose) {
+        this.closePopup(popupToClose);
+        this.toggleBodyLock(false);
+      }
+    }
+  }
+
+  // Новый метод: проверяет, является ли клик кликом по оверлею (вне контента)
+  isOverlayClick(target) {
+    const popup = target.closest('[data-popup]');
+    if (!popup) return false;
+
+    const popupContent = popup.querySelector('.popup__content');
+    if (!popupContent) return false;
+
+    // Клик считается по оверлею, если он НЕ внутри .popup__content
+    return !popupContent.contains(target);
   }
 
   getPopupBySelector(popupName) {
@@ -77,7 +99,7 @@ class PopupManager extends Popup {
     setTimeout(() => {
       popup.classList.add(this.options.isOpenClass);
       popup.setAttribute('aria-hidden', 'false');
-    }, 10);
+    }, 100);
   }
 
   closePopup(popup) {
