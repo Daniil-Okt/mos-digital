@@ -3,7 +3,7 @@
     z-index: 5;
     opacity: 0;
     transition: background-color 0.3s ease  0.3s, opacity 0.5s ease  0.3s;
-
+    
     &.visible {
         opacity: 1;
         transition: background-color 0.3s ease  0s, opacity 0.5s ease  0s;

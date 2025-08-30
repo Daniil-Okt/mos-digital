@@ -25,7 +25,7 @@
     -webkit-backdrop-filter: blur(20px);
   }
 
-  &.header-black-block, &.header-black-buble {
+  html:not(.menu-open) &.header-black-block, :not(.menu-open) &.header-black-buble {
     background: rgba(255, 255, 255, 0.01) !important;
     border-color: rgba(255, 255, 255, 0.1) !important;
     .header__logo, .header__btn-theme, .header__phone, .header__burger, .header__bot-link {
@@ -48,7 +48,7 @@
     }
   }
 
-  &.header-white-block, &.header-white-buble {
+  html:not(.menu-open) &.header-white-block,  :not(.menu-open) &.header-white-buble {
     border-color: rgba(0, 0, 0, 0.1);
     .header__logo, .header__btn-theme, .header__phone, .header__burger, .header__bot-link {
       color: #0d0d0d;
@@ -148,13 +148,26 @@
     }
   }
 
+  &__top-right {
+    display: flex;
+    align-items: center;
+
+
+    @media(min-width:1351px){
+      width: 100%;
+      @include adaptiveClamp(max-width, 750, 200);
+    }
+  }
   &__row-phone {
     display: flex;
     flex-direction: column;
     gap: rem(7);
-    @include adaptiveClamp(margin-left, 222, 70);
+    margin-left: rem(70);
     overflow: hidden;
 
+    @media(max-width:1350px){
+      margin-left: rem(130);
+    }
     @media(max-width:950px){
       display: none;
     }
@@ -310,9 +323,13 @@
     align-items: center;
     gap: rem(20);
     margin-left: auto;
+    max-width: rem(750);
+
+
 
     @media(min-width:1351px){
-      @include adaptiveClamp(margin-right, 338, 62);
+      @include adaptiveClamp(max-width, 750, 200);
+      width: 100%;
     }
     @media(max-width:768px){
         display: none;
@@ -327,6 +344,7 @@
   align-items: center;
   gap: rem(8);
   font-size: rem(12);
+  margin-right: auto;
 
   color: var(--bs-font-color);
   // @include adaptiveClamp(margin-right, 39, 32.5);

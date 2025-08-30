@@ -2,7 +2,6 @@ export function inputNameBlock() {
     document.addEventListener('DOMContentLoaded', function() {
         const nameInput = document.querySelector('[data-input-name-block]');
         if (!nameInput) {
-            console.error('Инпут с data-input-name-block не найден');
             return;
         }
         

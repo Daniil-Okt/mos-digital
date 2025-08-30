@@ -114,11 +114,12 @@ export function comparInit() {
             e.preventDefault();
         });
 
-        document.addEventListener('touchmove', (e) => {
+        // переносим touchmove на контейнер, чтобы не перехватывать глобальный скролл iOS
+        container.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
             handleMove(e.touches[0].clientX);
             e.preventDefault();
-        });
+        }, { passive: false });
 
         document.addEventListener('touchend', () => {
             isDragging = false;

@@ -25,6 +25,8 @@ class Popup {
     this.body.style.paddingRight = isLock ? `${lockPaddingValue}px` : '0px';
     this.html.classList.toggle('lock', isLock);
   }
+
+
 }
 
 export default Popup;

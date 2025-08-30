@@ -327,7 +327,8 @@ headerWhiteBlack()
 // comparInit()
 
 //лайк отзывов
-reviewsLike()
+// reviewsLike()
+
 
 //анимация цифр +
 window.addEventListener('load', numberDrawingAnim())
@@ -443,3 +444,46 @@ pay()
 
 
 inputNameBlock()
+
+
+
+
+// апдейт анимации кейсов
+window.updateCaseParallaxAnimation = function() {
+    // Проверяем наличие необходимых элементов и библиотеки
+    if (typeof simpleParallax === 'undefined') {
+        return false;
+    }
+    
+    const parallaxElement = document.querySelector('.direct-port__row.anim-prlx-case');
+    if (!parallaxElement) {
+        return false;
+    }
+    
+    const casePortFonBody = document.querySelectorAll('.case-port__fon-body');
+    if (casePortFonBody.length === 0) {
+        return false;
+    }
+    
+    // Удаляем старый экземпляр если есть
+    if (window.caseParallaxInstance) {
+        window.caseParallaxInstance.destroy();
+        window.caseParallaxInstance = null;
+    }
+    
+    // Создаем новый экземпляр
+    try {
+        window.caseParallaxInstance = new simpleParallax(casePortFonBody, {
+            scale: 1.5,
+            orientation: 'up',
+            delay: 0,
+        });
+
+		window.dispatchEvent(new Event('resize'));
+		window.scrollTo(window.pageXOffset, window.pageYOffset -1);
+
+        return true;
+    } catch (error) {
+        return false;
+    }
+};

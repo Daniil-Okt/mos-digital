@@ -68,6 +68,7 @@
     @include adaptiveClamp(padding-bottom, 22, 20);
     @include adaptiveClamp(padding-left, 30, 15);
     @include adaptiveClamp(padding-right, 27, 15);
+    overscroll-behavior: contain;
 
     border: rem(1) solid var(--bs-border-color);
     background: #0e1016;

@@ -25,6 +25,9 @@
       width: 100%;
       z-index: -1;
 
+      @media(min-width:1621px){
+        font-size: vw(195, 1620);
+      }
       @media(max-width:1500px){
         @include adaptiveClamp(font-size, 181, 53);
       }

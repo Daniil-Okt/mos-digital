@@ -46,11 +46,13 @@
 
 
     &__row {
-        .safari & {
-            @include adaptiveClamp(min-height, 1365, 1210);
-
-            @media(max-width:650px){
-                @include adaptiveClamp(min-height, 1665, 1385);
+        @media(min-width:1025px){
+            .safari & {
+                @include adaptiveClamp(min-height, 1365, 1210);
+    
+                @media(max-width:650px){
+                    @include adaptiveClamp(min-height, 1665, 1385);
+                }
             }
         }
     }
@@ -65,6 +67,7 @@
     position: relative;
     background: #171a21;
     transition: background-color 0.3s ease  0s, margin-top 0.6s ease  0s;
+    overscroll-behavior: contain;
 
     .white-theme & {
         background: #fff;
@@ -89,26 +92,23 @@
         }
     }
 
-    &:not(:first-child)._active {
-        // @include adaptiveClamp(margin-top, 292, 200);
-    }
 
     &:not(:last-child) {
         border-bottom: 1px solid var(--bs-border-color);
     }
 
-    &:nth-child(2) {
-        z-index: 2;
-    }
-    &:nth-child(3) {
-        z-index: 3;
-    }
-    &:nth-child(4) {
-        z-index: 4;
-    }
-    &:nth-child(5) {
-        z-index: 5;
-    }
+    // &:nth-child(2) {
+    //     // z-index: 2;
+    // }
+    // &:nth-child(3) {
+    //     // z-index: 3;
+    // }
+    // &:nth-child(4) {
+    //     // z-index: 4;
+    // }
+    // &:nth-child(5) {
+    //     // z-index: 5;
+    // }
 
     @media(max-width:650px){
         &:nth-child(2) {
@@ -143,6 +143,7 @@
         transition: min-height 0.6s ease  0s;
         overflow: hidden;
         will-change: min-height, height;
+        
 
         ._active & {
             @include adaptiveClamp(min-height, 450, 451);
@@ -278,6 +279,11 @@
         bottom: rem(-1);
         @include adaptiveClamp(left, 520, 350);
         @include adaptiveClamp(width, 477, 371);
+        /* изоляция слоя для стабильного скейла */
+        isolation: isolate;
+        contain: paint;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
 
         img {
             @include adaptiveClamp(width, 477, 371);
@@ -354,8 +360,12 @@
             opacity: 1;
         }
 
-        @include adaptiveClamp(height, 1000, 1002);
+ 
+        @include adaptiveClamp(height, 800, 802);
 
+        @media(max-width:1250px){
+            @include adaptiveClamp(height, 1000, 1002);
+        }
         @media(max-width:650px){
             @include adaptiveClamp(height, 1525, 1342);
         }

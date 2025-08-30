@@ -22,10 +22,7 @@ export function simpleParallaxInit() {
         const parallax = new simpleParallax (casePortFonBody, {
             scale: 1.5,
             orientation: 'up',
-            // startScroll: -100,
-            // transition: 'cubic-bezier(0,0,0,1)',
             delay: 0,
-            // overflow: true 
         });
     }
 
@@ -77,6 +74,9 @@ export function simpleParallaxInit() {
 
 
     window.dispatchEvent(new Event('resize'));
+    window.scrollTo(window.pageXOffset, window.pageYOffset -1);
 }
+
+
 
 

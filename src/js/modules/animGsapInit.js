@@ -8,6 +8,11 @@ import { CustomEase } from "gsap/CustomEase";
 
 // Регистрируем плагины
 gsap.registerPlugin(ScrollTrigger, SplitText, CustomEase);
+// ScrollTrigger.normalizeScroll(true);
+ScrollTrigger.config({
+    ignoreMobileResize: true
+});
+
 
 export function animGsapInit() {
     const screenHeight = window.innerHeight;
@@ -17,6 +22,8 @@ export function animGsapInit() {
 
         return prcEnter;
     }
+
+
 
 
     //анимация шоурила
@@ -47,8 +54,9 @@ export function animGsapInit() {
                 trigger: about,
                 start: isDesktop ? "top top" : `${prcSH(0.15)} top`,
                 end: isDesktop ? "75% top" : `${prcSH(0.75)} top`,
-                scrub: isDesktop ? true : 0.1,
+                scrub: isDesktop ? true : 0.3,
                 markers: false,
+                fastScrollEnd: true,
             }
         });
     
@@ -72,6 +80,9 @@ export function animGsapInit() {
         }
     }
     window.addEventListener('load', showreelAnimation) 
+
+
+
 
     //анимация страницы кейса
     function caseAnimation() {
@@ -121,6 +132,8 @@ export function animGsapInit() {
     window.addEventListener('load', caseAnimation) 
 
 
+
+
     //анимация формы
     function connectAnimation() {
         if (window.innerWidth > 1024) {
@@ -157,6 +170,8 @@ export function animGsapInit() {
         }
     }
     window.addEventListener('load', connectAnimation) 
+
+
 
 
     //анимация item цен, item цифр
@@ -196,6 +211,8 @@ export function animGsapInit() {
             ScrollTrigger.refresh();
     }
     window.addEventListener('load', animateServiceItems) 
+
+
 
 
     //анимация вопросов
@@ -241,6 +258,8 @@ export function animGsapInit() {
     } ) 
 
 
+
+
     //анимация футера
     function footerAnimation() {
         // const footer = document.querySelector('.footer');
@@ -282,6 +301,9 @@ export function animGsapInit() {
             footerAnimation()
         }, 500);
     } )
+
+
+
 
     //анимация карточек в моб версии
     function animateStageItem() {
@@ -332,6 +354,8 @@ export function animGsapInit() {
     window.addEventListener('load', animateStageItem) 
 
 
+
+
     // Анимация градиента этапов
     function animateStageFon() {
         if (window.innerWidth > 650) {
@@ -374,27 +398,61 @@ export function animGsapInit() {
     }
     window.addEventListener('load', animateStageFon) 
 
-    //анимация anim-qr-black
-    function animateQrBlack() {
-        const animQrBlack = document.querySelectorAll('[data-anim-qr]');
-        
-        if (!animQrBlack.length) return;
-    
-        setTimeout(() => {
-            animQrBlack.forEach(item => {
-                addBox(item);
+
+    // Глобальный объект для управления анимацией
+    const animQrBlackManager = {
+            elements: new Set(),
+            animations: new Map(),
+            isInitialized: false,
+
+            // Инициализация
+            init: function() {
+                if (this.isInitialized) return;
                 
-                const boxs = item.querySelectorAll('.anim-qr__box');
-                // Получаем длительность из data-атрибута или используем значение по умолчанию (1.2)
-                const duration = parseFloat(item.dataset.animQrDuration) || 1.2;
+                this.isInitialized = true;
+                this.setupMutationObserver();
+                this.animateExistingElements();
+                
+                // Также инициализируем при загрузке
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', () => {
+                        this.animateExistingElements();
+                    });
+                }
+            },
+
+            // Добавление элементов
+            addElements: function(elements) {
+                if (!elements || elements.length === 0) return;
+                
+                elements.forEach(element => {
+                    if (!this.elements.has(element)) {
+                        this.elements.add(element);
+                        this.animateElement(element);
+                    }
+                });
+                
+                ScrollTrigger.refresh();
+            },
+
+            // Анимация существующих элементов
+            animateExistingElements: function() {
+                const elements = document.querySelectorAll('[data-anim-qr]');
+                this.addElements(Array.from(elements));
+            },
+
+            // Анимация конкретного элемента
+            animateElement: function(element) {
+                if (!element || this.animations.has(element)) return;
+
+                this.addBox(element);
+                
+                const boxs = element.querySelectorAll('.anim-qr__box');
+                const duration = parseFloat(element.dataset.animQrDuration) || 1.2;
                 const easeConfig = CustomEase.create("custom", "M0,0 C0,0 0.319,0.047 0.409,0.138 0.532,0.261 0.596,0.81 0.673,0.893 0.774,1.003 1,1 1,1");
-                const scrollTriggerConfig = {
-                    trigger: item,
-                    start: 'top 80%',
-                    toggleActions: 'play none none none',
-                    once: true
-                };
-    
+                
+                const animations = [];
+
                 boxs.forEach(box => {
                     gsap.set(box, { willChange: 'transform, opacity' });
                     
@@ -402,77 +460,182 @@ export function animGsapInit() {
                     const isHorizontal = box.classList.contains('left') || box.classList.contains('right');
                     
                     if (isVertical || isHorizontal) {
-                        gsap.to(box, {
+                        const animation = gsap.to(box, {
                             [isVertical ? 'height' : 'width']: '0px',
-                            duration: duration, // Используем вычисленную длительность
+                            duration: duration,
                             ease: easeConfig,
-                            scrollTrigger: scrollTriggerConfig
+                            scrollTrigger: {
+                                trigger: element,
+                                start: 'top 80%',
+                                toggleActions: 'play none none none',
+                                once: true
+                            }
                         });
+                        
+                        animations.push(animation);
                     }
                 });
-            });
-    
-            ScrollTrigger.refresh();
-        }, 1000);
-    
-        function addBox(element) {
-            if (element.querySelector('.anim-qr__box')) return;
+
+                this.animations.set(element, animations);
+            },
+
+            // Добавление box элементов
+            addBox: function(element) {
+                if (element.querySelector('.anim-qr__box')) return;
+                
+                const boxes = [
+                    '<div class="anim-qr__box top"></div>',
+                    '<div class="anim-qr__box left"></div>',
+                    '<div class="anim-qr__box bottom"></div>',
+                    '<div class="anim-qr__box right"></div>'
+                ];
+                
+                element.insertAdjacentHTML('beforeend', boxes.join(''));
+            },
+
+            // Перезапуск анимации для элемента
+            restartElement: function(element) {
+                this.killElement(element);
+                this.animateElement(element);
+            },
+
+            // Удаление анимации элемента
+            killElement: function(element) {
+                const animations = this.animations.get(element);
+                if (animations) {
+                    animations.forEach(animation => {
+                        if (animation.scrollTrigger) {
+                            animation.scrollTrigger.kill();
+                        }
+                        animation.kill();
+                    });
+                    this.animations.delete(element);
+                }
+                this.elements.delete(element);
+            },
+
+            // Обновление всех анимаций
+            refresh: function() {
+                this.animations.forEach((animations, element) => {
+                    animations.forEach(animation => {
+                        if (animation.scrollTrigger) {
+                            animation.scrollTrigger.refresh();
+                        }
+                    });
+                });
+                ScrollTrigger.refresh();
+            },
+
+            // Сброс всех анимаций
+            reset: function() {
+                this.animations.forEach((animations, element) => {
+                    this.killElement(element);
+                });
+                this.elements.clear();
+                this.animateExistingElements();
+            },
+
+            // Mutation Observer для новых элементов
+            setupMutationObserver: function() {
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((mutation) => {
+                        if (mutation.addedNodes.length > 0) {
+                            mutation.addedNodes.forEach((node) => {
+                                if (node.nodeType === 1) { // Element node
+                                    // Проверяем сам node
+                                    if (node.matches('[data-anim-qr]')) {
+                                        this.addElements([node]);
+                                    }
+                                    
+                                    // Проверяем детей node
+                                    const newElements = node.querySelectorAll ? node.querySelectorAll('[data-anim-qr]') : [];
+                                    if (newElements.length > 0) {
+                                        this.addElements(Array.from(newElements));
+                                    }
+                                }
+                            });
+                        }
+                    });
+                });
+
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+    };
+    // Также инициализируем при полной загрузке страницы
+    window.addEventListener('load', function() {
+        
+        setTimeout(() => {
+            animQrBlackManager.init();
+        }, 1200);
+    });
+
+    // Глобальная функция для обновления анимации
+    window.updateQrBlackAnimation = function(selector = '[data-anim-qr]') {
+            // Если передан селектор, ищем элементы по нему
+            if (selector) {
+                const newElements = document.querySelectorAll(selector);
+                animQrBlackManager.addElements(Array.from(newElements));
+            } else {
+                // Иначе обновляем все
+                animQrBlackManager.reset();
+            }
             
-            const boxes = [
-                '<div class="anim-qr__box top"></div>',
-                '<div class="anim-qr__box left"></div>',
-                '<div class="anim-qr__box bottom"></div>',
-                '<div class="anim-qr__box right"></div>'
-            ];
-            
-            element.insertAdjacentHTML('beforeend', boxes.join(''));
-        }
-    }
-    window.addEventListener('load', animateQrBlack) 
+            animQrBlackManager.refresh();
+    };
 
 
 
 
-
-    //анимация слов
+    // анимация слов
     function animateTitleWords(userSettings = {}) {
         // Настройки по умолчанию
         const defaults = {
-            wordDelay: 0.1,      // Задержка между словами
-            duration: 0.7,       // Длительность анимации
-            yOffset: 20,         // Начальное смещение
-            startBlur: 8,        // Начальное размытие
-            triggerPoint: 'top 80%', // Когда запускать анимацию
-            triggerDelay: 0,    // Задержка перед анимацией связанных элементов
-            textAnimDuration: 0.6, // Длительность анимации для data-text-anim
-            textAnimEase: 'power2.out', // easing для анимации data-text-anim
+            wordDelay: 0.1,
+            duration: 0.7,
+            yOffset: 20,
+            startBlur: 8,
+            triggerPoint: 'top 80%',
+            triggerDelay: 0,
+            textAnimDuration: 0.6,
+            textAnimEase: 'power2.out',
             wordTag: 'span'
         };
-    
+
         const settings = { ...defaults, ...userSettings };
-    
+
         // Ждем полной загрузки страницы
-        window.addEventListener('load', function() {
+        window.addEventListener('load', function () {
             const textElements = document.querySelectorAll('.text-word-anim');
-            
-            // Проверяем, есть ли элементы для анимации
+
             if (!textElements.length) {
                 console.warn('No elements with class "text-word-anim" found');
                 return;
             }
-    
+
             textElements.forEach(element => {
-                // Инициализируем SplitText ТОЛЬКО для слов
+                // 🔹 Удаляем все <p>, оставляя только текст/узлы
+                const paragraphs = element.querySelectorAll('p');
+                paragraphs.forEach(p => {
+                    while (p.firstChild) {
+                        element.insertBefore(p.firstChild, p);
+                    }
+                    p.remove();
+                });
+
+                // Делаем SplitText только по словам
                 const split = new SplitText(element, {
                     type: 'words',
                     wordsClass: 'word-anim',
                     tag: settings.wordTag
                 });
-    
+
                 const words = split.words;
                 const triggerId = element.dataset.textTrigger;
-    
-                // Устанавливаем начальное состояние для основного текста
+
+                // Начальное состояние слов
                 gsap.set(words, {
                     opacity: 0,
                     y: settings.yOffset,
@@ -480,33 +643,31 @@ export function animGsapInit() {
                     display: 'inline-block',
                     willChange: 'transform, opacity, filter'
                 });
-    
-                // Устанавливаем начальное состояние для связанных элементов (data-text-anim)
+
+                // Начальное состояние связанных элементов
                 if (triggerId) {
                     const targetElements = document.querySelectorAll(`[data-text-anim="${triggerId}"]`);
                     gsap.set(targetElements, {
                         opacity: 0,
                         y: 10,
-                        filter: `blur(${settings.startBlur}px)`,
+                        // filter: `blur(${settings.startBlur}px)`,
                         willChange: 'transform, opacity'
                     });
                 }
-    
-                // Создаем анимацию для ScrollTrigger
+
+                // ScrollTrigger для анимации
                 ScrollTrigger.create({
                     trigger: element,
                     start: settings.triggerPoint,
                     onEnter: () => {
-                        // Анимация каждого слова с задержкой
-                        const animation = gsap.to(words, {
+                        gsap.to(words, {
                             opacity: 1,
                             y: 0,
                             filter: 'blur(0px)',
                             duration: settings.duration,
                             stagger: settings.wordDelay,
                             ease: 'power2.out',
-                            onComplete: function() {
-                                // Если есть data-text-trigger, анимируем соответствующие data-text-anim
+                            onComplete: function () {
                                 if (triggerId) {
                                     const targetElements = document.querySelectorAll(`[data-text-anim="${triggerId}"]`);
                                     gsap.to(targetElements, {
@@ -516,21 +677,21 @@ export function animGsapInit() {
                                         duration: settings.textAnimDuration,
                                         ease: settings.textAnimEase,
                                         delay: settings.triggerDelay,
-                                        stagger: settings.wordDelay * 0.5 // Небольшой stagger для множественных элементов
+                                        stagger: settings.wordDelay * 0.5
                                     });
                                 }
                             }
                         });
                     },
-                    once: true // Анимация сработает только один раз
+                    once: true
                 });
             });
-    
-            // Важно обновить ScrollTrigger после создания всех анимаций
+
             ScrollTrigger.refresh();
         });
     }
     animateTitleWords()
+
 
 
     //обновление gsap анимации
@@ -593,5 +754,7 @@ export function animGsapInit() {
     });
 
 }
+
+
 
 

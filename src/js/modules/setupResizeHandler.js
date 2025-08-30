@@ -9,7 +9,6 @@ export function setupResizeHandler() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(function() {
       ScrollTrigger.refresh(); // Критически важно!
-      console.log("ScrollTrigger refreshed after resize");
     }, 300);
   // });
 }
