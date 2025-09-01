@@ -169,7 +169,6 @@
         @include adaptiveClamp(font-size, 18, 15);
         font-weight: 500;
         color: var(--white-black-color);
-
         padding-right: rem(280);
 
         @media(max-width:1150px){

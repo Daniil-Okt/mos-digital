@@ -4,7 +4,12 @@ export function videoOpen() {
     
         // Находим попап с видео и его элементы
         const videoPopup = document.querySelector('.popup-video');
-        const videoElement = videoPopup.querySelector('video');
+        const videoElement = videoPopup.querySelector('video'); 
+
+        if (!videoPopup && !videoElement) {
+          return;
+        }
+        
         const videoSource = videoElement.querySelector('source');
         const popupContent = videoPopup.querySelector('.popup__content');
         const closeButtons = document.querySelectorAll('.popup__close, [data-close-overlay]');

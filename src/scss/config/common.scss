@@ -37,7 +37,7 @@ a {
 }
 h1, h2, h3, h4, h5 {
     color: var(--bs-title-color);
-    
+
     em, i {
         color: var(--bs-title-mark-color);
         font-style: italic;
@@ -46,7 +46,7 @@ h1, h2, h3, h4, h5 {
     }
 }
 h1, h2, h3, h4, h5, p, span {
-    transition: color 0.3s ease  0s;
+    transition: all 0.3s ease  0s;
 }
 
 
